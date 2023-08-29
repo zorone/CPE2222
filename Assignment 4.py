@@ -8,13 +8,13 @@ wCount = len(s1.split()) + len(s2.split()) + len(s3.split())
 s2m = s2.strip(" ")
 s3m = s3.strip(" ")
 
-secret = s1[-21] 
-secret += s1[-4]
-secret += s1[-82]
-secret += s2m[44]
-secret += s2m[4]
-secret += s3m[-32]
-secret += s3m[-10]
+secret = s1[-20] 
+secret += s1[-3]
+secret += s1[-81]
+secret += s2m[41]
+secret += s2m[3]
+secret += s3m[-31]
+secret += s3m[-9]
 
 print("Total characters in string s1, s2 and s3 are {} characters".format(length))
 print("Total words in string s1, s2 and s3 are {} words".format(wCount))
