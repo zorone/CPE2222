@@ -24,7 +24,7 @@ print("{I}{P}{A}".format(I="Item".center(30), P="Price".center(10), A="Quantity"
 print(pageBreak)
 
 for i in range(3):
-    print("%30s%7f%13d"%(Item[i], Price[i], Amount[i]))
+    print("{I}{P}{A}".format(I=Item[i].ljust(30), P=str(Price[i]).rjust(7), A=str(Amount[i]).rjust(13)))
     Total += Amount[i]
 
 print(pageBreak)
