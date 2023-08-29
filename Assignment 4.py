@@ -5,8 +5,8 @@ s3 = "Professionally, Python is great for backend web development, data analysis
 length = len(s1) + len(s2) + len(s3)
 wCount = len(s1.split()) + len(s2.split()) + len(s3.split())
 
-s2m = s2.strip()
-s3m = s3.strip()
+s2m = s2.strip(" ")
+s3m = s3.strip(" ")
 
 secret = s1[-21] 
 secret += s1[-4]
