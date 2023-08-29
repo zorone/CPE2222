@@ -1,4 +1,5 @@
 pageBreak = "-"*50
+Total = 0
 
 Item = list()
 Price = list()
@@ -23,7 +24,7 @@ print("{I}{P}{A}".format(I="Item".center(30), P="Price".center(10), A="Quantity"
 print(pageBreak)
 
 for i in range(3):
-    print("{I}{P}{A}".format(I=Item[i].ljust(30), P=str(Price[i]).center(7), A=str(Amount[i]).rjust(13)))
+    print("{I}{P}{A}".format(I=Item[i].ljust(30), P=str(Price[i]).rjust(7), A=str(Amount[i]).rjust(13)))
     Total += Amount[i]
 
 print(pageBreak)
