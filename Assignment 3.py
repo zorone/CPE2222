@@ -28,5 +28,5 @@ for i in range(3):
     Total += Amount[i]
 
 print(pageBreak)
-print("Total Quantity = {}".format(Total))
+print("Total Quantity = {}".format(Total).rjust(50))
 print(pageBreak)
