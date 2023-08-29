@@ -1,16 +1,20 @@
 pageBreak = "-"*50
 
-Item += list(str(input("Enter The 1st Product Name:")))
-Price += list(float(input("Enter Price of Product:")))
-Amount += list(int(input("Enter Quantity of Product:")))
+Item = list()
+Price = list()
+Amount = list()
 
-Item += list(str(input("Enter The 2nd Product Name:")))
-Price += list(float(input("Enter Price of Product:")))
-Amount += list(int(input("Enter Quantity of Product:")))
+Item.append(str(input("Enter The 1st Product Name:")))
+Price.append(float(input("Enter Price of Product:")))
+Amount.append(int(input("Enter Quantity of Product:")))
 
-Item += list(str(input("Enter The 3rd Product Name:")))
-Price += list(float(input("Enter Price of Product:")))
-Amount += list(int(input("Enter Quantity of Product:")))
+Item.append(str(input("Enter The 2nd Product Name:")))
+Price.append(float(input("Enter Price of Product:")))
+Amount.append(int(input("Enter Quantity of Product:")))
+
+Item.append(str(input("Enter The 3rd Product Name:")))
+Price.append(float(input("Enter Price of Product:")))
+Amount.append(int(input("Enter Quantity of Product:")))
 
 print(pageBreak)
 print("Inventory".center(50))
