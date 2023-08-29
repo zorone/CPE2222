@@ -1,19 +1,16 @@
 pageBreak = "-"*50
-Item = tuple()
-Price = tuple()
-Amount = tuple()
 
-Item += tuple(str(input("Enter The 1st Product Name:")), )
-Price += tuple(float(input("Enter Price of Product:")), )
-Amount += tuple(int(input("Enter Quantity of Product:")), )
+Item += list(str(input("Enter The 1st Product Name:")))
+Price += list(float(input("Enter Price of Product:")))
+Amount += list(int(input("Enter Quantity of Product:")))
 
-Item += tuple(str(input("Enter The 2nd Product Name:")), )
-Price += tuple(float(input("Enter Price of Product:")), )
-Amount += tuple(int(input("Enter Quantity of Product:")), )
+Item += list(str(input("Enter The 2nd Product Name:")))
+Price += list(float(input("Enter Price of Product:")))
+Amount += list(int(input("Enter Quantity of Product:")))
 
-Item += tuple(str(input("Enter The 3rd Product Name:")), )
-Price += tuple(float(input("Enter Price of Product:")), )
-Amount += tuple(int(input("Enter Quantity of Product:")), )
+Item += list(str(input("Enter The 3rd Product Name:")))
+Price += list(float(input("Enter Price of Product:")))
+Amount += list(int(input("Enter Quantity of Product:")))
 
 print(pageBreak)
 print("Inventory".center(50))
