@@ -3,7 +3,7 @@ s2 = "It has simple easy-to-use syntax, making it the perfect language for someo
 s3 = "Professionally, Python is great for backend web development, data analysis, artificial intelligence, and scientix computing."
 
 length = s1.len() + s2.len() + s3.len()
-wCount = s1.split().len() + s2.split().len() + s3.split().len()
+wCount = len(s1.split()) + len(s2.split()) + len(s3.split())
 
 s2m = s2.strip
 s3m = s3.strip
