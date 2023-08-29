@@ -22,7 +22,7 @@ print("Item".center(30), "Price".center(10), "Quantity".center(10))
 print(pageBreak)
 
 for i in range(3):
-    print("{0}{1}{2}".format(0=Item[i].ljust(30), 1=Price[i].center(7), 2=Amount[i].rjust(13)))
+    print("{I}{P}{A}".format(I=Item[i].ljust(30), P=Price[i].center(7), A=Amount[i].rjust(13)))
     Total += Amount[i]
 
 print(pageBreak)
