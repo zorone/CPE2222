@@ -16,8 +16,7 @@ secret += s2m[43]
 secret += s2m[3]
 secret += s3m[-31]
 secret += s3m[-9]
-print(s2m)
-print(s3m)
+
 print("Total characters in string s1, s2 and s3 are {} characters".format(length))
 print("Total words in string s1, s2 and s3 are {} words".format(wCount))
 print("The secret code is {}".format(secret))
