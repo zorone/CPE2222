@@ -5,14 +5,14 @@ s3 = "Professionally, Python is great for backend web development, data analysis
 length = len(s1) + len(s2) + len(s3)
 wCount = len(s1.split()) + len(s2.split()) + len(s3.split())
 
-s2m = s2.strip(" ")
-s3m = s3.strip(" ")
+s2m = s2.replace(" ", "")
+s3m = s3.replace(" ", "")
 
 # using first index = 1
 secret = s1[-20] 
 secret += s1[-3]
 secret += s1[-81]
-secret += s2m[45]
+secret += s2m[44]
 secret += s2m[4]
 secret += s3m[-31]
 secret += s3m[-9]
