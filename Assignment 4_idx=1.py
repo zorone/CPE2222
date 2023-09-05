@@ -8,12 +8,12 @@ wCount = len(s1.split()) + len(s2.split()) + len(s3.split())
 s2m = s2.replace(" ", "")
 s3m = s3.replace(" ", "")
 
-# using first index = 1
+# using first index = 0
 secret = s1[-20] 
 secret += s1[-3]
 secret += s1[-81]
-secret += s2m[44]
-secret += s2m[4]
+secret += s2m[43]
+secret += s2m[3]
 secret += s3m[-31]
 secret += s3m[-9]
 print(s2m)
