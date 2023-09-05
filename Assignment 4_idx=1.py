@@ -12,11 +12,12 @@ s3m = s3.strip(" ")
 secret = s1[-20] 
 secret += s1[-3]
 secret += s1[-81]
-secret += s2m[41]
-secret += s2m[3]
+secret += s2m[45]
+secret += s2m[4]
 secret += s3m[-31]
 secret += s3m[-9]
-
+print(s2m)
+print(s3m)
 print("Total characters in string s1, s2 and s3 are {} characters".format(length))
 print("Total words in string s1, s2 and s3 are {} words".format(wCount))
 print("The secret code is {}".format(secret))
