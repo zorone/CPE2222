@@ -6,11 +6,9 @@ print("-"*40)
 Alist = set()
 Alist.add(tuple(A))
 
-Blist = set()
-Blist.add(tuple(B))
+Blist = tuple(A)
 
-bothAB = set()
-bothAB = Alist.intersection(Blist)
+bothAB = tuple(B)
 
 onlyA = set()
 onlyA = Alist.difference(Blist)
