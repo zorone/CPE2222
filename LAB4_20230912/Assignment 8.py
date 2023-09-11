@@ -39,15 +39,14 @@ for i in range(-1, -5, -1):
 print("The highest point in the scrabble game:")
 
 for i in range(1, 5):
-    print('        i) "{}" with {} points'.format(char_point[i-1], s_point[i*-1]))
+    print('        {}) "{}" with {} points'.format(i, char_point[i-1], s_point[i*-1]))
 
 print("The highest amount in the scrabble game:")
 
 for i in range(1, 5):
-    print('        i) "{}" with {} pieces'.format(char_amount[i-1], s_amount[i*-1]))
+    print('        {}) "{}" with {} pieces'.format(i, char_amount[i-1], s_amount[i*-1]))
 
 print("The lowest ratio in the scrabble game:")
-print('        1) "{}" with {} percent'.format(char_ratio[0], s_ratio[0]))
-print('        2) "{}" with {} percent'.format(char_ratio[1], s_ratio[1]))
-print('        3) "{}" with {} percent'.format(char_ratio[2], s_ratio[2]))
-print('        4) "{}" with {} percent'.format(char_ratio[3], s_ratio[3]))
+
+for i in range(0, 4):
+    print('        {}) "{}" with {} percent'.format(i+1, char_ratio[i], s_ratio[i]))
