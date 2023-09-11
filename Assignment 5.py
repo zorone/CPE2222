@@ -3,24 +3,27 @@ B = str(input("Please enter the string B: "))
 
 print("-"*40)
 
-Alist = set()
-Alist.add(tuple(A))
+Alist = tuple(A)
+setA = set()
+setA.add(Alist)
 
-Blist = tuple(A)
+Blist = tuple(B)
+setB = set()
+setB.add(Blist)
 
-bothAB = tuple(B)
+bothAB = setA.intersection(setB)
 
 onlyA = set()
-onlyA = Alist.difference(Blist)
+onlyA = setA.difference(setB)
 
 onlyB = set()
-onlyB = Blist.difference(Alist)
+onlyB = setB.difference(setA)
 
 notBoth = set()
-notBoth = Alist.symmetric_difference(Blist)
+notBoth = setA.symmetric_difference(setB)
 
 all = set()
-all = Alist.union(Blist)
+all = setA.union(setB)
 
 print("A number of character in A is {}".format(len(A)))
 print("A number of character in A is {}".format(len(B)))
