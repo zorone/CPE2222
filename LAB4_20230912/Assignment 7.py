@@ -5,17 +5,20 @@ def multiplyMatrix(A, B):
         return -1
     p = len(B[0])
     
-    res = [[]]
+    res = tuple()
     
     for i in range(0, m):
+        t_res = tuple()
         
         for j in range(0, p):
             sum = 0
             
             for k in range(0, n):
                 sum += A[i][k] * B[k][j]
-                
-            res[i][j] = sum
+                 
+            t_res += (sum, )
+              
+        res += (t_res, )
     
     return res
 
