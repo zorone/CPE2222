@@ -20,11 +20,11 @@ def multiplyMatrix(A, B):
     return res
 
 def transposeMatrix(A):
-    m = len(A)
+    n = len(A[0])
     
     res = []
     
-    for i in range(0, m):
+    for i in range(0, n):
         t_res = []
         for eachRow in A:
             t_res.append(eachRow[i])
