@@ -25,13 +25,13 @@ def multiplyMatrix(A, B):
 def transposeMatrix(A):
     n = len(A[0])
     
-    res = []
+    res = tuple()
     
     for i in range(0, n):
-        t_res = []
+        t_res = tuple()
         for eachRow in A:
-            t_res.append(eachRow[i])
-        res.append(t_res)
+            t_res += (eachRow[i], )
+        res += (t_res, )
             
     return res
 
