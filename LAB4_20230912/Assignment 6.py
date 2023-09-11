@@ -1,8 +1,8 @@
-testScore = {
+testScore = [
                   {"First": [20, 19, 10, 5]},
                   {"Second": [18, 20, 5, 3]},
                   {"Third": [19, 19, 4, 1]}
-                  }
+                  ]
 
 dictionary = {"index": [0, 1, 2, 3],
               "Name": ["Peter", "Paul", "Mary", "Jenny"],
