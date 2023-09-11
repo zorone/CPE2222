@@ -1,12 +1,14 @@
-dictionary = {"index": [0, 1, 2, 3],
-              "Name": ["Peter", "Paul", "Mary", "Jenny"],
-              "Age": [40, 25, 18, 60],
-              "Gender": ["Male", "Male", "Female", "Female"],
-              "Test": {
+testScore = {
                   {"First": [20, 19, 10, 5]},
                   {"Second": [18, 20, 5, 3]},
                   {"Third": [19, 19, 4, 1]}
                   }
+
+dictionary = {"index": [0, 1, 2, 3],
+              "Name": ["Peter", "Paul", "Mary", "Jenny"],
+              "Age": [40, 25, 18, 60],
+              "Gender": ["Male", "Male", "Female", "Female"],
+              "Test": testScore
               }
 
 print("\"{}\" is {}".format(dictionary["Name"][0], dictionary["Gender"][0]))
