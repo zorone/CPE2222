@@ -4,10 +4,10 @@ B = str(input("Please enter the string B: "))
 print("-"*40)
 
 Alist = set()
-Alist.add(tuple(A.split()))
+Alist.add(tuple(A))
 
 Blist = set()
-Blist.add(tuple(B.split()))
+Blist.add(tuple(B))
 
 bothAB = set()
 bothAB = Alist.intersection(Blist)
