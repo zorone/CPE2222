@@ -42,10 +42,6 @@ AtA = multiplyMatrix(A, tA)
 starBreak = '*' * 90
 pageBreak = '-' * 90
 
-print(A)
-print(tA)
-print(AtA)
-
 print(starBreak)
 print("Matrix with Tuple".center(90))
 print(starBreak)
