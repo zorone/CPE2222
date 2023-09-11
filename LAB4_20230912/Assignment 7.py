@@ -7,12 +7,12 @@ def multiplyMatrix(A, B):
     
     res = [[]]
     
-    for i in range(m):
+    for i in range(0, m):
         
-        for j in range(p):
+        for j in range(0, p):
             sum = 0
             
-            for k in range(n):
+            for k in range(0, n):
                 sum += A[i][k] * B[k][j]
                 
             res[i][j] = sum
@@ -21,13 +21,14 @@ def multiplyMatrix(A, B):
 
 def transposeMatrix(A):
     m = len(A)
-    n = len(A[0])
     
-    res = [[]]
+    res = []
     
-    for i in range(m):
-        for j in range(n):
-            res[j][i] = A[i][j]
+    for i in range(0, m):
+        t_res = []
+        for eachRow in A:
+            t_res.append(eachRow[i])
+        res.append(t_res)
             
     return res
 
