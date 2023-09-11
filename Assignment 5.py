@@ -3,13 +3,9 @@ B = str(input("Please enter the string B: "))
 
 print("-"*40)
 
-Alist = tuple(A)
-setA = set()
-setA.add(Alist)
+setA = set(A)
 
-Blist = tuple(B)
-setB = set()
-setB.add(Blist)
+setB = set(B)
 
 bothAB = setA.intersection(setB)
 
