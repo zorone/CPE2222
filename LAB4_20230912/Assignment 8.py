@@ -32,7 +32,7 @@ for (i, search) in ((point, s_point), (amount, s_amount), (ratio, s_ratio)):
 for (i, j, k) in (('highest', 'point', 'points'), ('highest', 'amount', 'pieces'), ('lowest', 'ratio', 'percent')):
     print("The {} {} in the scrabble game:".format(i, j))
     
-    for c, v in {ch: val}:
+    for c, v in {ch: val}.items():
         for n in range(1, 5):
             print('        {}) "{}" with {} {}'.format(n, c, v, k))
             
