@@ -17,6 +17,8 @@ s_amount.sort(reverse=True)
 s_ratio.sort()
 
 temp = int()
+count = int()
+count = 0
 
 ch = tuple()
 val = tuple()
@@ -27,20 +29,14 @@ vTemp = tuple()
 for (i, search) in ((point, s_point), (amount, s_amount), (ratio, s_ratio)):
     for j in search[0:4]:
         temp = i.index(j)
-        cTemp += (letter[temp], )
-        vTemp += (j, )
+        ch += (letter[temp], )
+        val += (j, )
         i[temp] = -1
-    ch += (cTemp, )
-    val += (vTemp, )
-    print(ch)
-    print(val)
-    cTemp = ( )
-    vTemp = ( )
 
 for (i, j, k) in (('highest', 'point', 'points'), ('highest', 'amount', 'pieces'), ('lowest', 'ratio', 'percent')):
     print("The {} {} in the scrabble game:".format(i, j))
     
-    for (cList, vList) in (ch, val):
-        for (n, c, v) in (range(1, 5), cList, vList):
-            print('        {}) "{}" with {} {}'.format(n, c, v, k))
-            
+    for n in range(1, 5):
+        print('        {}) "{}" with {} {}'.format(n, ch[count], val[count], k))
+        count += 1
+        
