@@ -16,10 +16,10 @@ while True:
         s += "IV"
         
     else:
-        res, mod = divmod(x, 5)
+        res, mod = divmod(res, 5)
         s += "V"*res
         s += "I"*mod
 
-    print('The roman number of {} is " {} "'.format(x, s))
+    print('The roman number of {} is " {} "'.format(x, s))~
     
     
