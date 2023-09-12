@@ -7,10 +7,9 @@ while True:
     if(size == 0):
         break
     
-    for i in range(size):
+    print("#"*size)
+    for i in range(size-2):
+        print("#", end="")
+        print("#".rjust(size-1))
+    if(size > 1):
         print("#"*size)
-        for j in range(size):
-            print("#", end="")
-            print("#".rjust(size-1))
-        if(size > 1):
-            print("#"*size)
