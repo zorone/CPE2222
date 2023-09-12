@@ -30,8 +30,8 @@ for (i, search) in ((point, s_point), (amount, s_amount), (ratio, s_ratio)):
         cTemp += (letter[temp], )
         vTemp += (j, )
         i[temp] = -1
-    ch += ((cTemp, ), )
-    val += ((vTemp, ), )
+    ch += (cTemp, )
+    val += (vTemp, )
     print(ch)
     print(val)
     cTemp = ( )
