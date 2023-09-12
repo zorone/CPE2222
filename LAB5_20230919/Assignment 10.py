@@ -13,7 +13,7 @@ upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 lowerCase = "abcdefghijklmnopqrstuvwxyz"
 number = "0123456789"
 
-checkers = int(0)
+checkers = str("000")
 
 s = str()
 
@@ -29,21 +29,21 @@ if len(s) > 0:
     sys.exit(0)
 
 for c in password:
-    if(checkers < 4): 
+    if(checkers[0] == "0"): 
         if c in upperCase:
-            checkers += 4
-    if(checkers & ~4 < 2):
+            checkers[0] = "1"
+    if(checkers[1] == "0"):
         if c in lowerCase:
-            checkers += 2
-    if(checkers & ~6 < 1):
+            checkers[1] = "1"
+    if(checkers[2] == "0"):
         if c in number:
-            checkers += 1
+            checkers[2] = "1"
 
-if(checkers < 4):
+if(checkers[0] == "0"):
     s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[0]+tokenType[0]+tokenQuantifier[0]
-elif(checkers < 2):
+elif(checkers[1] == "0"):
     s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[0]+tokenType[1]+tokenQuantifier[0]
-elif(checkers < 1):
+elif(checkers[2] == "0"):
     s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[0]+tokenQuantifier[0]
 else:
     s= ":-) Your password is correct (-:"
