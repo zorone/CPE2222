@@ -8,9 +8,9 @@ while True:
         break
     
     for i in range(size):
-        print("#"*i)
+        print("#"*size)
         for j in range(size):
             print("#", end="")
-            print("#".rjust(i-1))
+            print("#".rjust(size-1))
         if(size > 1):
-            print("#"*i)
+            print("#"*size)
