@@ -12,41 +12,27 @@ s_point = point.copy()
 s_amount = amount.copy()
 s_ratio = ratio.copy()
 
-s_point.sort()
-s_amount.sort()
+s_point.sort(reverse=True)
+s_amount.sort(reverse=True)
 s_ratio.sort()
 
 temp = int()
 
-char_point = tuple()
-char_amount = tuple()
-char_ratio = tuple()
+ch = tuple()
+val = tuple()
 
-for i in range(-1, -5, -1):
-    temp = point.index(s_point[i])
-    char_point += (letter[temp], )
-    point[temp] = -1
+for i, search in (point, amount, ratio), (s_point, s_amount, s_ratio):
+    for j in search[0:4]:
+        temp = i.index(j)
+        ch += (letter[temp], )
+        val += (j, )
+        i[temp] = -1
+
+
+for i, j, k in ('highest', 'highest', 'lowest'), ('point', 'amount', 'ratio'), ('points', 'pieces', 'percent'):
+    print("The {} {} in the scrabble game:".format(i, j))
     
-    temp = amount.index(s_amount[i])
-    char_amount += (letter[temp], )
-    amount[temp] = -1
-    
-    temp = ratio.index(s_ratio[(i*-1)-1])
-    char_ratio += (letter[temp], )
-    ratio[temp] = -1
-
-
-print("The highest point in the scrabble game:")
-
-for i in range(1, 5):
-    print('        {}) "{}" with {} points'.format(i, char_point[i-1], s_point[i*-1]))
-
-print("The highest amount in the scrabble game:")
-
-for i in range(1, 5):
-    print('        {}) "{}" with {} pieces'.format(i, char_amount[i-1], s_amount[i*-1]))
-
-print("The lowest ratio in the scrabble game:")
-
-for i in range(0, 4):
-    print('        {}) "{}" with {} percent'.format(i+1, char_ratio[i], s_ratio[i]))
+    for c, v in ch, val:
+        for n in range(1, 5):
+            print('        {}) "{}" with {} {}'.format(n, c, v, k))
+            
