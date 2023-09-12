@@ -21,11 +21,11 @@ if l < 8:
     s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[1]+tokenType[2]+tokenQuantifier[2]
 elif l > 16:
     s = header+tokenNegative[1]+tokenAmount[1]+tokenArticle[1]+tokenType[3]+tokenQuantifier[2]
-elif c not in upperCase:
+elif len(upperCase.difference(c)) > 25:
     s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[0]+tokenType[0]+tokenQuantifier[0]
-elif c not in lowerCase:
+elif len(lowerCase.difference(c)) > 25:
     s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[0]+tokenType[1]+tokenQuantifier[0]
-elif c not in number:
+elif len(number.difference(c)) > 9:
     s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[0]+tokenQuantifier[1]
 else:
     s= ":-) Your password is correct (-:"
