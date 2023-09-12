@@ -26,16 +26,16 @@ elif l > 16:
     
 if len(s) > 0:
     print(s)
-    sys.exit
+    sys.exit(0)
 
 for c in password:
     if(checkers < 4): 
         if c in upperCase:
             checkers += 4
-    if(checkers < 2):
+    if(checkers & ~4 < 2):
         if c in lowerCase:
             checkers += 2
-    if(checkers < 1):
+    if(checkers & ~6 < 1):
         if c in number:
             checkers += 1
 
