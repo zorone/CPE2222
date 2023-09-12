@@ -13,7 +13,7 @@ upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 lowerCase = "abcdefghijklmnopqrstuvwxyz"
 number = "0123456789"
 
-checkers = str("000")
+checkers = list("000")
 
 s = str()
 
@@ -44,7 +44,7 @@ if(checkers[0] == "0"):
 elif(checkers[1] == "0"):
     s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[0]+tokenType[1]+tokenQuantifier[0]
 elif(checkers[2] == "0"):
-    s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[0]+tokenQuantifier[0]
+    s = header+tokenNegative[0]+tokenAmount[0]+tokenArticle[0]+tokenQuantifier[1]
 else:
     s= ":-) Your password is correct (-:"
     
