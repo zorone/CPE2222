@@ -7,7 +7,7 @@ while True:
     if x not in acceptRange: break
     
     res, mod = divmod(x, 10)
-    s += "X"*res
+    s = "X"*res
     
     if(mod == 9):
         s += "IX"
@@ -16,7 +16,7 @@ while True:
         s += "IV"
         
     else:
-        res, mod = divmod(res, 5)
+        res, mod = divmod(mod, 5)
         s += "V"*res
         s += "I"*mod
 
