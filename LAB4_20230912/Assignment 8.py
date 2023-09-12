@@ -21,18 +21,24 @@ temp = int()
 ch = tuple()
 val = tuple()
 
+cTemp = tuple()
+vTemp = tuple()
+
 for (i, search) in ((point, s_point), (amount, s_amount), (ratio, s_ratio)):
     for j in search[0:4]:
         temp = i.index(j)
-        ch += (letter[temp], )
-        val += (j, )
+        cTemp += (letter[temp], )
+        vTemp += (j, )
         i[temp] = -1
-
+    ch += ((cTemp, ), )
+    val += ((vTemp, ), )
+    cTemp.clear()
+    vTemp.clear()
 
 for (i, j, k) in (('highest', 'point', 'points'), ('highest', 'amount', 'pieces'), ('lowest', 'ratio', 'percent')):
     print("The {} {} in the scrabble game:".format(i, j))
     
-    for c, v in {ch: val}.items():
-        for n in range(1, 5):
+    for (cList, vList) in (ch, val):
+        for (n, c, v) in (range(1, 5), cList, vList):
             print('        {}) "{}" with {} {}'.format(n, c, v, k))
             
