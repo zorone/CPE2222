@@ -32,8 +32,10 @@ for (i, search) in ((point, s_point), (amount, s_amount), (ratio, s_ratio)):
         i[temp] = -1
     ch += ((cTemp, ), )
     val += ((vTemp, ), )
-    cTemp.clear()
-    vTemp.clear()
+    print(ch)
+    print(val)
+    cTemp = ( )
+    vTemp = ( )
 
 for (i, j, k) in (('highest', 'point', 'points'), ('highest', 'amount', 'pieces'), ('lowest', 'ratio', 'percent')):
     print("The {} {} in the scrabble game:".format(i, j))
