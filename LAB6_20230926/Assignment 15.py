@@ -15,14 +15,13 @@ def encrypt(P,k):
     
 def decrypt(C,k):
     for c in C:
+        k += 26
         if(c in upperList):
-            temp = upperList.index(c)
-            temp = abs(temp - k)
-            return upperList[temp%26]
+            k -= upperList.index(c)
+            return upperList[k%26]
         else:
-            temp = lowerList.index(c)
-            temp = abs(temp - k)
-            return lowerList[temp%26]
+            k -= lowerList.index(c)
+            return lowerList[k%26]
     
 ciphertext = encrypt(plaintext,secretkey)
 print('The encrypted ciphertext:',ciphertext,sep='')
