@@ -13,6 +13,7 @@ def encrypt(P,k):
         return lowerList[k%26]  
     
 def decrypt(C,k):
+    k += 26
     if(C in upperList):
         k -= upperList.index(C)
         return upperList[k%26]
