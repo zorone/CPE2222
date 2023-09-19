@@ -1,5 +1,5 @@
 def nthDegreePascal(re :int):
-    pascalList = tuple()
+    pascalList = list()
     if(re <= 1):
         temp = [1, 1][0:re+1]
         return temp
