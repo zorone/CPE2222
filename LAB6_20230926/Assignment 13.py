@@ -15,7 +15,7 @@ def start():
     for i in range(1, 6):
         print("round{}".format(i).center(50, '-'))
         
-        temp = input("Enter an integer from {} to {} : ".format(floor, ceil))
+        temp = int(input("Enter an integer from {} to {} : ".format(floor, ceil)))
         
         if(temp == number):
             print(hashStrap)
