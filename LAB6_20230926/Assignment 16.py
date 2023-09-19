@@ -8,11 +8,8 @@ def dictGen(size :int):
         squareArea = l**2
         triangleArea = (3**(1/2))*(l**2)*(1/4)
         
-        table.update({
-            'Circle': {l: circleArea},
-            'Square': {l: squareArea},
-            'Triangle': {l: triangleArea}
-        })
+        for keys in ('Circle', 'Square', 'Triangle'):
+            table[keys].update({l: circleArea})
 
 
 def main():
