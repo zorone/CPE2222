@@ -1,10 +1,15 @@
-def nthDegreePascal(re :int, *listVal):
+def nthDegreePascal(re :int):
+    pascalList = tuple()
     if(re <= 1):
-        pascalList = [1, 1][0:re+1]
-        return pascalList
+        temp = [1, 1][0:re+1]
+        return temp
     else:
-        pascalList = nthDegreePascal(re-1, listVal)
+        temp = nthDegreePascal(re-1)
     
-    for i in range(0, len(pascalList)):
+    for i in range(0, len(temp)-1):
+        pascalList += [temp[i]+temp[i+1]]
         
-    
+    return pascalList
+
+n = int(input("Please Enter Degree of Pascal Triangle: "))
+print(nthDegreePascal(n))
