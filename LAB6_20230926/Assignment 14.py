@@ -6,8 +6,11 @@ def nthDegreePascal(re :int):
     else:
         temp = nthDegreePascal(re-1)
     
+    pascalList += [1]
     for i in range(0, len(temp)-1):
         pascalList += [temp[i]+temp[i+1]]
+    
+    pascalList += [1]
         
     return pascalList
 
