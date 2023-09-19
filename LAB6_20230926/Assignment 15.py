@@ -13,6 +13,8 @@ def encrypt(P,k):
         else:
             temp = lowerList.index(p)
             encryptText += lowerList[(temp+k)%26]  
+            
+    return encryptText
     
 def decrypt(C,k):
     decryptText = str()
@@ -23,6 +25,8 @@ def decrypt(C,k):
         else:
             temp = lowerList.index(c)
             decryptText += lowerList[(temp-k)%26]
+            
+    return decryptText
     
 ciphertext = encrypt(plaintext,secretkey)
 print('The encrypted ciphertext:',ciphertext,sep='')
