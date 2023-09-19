@@ -5,16 +5,20 @@ upperList = tuple('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 lowerList = tuple('abcdefghijklmnopqrstuvwxyz')
 
 def encrypt(P,k):
-    k %= 26
     if(P in upperList):
-        temp = upperList.index(P)
-        return upperList[(temp+k)%26]
+        k += upperList.index(P)
+        return upperList[k%26]
+    else:
+        k += lowerList.index(P)
+        return lowerList[k%26]  
     
 def decrypt(C,k):
-    
-    
-    
-    
+    if(C in upperList):
+        k -= upperList.index(C)
+        return upperList[k%26]
+    else:
+        k -= upperList.index(C)
+        return upperList[k%26]
     
 ciphertext = encrypt(plaintext,secretkey)
 print('The encrypted ciphertext:',ciphertext,sep='')
