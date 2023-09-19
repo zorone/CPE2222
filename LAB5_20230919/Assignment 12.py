@@ -1,12 +1,9 @@
 acceptRange = range(1, 40)
 s = str()
+romanDict = dict()
 
-while True:
-    x = int(input("Enter a number for roman number conversion:"))
-    
-    if x not in acceptRange: break
-    
-    res, mod = divmod(x, 10)
+for i in range(1, 40):
+    res, mod = divmod(i, 10)
     s = "X"*res
     
     if(mod == 9):
@@ -19,7 +16,17 @@ while True:
         res, mod = divmod(mod, 5)
         s += "V"*res
         s += "I"*mod
+    
+    romanDict.update({i: s})
+    
+print(romanDict)
 
-    print('The roman number of {} is " {} "'.format(x, s))
+
+while True:
+    x = int(input("Enter a number for roman number conversion:"))
+    
+    if x not in acceptRange: break
+
+    print('The roman number of {} is " {} "'.format(x, romanDict[x]))
     
     
