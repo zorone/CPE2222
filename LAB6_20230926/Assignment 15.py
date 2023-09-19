@@ -9,10 +9,10 @@ def encrypt(P,k):
     for p in P:    
         if(p in upperList):
             temp = upperList.index(p)
-            encodeText += upperList[(temp+k)%26]
+            encryptText += upperList[(temp+k)%26]
         else:
             temp = lowerList.index(p)
-            encodeText += lowerList[(temp+k)%26]  
+            encryptText += lowerList[(temp+k)%26]  
     
 def decrypt(C,k):
     decryptText = str()
