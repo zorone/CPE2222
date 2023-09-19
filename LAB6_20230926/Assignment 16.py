@@ -28,14 +28,14 @@ def main():
             return
         
         print("Enter the dictionary key")
-        index = round(float(input("{} - {}:".format(1, size))))
+        index = math.floor(float(input("{} - {}:".format(1, size))))
         
         if index not in range(1, size+1):
             print("!!! The key is out of scope !!!")
             return
         
         print(pageBreak)
-        print("The area of {} is {}".format(shape.upper(), table[shape][index]))
+        print("The area of {} is {}".format(shape.upper(), round(table[shape][index], 2)))
         print(pageBreak)
 
 main()
