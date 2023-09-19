@@ -19,7 +19,7 @@ for i in range(1, 40):
     
     romanDict.update({i: s})
     
-print(romanDict)
+# print(romanDict)
 
 
 while True:
