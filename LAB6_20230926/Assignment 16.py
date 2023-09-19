@@ -2,14 +2,17 @@ import math
 
 table = {'Circle': dict(), 'Square': dict(), 'Triangle': dict()}
 
+keys = ('Circle', 'Square', 'Triangle')
+areas = ('circleArea', 'squareArea', 'triangleArea')
+
 def dictGen(size :int):
     for l in range (1, size+1):
         circleArea = math.pi*(l**2)
         squareArea = l**2
         triangleArea = (3**(1/2))*(l**2)*(1/4)
         
-        for keys in ('Circle', 'Square', 'Triangle'):
-            table[keys].update({l: circleArea})
+        for i in range(3):
+            table[keys[i]].update({l: areas[i]})
 
 
 def main():
