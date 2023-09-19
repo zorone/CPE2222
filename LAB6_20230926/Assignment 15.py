@@ -17,8 +17,8 @@ def decrypt(C,k):
         k -= upperList.index(C)
         return upperList[k%26]
     else:
-        k -= upperList.index(C)
-        return upperList[k%26]
+        k -= lowerList.index(C)
+        return lowerList[k%26]
     
 ciphertext = encrypt(plaintext,secretkey)
 print('The encrypted ciphertext:',ciphertext,sep='')
