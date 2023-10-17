@@ -12,6 +12,7 @@ for subject in availableSubject:
     inputPrompt += ", ";
 
 inputPrompt.rstrip()
+inputPrompt = inputPrompt[0:len(inputPrompt)-2]
 inputPrompt += "]:"
 
 topic = str(input(inputPrompt))
