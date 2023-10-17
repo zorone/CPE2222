@@ -1,6 +1,6 @@
 def recursive(size, *arr):
     if(size>2):
-        recursive(size-1, *arr)
+        arr = recursive(size-1, *arr)
         arr += (1, )
     elif(size == 2):
         arr = (1, 2, 3)
