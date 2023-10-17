@@ -5,9 +5,10 @@ print("-"*50)
 n = int(input("Enter the height of right triangle:"))
 
 while n != 0:
-    print("*".rjust(n))
+    if n > 1:
+        print("*".rjust(n))
     for i in range(1, n-1):
-        print("*".rjust(n-i), "*".rjust(n))
+        print("*".rjust(n-i), "*")
     print("*"*n)
     
     n = int(input("Enter the height of right triangle:"))
