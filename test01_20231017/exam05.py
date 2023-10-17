@@ -29,3 +29,4 @@ else:
         if tempAmount:
             tempLeft = tempLeft%size
             print("The {}-$Baht {} = {} {}(s)".format(size, text1, tempAmount, text2))
+print(pageBreak)
