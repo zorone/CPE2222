@@ -49,7 +49,7 @@ else:
     
     for grade in stat.keys():
         stat[grade][1] = stat[grade][0] / count
-        text = print("{} ({})".format(stat[grade][0], stat[grade][1]))
+        text = "{} ({})".format(stat[grade][0], stat[grade][1])
         print("{}{}".format(grade.center(7), text.center(43)))
 
     average = sum/count
