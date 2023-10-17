@@ -33,6 +33,7 @@ else:
             "D": [0, 0],
             "F": [0, 0]}
     for student in ext.Info_Dict:
-        
+        tempScore = student[topic]
+        print(tempScore)
 
 print(pageBreak)
