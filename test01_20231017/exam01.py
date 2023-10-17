@@ -1,7 +1,9 @@
 def recursive(size, *arr):
     if(size>2):
         arr = recursive(size-1, *arr)
-        arr += (1, )
+        sz = len(arr)
+        val = arr[sz-3] + 2*arr[sz-2] + 4*arr[sz-1]
+        arr += (val, )
     elif(size == 2):
         arr = (1, 2, 3)
     elif(size == 1):
