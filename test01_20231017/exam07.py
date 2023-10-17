@@ -1,7 +1,7 @@
 import module_exam as ext
 
 studentID = ext.Info_Dict.keys()
-availableSubject = dict(ext.Info_Dict.values())
+availableSubject = ext.Info_Dict[0].keys()
 
 topic = str(input("Enter your subject {}".format(availableSubject)))
 
