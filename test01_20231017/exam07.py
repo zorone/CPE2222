@@ -21,7 +21,7 @@ pageBreak = "-"*50
 
 print(pageBreak)
 
-if topic not in subject:
+if [topic] not in subject:
     print("!!!  Subject Error !!!")
 else:
     textCol1 = "Grade"
