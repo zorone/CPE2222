@@ -1,4 +1,4 @@
-pageBreak = "*"*35
+pageBreak = "-"*35
 
 print(pageBreak)
 price = int(input("The total price of products: "))
