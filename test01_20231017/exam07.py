@@ -4,5 +4,14 @@ studentID = ext.Info_Dict.keys()
 
 for ID in studentID:
     availableSubject = ext.Info_Dict[ID].keys()
+    break;
 
-topic = str(input("Enter your subject {}".format(availableSubject)))
+inputPrompt = "Enter your subject ["
+for subject in availableSubject:
+    inputPrompt += subject;
+    inputPrompt += ", ";
+
+inputPrompt.rstrip()
+inputPrompt += "]:"
+
+topic = str(input(inputPrompt))
