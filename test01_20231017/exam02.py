@@ -8,7 +8,7 @@ while n != 0:
     if n > 1:
         print("*".rjust(n))
     for i in range(1, n-1):
-        print("{}{}".format("*".rjust(n-1), "*"))
+        print("{}{}".format("*".rjust(n-i), "*".rjust(i)))
     print("*"*n)
     
     n = int(input("Enter the height of right triangle:"))
