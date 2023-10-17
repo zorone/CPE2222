@@ -27,11 +27,14 @@ def start():
         
         if(temp < number):
             tempStr += "low"
-            floor = temp
+            if(floor < temp):
+                floor = temp
             
         else:
             tempStr += "high"
             ceil = temp
+            if(ceil > temp):
+                ceil = temp
         
         print(tempStr)
 
