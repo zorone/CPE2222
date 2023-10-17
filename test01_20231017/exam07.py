@@ -52,7 +52,7 @@ else:
         stat[grade][1] = round(stat[grade][1], 2)
         text1 = "{}".format(stat[grade][0])
         text2 = "{}".format(stat[grade][1])
-        print("{}{} ({})".format(grade.center(7), text1.rjust(19)), text2.rjust(5))
+        print("%2s%17f (%5.2f)"%(grade, text1, text2))
 
     average = sum/count
     print(pageBreak)
