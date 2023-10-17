@@ -2,9 +2,9 @@ n = int(input("Please Enter Degree: "))
 arr = list()
 
 for i in range(0, n+2):
-    if(i == -2):
+    if(i == 0):
         arr[0] = [1]
-    elif(i == -1):
+    elif(i == 1):
         arr[1] = [1, 1]
     else:
         arr[i+2] = [1]
