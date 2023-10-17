@@ -16,3 +16,23 @@ inputPrompt = inputPrompt[0:len(inputPrompt)-2]
 inputPrompt += "]:"
 
 topic = str(input(inputPrompt))
+
+pageBreak = "-"*50
+
+print(pageBreak)
+
+if topic not in subject:
+    print("!!!  Subject Error !!!")
+else:
+    stat = {"A": [0, 0],
+            "B+": [0, 0],
+            "B": [0, 0],
+            "C+": [0, 0],
+            "C": [0, 0],
+            "D+": [0, 0],
+            "D": [0, 0],
+            "F": [0, 0]}
+    for student in ext.Info_Dict:
+        
+
+print(pageBreak)
