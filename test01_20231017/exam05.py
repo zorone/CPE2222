@@ -15,11 +15,11 @@ else:
     print("List of money return")
     
     receipt = pay - price
-    tempLeft = 0
+    tempLeft = receipt
     tempAmount = 0
     
     for size in moneySize:
-        tempAmount = receipt/size
+        tempAmount = int(tempLeft/size)
         if size > 10:
             text1 = "Banknote"
             text2 = "Piece"
@@ -27,5 +27,5 @@ else:
             text1 = "Coin"
             text2 = "Coin"
         if tempAmount:
-            tempLeft = receipt%size
+            tempLeft = tempLeft%size
             print("The {}-$Baht {} = {} {}(s)".format(size, text1, tempAmount, text2))
