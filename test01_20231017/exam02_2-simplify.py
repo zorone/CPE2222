@@ -12,7 +12,7 @@ for i in range(1, n+1):
         if j == 0:
             val = arrList[-1][-1]
         else:
-            val = arrList[-1][-1] + arr[-1]
+            val = arrList[-1][j-1] + arr[-1]
         arr += [val]
     arrList += [arr]
 
