@@ -5,7 +5,7 @@ arrList = [[1], [1, 2]]
 major = 1
 minor = 0
 
-for i in range(1, n+1):
+for i in range(2, n+1):
     major = minor
     minor = (minor+1)%2
     sz += 1
@@ -17,5 +17,8 @@ for i in range(1, n+1):
         else:
             arrList[major] += arrList[major][j-1] + arrList[minor][j-1]
 
-res = arrList[major]
+if(n < 2):
+    res = arrList[n]
+else:
+    res = arrList[major]
 print(res)
