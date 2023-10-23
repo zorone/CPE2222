@@ -9,7 +9,7 @@ for i in range(1, n+1):
     arr += [1]
     sz = len(arr)
     for j in range(0, n):
-        print("{j} {t}: {v}\n{j} {p}: {w}".format(j=j))
+        print("{} {}: {}\n{} {}: {}".format(j, type(arrList[arr-1][j]), arrList[arr-1][j], j+1, type(arrList[arr-1][j+1], arrList[arr-1][j+1])))
         val = arrList[arr-1][j] + arrList[arr-1][j+1]
         arr += [val]
     arr += [1]
