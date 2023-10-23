@@ -9,13 +9,13 @@ for i in range(2, n+1):
     major = minor
     minor = (minor+1)%2
     sz += 1
-    for j in range(sz+1, 0, -1):
+    for j in range(0, sz+1):
         if j == 0:
             arrList[major][j] = arrList[minor][-1]
         elif j < sz-1:
-            arrList[major][j] = arrList[major][-j] + arrList[minor][-j]
+            arrList[major][j] = arrList[major][j-sz] + arrList[minor][j-sz]
         else:
-            arrList[major] += [arrList[major][-j] + arrList[minor][-j]]
+            arrList[major] += [arrList[major][j-sz] + arrList[minor][j-sz]]
 
 if(n < 2):
     res = arrList[n]
