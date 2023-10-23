@@ -8,7 +8,9 @@ for i in range(1, n+1):
     arr = list()
     arr += [1]
     sz = len(arr)
-    for j in range(0, n):
+    for j in range(0, sz):
+        if sz < 2:
+            continue
         print("{} {}: {}\n{} {}: {}".format(j, type(arrList[arr-1][j]), arrList[arr-1][j], j+1, type(arrList[arr-1][j+1], arrList[arr-1][j+1])))
         val = arrList[arr-1][j] + arrList[arr-1][j+1]
         arr += [val]
