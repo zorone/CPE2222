@@ -15,7 +15,7 @@ for i in range(2, n+1):
         elif j < sz-1:
             arrList[major][j] = arrList[major][j-1] + arrList[minor][j-1]
         else:
-            arrList[major] += arrList[major][j-1] + arrList[minor][j-1]
+            arrList[major] += [arrList[major][j-1] + arrList[minor][j-1]]
 
 if(n < 2):
     res = arrList[n]
