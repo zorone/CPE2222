@@ -2,12 +2,12 @@ n = int(input("Please Enter Degree: "))
 
 arr = [1]
 arrList = list()
-arrList += arr
+arrList += [arr]
 
 for i in range(1, n+1):
     arr = list()
     arr += [1]
-    sz = len(arr)
+    sz = len(arrList)
     for j in range(0, sz):
         if sz < 2:
             continue
