@@ -1,6 +1,6 @@
 n = int(input("Please Enter Degree: "))
 
-sz = 0
+sz = 1
 arrList = [[1], [1, 2]]
 major = 1
 minor = 0
