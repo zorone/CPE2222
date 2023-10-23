@@ -15,6 +15,6 @@ for i in range(1, n+1):
         val = arrList[sz-1][j] + arrList[sz-1][j+1]
         arr += [val]
     arr += [1]
-    arrList += arr
+    arrList += [arr]
 
 print(arrList)
