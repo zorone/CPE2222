@@ -1,5 +1,6 @@
 n = int(input("Please Enter Degree: "))
 
+sz = 0
 arr = [1]
 arrList = list()
 arrList += [arr]
@@ -16,4 +17,5 @@ for i in range(1, n+1):
     arr += [1]
     arrList += [arr]
 
-print(arrList)
+res = arrList[sz]
+print(res)
