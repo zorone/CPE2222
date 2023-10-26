@@ -7,11 +7,12 @@ def check():
     resFrame.grid()
     hintStr = hintGenerate()
     if(hintStr[0] != 4):
-        resStr = "Hint:"
         print(ans)
+        resStr = "Hint:"
         
     else:
         resStr = "*** CORRECT ***"
+        hintStr[1] = ''
         
     res = Label(resFrame, text=resStr, justify='center')
     res.grid(row=1, column=6)
@@ -43,7 +44,6 @@ frame.grid(sticky=(N, W, E, S))
 
 displayFrame = Frame(frame, height=4)
 displayFrame.anchor('w')
-displayFrame.pack(side='left')
 displayFrame.grid()
 message = Label(displayFrame, text="Guessing:")
 message.grid(row=1, column=0)
