@@ -6,16 +6,15 @@ ans = ''.join(sample('1234567890', 4))
 def check():
     hintStr = hintGenerate()
     if(hintStr[0] != 4):
-        resStr = "Hint:"
+        res = Label(frame, text="Hint:", padx=2, justify='center')
+        res.grid(row=1, column=6)
+        hint = Label(frame, text=hintStr[1], padx=2, justify='center')
+        hint.grid(row=2, column=6)
         
     else:
-        resStr = "*** CORRECT ***"
-        hintStr = (hintStr[0], '')
-        
-    res = Label(frame, text=resStr, padx=2, justify='center')
-    res.grid(row=1, column=6)
-    hint = Label(frame, text=hintStr[1], padx=2, justify='center')
-    hint.grid(row=2, column=6)
+        res = Label(frame, text="Hint:", padx=2, justify='center')
+        res.grid(row=1, column=6)
+        hint.destroy()
             
 def hintGenerate():
     bull = 0
