@@ -36,6 +36,7 @@ window.geometry("320x100")
 
 frame = Frame(window, borderwidth=1, height=4)
 frame.anchor('center')
+frame.grid(row=1, column=1)
 
 message = Label(frame, text="Guessing:")
 message.grid(row=1, column=0)
@@ -48,6 +49,4 @@ for i in range(0, 4):
 button = Button(frame, text="Submit", padx=2, command=check)
 button.grid(row=1, column=5)
 
-window.pack()
-window.grid()
 window.mainloop()
