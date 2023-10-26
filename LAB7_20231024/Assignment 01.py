@@ -9,14 +9,14 @@ def check():
     if(hintStr[0] != 4):
         print(ans)
         res = Label(frame, text="Hint:", padx=2, justify='center')
-        res.grid(row=1, column=6)
-        hint.grid(row=2, column=6)
-        
+
     else:
-        res = Label(frame, text="Hint:", padx=2, justify='center')
-        res.grid(row=1, column=6)
-        hint.destroy()
-            
+        res = Label(frame, text="*** CORRECT ***", padx=2, justify='center')
+        hint.config(text="")
+
+    res.grid(row=1, column=6)
+    hint.grid(row=2, column=6)
+
 def hintGenerate():
     bull = 0
     cow = 0
@@ -26,7 +26,7 @@ def hintGenerate():
             bull += 1
         elif(temp in ans):
             cow += 1
-    
+
     hintStr = "Bulls:{} and Cows:{}".format(bull, cow)
     return (bull, hintStr)
 
