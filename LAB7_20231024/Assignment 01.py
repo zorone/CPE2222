@@ -43,7 +43,7 @@ frame.grid(sticky=(N, W, E, S))
 
 displayFrame = Frame(frame, height=4)
 displayFrame.anchor('w')
-displayFrame.pack('left')
+displayFrame.pack(side='left')
 displayFrame.grid()
 message = Label(displayFrame, text="Guessing:")
 message.grid(row=1, column=0)
@@ -56,12 +56,12 @@ for i in range(0, 4):
 
 buttonFrame = Frame(frame, width=10, height=4)
 buttonFrame.anchor('center')
+buttonFrame.pack(side='left')
 buttonFrame.grid()
 button = Button(buttonFrame, text="Submit", command=check)
 button.grid(row=1, column=0)
 
 resFrame = Frame(frame, height=4)
 resFrame.anchor('e')
-resFrame.pack(side='right')
 
 window.mainloop()
