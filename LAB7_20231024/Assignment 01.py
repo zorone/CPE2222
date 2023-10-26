@@ -5,10 +5,10 @@ ans = ''.join(sample('1234567890', 4))
 
 def check():
     hintStr = hintGenerate()
+    hint = Label(frame, text=hintStr[1], padx=2, justify='center')
     if(hintStr[0] != 4):
         res = Label(frame, text="Hint:", padx=2, justify='center')
         res.grid(row=1, column=6)
-        hint = Label(frame, text=hintStr[1], padx=2, justify='center')
         hint.grid(row=2, column=6)
         
     else:
