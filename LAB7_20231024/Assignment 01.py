@@ -7,15 +7,16 @@ def check():
     resFrame.grid()
     hintStr = hintGenerate()
     if(hintStr[0] != 4):
-        res = Label(resFrame, text="Hint:", justify='center')
-        res.grid(row=1, column=6)
-        hint = Label(resFrame, text=hintStr[1], justify='center')
-        hint.grid(row=2, column=6)
-        return
-    
-    hintStr = ''
-    res = Label(resFrame, text="*** CORRECT ***", justify='center')
+        resStr = "Hint:"
+        
+    else:
+        resStr = "*** CORRECT ***"
+        hintStr[1] = ''
+        
+    res = Label(resFrame, text=resStr, justify='center')
     res.grid(row=1, column=6)
+    hint = Label(resFrame, text=hintStr[1], justify='center')
+    hint.grid(row=2, column=6)
             
 def hintGenerate():
     bull = 0
@@ -42,6 +43,7 @@ frame.grid(sticky=(N, W, E, S))
 
 displayFrame = Frame(frame, height=4)
 displayFrame.anchor('w')
+displayFrame.pack('left')
 displayFrame.grid()
 message = Label(displayFrame, text="Guessing:")
 message.grid(row=1, column=0)
@@ -60,5 +62,6 @@ button.grid(row=1, column=0)
 
 resFrame = Frame(frame, height=4)
 resFrame.anchor('e')
+resFrame.pack(side='right')
 
 window.mainloop()
