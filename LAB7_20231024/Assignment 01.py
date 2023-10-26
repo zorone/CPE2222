@@ -35,10 +35,10 @@ window.rowconfigure(0, weight=1)
 
 frame = Frame(window, border=3)
 frame.anchor('center')
-frame.pack(sticky=(N, W, E, S))
+frame.pack()
 
 message = Label(frame, text="Guessing:")
-message.pack(side='left', sticky=E)
+message.pack(side='left')
 entry = list()
 
 for i in range(0, 4):
