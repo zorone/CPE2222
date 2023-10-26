@@ -3,10 +3,13 @@ from random import sample
 
 window = Tk()
 window.title("Bull and Cow guessing game")
-window.geometry("480x80")
+window.geometry("240x80")
 
 message = [Label(window, text="Guessing")]
-entry = [Entry(window, width=3)]
-entry = entry*4
+entry = list()
+
+for i in range(0, 4):
+    entry += [Entry(window, width=3)]
+    entry[i].grid(row=0, column=i+2)
 
 window.mainloop()
