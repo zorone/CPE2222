@@ -6,22 +6,23 @@ ans = ''.join(sample('1234567890', 4))
 def check():
     hintStr = hintGenerate()
     if(hintStr[0] != 4):
-        res = Label(window, text="Hint:", justify='center')
+        res = Label(frame, text="Hint:", justify='center')
         res.grid(row=0, grid=6)
-        hint = Label(window, text=hintStr[1], justify='center')
+        hint = Label(frame, text=hintStr[1], justify='center')
         hint.grid(row=1, grid=6)
         return
     
-    res = Label(window, text="*** CORRECT ***", justify='center')
+    res = Label(frame, text="*** CORRECT ***", justify='center')
     res.grid(row=0, grid=6)
             
 def hintGenerate():
     bull = 0
     cow = 0
     for i in range(0, 4):
-        if(ans[i] == entry[i].get()):
+        temp = entry[i].get()
+        if(ans[i] == temp):
             bull += 1
-        elif(entry[i] in ans):
+        elif(temp in ans):
             cow += 1
     
     hintStr = "Bulls:{} and Cows:{}".format(bull, cow)
@@ -30,16 +31,25 @@ def hintGenerate():
 window = Tk()
 window.title("Bull and Cow guessing game")
 window.geometry("320x120")
+window.columnconfigure(0, weight=1)
+window.rowconfigure(0, weight=1)
 
-message = Label(window, text="Guessing:")
+frame = Frame(window)
+frame.anchor('center')
+frame.grid()
+
+message = Label(frame, text="Guessing:")
 message.grid(row=0, column=0)
 entry = list()
 
 for i in range(0, 4):
-    entry += [Entry(window, width=3)]
+    entry += [Entry(frame, width=3)]
     entry[i].grid(row=0, column=i+1)
 
-button = Button(window, text="Submit", command=check)
-button.grid(row=0, column=5, columnspan=2)
+
+buttonFrame = Frame(frame)
+buttonFrame.grid(row=0, column=5, columnspan=3)
+button = Button(buttonFrame, text="Submit", command=check)
+button.grid(row=0, column=1)
 
 window.mainloop()
