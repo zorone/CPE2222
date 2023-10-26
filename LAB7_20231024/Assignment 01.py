@@ -7,7 +7,7 @@ def check():
     resFrame.grid()
     hintStr = hintGenerate()
     if(hintStr[0] != 4):
-        print(res)
+        print(ans)
         res = Label(resFrame, text="Hint:", justify='center')
         res.grid(row=1, column=6)
         hint = Label(resFrame, text=hintStr[1], justify='center')
