@@ -14,8 +14,8 @@ def check():
         res.config("*** CORRECT ***")
         hint.config(text="")
 
-    res.grid(row=1, column=6)
-    hint.grid(row=2, column=6)
+    res.grid()
+    hint.grid()
 
 def hintGenerate():
     bull = 0
