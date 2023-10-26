@@ -12,7 +12,7 @@ def check():
         resStr = "*** CORRECT ***"
         hintStr[1] = ''
         
-    res = Label(frame, text=resStr, justify='center')
+    res = Label(frame, text=resStr, padx=2, justify='center')
     res.grid(row=1, column=6)
     hint = Label(frame, text=hintStr[1], justify='center')
     hint.grid(row=2, column=6)
@@ -32,11 +32,9 @@ def hintGenerate():
 
 window = Tk()
 window.title("Bull and Cow guessing game")
-window.geometry("320x120")
-window.columnconfigure(5, weight=10)
-window.columnconfigure(6, weight=20)
+window.geometry("320x100")
 
-frame = Frame(window, border=3, height=4)
+frame = Frame(window, borderwidth=1, height=4)
 frame.anchor('center')
 frame.grid(sticky=(N, W, E, S))
 
@@ -48,7 +46,7 @@ for i in range(0, 4):
     entry += [Entry(frame, width=3)]
     entry[i].grid(row=1, column=i+1)
 
-button = Button(frame, text="Submit", command=check)
+button = Button(frame, text="Submit", padx=2, command=check)
 button.grid(row=1, column=5)
 
 window.mainloop()
