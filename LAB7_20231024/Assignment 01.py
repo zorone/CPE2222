@@ -14,9 +14,6 @@ def check():
         res.config("*** CORRECT ***")
         hint.config(text="")
 
-    res.grid()
-    hint.grid()
-
 def hintGenerate():
     bull = 0
     cow = 0
