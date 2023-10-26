@@ -35,8 +35,7 @@ window.title("Bull and Cow guessing game")
 window.geometry("320x100")
 
 frame = Frame(window, borderwidth=1, height=4)
-frame.anchor('center')
-frame.grid(row=1, column=1)
+frame.grid(sticky=(W, N, E, S))
 
 message = Label(frame, text="Guessing:")
 message.grid(row=1, column=0)
