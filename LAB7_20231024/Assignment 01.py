@@ -34,7 +34,7 @@ window.columnconfigure(0, weight=1)
 window.rowconfigure(0, weight=1)
 
 frame = Frame(window, border=3)
-frame.pack(anchor='center', side='bottom', fill='both')
+frame.pack(anchor='center', fill='both')
 
 message = Label(frame, text="Guessing:")
 message.pack(side='left')
