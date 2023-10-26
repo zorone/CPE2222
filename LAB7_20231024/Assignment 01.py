@@ -4,17 +4,16 @@ from random import sample
 ans = ''.join(sample('1234567890', 4))
 
 def check():
-    hintStr = hintGenerate()
-    resFrame = Frame(frame, height=4)
     resFrame.grid()
+    hintStr = hintGenerate()
     if(hintStr[0] != 4):
-        res = Label(frame, text="Hint:", justify='center')
+        res = Label(resFrame, text="Hint:", justify='center')
         res.grid(row=1, column=6)
-        hint = Label(frame, text=hintStr[1], justify='center')
+        hint = Label(resFrame, text=hintStr[1], justify='center')
         hint.grid(row=2, column=6)
         return
     
-    res = Label(frame, text="*** CORRECT ***", justify='center')
+    res = Label(resFrame, text="*** CORRECT ***", justify='center')
     res.grid(row=1, column=6)
             
 def hintGenerate():
@@ -41,8 +40,9 @@ frame.anchor('center')
 frame.grid()
 
 displayFrame = Frame(frame, height=4)
+displayFrame.grid()
 message = Label(displayFrame, text="Guessing:")
-message.grid(row=0, column=0)
+message.grid(row=1, column=0)
 entry = list()
 
 for i in range(0, 4):
@@ -55,5 +55,7 @@ buttonFrame.anchor('center')
 buttonFrame.grid()
 button = Button(buttonFrame, text="Submit", command=check)
 button.grid(row=1, column=0)
+
+resFrame = Frame(frame, height=4)
 
 window.mainloop()
