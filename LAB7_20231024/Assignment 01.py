@@ -40,7 +40,7 @@ frame.anchor('center')
 frame.grid()
 
 displayFrame = Frame(frame, height=4)
-displayFrame.anchor('W')
+displayFrame.anchor('w')
 displayFrame.grid()
 message = Label(displayFrame, text="Guessing:")
 message.grid(row=1, column=0)
@@ -58,6 +58,6 @@ button = Button(buttonFrame, text="Submit", command=check)
 button.grid(row=1, column=0)
 
 resFrame = Frame(frame, height=4)
-resFrame.anchor('E')
+resFrame.anchor('e')
 
 window.mainloop()
