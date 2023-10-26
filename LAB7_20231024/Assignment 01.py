@@ -5,16 +5,13 @@ ans = ''.join(sample('1234567890', 4))
 
 def check():
     hintStr = hintGenerate()
-    hint = Label(frame, text=hintStr[1], padx=2, justify='center')
+    hint.config(text=hintStr[1])
     if(hintStr[0] != 4):
         print(ans)
-        res = Label(frame, text="Hint:", padx=2, justify='center')
-        res.grid(row=1, column=6)
-        hint.grid(row=2, column=6)
+        res.config(text="Hint:")
 
     else:
-        res = Label(frame, text="*** CORRECT ***", padx=2, justify='center')
-        res.grid(row=1, column=6)
+        res.config(text="*** CORRECT ***")
         hint.config(text=" "*20)
 
 def hintGenerate():
@@ -38,17 +35,22 @@ window.rowconfigure(0, weight=1)
 
 frame = Frame(window, border=3)
 frame.anchor('center')
-frame.grid(sticky=(N, W, E, S))
+frame.pack(sticky=(N, W, E, S))
 
 message = Label(frame, text="Guessing:")
-message.grid(row=1, column=0)
+message.pack(side='left', sticky=E)
 entry = list()
 
 for i in range(0, 4):
     entry += [Entry(frame, width=3)]
-    entry[i].grid(row=1, column=i+1)
+    entry[i].pack(side='left')
 
 button = Button(frame, text="Submit", padx=2, command=check)
-button.grid(row=1, column=5)
+button.pack(anchor='center', side='left', fill='x')
+
+res = Label(frame, text="", padx=2, justify='center')
+hint = Label(frame, text="", padx=2, justify='center')
+res.pack(anchor='center', side='left')
+hint.pack(anchor='center', side='bottom')
 
 window.mainloop()
