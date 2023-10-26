@@ -9,6 +9,7 @@ message = [Label(window, text="Guessing")]
 entry = list()
 
 frame = Frame(window)
+frame.grid()
 
 for i in range(0, 4):
     entry += [Entry(window, width=3)]
