@@ -13,6 +13,7 @@ def check():
         hint.grid(row=2, column=6)
         return
     
+    hintStr = ''
     res = Label(resFrame, text="*** CORRECT ***", justify='center')
     res.grid(row=1, column=6)
             
@@ -37,7 +38,7 @@ window.rowconfigure(0, weight=1)
 
 frame = Frame(window, border=3)
 frame.anchor('center')
-frame.grid()
+frame.grid(sticky=(N, W, E, S))
 
 displayFrame = Frame(frame, height=4)
 displayFrame.anchor('w')
