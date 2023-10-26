@@ -7,9 +7,9 @@ def check():
     hintStr = hintGenerate()
     if(hintStr[0] != 4):
         res = Label(frame, text="Hint:", justify='center')
-        res.grid(row=0, grid=6)
+        res.grid(row=0, column=6)
         hint = Label(frame, text=hintStr[1], justify='center')
-        hint.grid(row=1, grid=6)
+        hint.grid(row=1, column=6)
         return
     
     res = Label(frame, text="*** CORRECT ***", justify='center')
@@ -47,7 +47,8 @@ for i in range(0, 4):
     entry[i].grid(row=0, column=i+1)
 
 
-buttonFrame = Frame(frame)
+buttonFrame = Frame(frame, width=10)
+buttonFrame.anchor('center')
 buttonFrame.grid(row=0, column=5, columnspan=3)
 button = Button(buttonFrame, text="Submit", command=check)
 button.grid(row=0, column=1)
