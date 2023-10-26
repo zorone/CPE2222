@@ -2,10 +2,9 @@ from tkinter import *
 from random import sample
 
 ans = ''.join(sample('1234567890', 4))
-hintStr = str()
 
 def check():
-    if(hintGenerate() != 4):
+    if(hintStr = hintGenerate()[0] != 4):
         res = Label(window, text="Hint:", justify='center')
         res.grid(row=0, grid=5)
         hint = Label(window, text=hintStr, justify='center')
@@ -25,7 +24,7 @@ def hintGenerate():
             cow += 1
     
     hintStr = "Bulls:{} and Cows:{}".format(bull, cow)
-    return bull
+    return (bull, hintStr)
 
 window = Tk()
 window.title("Bull and Cow guessing game")
