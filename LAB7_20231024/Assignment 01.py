@@ -1,18 +1,44 @@
 from tkinter import *
 from random import sample
 
+ans = ''.join(sample('1234567890', 4))
+hintStr = str()
+
+def check():
+    if(hintGenerate() != 4):
+        res = Label(window, text="Hint:", justify='center')
+        res.grid(row=0, grid=5)
+        hint = Label(window, text=hintStr, justify='center')
+        hint.grid(row=1, grid=5)
+        return
+    
+    res = Label(window, text="*** CORRECT ***", justify='center')
+    res.grid(row=0, grid=5)
+            
+def hintGenerate():
+    bull = 0
+    cow = 0
+    for i in range(0, 4):
+        if(ans[i] == entry[i].get()):
+            bull += 1
+        elif(entry[i] in ans):
+            cow += 1
+    
+    hintStr = "Bulls:{} and Cows:{}".format(bull, cow)
+    return bull
+
 window = Tk()
 window.title("Bull and Cow guessing game")
 window.geometry("320x120")
 
-message = [Label(window, text="Guessing")]
+message = Label(window, text="Guessing")
+message.grid(row=0, column=0)
 entry = list()
 
-frame = Frame(window, borderwidth=5)
-frame.grid(column=0, row=0, sticky=(N, W, E, S))
-
 for i in range(0, 4):
-    entry += [Entry(frame, width=3)]
-    entry[i].grid(row=0, column=i+2)
+    entry += [Entry(window, width=3)]
+    entry[i].grid(row=0, column=i+1)
+
+button = Button(window, text="Submit", command=check)
 
 window.mainloop()
