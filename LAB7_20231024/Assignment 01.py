@@ -13,7 +13,7 @@ def check():
         return
     
     res = Label(frame, text="*** CORRECT ***", justify='center')
-    res.grid(row=0, grid=6)
+    res.grid(row=0, column=6)
             
 def hintGenerate():
     bull = 0
