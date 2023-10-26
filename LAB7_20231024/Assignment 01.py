@@ -8,6 +8,9 @@ window.geometry("240x80")
 message = [Label(window, text="Guessing")]
 entry = list()
 
+frame = dict()
+frame += {"main": Frame(borderwidth=0, padding=5)}
+
 for i in range(0, 4):
     entry += [Entry(window, width=3)]
     entry[i].grid(row=0, column=i+2)
