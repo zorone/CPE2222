@@ -40,6 +40,7 @@ frame.anchor('center')
 frame.grid()
 
 displayFrame = Frame(frame, height=4)
+displayFrame.anchor('W')
 displayFrame.grid()
 message = Label(displayFrame, text="Guessing:")
 message.grid(row=1, column=0)
@@ -47,7 +48,7 @@ entry = list()
 
 for i in range(0, 4):
     entry += [Entry(displayFrame, width=3)]
-    entry[i].grid(row=0, column=i+1)
+    entry[i].grid(row=1, column=i+1)
 
 
 buttonFrame = Frame(frame, width=10, height=4)
@@ -57,5 +58,6 @@ button = Button(buttonFrame, text="Submit", command=check)
 button.grid(row=1, column=0)
 
 resFrame = Frame(frame, height=4)
+resFrame.anchor('E')
 
 window.mainloop()
