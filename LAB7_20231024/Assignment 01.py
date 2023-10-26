@@ -34,6 +34,8 @@ def hintGenerate():
 window = Tk()
 window.title("Bull and Cow guessing game")
 window.geometry("320x100")
+window.columnconfigure(0, weight=1)
+window.rowconfigure(0, weight=1)
 
 frame = Frame(window, border=3)
 frame.anchor('center')
