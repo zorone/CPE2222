@@ -8,7 +8,7 @@ window.geometry("240x80")
 message = [Label(window, text="Guessing")]
 entry = list()
 
-frame = Frame()
+frame = Frame(window)
 
 for i in range(0, 4):
     entry += [Entry(window, width=3)]
