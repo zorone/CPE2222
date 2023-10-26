@@ -35,7 +35,6 @@ window.rowconfigure(0, weight=1)
 
 frame = Frame(window, border=3)
 frame.anchor('center')
-frame.grid(sticky=(N, W, E, S))
 
 message = Label(frame, text="Guessing:")
 message.grid(row=1, column=0)
