@@ -4,10 +4,11 @@ from random import sample
 ans = ''.join(sample('1234567890', 4))
 
 def check():
-    if(hintStr = hintGenerate()[0] != 4):
+    hintStr = hintGenerate()
+    if(hintStr[0] != 4):
         res = Label(window, text="Hint:", justify='center')
         res.grid(row=0, grid=5)
-        hint = Label(window, text=hintStr, justify='center')
+        hint = Label(window, text=hintStr[1], justify='center')
         hint.grid(row=1, grid=5)
         return
     
