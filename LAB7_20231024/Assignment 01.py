@@ -8,8 +8,7 @@ window.geometry("240x80")
 message = [Label(window, text="Guessing")]
 entry = list()
 
-frame = Frame(window)
-frame["padding"] = 5
+frame = Frame(window, borderwidth=5)
 frame.grid(column=0, row=0, sticky=(N, W, E, S))
 
 frame.grid(row=0, column=0)
