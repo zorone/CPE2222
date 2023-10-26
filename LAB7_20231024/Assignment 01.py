@@ -48,4 +48,6 @@ for i in range(0, 4):
 button = Button(frame, text="Submit", padx=2, command=check)
 button.grid(row=1, column=5)
 
+window.pack()
+window.grid()
 window.mainloop()
