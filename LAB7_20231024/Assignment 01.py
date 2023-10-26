@@ -10,7 +10,7 @@ def check():
         
     else:
         resStr = "*** CORRECT ***"
-        hintStr[1] = ''
+        hintStr = (hintStr[0], '')
         
     res = Label(frame, text=resStr, padx=2, justify='center')
     res.grid(row=1, column=6)
