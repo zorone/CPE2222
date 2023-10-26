@@ -15,7 +15,7 @@ def check():
     else:
         res = Label(frame, text="*** CORRECT ***", padx=2, justify='center')
         res.grid(row=1, column=6)
-        hint.config(text="")
+        hint.config(text=" "*20)
 
 def hintGenerate():
     bull = 0
