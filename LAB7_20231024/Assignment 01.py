@@ -5,13 +5,13 @@ ans = ''.join(sample('1234567890', 4))
 
 def check():
     hintStr = hintGenerate()
-    hint = Label(frame, text=hintStr[1], padx=2, justify='center')
+    hint.config(text=hintStr[1])
     if(hintStr[0] != 4):
         print(ans)
-        res = Label(frame, text="Hint:", padx=2, justify='center')
+        res.config(text="Hint:")
 
     else:
-        res = Label(frame, text="*** CORRECT ***", padx=2, justify='center')
+        res.config("*** CORRECT ***")
         hint.config(text="")
 
     res.grid(row=1, column=6)
@@ -50,5 +50,11 @@ for i in range(0, 4):
 
 button = Button(frame, text="Submit", padx=2, command=check)
 button.grid(row=1, column=5)
+
+res = Label(frame, text="", padx=2, justify='center')
+hint = Label(frame, text="", padx=2, justify='center')
+
+res.pack()
+hint.pack()
 
 window.mainloop()
