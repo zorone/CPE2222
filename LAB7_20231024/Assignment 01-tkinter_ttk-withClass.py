@@ -45,7 +45,7 @@ class Main(tk.Tk):
         self.resFrame.grid(row=0, column=2, sticky=(N,S))
         
         self.resPad = {'top': ttk.Label(self.resFrame, anchor='center', text='')}
-        self.resPad['bottom'] = [ttk.Label(self.resFrame, anchor='center', text='')]
+        self.resPad['bottom'] = ttk.Label(self.resFrame, anchor='center', text='')
         self.res = ttk.Label(self.resFrame, anchor='center', text='')
         self.hint = ttk.Label(self.resFrame, anchor='center', text='')
         
