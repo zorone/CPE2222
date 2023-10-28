@@ -10,8 +10,8 @@ def check():
         res.config(text="Hint:")
 
     else:
-        res.config(text="*** CORRECT ***")
-        hintStr[1] = " "*18
+        res.config(text="*** CORRECT ***", padx=2)
+        hintStr[1] = ""
 
     hint.config(text=hintStr[1])
     
