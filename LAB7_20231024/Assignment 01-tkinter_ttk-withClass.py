@@ -11,6 +11,10 @@ class Main(tk.Tk):
         
         self.style = ttk.Style()
         
+        self.ans = str(sample('0123456789', 4))
+        self.bull = 0
+        self.cow = 0
+        
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.anchor('center')
         self.mainFrame.grid(row=0, column=0, sticky=(N,W,E,S))
@@ -35,7 +39,10 @@ class Main(tk.Tk):
     
     def check(self):
         test = '0123456789'
-        for e in self.entry:
+        ans_test = self.ans
+        self.bull = 0
+        self.cow = 0
+        for i, e in enumerate(self.entry):
             val = e.get()
             if(val == ''):
                 self.res.config(text='ERROR!!!')
@@ -45,6 +52,11 @@ class Main(tk.Tk):
                 if(val in test):
                     test = test.replace(val, '')
                     print(val, test)
+                    if(val == ans_test[i]):
+                        self.bull += 1
+                    elif(val in ans_test):
+                        self.cow += 1
+                    print(self.bull, self.cow)
                     continue
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Duplicate Input value')
