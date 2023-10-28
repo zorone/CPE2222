@@ -34,15 +34,15 @@ class Main(tk.Tk):
             self.entry += (ttk.Entry(self.inputFrame, width=3), )
             self.entry[i].grid(row=0, column=i+1, sticky=(W,E))
         
-        self.buttonFrame = ttk.Frame(self.inputFrame, padding=2)
+        self.buttonFrame = ttk.Frame(self.mainFrame, padding=2)
         self.buttonFrame.anchor('center')
-        self.buttonFrame.grid(row=0, column=0)
+        self.buttonFrame.grid(row=0, column=1)
         self.button = ttk.Button(self.buttonFrame, padding=2, text="Submit", command=self.check)
         self.button.grid(row=0, column=5, sticky=(W,E))
         
         self.resFrame = ttk.Frame(self.mainFrame, padding=5)
         self.resFrame.anchor('center')
-        self.resFrame.grid(row=0, column=1, sticky=(N,S))
+        self.resFrame.grid(row=0, column=2, sticky=(N,S))
         
         self.res = ttk.Label(self.resFrame, anchor='center', text='')
         self.hint = ttk.Label(self.resFrame, anchor='center', text='')
