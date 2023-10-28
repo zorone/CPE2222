@@ -39,7 +39,8 @@ class Main(tk.Tk):
     
     def check(self):
         self.test = '0123456789'
-        
+        self.bull = 0
+        self.cow = 0
         for i, e in enumerate(self.entry):
             val = e.get()
             if(val == ''):
