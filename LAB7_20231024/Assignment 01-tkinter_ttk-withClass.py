@@ -35,13 +35,20 @@ class Main(tk.Tk):
     
     def check(self):
         for e in self.entry:
+            test = '0123456789'
             val = e.get()
             if(val == ''):
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value is empty')
                 break
             elif(val in '0123456789'):
-                print(val)
+                if(val in test):
+                    test.replace(val, '')
+                    print(val, test)
+                    continue
+                self.res.config(text='ERROR!!!')
+                self.hint.config(text='Duplicate Input value')
+                break
             else:
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value not implement')
