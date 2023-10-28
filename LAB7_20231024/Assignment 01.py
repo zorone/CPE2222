@@ -31,6 +31,7 @@ def hintGenerate():
 window = Tk()
 window.title("Bull and Cow guessing game")
 window.geometry("360x80")
+window.config(anchor='center')
 
 padding = Label(window, text="  ")
 
