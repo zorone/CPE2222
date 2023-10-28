@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter as tk
 from tkinter import ttk
 from random import sample
+from math import floor
 
 class Main(tk.Tk):
     def __init__(self, ):
@@ -21,7 +22,7 @@ class Main(tk.Tk):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
         
-        self.inputFrame = ttk.Frame(self.mainFrame, padding=5, width=self.inputWidth, height=self.height)
+        self.inputFrame = ttk.Frame(self.mainFrame, padding=5)
         self.inputFrame.anchor('center')
         self.inputFrame.grid(row=0, column=0, sticky=(N,W,E,S))
         
@@ -91,8 +92,13 @@ class Main(tk.Tk):
         self.res.config(text="Hint:")
         self.hint.config(text=f"Bulls:{self.bull} and Cows:{self.cow}")
 
-    def winResize(event):
+    def winResize(self, event):
+        self.width = event.width
+        self.inputWidth = floor((self.width)/4)
+        self.resWidth = self.width - self.inputWight
         
+        self.inputFrame.config(width=self.inputWidght, height=event.height)
+        self.resFrame.config(width=self.resWidght, height=event.height)
 
 if __name__ == "__main__":
     main = Main()
