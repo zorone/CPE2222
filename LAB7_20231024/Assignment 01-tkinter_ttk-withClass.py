@@ -46,10 +46,10 @@ class Main(tk.Tk):
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value is empty')
                 break
-            elif(self.isNotRepeat(e)):
-                self.hintCount(e, i)
+            elif(self.isNotRepeat(val)):
+                self.hintCount(val, i)
                 self.generateHint()
-            elif(self.isNum(e)):
+            elif(self.isNum(val)):
                 break
             else:
                 self.res.config(text='ERROR!!!')
