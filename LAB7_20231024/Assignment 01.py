@@ -11,7 +11,7 @@ def check():
 
     else:
         res.config(text="*** CORRECT ***")
-        hintStr[1] = ""
+        hintStr[1] = " "*18
 
     hint.config(text=hintStr[1])
     
