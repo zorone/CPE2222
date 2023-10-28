@@ -31,7 +31,7 @@ class Main(tk.Tk):
         self.res = ttk.Label(self.mainFrame, anchor='center', text='')
         self.hint = ttk.Label(self.mainFrame, anchor='center', text='')
         self.res.grid(row=0, column=6, sticky=(S,E))
-        self.res.grid(row=1, column=6, sticky=(N,E))
+        self.hint.grid(row=1, column=6, sticky=(N,E))
     
     def check(self):
         for e in self.entry:
