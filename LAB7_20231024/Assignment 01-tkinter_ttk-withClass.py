@@ -30,16 +30,18 @@ class Main(tk.Tk):
         
         self.res = ttk.Label(self.mainFrame, anchor='center', text='')
         self.hint = ttk.Label(self.mainFrame, anchor='center', text='')
-        self.res.grid(row=0, column=6, sticky=(S,E))
-        self.hint.grid(row=1, column=6, sticky=(N,E))
+        self.res.grid(row=0, column=6)
+        self.hint.grid(row=1, column=6)
     
     def check(self):
         for e in self.entry:
-            if(e.get() in '0123456789'):
-                print('pass')
+            val = e.get()
+            if((val in '0123456789') and (not val)):
+                print(val)
             else:
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value not implement')
+                break
 
 if __name__ == "__main__":
     main = Main()
