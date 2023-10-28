@@ -47,19 +47,13 @@ for i in range(0, 4):
     padding[i].grid(row=rowIndex[i], column=columnIndex[i])
     entry[i].grid(row=1, column=i+1)
 
-padding.grid(row=1, column=6)
-
 button = Button(window, text="Submit", command=check)
 button.grid(row=1, column=7)
-
-padding.grid(row=1, column=8)
 
 res = Label(window, text="", justify='center')
 hint = Label(window, text="", justify='center')
 
 res.grid(row=1, column=9)
 hint.grid(row=2, column=9)
-
-padding.grid(row=3, column=10)
 
 window.mainloop()
