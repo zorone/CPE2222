@@ -25,13 +25,20 @@ class Main(tk.Tk):
             entry += (ttk.Entry(self.mainFrame, width=3), )
             entry[i].grid(row=0, column=i+1, sticky=(W,E))
         
-        self.button = ttk.Button(self.mainFrame, padding=2, text="Submit", command=self.check)
+        self.button = ttk.Button(self.mainFrame, padding=2, text="Submit", sticky=(W,E), command=self.check)
+        self.button.grid(row=0, column=5)
         
-    def check():
+        self.res = ttk.Label(self.mainFrame, anchor='center', text='')
+        self.hint = ttk.Label(self.mainFrame, anchor='center', text='')
+        
+        
+    
+    def check(self):
         for e in self.entry:
             if(e.get() in '0123456789'):
-                
+                print('pass')
             else:
+                self.res.config(text='ERROR!!!')
                 
 
 if __name__ == "__main__":
