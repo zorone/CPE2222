@@ -46,7 +46,8 @@ class Main(tk.Tk):
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value is empty')
                 break
-            elif(self.num(val))
+            elif(self.isNotRepeat(e)):
+                
             elif(val in '0123456789'):
                 if(val in test):
                     test = test.replace(val, '')
@@ -63,13 +64,20 @@ class Main(tk.Tk):
                 self.hint.config(text='Input value not implement')
                 break
 
-    def num(self):
-        
+    def isNotRepeat(self, val):
+        if val in self.test:
+            self.test = self.test.replace(val, '')
+            hintCount(val)
+            return True
+        else:
+            isNum(val)
+            return False
+    
+    def isNum(self, val):
+        if val in '0123456789':
+            
 
-    def repeatConfig(self):
-        
-
-    def hintCount(self):
+    def hintCount(self, val):
         
 
 if __name__ == "__main__":
