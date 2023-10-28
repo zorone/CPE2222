@@ -38,7 +38,7 @@ class Main(tk.Tk):
         self.hint.grid(row=1, column=6)
     
     def check(self):
-        test = '0123456789'
+        self.test = '0123456789'
         
         for i, e in enumerate(self.entry):
             val = e.get()
@@ -46,6 +46,7 @@ class Main(tk.Tk):
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value is empty')
                 break
+            elif(self.num(val))
             elif(val in '0123456789'):
                 if(val in test):
                     test = test.replace(val, '')
@@ -62,10 +63,10 @@ class Main(tk.Tk):
                 self.hint.config(text='Input value not implement')
                 break
 
-    def isNum(self):
+    def num(self):
         
 
-    def isRepeat(self):
+    def repeatConfig(self):
         
 
     def hintCount(self):
