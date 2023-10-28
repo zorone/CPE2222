@@ -4,9 +4,12 @@ from tkinter import ttk
 from random import sample
 
 class Main(tk.Tk):
-    def __init__(self):
+    def __init__(self, ):
+        super().__init__()
         self.title("Bull and Cow guessing game")
         self.geometry("360x80")
+        
+        self.style = ttk.Style()
         
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.grid(column=0, row=0, sticky=(N,W,E,S))
