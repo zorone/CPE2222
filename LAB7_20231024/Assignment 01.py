@@ -16,7 +16,7 @@ def check():
         res = Label(frame, text="*** CORRECT ***", padx=2, justify='center')
         res.grid(row=1, column=6)
         hint.config(text="")
-        hint.update()
+        window.update()
         hint.forget()
 
 def hintGenerate():
