@@ -43,7 +43,7 @@ class Main(tk.Tk):
                 break
             elif(val in '0123456789'):
                 if(val in test):
-                    test.replace(val, '')
+                    test.remove(val)
                     print(val, test)
                     continue
                 self.res.config(text='ERROR!!!')
