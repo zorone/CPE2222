@@ -49,6 +49,7 @@ class Main(tk.Tk):
                 self.hint.config(text='Input value is empty')
                 break
             elif(val in '0123456789'):
+                print(ans_test)
                 if(val in test):
                     test = test.replace(val, '')
                     print(val, test)
