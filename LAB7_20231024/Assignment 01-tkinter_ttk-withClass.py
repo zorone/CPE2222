@@ -15,6 +15,9 @@ class Main(tk.Tk):
         self.mainFrame.grid(column=0, row=0, sticky=(N,W,E,S))
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
+        
+        self.label = ttk.Label(self.mainFrame, text="Guessing:")
+        self.label.grid(column=0, row=0, sticky=E)
 
 if __name__ == "__main__":
     main = Main()
