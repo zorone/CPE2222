@@ -34,25 +34,26 @@ class Main(tk.Tk):
             self.entry += (ttk.Entry(self.inputFrame, width=3), )
             self.entry[i].grid(row=0, column=i+1, sticky=(W,E))
         
+        self.inputHolder = ttk.Label(self.inputFrame, text="")
+        self.inputHolder.grid(row=1, column=0)
+        
         self.buttonFrame = ttk.Frame(self.mainFrame, padding=2)
         self.buttonFrame.anchor('center')
         self.buttonFrame.grid(row=0, column=1)
         self.button = ttk.Button(self.buttonFrame, padding=2, text="Submit", command=self.check)
+        self.buttonHolder = ttk.Label(self.buttonFrame, padding=2, text="")
         self.button.grid(row=0, column=5, sticky=(W,E))
+        self.buttonHolder.grid(row=1, column=5, sticky=(W,E))
         
         self.resFrame = ttk.Frame(self.mainFrame, padding=5)
         self.resFrame.anchor('center')
         self.resFrame.grid(row=0, column=2, sticky=(N,S))
         
-        self.resPad = {'top': ttk.Label(self.resFrame, anchor='center', text='')}
-        self.resPad['bottom'] = ttk.Label(self.resFrame, anchor='center', text='')
         self.res = ttk.Label(self.resFrame, anchor='center', text='')
         self.hint = ttk.Label(self.resFrame, anchor='center', text='')
         
-        self.resPad['top'].grid(row=0, column=0)
-        self.res.grid(row=1, column=0)
-        self.hint.grid(row=2, column=0)
-        self.resPad['bottom'].grid(row=3, column=0)
+        self.res.grid(row=0, column=0)
+        self.hint.grid(row=1, column=0)
         
         self.mainFrame.bind("<Configure>", self.winResize)
     
