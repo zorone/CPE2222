@@ -2,10 +2,11 @@
 # temporary FIX: https://github.com/ranaroussi/yfinance#pandas_datareader-override
 
 import tkinter as tk
-import pandas_datareader as web
 import yfinance as yf
 
 yf.pdr_override() # <== that's all it takes :-)
+
+import pandas_datareader as web
 
 class GUI:
     def __init__(self):
