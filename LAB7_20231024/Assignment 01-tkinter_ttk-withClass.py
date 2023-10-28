@@ -24,7 +24,7 @@ class Main(tk.Tk):
         
         self.inputFrame = ttk.Frame(self.mainFrame, padding=5)
         self.inputFrame.anchor('center')
-        self.inputFrame.grid(row=0, column=0, sticky=(N,W,E,S))
+        self.inputFrame.grid(row=0, column=0, sticky=(N,W,S))
         
         self.label = ttk.Label(self.inputFrame, text="Guessing:")
         self.label.grid(column=0, row=0, sticky=E)
@@ -38,6 +38,9 @@ class Main(tk.Tk):
         self.button.grid(row=0, column=5, sticky=(W,E))
         
         self.resFrame = ttk.Frame(self.mainFrame, padding=5)
+        self.resFrame.anchor('center')
+        self.resFrame.grid(row=0, column=1, sticky=(N,E,S))
+        
         self.res = ttk.Label(self.resFrame, anchor='center', text='')
         self.hint = ttk.Label(self.resFrame, anchor='center', text='')
         self.res.grid(row=0, column=6)
@@ -94,8 +97,8 @@ class Main(tk.Tk):
 
     def winResize(self, event):
         self.width = event.width
-        self.inputWidth = floor((self.width)/4) - 1
-        self.resWidth = self.width - self.inputWidth - 2
+        self.inputWidth = floor((self.width)/4)
+        self.resWidth = self.width - self.inputWidth
         
         self.inputFrame.config(width=self.inputWidth, height=event.height)
         self.resFrame.config(width=self.resWidth, height=event.height)
