@@ -1,7 +1,11 @@
 # https://stackoverflow.com/questions/70609391/pythontkinter-text-widget-doesnt-change-text-immidiately
+# temporary FIX: https://github.com/ranaroussi/yfinance#pandas_datareader-override
 
 import tkinter as tk
 import pandas_datareader as web
+import yfinance as yf
+
+yf.pdr_override() # <== that's all it takes :-)
 
 class GUI:
     def __init__(self):
