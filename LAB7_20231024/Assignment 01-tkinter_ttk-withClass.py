@@ -24,7 +24,7 @@ class Main(tk.Tk):
         
         self.inputFrame = ttk.Frame(self.mainFrame, padding=5)
         self.inputFrame.anchor('center')
-        self.inputFrame.grid(row=0, column=0, sticky=(N,W,S))
+        self.inputFrame.grid(row=0, column=0, sticky=(N,S))
         
         self.label = ttk.Label(self.inputFrame, text="Guessing:")
         self.label.grid(column=0, row=0, sticky=E)
@@ -34,12 +34,15 @@ class Main(tk.Tk):
             self.entry += (ttk.Entry(self.inputFrame, width=3), )
             self.entry[i].grid(row=0, column=i+1, sticky=(W,E))
         
-        self.button = ttk.Button(self.inputFrame, padding=2, text="Submit", command=self.check)
+        self.buttonFrame = ttk.Frame(self.inputFrame, padding=2)
+        self.buttonFrame.anchor('center')
+        self.buttonFrame.grid(row=0, column=0)
+        self.button = ttk.Button(self.buttonFrame, padding=2, text="Submit", command=self.check)
         self.button.grid(row=0, column=5, sticky=(W,E))
         
         self.resFrame = ttk.Frame(self.mainFrame, padding=5)
         self.resFrame.anchor('center')
-        self.resFrame.grid(row=0, column=1, sticky=(N,E,S))
+        self.resFrame.grid(row=0, column=1, sticky=(N,S))
         
         self.res = ttk.Label(self.resFrame, anchor='center', text='')
         self.hint = ttk.Label(self.resFrame, anchor='center', text='')
