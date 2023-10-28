@@ -95,10 +95,10 @@ class Main(tk.Tk):
     def winResize(self, event):
         self.width = event.width
         self.inputWidth = floor((self.width)/4)
-        self.resWidth = self.width - self.inputWight
+        self.resWidth = self.width - self.inputWidth
         
-        self.inputFrame.config(width=self.inputWidght, height=event.height)
-        self.resFrame.config(width=self.resWidght, height=event.height)
+        self.inputFrame.config(width=self.inputWidth, height=event.height)
+        self.resFrame.config(width=self.resWidth, height=event.height)
 
 if __name__ == "__main__":
     main = Main()
