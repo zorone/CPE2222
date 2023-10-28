@@ -46,8 +46,9 @@ class Main(tk.Tk):
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value is empty')
                 break
-            elif(self.isNotRepeat(e, i)):
-                continue
+            elif(self.isNotRepeat(e)):
+                self.hintCount(e, i)
+                self.generateHint()
             elif(self.isNum(e)):
                 break
             else:
@@ -55,10 +56,9 @@ class Main(tk.Tk):
                 self.hint.config(text='Input value not implement')
                 break
 
-    def isNotRepeat(self, val, index):
+    def isNotRepeat(self, val):
         if val in self.test:
             self.test = self.test.replace(val, '')
-            self.hintCount(val, index)
             return True
         self.res.config(text='ERROR!!!')
         self.hint.config(text='Duplicate Input value')
@@ -74,6 +74,14 @@ class Main(tk.Tk):
             self.bull += 1
         elif val in self.ans:
             self.cow += 1
+
+    def generateHint(self):
+        if self.bull == 4:
+            self.res.config(text="*** CORRECT ***")
+            self.hint.config(text='')
+            return
+        self.res.config(text="Hint:")
+        self.hint.config(text=f"Bulls:{self.bull} and Cows:{self.cow}")
 
 if __name__ == "__main__":
     main = Main()
