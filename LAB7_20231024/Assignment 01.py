@@ -31,17 +31,17 @@ def hintGenerate():
 window = Tk()
 window.title("Bull and Cow guessing game")
 window.geometry("360x80")
-window.config(anchor='center')
 
-padding = Label(window, text="  ")
-
-padding.grid(row=0, column=0, columnspan=11)
+padding = list()
+xIndex = (0, )
+yIndex = ()
 
 message = Label(window, text="Guessing:")
 message.grid(row=1, column=0)
 entry = list()
 
 for i in range(0, 4):
+    padding += [Label(window, text="  ")]
     entry += [Entry(window, width=3)]
     entry[i].grid(row=1, column=i+1)
 
