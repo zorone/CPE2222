@@ -21,21 +21,28 @@ class Main(tk.Tk):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
         
-        self.label = ttk.Label(self.mainFrame, text="Guessing:")
+        self.inputFrame = ttk.Frame(self.mainFrame, padding=5)
+        self.inputFrame.anchor('center')
+        self.inputFrame.grid(row=0, column=0, sticky=(N,W,E,S))
+        
+        self.label = ttk.Label(self.inputFrame, text="Guessing:")
         self.label.grid(column=0, row=0, sticky=E)
         
         self.entry = list()
         for i in range(0, 4):
-            self.entry += (ttk.Entry(self.mainFrame, width=3), )
+            self.entry += (ttk.Entry(self.inputFrame, width=3), )
             self.entry[i].grid(row=0, column=i+1, sticky=(W,E))
         
-        self.button = ttk.Button(self.mainFrame, padding=2, text="Submit", command=self.check)
+        self.button = ttk.Button(self.inputFrame, padding=2, text="Submit", command=self.check)
         self.button.grid(row=0, column=5, sticky=(W,E))
         
-        self.res = ttk.Label(self.mainFrame, anchor='center', text='')
-        self.hint = ttk.Label(self.mainFrame, anchor='center', text='')
+        self.resFrame = ttk.Frame(self.mainFrame, padding=5)
+        self.res = ttk.Label(self.resFrame, anchor='center', text='')
+        self.hint = ttk.Label(self.resFrame, anchor='center', text='')
         self.res.grid(row=0, column=6)
         self.hint.grid(row=1, column=6)
+        
+        self.bind("<Configure>", on_window_resize)
     
     def check(self):
         self.test = '0123456789'
