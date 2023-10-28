@@ -21,7 +21,7 @@ class Main(tk.Tk):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
         
-        self.inputFrame = ttk.Frame(self.mainFrame, padding=5)
+        self.inputFrame = ttk.Frame(self.mainFrame, padding=5, width=self.inputWidth, height=self.height)
         self.inputFrame.anchor('center')
         self.inputFrame.grid(row=0, column=0, sticky=(N,W,E,S))
         
@@ -42,7 +42,7 @@ class Main(tk.Tk):
         self.res.grid(row=0, column=6)
         self.hint.grid(row=1, column=6)
         
-        self.bind("<Configure>", on_window_resize)
+        self.bind("<Configure>", self.winResize)
     
     def check(self):
         self.test = '0123456789'
@@ -90,6 +90,9 @@ class Main(tk.Tk):
             return
         self.res.config(text="Hint:")
         self.hint.config(text=f"Bulls:{self.bull} and Cows:{self.cow}")
+
+    def winResize(event):
+        
 
 if __name__ == "__main__":
     main = Main()
