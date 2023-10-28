@@ -5,20 +5,19 @@ ans = ''.join(sample('1234567890', 4))
 
 def check():
     hintStr = hintGenerate()
-    hint = Label(frame, text=hintStr[1], padx=2, justify='center')
     if(hintStr[0] != 4):
         print(ans)
         res = Label(frame, text="Hint:", padx=2, justify='center')
         res.grid(row=1, column=6)
-        hint.grid(row=2, column=6)
 
     else:
         res = Label(frame, text="*** CORRECT ***", padx=2, justify='center')
         res.grid(row=1, column=6)
-        hint.config(text="")
-        window.update()
-        hint.forget()
+        hintStr[1] = ""
 
+    hint = Label(frame, text=hintStr[1], padx=2, justify='center')
+    hint.grid(row=2, column=6)
+    
 def hintGenerate():
     bull = 0
     cow = 0
@@ -30,13 +29,11 @@ def hintGenerate():
             cow += 1
 
     hintStr = "Bulls:{} and Cows:{}".format(bull, cow)
-    return (bull, hintStr)
+    return [bull, hintStr]
 
 window = Tk()
 window.title("Bull and Cow guessing game")
-window.geometry("320x100")
-window.columnconfigure(0, weight=1)
-window.rowconfigure(0, weight=1)
+window.geometry("360x80")
 
 frame = Frame(window, border=3)
 frame.anchor('center')
