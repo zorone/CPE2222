@@ -7,15 +7,15 @@ def check():
     hintStr = hintGenerate()
     if(hintStr[0] != 4):
         print(ans)
-        res = Label(frame, text="Hint:", padx=2, justify='center')
+        res = Label(window, text="Hint:", padx=2, justify='center')
         res.grid(row=1, column=6)
 
     else:
-        res = Label(frame, text="*** CORRECT ***", padx=2, justify='center')
+        res = Label(window, text="*** CORRECT ***", padx=2, justify='center')
         res.grid(row=1, column=6)
         hintStr[1] = ""
 
-    hint = Label(frame, text=hintStr[1], padx=2, justify='center')
+    hint = Label(window, text=hintStr[1], padx=2, justify='center')
     hint.grid(row=2, column=6)
     
 def hintGenerate():
@@ -35,19 +35,24 @@ window = Tk()
 window.title("Bull and Cow guessing game")
 window.geometry("360x80")
 
-frame = Frame(window, border=3)
-frame.anchor('center')
-frame.grid(sticky=(N, W, E, S))
+padding = Label(window, text=" ")
+buttonPadding = Label(window, text="  ")
 
-message = Label(frame, text="Guessing:")
+padding.grid(row=0, column=0)
+
+message = Label(window, text="Guessing:")
 message.grid(row=1, column=0)
 entry = list()
 
-for i in range(0, 4):
-    entry += [Entry(frame, width=3)]
-    entry[i].grid(row=1, column=i+1)
+buttonPadding.grid(row=1, column=1)
 
-button = Button(frame, text="Submit", padx=2, command=check)
-button.grid(row=1, column=5)
+for i in range(0, 4):
+    entry += [Entry(window, width=3)]
+    entry[i].grid(row=1, column=i+2)
+
+button = Button(window, text="Submit", padx=2, command=check)
+button.grid(row=1, column=7)
+
+padding.grid(row=3, column=0)
 
 window.mainloop()
