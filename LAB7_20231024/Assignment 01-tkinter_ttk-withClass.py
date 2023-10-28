@@ -43,7 +43,7 @@ class Main(tk.Tk):
         self.res.grid(row=0, column=6)
         self.hint.grid(row=1, column=6)
         
-        self.bind("<Configure>", self.winResize)
+        self.mainFrame.bind("<Configure>", self.winResize)
     
     def check(self):
         self.test = '0123456789'
