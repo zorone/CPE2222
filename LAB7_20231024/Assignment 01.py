@@ -10,7 +10,7 @@ def check():
         res.config(text="Hint:")
 
     else:
-        res.config(text=" *** CORRECT ***")
+        res.config(text="  *** CORRECT ***")
         hintStr[1] = ""
 
     hint.config(text=hintStr[1])
