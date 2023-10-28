@@ -34,17 +34,18 @@ class Main(tk.Tk):
         self.hint.grid(row=1, column=6)
     
     def check(self):
+        test = '0123456789'
         for e in self.entry:
-            test = '0123456789'
             val = e.get()
             if(val == ''):
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value is empty')
                 break
-            elif(val in test):
-                test = test.replace(val, '')
-                print(val, test)
             elif(val in '0123456789'):
+                if(val in test):
+                    test = test.replace(val, '')
+                    print(val, test)
+                    continue
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Duplicate Input value')
                 break
