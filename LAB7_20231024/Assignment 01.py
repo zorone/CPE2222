@@ -34,7 +34,7 @@ window.geometry("360x80")
 
 padding = Label(window, text="  ")
 
-padding.grid(row=0, column=0)
+padding.grid(row=0, column=0, columnspan=11)
 
 message = Label(window, text="Guessing:")
 message.grid(row=1, column=0)
