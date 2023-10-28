@@ -39,9 +39,7 @@ class Main(tk.Tk):
     
     def check(self):
         test = '0123456789'
-        ans_test = self.ans
-        self.bull = 0
-        self.cow = 0
+        
         for i, e in enumerate(self.entry):
             val = e.get()
             if(val == ''):
@@ -49,15 +47,12 @@ class Main(tk.Tk):
                 self.hint.config(text='Input value is empty')
                 break
             elif(val in '0123456789'):
-                print(ans_test)
                 if(val in test):
                     test = test.replace(val, '')
-                    print(val, test)
-                    if(val == ans_test[i]):
+                    if(val == self.ans[i]):
                         self.bull += 1
-                    elif(val in ans_test):
+                    elif(val in self.ans):
                         self.cow += 1
-                    print(self.bull, self.cow)
                     continue
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Duplicate Input value')
@@ -66,6 +61,15 @@ class Main(tk.Tk):
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value not implement')
                 break
+
+    def isNum(self):
+        
+
+    def isRepeat(self):
+        
+
+    def hintCount(self):
+        
 
 if __name__ == "__main__":
     main = Main()
