@@ -13,12 +13,26 @@ class Main(tk.Tk):
         
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.anchor('center')
-        self.mainFrame.grid(column=0, row=0, sticky=(N,W,E,S))
+        self.mainFrame.grid(row=0, column=0, sticky=(N,W,E,S))
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
         
         self.label = ttk.Label(self.mainFrame, text="Guessing:")
         self.label.grid(column=0, row=0, sticky=E)
+        
+        self.entry = list()
+        for i in range(0, 4):
+            entry += (ttk.Entry(self.mainFrame, width=3), )
+            entry[i].grid(row=0, column=i+1, sticky=(W,E))
+        
+        self.button = ttk.Button(self.mainFrame, padding=2, text="Submit", command=self.check)
+        
+    def check():
+        for e in self.entry:
+            if(e.get() in '0123456789'):
+                
+            else:
+                
 
 if __name__ == "__main__":
     main = Main()
