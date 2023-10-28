@@ -44,8 +44,8 @@ class Main(tk.Tk):
         self.resFrame.anchor('center')
         self.resFrame.grid(row=0, column=2, sticky=(N,S))
         
-        self.res = ttk.Label(self.resFrame, anchor='center', text='')
-        self.hint = ttk.Label(self.resFrame, anchor='center', text='')
+        self.res = ttk.Label(self.resFrame, anchor='s', text='')
+        self.hint = ttk.Label(self.resFrame, anchor='n', text='')
         self.res.grid(row=0, column=6)
         self.hint.grid(row=1, column=6)
         
