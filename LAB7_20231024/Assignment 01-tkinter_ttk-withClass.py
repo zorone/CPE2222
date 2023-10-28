@@ -7,7 +7,7 @@ class Main(tk.Tk):
     def __init__(self, ):
         super().__init__()
         self.title("Bull and Cow guessing game")
-        self.geometry("360x80")
+        self.geometry("400x80")
         
         self.style = ttk.Style()
         
@@ -36,7 +36,11 @@ class Main(tk.Tk):
     def check(self):
         for e in self.entry:
             val = e.get()
-            if((val in '0123456789') and (not val)):
+            if(val):
+                self.res.config(text='ERROR!!!')
+                self.hint.config(text='Input value is empty')
+                break
+            elif(val in '0123456789'):
                 print(val)
             else:
                 self.res.config(text='ERROR!!!')
