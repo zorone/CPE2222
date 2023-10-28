@@ -6,7 +6,6 @@ ans = ''.join(sample('1234567890', 4))
 def check():
     hintStr = hintGenerate()
     if(hintStr[0] != 4):
-        print(ans)
         res.config(text="Hint:")
 
     else:
