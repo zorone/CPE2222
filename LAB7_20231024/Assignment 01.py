@@ -33,8 +33,8 @@ window.title("Bull and Cow guessing game")
 window.geometry("360x80")
 
 padding = list()
-xIndex = (0, )
-yIndex = ()
+rowIndex = (0, 1, 1, 3)
+columnIndex = (0, 6, 8, 10)
 
 message = Label(window, text="Guessing:")
 message.grid(row=1, column=0)
@@ -43,6 +43,8 @@ entry = list()
 for i in range(0, 4):
     padding += [Label(window, text="  ")]
     entry += [Entry(window, width=3)]
+    
+    padding[i].grid(row=rowIndex[i], column=columnIndex[i])
     entry[i].grid(row=1, column=i+1)
 
 padding.grid(row=1, column=6)
