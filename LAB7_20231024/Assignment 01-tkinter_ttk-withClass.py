@@ -12,7 +12,8 @@ class Main(tk.Tk):
         self.style = ttk.Style()
         
         self.mainFrame = ttk.Frame(self, padding=5)
-        self.mainFrame.grid(column=0, row=0, anchor='center',sticky=(N,W,E,S))
+        self.mainFrame.anchor('center')
+        self.mainFrame.grid(column=0, row=0, sticky=(N,W,E,S))
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
         
