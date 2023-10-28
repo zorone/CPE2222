@@ -33,8 +33,8 @@ window.title("Bull and Cow guessing game")
 window.geometry("360x80")
 
 padding = list()
-rowIndex = (1, 1, 1, 2)
-columnIndex = (0, 6, 8, 10)
+rowIndex = (0, 1, 1, 1)
+columnIndex = (0, 0, 6, 8)
 
 message = Label(window, text="Guessing:")
 message.grid(row=1, column=1)
