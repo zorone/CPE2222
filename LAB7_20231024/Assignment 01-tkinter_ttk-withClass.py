@@ -11,7 +11,7 @@ class Main(tk.Tk):
         
         self.style = ttk.Style()
         
-        self.ans = str(sample('0123456789', 4))
+        self.ans = ''.join(sample('0123456789', 4))
         self.bull = 0
         self.cow = 0
         
