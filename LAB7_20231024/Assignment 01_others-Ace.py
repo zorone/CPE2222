@@ -43,6 +43,7 @@ def check_guess():
     result_label2.config(text=f"Bulls: {bulls} and Cows: {cows}")
     if bulls == 4:
         result_label.config(text="**CORRECT**")
+        result_label2.config(text="")
         guessed_correctly = True  # ทายถูกแล้ว
     
 result_label = Label(window, text="")
