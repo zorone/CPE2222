@@ -36,7 +36,7 @@ class Main(tk.Tk):
     def check(self):
         for e in self.entry:
             val = e.get()
-            if(val):
+            if(val == ''):
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value is empty')
                 break
