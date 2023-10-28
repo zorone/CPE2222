@@ -22,8 +22,8 @@ class Main(tk.Tk):
         
         self.entry = list()
         for i in range(0, 4):
-            entry += (ttk.Entry(self.mainFrame, width=3), )
-            entry[i].grid(row=0, column=i+1, sticky=(W,E))
+            self.entry += (ttk.Entry(self.mainFrame, width=3), )
+            self.entry[i].grid(row=0, column=i+1, sticky=(W,E))
         
         self.button = ttk.Button(self.mainFrame, padding=2, text="Submit", command=self.check)
         self.button.grid(row=0, column=5, sticky=(W,E))
