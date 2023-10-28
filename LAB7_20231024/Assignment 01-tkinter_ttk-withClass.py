@@ -41,11 +41,10 @@ class Main(tk.Tk):
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Input value is empty')
                 break
+            elif(val in test):
+                test = test.replace(val, '')
+                print(val, test)
             elif(val in '0123456789'):
-                if(val in test):
-                    test = test.replace(val, '')
-                    print(val, test)
-                    continue
                 self.res.config(text='ERROR!!!')
                 self.hint.config(text='Duplicate Input value')
                 break
