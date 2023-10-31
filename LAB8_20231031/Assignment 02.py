@@ -15,7 +15,7 @@ class Main(Tk):
         self.calcOption.pack()
         
         self.calcEntry = ["Area of Rectangle", "Area of Triangle", "Pythagorean"]
-        self.calcSelected = IntVar(-1)
+        self.calcSelected = IntVar()
         
         for i, title in enumerate(self.calcEntry):
             self.calcEntry += [ttk.Radiobutton(self.calcOption, text=title, value=i, variable=self.calcSelected)]
