@@ -20,8 +20,8 @@ class Main(Tk):
         self.paramLabel = list()
         self.paramEntry = list()
         self.paramVar = list()
-        self.prevSession = int()
-        self.currentSession = int()
+        self.prevSession = -1
+        self.currentSession = 0
         
         self.paramVal = [0, 0]
         self.result = int()
