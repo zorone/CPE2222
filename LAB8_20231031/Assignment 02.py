@@ -19,6 +19,7 @@ class Main(Tk):
         
         self.paramLabel = list()
         self.paramEntry = list()
+        self.paramVar = list()
         
         self.widgetText = [['Length:', 'Width:', 'Area'],
                            ['Base', 'Height', 'Area'],
@@ -42,8 +43,18 @@ class Main(Tk):
         self.paramOption.pack(side='left')
         
         for i in range(2):
-            self.paramLabel += ttk.Label(self.paramOption, justify='right')
-            self.paramLabel[i].pack(side='left')
+            self.paramLabel += [ttk.Label(self.paramOption, justify='right')]
+            self.paramLabel[i].pack(side='top')
+            self.paramVar += [DoubleVar()]
+            self.paramEntry += [ttk.Spinbox(self.paramOption, justify='left', textvariable=self.paramVar[i])]
+            self.paramEntry[i].pack(side='left')
+        
+        self.submitButton = ttk.Button(self.paramOption, padding=5, command=self.calculate)
+        self.submitButton.pack(side='top')
+        
+    def calculate(self):
+        print()
+    
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
