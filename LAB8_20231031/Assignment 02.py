@@ -27,6 +27,7 @@ class Main(Tk):
         self.paramVal = [0, 0]
         self.result = int()
         self.res = str()
+        self.resCheck = False
         
         self.widgetText = [['Length:', 'Width:', 'Area'],
                            ['Base:', 'Height:', 'Area'],
@@ -112,7 +113,14 @@ class Main(Tk):
         self.res = 'The longest size of right triangle with ({}, {}) is {}'.format(self.paramVal[0], self.paramVal[1], self.result)
         
     def respond(self):
-        print()
+        if self.resCheck:
+            self.resLabel.config(text=self.res)
+        else:
+            self.resCheck = True
+            self.resFrame = ttk.Frame(self.mainFrame, padding=5)
+            self.resFrame.pack(side='bottom', fill='none')
+            
+            self.resLabel = ttk.Label(self.resFrame, text=self.res, justify='center', anchor='center')
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
