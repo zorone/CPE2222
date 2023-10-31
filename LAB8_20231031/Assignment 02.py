@@ -23,6 +23,7 @@ class Main(Tk):
         self.prevSession = int()
         self.currentSession = int()
         
+        self.paramInt = [0, 0]
         self.result = int()
         self.res = str()
         
@@ -85,6 +86,7 @@ class Main(Tk):
             print('Not implement')
 
     def rectangleArea(self):
+        self.paramInt[0]
         self.result = self.paramVar[0].get() * self.paramVar[1].get()
         self.res = 
 
