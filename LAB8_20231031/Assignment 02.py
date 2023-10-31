@@ -17,6 +17,13 @@ class Main(Tk):
         self.calcEntry = ["Area of Rectangle", "Area of Triangle", "Pythagorean"]
         self.calcSelected = IntVar()
         
+        self.paramLabel = list()
+        self.paramEntry = list()
+        
+        self.widgetText = [['Length:', 'Width:', 'Area'],
+                           ['Base', 'Height', 'Area'],
+                           ['The 1st size:', 'The 2nd size:', 'Pythagorean Theory']]
+        
         self.pane = False
         
         for i, title in enumerate(self.calcEntry):
@@ -32,10 +39,11 @@ class Main(Tk):
             return
         
         self.paramOption = ttk.Labelframe(self.mainFrame, padding=5, text='Parameter Setting')
-        self.paramOption.pack(side='right')
+        self.paramOption.pack(side='left')
         
-        self.paramEntry = ['', '']
-        self.submitText = ['Area', 'Area']
+        for i in range(2):
+            self.paramLabel += ttk.Label(self.paramOption, justify='right')
+            self.paramLabel[i].pack(side='left')
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
