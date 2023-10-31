@@ -91,13 +91,17 @@ class Main(Tk):
             print('Not implement')
 
     def rectangleArea(self):
-        self.result = self.paramVal[0].get() * self.paramVar[1].get()
+        self.result = self.paramVal[0] * self.paramVal[1]
         self.res = 'The area of rectangle with length of {} and width of {} is {}'.format(self.paramVal[0], self.paramVal[1], self.result)
 
     def triangleArea(self):
-        self.result = (1/2)*self.paramVal[0].get() * self.paramVar[1].get()
-        self.res = 'The area of rectangle with length of {} and width of {} is {}'.format(self.paramVal[0], self.paramVal[1], self.result)
+        self.result = (1/2)*self.paramVal[0] * self.paramVal[1]
+        self.res = 'The area of triangle with base of {} and height of {} is {}'.format(self.paramVal[0], self.paramVal[1], self.result)
 
+    def pythagorean(self):
+        self.result = (self.paramVal[0]**2 + self.paramVal[1]**2)**(1/2)
+        self.res = 'The longest size of right triangle with ({}, {}) is {}'.format(self.paramVal[0], self.paramVal[1], self.result)
+        
     def respond(self):
         print()
 if __name__ == "__main__":
