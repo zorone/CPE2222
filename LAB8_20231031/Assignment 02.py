@@ -121,6 +121,7 @@ class Main(Tk):
             self.resFrame.pack(side='bottom', fill='none')
             
             self.resLabel = ttk.Label(self.resFrame, text=self.res, justify='center', anchor='center')
+            self.resLabel.pack(fill='both')
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
