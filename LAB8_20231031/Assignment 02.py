@@ -11,7 +11,7 @@ class Main(Tk):
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.pack()
         
-        self.calcOption = ttk.Frame(self.mainFrame, padding=5, name='Calculation')
+        self.calcOption = ttk.Labelframe(self.mainFrame, padding=5, text='Calculation')
         self.calcOption.pack()
         
         self.calcEntry = ["Area of Rectangle", "Area of Triangle", "Pythagorean"]
