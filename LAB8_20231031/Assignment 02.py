@@ -18,7 +18,7 @@ class Main(Tk):
         self.calcSelected = IntVar(-1)
         
         for i, title in enumerate(self.calcEntry):
-            self.calcEntry += ttk.Radiobutton(self.calcOption, name=title)
+            self.calcEntry += [ttk.Radiobutton(self.calcOption, text=title, value=i, variable=self.calcSelected)]
             self.calcEntry[i].pack()
 
 if __name__ == "__main__":
