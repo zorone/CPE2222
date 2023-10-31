@@ -72,9 +72,14 @@ class Main(Tk):
             self.paramEntry[i].config(text=self.widgetText[self.currentSession][i])
 
     def activate(self):
+        self.get()
         self.calculate()
         self.respond()
         
+    def get(self):
+        for i in range(2):
+            self.paramInt[i] = self.paramVar[i].get()
+
     def calculate(self):
         if self.currentSession == 0:
             self.rectangleArea()
@@ -86,8 +91,7 @@ class Main(Tk):
             print('Not implement')
 
     def rectangleArea(self):
-        self.paramInt[0]
-        self.result = self.paramVar[0].get() * self.paramVar[1].get()
+        self.result = self.paramInt[0].get() * self.paramVar[1].get()
         self.res = 
 
     def respond(self):
