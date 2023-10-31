@@ -63,10 +63,10 @@ class Main(Tk):
         
         self.paramFrame +=[ttk.Frame(self.paramOption)]
         self.paramFrame[2].pack()
-        self.paramEntry += [ttk.Frame(self.paramFrame[2], padding=5)]
-        self.paramEntry[2].pack(side='left')
         self.paramEntry += [ttk.Button(self.paramFrame[2], padding=5, command=self.activate)]
-        self.paramEntry[2].pack(side='left')
+        self.paramEntry[2].pack(side='right')
+        self.paramEntry += [ttk.Frame(self.paramFrame[2], padding=5)]
+        self.paramEntry[3].pack(side='right')
         
     def setText(self):
         self.currentSession = self.calcSelected.get()
