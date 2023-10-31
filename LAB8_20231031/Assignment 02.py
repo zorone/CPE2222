@@ -54,7 +54,7 @@ class Main(Tk):
             self.paramEntry += [ttk.Spinbox(self.paramOption, justify='left', textvariable=self.paramVar[i])]
             self.paramEntry[i].pack(side='left')
         
-        self.paramEntry[3] += ttk.Button(self.paramOption, padding=5, command=self.calculate)
+        self.paramEntry += [ttk.Button(self.paramOption, padding=5, command=self.calculate)]
         self.paramEntry[3].pack(side='top')
         
     def setText(self):
