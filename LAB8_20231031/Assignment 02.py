@@ -15,7 +15,7 @@ class Main(Tk):
         self.topFrame.pack(side='top', expand='TRUE', fill='both')
         
         self.calcOption = ttk.Labelframe(self.topFrame, padding=5, text='Calculation')
-        self.calcOption.pack(anchor='w', side='left', expand='TRUE', fill='both')
+        self.calcOption.pack(anchor='w', side='left', expand='TRUE', fill='x')
         
         self.calcEntry = ["Area of Rectangle", "Area of Triangle", "Pythagorean"]
         self.calcSelected = IntVar()
