@@ -20,7 +20,7 @@ class Main(Tk):
     def setWidgetType(self, widgetType):
         for t in ['radioButton']:
             if widgetType == 'radioButton':
-                
+                self.func = ttk.Radiobutton()
     
     def entryGenerate(self, *arg):
         for i, item in enumerate(arg):
