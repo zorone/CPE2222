@@ -121,7 +121,7 @@ class Main(Tk):
         else:
             self.resCheck = True
             self.resFrame = ttk.Frame(self.mainFrame, padding=5)
-            self.resFrame.pack(side='top', fill='none')
+            self.resFrame.pack(side='top', fill='both')
             
             self.resLabel = ttk.Label(self.resFrame, text=self.res, justify='center', anchor='center')
             self.resLabel.pack(expand='TRUE', fill='both')
