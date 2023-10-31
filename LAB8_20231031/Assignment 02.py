@@ -17,12 +17,15 @@ class Main(Tk):
         self.calcEntry = ["radioButton", "Area of Rectangle", "Area of Triangle", "Pythagorean"]
         self.calcSelected = IntVar(-1)
     
+    def setWidgetType(self, widgetType):
+        for t in ['radioButton']:
+            if widgetType == 'radioButton':
+                
+    
     def entryGenerate(self, *arg):
         for i, item in enumerate(arg):
             if(i == 0):
                 setWidgetType(item)
-        
-    def setWidgetType(self, widgetType):
         
 
 if __name__ == "__main__":
