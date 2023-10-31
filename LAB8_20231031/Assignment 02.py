@@ -15,7 +15,7 @@ class Main(Tk):
         self.topFrame.pack(side='top', expand='TRUE', fill='both')
         
         self.calcOption = ttk.Labelframe(self.topFrame, padding=5, text='Calculation')
-        self.calcOption.pack(side='left', expand='TRUE', fill='both')
+        self.calcOption.pack(anchor='w', side='left', expand='TRUE', fill='both')
         
         self.calcEntry = ["Area of Rectangle", "Area of Triangle", "Pythagorean"]
         self.calcSelected = IntVar()
@@ -54,7 +54,7 @@ class Main(Tk):
         self.pane = True
 
         self.paramOption = ttk.Labelframe(self.topFrame, padding=5, text='Parameter Setting')
-        self.paramOption.pack(anchor='w', side='left', expand='TRUE', fill='x')
+        self.paramOption.pack(anchor='center', side='left', expand='TRUE', fill='x')
         
         for i in range(2):
             self.paramFrame +=[ttk.Frame(self.paramOption)]
