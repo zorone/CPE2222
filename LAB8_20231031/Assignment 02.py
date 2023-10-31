@@ -29,7 +29,7 @@ class Main(Tk):
         self.res = str()
         
         self.widgetText = [['Length:', 'Width:', 'Area'],
-                           ['Base', 'Height', 'Area'],
+                           ['Base:', 'Height:', 'Area'],
                            ['The 1st size:', 'The 2nd size:', 'Pythagorean Theory']]
         
         self.pane = False
@@ -56,17 +56,17 @@ class Main(Tk):
             self.paramFrame +=[ttk.Frame(self.paramOption)]
             self.paramFrame[i].pack()
             self.paramLabel += [ttk.Label(self.paramFrame[i], justify='right')]
-            self.paramLabel[i].pack(side='left')
+            self.paramLabel[i].pack(side='left', expand='TRUE', fill='x')
             self.paramVar += [DoubleVar()]
             self.paramEntry += [ttk.Spinbox(self.paramFrame[i], justify='left', textvariable=self.paramVar[i])]
-            self.paramEntry[i].pack(side='left')
+            self.paramEntry[i].pack(side='left', expand='TRUE', fill='x')
         
         self.paramFrame +=[ttk.Frame(self.paramOption)]
         self.paramFrame[2].pack()
         self.paramEntry += [ttk.Button(self.paramFrame[2], padding=5, command=self.activate)]
-        self.paramEntry[2].pack(side='right')
+        self.paramEntry[2].pack(side='right', expand='TRUE', fill='x')
         self.paramEntry += [ttk.Frame(self.paramFrame[2], padding=5)]
-        self.paramEntry[3].pack(side='right')
+        self.paramEntry[3].pack(side='right', expand='TRUE', fill='x')
         
     def setText(self):
         self.currentSession = self.calcSelected.get()
