@@ -53,7 +53,7 @@ class Main(Tk):
         
         for i in range(2):
             self.paramLabel += [ttk.Label(self.paramOption, justify='right')]
-            self.paramLabel[i].pack(side='top')
+            self.paramLabel[i].pack(side='left')
             self.paramVar += [DoubleVar()]
             self.paramEntry += [ttk.Spinbox(self.paramOption, justify='left', textvariable=self.paramVar[i])]
             self.paramEntry[i].pack(side='left')
