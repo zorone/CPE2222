@@ -34,7 +34,6 @@ class Main(Tk):
         
     def calcOptionSet(self):
         self.paramGenerate()
-        self.prevSession = self.calcSelected
         self.setText()
             
 
@@ -58,8 +57,13 @@ class Main(Tk):
         self.submitButton.pack(side='top')
         
     def setText(self):
-        if self.prevSession == self.calcSelected
-        return
+        if self.prevSession == self.calcSelected:
+            return
+        
+        self.prevSession = self.calcSelected
+        
+        for i in range(2):
+            self.paramEntry[i].config()
 
     def calculate(self):
         print()
