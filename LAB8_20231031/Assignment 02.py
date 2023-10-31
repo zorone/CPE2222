@@ -11,7 +11,10 @@ class Main(Tk):
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.pack(expand='TRUE', fill='both')
         
-        self.calcOption = ttk.Labelframe(self.mainFrame, padding=5, text='Calculation')
+        self.topFrame = ttk.Frame(self.mainFrame, padding=5)
+        self.topFrame.pack(side='top', expand='TRUE', fill='both')
+        
+        self.calcOption = ttk.Labelframe(self.topFrame, padding=5, text='Calculation')
         self.calcOption.pack(side='left', expand='TRUE', fill='both')
         
         self.calcEntry = ["Area of Rectangle", "Area of Triangle", "Pythagorean"]
@@ -50,7 +53,7 @@ class Main(Tk):
         
         self.pane = True
 
-        self.paramOption = ttk.Labelframe(self.mainFrame, padding=5, text='Parameter Setting')
+        self.paramOption = ttk.Labelframe(self.topFrame, padding=5, text='Parameter Setting')
         self.paramOption.pack(side='left')
         
         for i in range(2):
@@ -118,10 +121,10 @@ class Main(Tk):
         else:
             self.resCheck = True
             self.resFrame = ttk.Frame(self.mainFrame, padding=5)
-            self.resFrame.pack(side='bottom', fill='none')
+            self.resFrame.pack(side='top', fill='none')
             
             self.resLabel = ttk.Label(self.resFrame, text=self.res, justify='center', anchor='center')
-            self.resLabel.pack(fill='both')
+            self.resLabel.pack(expand='TRUE', fill='both')
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
