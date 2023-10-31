@@ -24,6 +24,7 @@ class Main(Tk):
             self.func = ttk.Radiobutton()
     
     def entryGenerate(self, *arg):
+        temp = list()
         for i, item in enumerate(arg):
             if(i == 0):
                 self.setWidgetType(item)
