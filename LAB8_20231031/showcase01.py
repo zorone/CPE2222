@@ -1,7 +1,7 @@
-def recursive(*arg):
-    sz = len(arg)
-    if(sz > 1):
-        recursive(arg[0:sz-1])
-    print(arg)
-    
-recursive("Hello World!")
+def factorial(num):
+    if(0 <= num <= 1):
+        print(num)
+    else:
+        print(num*factorial(num-1))
+        
+factorial(10)
