@@ -9,10 +9,10 @@ class Main(Tk):
         self.style = ttk.Style()
         
         self.mainFrame = ttk.Frame(self, padding=5)
-        self.mainFrame.pack(expand='TRUE', fill='BOTH')
+        self.mainFrame.pack(expand='TRUE', fill='both')
         
         self.calcOption = ttk.Labelframe(self.mainFrame, padding=5, text='Calculation')
-        self.calcOption.pack(side='left', expand='TRUE', fill='BOTH')
+        self.calcOption.pack(side='left', expand='TRUE', fill='both')
         
         self.calcEntry = ["Area of Rectangle", "Area of Triangle", "Pythagorean"]
         self.calcSelected = IntVar()
@@ -36,7 +36,7 @@ class Main(Tk):
         
         for i, title in enumerate(self.calcEntry):
             self.calcEntry[i] = ttk.Radiobutton(self.calcOption, text=title, value=i, variable=self.calcSelected, command=self.calcOptionSet)
-            self.calcEntry[i].pack(side='top', anchor='w', expand='TRUE', fill='BOTH')
+            self.calcEntry[i].pack(side='top', anchor='w', expand='TRUE', fill='both')
         
     def calcOptionSet(self):
         self.paramGenerate()
@@ -54,7 +54,7 @@ class Main(Tk):
         
         for i in range(2):
             self.paramFrame +=[ttk.Frame(self.paramOption)]
-            self.paramFrame[i].pack(expand='TRUE', fill='BOTH')
+            self.paramFrame[i].pack(expand='TRUE', fill='both')
             self.paramLabel += [ttk.Label(self.paramFrame[i], justify='right')]
             self.paramLabel[i].pack(side='left', expand='TRUE', fill='x')
             self.paramVar += [DoubleVar()]
@@ -62,7 +62,7 @@ class Main(Tk):
             self.paramEntry[i].pack(side='left', expand='TRUE', fill='x')
         
         self.paramFrame +=[ttk.Frame(self.paramOption)]
-        self.paramFrame[2].pack(expand='TRUE', fill='BOTH')
+        self.paramFrame[2].pack(expand='TRUE', fill='both')
         self.paramEntry += [ttk.Button(self.paramFrame[2], padding=5, command=self.activate)]
         self.paramEntry[2].pack(side='right', expand='TRUE', fill='x')
         self.paramEntry += [ttk.Frame(self.paramFrame[2], padding=5)]
