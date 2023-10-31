@@ -12,7 +12,7 @@ class Main(Tk):
         self.mainFrame.pack()
         
         self.calcOption = ttk.Labelframe(self.mainFrame, padding=5, text='Calculation')
-        self.calcOption.pack()
+        self.calcOption.pack(side='left')
         
         self.calcEntry = ["Area of Rectangle", "Area of Triangle", "Pythagorean"]
         self.calcSelected = IntVar()
@@ -28,10 +28,14 @@ class Main(Tk):
             
 
     def paramGenerate(self):
-        if not self.pane:
-            self.pane = True
+        if self.pane:
+            return
         
-
+        self.paramOption = ttk.Labelframe(self.mainFrame, padding=5, text='Parameter Setting')
+        self.paramOption.pack(side='right')
+        
+        self.paramEntry = ['', '']
+        self.submitText = ['Area', 'Area']
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
