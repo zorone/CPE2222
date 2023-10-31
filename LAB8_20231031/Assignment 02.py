@@ -23,7 +23,7 @@ class Main(Tk):
         self.prevSession = int()
         self.currentSession = int()
         
-        self.paramInt = [0, 0]
+        self.paramVal = [0, 0]
         self.result = int()
         self.res = str()
         
@@ -78,7 +78,7 @@ class Main(Tk):
         
     def get(self):
         for i in range(2):
-            self.paramInt[i] = self.paramVar[i].get()
+            self.paramVal[i] = self.paramVar[i].get()
 
     def calculate(self):
         if self.currentSession == 0:
@@ -91,8 +91,12 @@ class Main(Tk):
             print('Not implement')
 
     def rectangleArea(self):
-        self.result = self.paramInt[0].get() * self.paramVar[1].get()
-        self.res = 
+        self.result = self.paramVal[0].get() * self.paramVar[1].get()
+        self.res = 'The area of rectangle with length of {} and width of {} is {}'.format(self.paramVal[0], self.paramVal[1], self.result)
+
+    def triangleArea(self):
+        self.result = (1/2)*self.paramVal[0].get() * self.paramVar[1].get()
+        self.res = 'The area of rectangle with length of {} and width of {} is {}'.format(self.paramVal[0], self.paramVal[1], self.result)
 
     def respond(self):
         print()
