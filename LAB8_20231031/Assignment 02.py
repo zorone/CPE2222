@@ -20,6 +20,7 @@ class Main(Tk):
         self.paramLabel = list()
         self.paramEntry = list()
         self.paramVar = list()
+        self.prevSession = int()
         
         self.widgetText = [['Length:', 'Width:', 'Area'],
                            ['Base', 'Height', 'Area'],
@@ -33,12 +34,16 @@ class Main(Tk):
         
     def calcOptionSet(self):
         self.paramGenerate()
+        self.prevSession = self.calcSelected
+        self.setText()
             
 
     def paramGenerate(self):
         if self.pane:
             return
         
+        self.pane = True
+
         self.paramOption = ttk.Labelframe(self.mainFrame, padding=5, text='Parameter Setting')
         self.paramOption.pack(side='left')
         
@@ -52,6 +57,10 @@ class Main(Tk):
         self.submitButton = ttk.Button(self.paramOption, padding=5, command=self.calculate)
         self.submitButton.pack(side='top')
         
+    def setText(self):
+        if self.prevSession == self.calcSelected
+        return
+
     def calculate(self):
         print()
     
