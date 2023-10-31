@@ -8,10 +8,10 @@ class Main(Tk):
         self.title("CPE2222")
         self.style = ttk.Style()
         
-        self.mainFrame = Frame(self, padding=5)
+        self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.pack()
         
-        self.calcOption = Frame(self.mainFrame, padding=5, name='Calculation')
+        self.calcOption = ttk.Frame(self.mainFrame, padding=5, name='Calculation')
         self.calcOption.pack()
         
         self.calcEntry = ["Area of Rectangle", "Area of Triangle", "Pythagorean"]
