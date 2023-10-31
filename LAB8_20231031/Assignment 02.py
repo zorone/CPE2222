@@ -60,10 +60,10 @@ class Main(Tk):
             self.paramFrame +=[ttk.Frame(self.paramOption)]
             self.paramFrame[i].pack(expand='TRUE', fill='both')
             self.paramLabel += [ttk.Label(self.paramFrame[i], justify='right')]
-            self.paramLabel[i].pack(side='left', expand='TRUE', fill='x')
+            self.paramLabel[i].pack(anchor='e', side='left', expand='TRUE', fill='x')
             self.paramVar += [DoubleVar()]
             self.paramEntry += [ttk.Spinbox(self.paramFrame[i], justify='left', textvariable=self.paramVar[i])]
-            self.paramEntry[i].pack(side='left', expand='TRUE', fill='x')
+            self.paramEntry[i].pack(anchor='w', side='left', expand='TRUE', fill='x')
         
         self.paramFrame +=[ttk.Frame(self.paramOption)]
         self.paramFrame[2].pack(expand='TRUE', fill='both')
@@ -121,10 +121,10 @@ class Main(Tk):
         else:
             self.resCheck = True
             self.resFrame = ttk.Frame(self.mainFrame, padding=5)
-            self.resFrame.pack(side='top', fill='both')
+            self.resFrame.pack(side='top', expand='TRUE', fill='both')
             
             self.resLabel = ttk.Label(self.resFrame, text=self.res, justify='center', anchor='center')
-            self.resLabel.pack(expand='TRUE', fill='both')
+            self.resLabel.pack(anchor='center', expand='TRUE', fill='y')
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
