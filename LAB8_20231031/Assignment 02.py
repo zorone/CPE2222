@@ -40,7 +40,7 @@ class Main(Tk):
         
         for i, title in enumerate(self.calcEntry):
             self.calcEntry[i] = ttk.Radiobutton(self.calcOption, text=title, value=i, variable=self.calcSelected, command=self.calcOptionSet)
-            self.calcEntry[i].pack(side='top', anchor='w', expand='TRUE', fill='y')
+            self.calcEntry[i].pack(side='top', anchor='w', expand='TRUE', fill='x')
         
     def calcOptionSet(self):
         self.paramGenerate()
@@ -54,23 +54,23 @@ class Main(Tk):
         self.pane = True
 
         self.paramOption = ttk.Labelframe(self.topFrame, padding=5, text='Parameter Setting')
-        self.paramOption.pack(side='left', expand='TRUE', fill='both')
+        self.paramOption.pack(anchor='w', side='left', expand='TRUE', fill='x')
         
         for i in range(2):
             self.paramFrame +=[ttk.Frame(self.paramOption)]
             self.paramFrame[i].pack(expand='TRUE', fill='both')
             self.paramLabel += [ttk.Label(self.paramFrame[i], justify='right')]
-            self.paramLabel[i].pack(side='left', expand='TRUE', fill='y')
+            self.paramLabel[i].pack(side='left', expand='TRUE', fill='x')
             self.paramVar += [DoubleVar()]
             self.paramEntry += [ttk.Spinbox(self.paramFrame[i], justify='left', textvariable=self.paramVar[i])]
-            self.paramEntry[i].pack(side='left', expand='TRUE', fill='y')
+            self.paramEntry[i].pack(side='left', expand='TRUE', fill='x')
         
         self.paramFrame +=[ttk.Frame(self.paramOption)]
         self.paramFrame[2].pack(expand='TRUE', fill='both')
         self.paramEntry += [ttk.Button(self.paramFrame[2], padding=5, command=self.activate)]
-        self.paramEntry[2].pack(side='right', expand='TRUE', fill='y')
+        self.paramEntry[2].pack(side='right', expand='TRUE', fill='x')
         self.paramEntry += [ttk.Frame(self.paramFrame[2], padding=5)]
-        self.paramEntry[3].pack(side='right', expand='TRUE', fill='y')
+        self.paramEntry[3].pack(side='right', expand='TRUE', fill='x')
         
     def setText(self):
         self.currentSession = self.calcSelected.get()
