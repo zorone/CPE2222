@@ -18,6 +18,7 @@ class Main(Tk):
         self.calcSelected = IntVar()
         
         self.paramLabel = list()
+        self.paramFrame = list()
         self.paramEntry = list()
         self.paramVar = list()
         self.prevSession = -1
@@ -52,14 +53,20 @@ class Main(Tk):
         self.paramOption.pack(side='left')
         
         for i in range(2):
-            self.paramLabel += [ttk.Label(self.paramOption, justify='right')]
-            self.paramLabel[i].pack(side='top')
+            self.paramFrame +=[ttk.Frame(self.paramOption)]
+            self.paramFrame[i].pack()
+            self.paramLabel += [ttk.Label(self.paramFrame[i], justify='right')]
+            self.paramLabel[i].pack(side='left')
             self.paramVar += [DoubleVar()]
-            self.paramEntry += [ttk.Spinbox(self.paramOption, justify='left', textvariable=self.paramVar[i])]
+            self.paramEntry += [ttk.Spinbox(self.paramFrame[i], justify='left', textvariable=self.paramVar[i])]
             self.paramEntry[i].pack(side='left')
         
-        self.paramEntry += [ttk.Button(self.paramOption, padding=5, command=self.activate)]
-        self.paramEntry[2].pack(side='top')
+        self.paramFrame +=[ttk.Frame(self.paramOption)]
+        self.paramFrame[2].pack()
+        self.paramEntry += [ttk.Frame(self.paramFrame[2], padding=5)]
+        self.paramEntry[2].pack(side='left')
+        self.paramEntry += [ttk.Button(self.paramFrame[2], padding=5, command=self.activate)]
+        self.paramEntry[2].pack(side='left')
         
     def setText(self):
         self.currentSession = self.calcSelected.get()
