@@ -23,6 +23,9 @@ class Main(Tk):
         self.prevSession = int()
         self.currentSession = int()
         
+        self.result = int()
+        self.res = str()
+        
         self.widgetText = [['Length:', 'Width:', 'Area'],
                            ['Base', 'Height', 'Area'],
                            ['The 1st size:', 'The 2nd size:', 'Pythagorean Theory']]
@@ -54,8 +57,8 @@ class Main(Tk):
             self.paramEntry += [ttk.Spinbox(self.paramOption, justify='left', textvariable=self.paramVar[i])]
             self.paramEntry[i].pack(side='left')
         
-        self.paramEntry += [ttk.Button(self.paramOption, padding=5, command=self.calculate)]
-        self.paramEntry[3].pack(side='top')
+        self.paramEntry += [ttk.Button(self.paramOption, padding=5, command=self.activate)]
+        self.paramEntry[2].pack(side='top')
         
     def setText(self):
         self.currentSession = self.calcSelected.get()
@@ -67,9 +70,26 @@ class Main(Tk):
         for i in range(3):
             self.paramEntry[i].config(text=self.widgetText[self.currentSession][i])
 
+    def activate(self):
+        self.calculate()
+        self.respond()
+        
     def calculate(self):
+        if self.currentSession == 0:
+            self.rectangleArea()
+        elif self.currentSession == 1:
+            self.triangleArea()
+        elif self.currentSession == 2:
+            self.pythagorean()
+        else:
+            print('Not implement')
+
+    def rectangleArea(self):
+        self.result = self.paramVar[0].get() * self.paramVar[1].get()
+        self.res = 
+
+    def respond(self):
         print()
-    
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
