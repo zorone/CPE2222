@@ -21,6 +21,7 @@ class Main(Tk):
         self.paramEntry = list()
         self.paramVar = list()
         self.prevSession = int()
+        self.currentSession = int()
         
         self.widgetText = [['Length:', 'Width:', 'Area'],
                            ['Base', 'Height', 'Area'],
@@ -57,13 +58,15 @@ class Main(Tk):
         self.submitButton.pack(side='top')
         
     def setText(self):
-        if self.prevSession == self.calcSelected:
+        self.currentSession = self.calcSelected.get()
+        if self.prevSession == self.currentSession:
             return
         
-        self.prevSession = self.calcSelected
+        self.prevSession = self.currentSession
         
         for i in range(2):
-            self.paramEntry[i].config()
+            self.paramEntry[i].config(text=self.widgetText[self.prevSession])
+            self.submitButton.config()
 
     def calculate(self):
         print()
