@@ -54,8 +54,8 @@ class Main(Tk):
             self.paramEntry += [ttk.Spinbox(self.paramOption, justify='left', textvariable=self.paramVar[i])]
             self.paramEntry[i].pack(side='left')
         
-        self.submitButton = ttk.Button(self.paramOption, padding=5, command=self.calculate)
-        self.submitButton.pack(side='top')
+        self.paramEntry[3] += ttk.Button(self.paramOption, padding=5, command=self.calculate)
+        self.paramEntry[3].pack(side='top')
         
     def setText(self):
         self.currentSession = self.calcSelected.get()
@@ -64,9 +64,8 @@ class Main(Tk):
         
         self.prevSession = self.currentSession
         
-        for i in range(2):
-            self.paramEntry[i].config(text=self.widgetText[self.prevSession])
-            self.submitButton.config()
+        for i in range(3):
+            self.paramEntry[i].config(text=self.widgetText[self.currentSession][i])
 
     def calculate(self):
         print()
