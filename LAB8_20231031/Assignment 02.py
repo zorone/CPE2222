@@ -68,8 +68,10 @@ class Main(Tk):
         
         self.prevSession = self.currentSession
         
-        for i in range(3):
+        for i in range(2):
             self.paramLabel[i].config(text=self.widgetText[self.currentSession][i])
+        
+        self.paramEntry[2].config(text=self.widgetText[self.currentSession][2])
 
     def activate(self):
         self.get()
