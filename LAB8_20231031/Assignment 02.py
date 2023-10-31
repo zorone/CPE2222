@@ -14,12 +14,17 @@ class Main(Tk):
         self.calcOption = Frame(self.mainFrame, padding=5, name='Calculation')
         self.calcOption.pack()
         
-        self.calcEntry = list()
-        self.calcValue = IntVar(-1)
+        self.calcEntry = ["radioButton", "Area of Rectangle", "Area of Triangle", "Pythagorean"]
+        self.calcSelected = IntVar(-1)
     
-    def entryGenerate(self):
+    def entryGenerate(self, *arg):
+        for i, item in enumerate(arg):
+            if(i == 0):
+                setWidgetType(item)
         
+    def setWidgetType(self, widgetType):
         
+
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
