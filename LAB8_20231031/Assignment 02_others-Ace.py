@@ -15,9 +15,6 @@ def c():
     if s == 1:  # Area of Rectangle
         e1 = s1 * s2
         e2.config(text=f"The area of rectangle with length of {s1} and width of {s2} is {e1}")
-        l1.config(text=f"Length:")
-        w1.config(text=f"width:")
-        c1.config(text=f"Area")
     elif s == 2:  # Area of Triangle
         e1 = 0.5 * s1 * s2
         e2.config(text=f"The aarea of triangle with base of {s1} and height of {s2} is {e1}")
@@ -30,6 +27,13 @@ def c():
         l1.config(text=f"The 1st size:")
         w1.config(text=f"The 2st size:")
         c1.config(text=f"Pythagorean Theory")
+
+def text():
+    s = r.get
+    if s == 1:
+        l1.config(text=f"Length:")
+        w1.config(text=f"width:")
+        c1.config(text=f"Area")
 
 root = Tk()
 root.title("CPE2222")
@@ -48,7 +52,7 @@ a1.grid(row=1, column=1)
 r = IntVar()
 r.set(3)
 
-r1 = Radiobutton(a1, text="Area of Rectangle", variable=r, value=1)
+r1 = Radiobutton(a1, text="Area of Rectangle", variable=r, value=1, command=text)
 r1.grid(row=0, column=0)
 
 r2 = Radiobutton(a1, text="Area of Triangle   ", variable=r, value=2)
