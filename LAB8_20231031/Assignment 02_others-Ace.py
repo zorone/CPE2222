@@ -9,7 +9,7 @@ def c():
         e2.config(text=f"The area of rectangle with length of {s1} and width of {s2} is {e1}")
         l1.config(text=f"Length:")
         w1.config(text=f"width:")
-        c1.config(a2,text=f"Area")
+        c1.config(text=f"Area")
     elif s == 2:  # Area of Triangle
         s1= float(l.get())
         s2 = float(w.get())
@@ -17,7 +17,7 @@ def c():
         e2.config(text=f"The aarea of triangle with base of {s1} and height of {s2} is {e1}")
         l1.config(text=f"Base:")
         w1.config(text=f"Height:")
-        c1.config(a2,text=f"Area")
+        c1.config(text=f"Area")
     elif s == 3:  # Pythagorean
         s1 = float(l.get())
         s2 = float(w.get())
@@ -25,7 +25,7 @@ def c():
         e2.config(text=f"The longest size of right triangle({s1},{s2}) is {e1}")
         l1.config(text=f"The 1st size:")
         w1.config(text=f"The 2st size:")
-        c1.config(a2,text=f"Pythagorean Theory")
+        c1.config(text=f"Pythagorean Theory")
 
 root = Tk()
 root.title("CPE2222")
@@ -69,7 +69,7 @@ w.grid(row=1, column=2)
 c1 = Button(a2, text="", command=c)
 c1.grid(row=6, column=0, columnspan=3)
 
-e2 = Label(root, text="")
+e2 = Label(root, text="", justify='center')
 e2.grid(row=2, column=0, columnspan=3)
 
 root.mainloop()
