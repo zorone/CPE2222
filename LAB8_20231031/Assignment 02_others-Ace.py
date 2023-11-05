@@ -2,25 +2,29 @@ from tkinter import *
 
 def c():
     s = r.get()
+    s1 = l.get()
+    s2 = w.get()
+
+    if(s1 == '' or s2 == ''): # check for null character
+        s1 = 0
+        s2 = 0
+    else:
+        s1 = float(s1)
+        s2 = float(s2)
+
     if s == 1:  # Area of Rectangle
-        s1 = float(l.get())
-        s2 = float(w.get())
         e1 = s1 * s2
         e2.config(text=f"The area of rectangle with length of {s1} and width of {s2} is {e1}")
         l1.config(text=f"Length:")
         w1.config(text=f"width:")
         c1.config(text=f"Area")
     elif s == 2:  # Area of Triangle
-        s1= float(l.get())
-        s2 = float(w.get())
         e1 = 0.5 * s1 * s2
         e2.config(text=f"The aarea of triangle with base of {s1} and height of {s2} is {e1}")
         l1.config(text=f"Base:")
         w1.config(text=f"Height:")
         c1.config(text=f"Area")
     elif s == 3:  # Pythagorean
-        s1 = float(l.get())
-        s2 = float(w.get())
         e1 = (s1 * 2 +s2 * 2) ** 0.5
         e2.config(text=f"The longest size of right triangle({s1},{s2}) is {e1}")
         l1.config(text=f"The 1st size:")
