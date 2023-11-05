@@ -57,7 +57,7 @@ class Main(Tk):
         self.paramOption.pack(anchor='center', side='left', expand='TRUE', fill='x')
         
         for i in range(2):
-            self.paramFrame +=[ttk.Frame(self.paramOption)]
+            self.paramFrame += [ttk.Frame(self.paramOption)]
             self.paramFrame[i].pack(expand='TRUE', fill='both')
             self.paramLabel += [ttk.Label(self.paramFrame[i], justify='right')]
             self.paramLabel[i].pack(anchor='e', side='left', expand='TRUE', fill='x')
