@@ -29,7 +29,7 @@ def c():
         c1.config(text=f"Pythagorean Theory")
 
 def text():
-    s = r.get
+    s = r.get()
     if s == 1:
         l1.config(text=f"Length:")
         w1.config(text=f"width:")
