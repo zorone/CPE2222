@@ -5,5 +5,5 @@ class Main:
     def __init__(self):
         print()
 
-iƒ __name__ == "__main__":
+if __name__ == "__main__":
     print()
