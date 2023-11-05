@@ -70,6 +70,7 @@ c1 = Button(a2, text="", command=c)
 c1.grid(row=6, column=0, columnspan=3)
 
 e2 = Label(root, text="", justify='center')
-e2.grid(row=2, column=0, columnspan=3)
+e2.grid(row=2, column=1, columnspan=3, sticky=(N,S,E,W))
 
+c()
 root.mainloop()
