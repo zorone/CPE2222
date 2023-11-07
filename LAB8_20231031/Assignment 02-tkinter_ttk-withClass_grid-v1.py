@@ -13,9 +13,15 @@ class Main(Tk):
         self.option = IntVar()
         self.optionText = ['Area of Rectangle', 'Area of Triangle', 'Pythagorean']
         
+        self.expand = False
+        
         self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
         self.optionFrame = self.buildLabelFrame(self.mainFrame, text="Calculation", x=0, y=0, width=1, height=3)
         self.optionList = self.buildRadioButton(self.optionFrame, self.option, self.optionText, amount=3)
+        
+    def trigger():
+        if not self.expand:
+            
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, padding=5)
@@ -35,8 +41,8 @@ class Main(Tk):
         return res
 
     def setCommand(self, varList, command):
-        for item in varList:
-            item.config(command=command)
+        for i, item in enumerate(varList):
+            item.config(command=command[i])
 
 if __name__ == "__main__":
     main = Main()
