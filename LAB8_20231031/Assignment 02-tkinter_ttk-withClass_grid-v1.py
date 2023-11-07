@@ -34,6 +34,11 @@ class Main(Tk):
             res[i].grid(column=0, row=i, sticky=pos)
         return res
 
+    def setCommand(self, varList, command):
+        res = list()
+        for item in varList:
+            res 
+
 if __name__ == "__main__":
     main = Main()
     main.mainloop()
