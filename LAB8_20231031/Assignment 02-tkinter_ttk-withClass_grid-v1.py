@@ -10,6 +10,9 @@ class Main(Tk):
         self.title("CPE2222")
         self.style = ttk.Style()
         
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
+        
         self.option = IntVar()
         self.optionText = ['Area of Rectangle', 'Area of Triangle', 'Pythagorean']
         
@@ -82,11 +85,15 @@ class Main(Tk):
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Frame(host, padding=5)
+        res.grid_rowconfigure(0, weight=1)
+        res.grid_columnconfigure(0, weight=1)
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos)
         return res
 
     def buildLabelFrame(self, host, text, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, text=text, padding=5)
+        res.grid_rowconfigure(0, weight=1)
+        res.grid_columnconfigure(0, weight=1)
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos, padx=20, pady=(10, 20))
         return res
     
