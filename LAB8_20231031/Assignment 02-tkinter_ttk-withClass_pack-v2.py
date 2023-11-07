@@ -2,11 +2,9 @@ from tkinter import *
 from tkinter import ttk
 
 class Build:
-    def __init__(self,):
-        print()
-    def frame(self, x, y, width, height):
-        res = list()
-        res += 
+    def frame(host, x, y, width, height):
+        res = ttk.Frame(host, padding=5)
+        res.grid(row=x, column)
 class Main(Tk):
     
     build = Build()
