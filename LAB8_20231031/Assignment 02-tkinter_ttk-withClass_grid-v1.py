@@ -19,9 +19,16 @@ class Main(Tk):
         self.optionFrame = self.buildLabelFrame(self.mainFrame, text="Calculation", x=0, y=0, width=1, height=3)
         self.optionList = self.buildRadioButton(self.optionFrame, self.option, self.optionText, amount=3)
         
-    def trigger():
+    def trigger(self):
         if not self.expand:
+            self.expand = True
+            self.expandWindow()
+        else:
+            print()
             
+    def expandWindow(self):
+        self.actionFrame = self.buildLabelFrame(self.mainFrame, text="Parameter Setting", x=2, y=0, width=1, height=3)
+        self.paramLabel
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, padding=5)
@@ -32,6 +39,11 @@ class Main(Tk):
         res = ttk.Labelframe(host, text=text, padding=5)
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos)
         return res
+    
+    def buildLabel(self, host, textList, amount=1, pos=(N,W,E,S)):
+        res = list()
+        for i in range(0, amount):
+            res += [ttk.Label(host, text=textList[i], pos=)]
     
     def buildRadioButton(self, host, var, textList, amount=1, pos=(N,W,E,S)):
         res = list()
