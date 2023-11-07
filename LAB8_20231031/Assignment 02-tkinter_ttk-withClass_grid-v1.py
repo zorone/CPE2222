@@ -10,12 +10,7 @@ class Main(Tk):
         self.title("CPE2222")
         self.style = ttk.Style()
         
-        self.grid_rowconfigure(0, weight=1)
-        self.grid_columnconfigure(0, weight=1)
-        self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(1, weight=1, minsize=20)
-        self.grid_rowconfigure(2, weight=1)
-        self.grid_columnconfigure(2, weight=1)
         
         self.option = IntVar()
         self.optionText = ['Area of Rectangle', 'Area of Triangle', 'Pythagorean']
