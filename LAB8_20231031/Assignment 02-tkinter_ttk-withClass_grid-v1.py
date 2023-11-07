@@ -28,9 +28,9 @@ class Main(Tk):
         if not self.expand:
             self.expand = True
             self.expandWindow()
-        else:
-            self.setText()
-            
+        
+        self.setText()
+
     def expandWindow(self):
         self.paramText = ['', '', '']
         
@@ -43,6 +43,12 @@ class Main(Tk):
         labelText = [['Length:', 'Width:', 'Area'],
                      ['Base:', 'Height:', 'Area'],
                      ['The 1st side:', 'The 2nd side:', 'Pythagorean Theory']]
+        
+        self.optionVal = self.option.get()
+        
+        self.paramLabel[0].config(text=labelText[self.optionVal][0])
+        self.paramLabel[1].config(text=labelText[self.optionVal][1])
+        self.paramSubmit[0].config(text=labelText[self.optionVal][2])
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Frame(host, padding=5)
