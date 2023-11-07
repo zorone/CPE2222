@@ -27,7 +27,7 @@ class Main(Tk):
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos)
         return res
     
-    def buildRadioButton(self, host, var, amount=1, textList=list(), pos=(N,W,E,S)):
+    def buildRadioButton(self, host, var, *textList, amount=1, pos=(N,W,E,S)):
         res = list()
         for i in range(amount):
             res += [ttk.Radiobutton(host, text=textList[i], value=i, variable=var)]
