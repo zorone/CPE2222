@@ -56,7 +56,7 @@ class Main(Tk):
             
             self.resFrame = self.buildFrame(self.mainFrame, 0, 3, 3, 4)
             self.resLabel = ttk.Label(self.resFrame, anchor='center', justify='center', text='')
-            self.resLabel.grid(column=0, row=3, columnspan=3, rowspan=4, sticky=(N,W,E,S))
+            self.resLabel.grid(column=0, row=0, sticky=(N,W,E,S))
         
         self.resLabel.config(text=res)
 
