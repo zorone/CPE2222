@@ -74,7 +74,7 @@ class Main(Tk):
     def buildSpinBox(self, host, varList, amount=1, startx=0, starty=0, incrX=0, incrY=1, incr=0.1, pos=(N,W,E,S)):
         res = list()
         for i in range(0, amount):
-            res += [ttk.Spinbox(host, textvariable=varList[i], from_=1, to=100, increment=incr)]
+            res += [ttk.Spinbox(host, textvariable=varList[i], from_=1, to=100, increment=incr, show=1)]
             res[i].grid(column=startx, row=starty, sticky=pos)
             startx += incrX
             starty += incrY
