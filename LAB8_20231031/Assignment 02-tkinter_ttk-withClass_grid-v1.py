@@ -33,9 +33,9 @@ class Main(Tk):
         
         self.setText()
         self.setCommand()
-
-    def activate(self):
         
+    def activate(self):
+        print()
 
     def expandWindow(self):
         self.paramText = ['', '', '']
