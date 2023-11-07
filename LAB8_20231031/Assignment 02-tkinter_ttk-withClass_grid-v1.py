@@ -71,7 +71,7 @@ class Main(Tk):
             starty += incrY
         return res
     
-    def buildSpinBox(self, host, varList, amount=1, startx=0, starty=0, incrX=0, incrY=1, range=(1,100), incr=0.1, pos=(N,W,E,S)):
+    def buildSpinBox(self, host, varList, amount=1, startx=0, starty=0, incrX=0, incrY=1, range=[1,100], incr=0.1, pos=(N,W,E,S)):
         res = list()
         for i in range(0, amount):
             res += [ttk.Spinbox(host, variable=varList[i], from_=range[0], to=range[1], increment=incr)]
