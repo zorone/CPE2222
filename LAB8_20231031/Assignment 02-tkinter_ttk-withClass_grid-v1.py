@@ -33,7 +33,7 @@ class Main(Tk):
         self.paramText = ['', '', '']
         
         self.actionFrame = self.buildLabelFrame(self.mainFrame, text="Parameter Setting", x=2, y=0, width=1, height=3)
-        self.paramLabel = self.buildLabel(self.actionFrame, self.paramText, 3, pos=(E), justify='right')
+        self.paramLabel = self.buildLabel(self.actionFrame, self.paramText, amount=3, pos=(E), justify='right')
 
     def setText(self):
         labelText = [['Length:', 'Width:', 'Area'],
@@ -50,18 +50,27 @@ class Main(Tk):
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos, padx=20, pady=(10, 20))
         return res
     
-    def buildLabel(self, host, textList, amount=1, startx=0, starty=0, movex=1, movey=0, pos=(N,W,E,S), justify='center'):
+    def buildLabel(self, host, textList, amount=1, startx=0, starty=0, incrX=1, incrY=0, pos=(N,W,E,S), justify='center'):
         res = list()
         for i in range(0, amount):
             res += [ttk.Label(host, text=textList[i], justify=justify)]
-            res[i].grid(column=0, row=i, sticky=pos)
+            res[i].grid(column=startx, row=starty, sticky=pos)
+            startx += incrX
+            starty += incrY
     
-    def buildRadioButton(self, host, var, textList, amount=1, pos=(N,W,E,S)):
+    def buildRadioButton(self, host, var, textList, amount=1, startx=0, starty=0, incrX=1, incrY=0, pos=(N,W,E,S)):
         res = list()
         for i in range(0, amount):
             res += [ttk.Radiobutton(host, text=textList[i], value=i, variable=var)]
-            res[i].grid(column=0, row=i, sticky=pos)
+            res[i].grid(column=startx, row=starty, sticky=pos)
+            startx += incrX
+            starty += incrY
         return res
+    
+    def buildSpinBox(self, host, var, amount=1, startx=0, starty=0, incrX=1, incrY=0, pos=(N,W,E,S)):
+        res = list()
+        for i in range(0, amount):
+            res += [ttk.Spinbox(host, variable=var, from_=1, to=100, interval=)]
 
 if __name__ == "__main__":
     main = Main()
