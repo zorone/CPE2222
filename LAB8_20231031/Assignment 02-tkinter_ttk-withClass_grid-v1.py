@@ -10,7 +10,12 @@ class Main(Tk):
         self.title("CPE2222")
         self.style = ttk.Style()
         
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(1, weight=1, minsize=20)
+        self.grid_rowconfigure(2, weight=1)
+        self.grid_columnconfigure(2, weight=1)
         
         self.option = IntVar()
         self.optionText = ['Area of Rectangle', 'Area of Triangle', 'Pythagorean']
@@ -84,8 +89,6 @@ class Main(Tk):
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Frame(host, padding=5)
-        res.grid_rowconfigure(0, weight=1)
-        res.grid_columnconfigure(0, weight=1)
         res.anchor('center')
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos)
         return res
@@ -135,17 +138,17 @@ class Main(Tk):
     def areaRectangle(self):
         self.res = self.spinBoxVal[0] * self.spinBoxVal[1]
         self.res = round(self.res, 1)
-        return "The area of rectangle with length of {} and width of {} is {}".format(self.spinBoxVal[0], self.spinBoxVal[1], self.res)
+        return "The area of rectangle with length of {} and width of {} is {}\n".format(self.spinBoxVal[0], self.spinBoxVal[1], self.res)
         
     def areaTriangle(self):
         self.res = (1/2) * self.spinBoxVal[0] * self.spinBoxVal[1]
         self.res = round(self.res, 1)
-        return "The area of triangle with base of {} and height of {} is {}".format(self.spinBoxVal[0], self.spinBoxVal[1], self.res)
+        return "The area of triangle with base of {} and height of {} is {}\n".format(self.spinBoxVal[0], self.spinBoxVal[1], self.res)
         
     def pythagorean(self):
         self.res = (self.spinBoxVal[0]**2 + self.spinBoxVal[1]**2)**(1/2)
         self.res = round(self.res, 1)
-        return "The longest side of right triangle with ({},{}) is {}".format(self.spinBoxVal[0], self.spinBoxVal[1], self.res)
+        return "The longest side of right triangle with ({},{}) is {}\n".format(self.spinBoxVal[0], self.spinBoxVal[1], self.res)
 
 if __name__ == "__main__":
     main = Main()
