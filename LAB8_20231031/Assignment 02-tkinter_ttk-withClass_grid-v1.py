@@ -42,7 +42,7 @@ class Main(Tk):
 
     def buildLabelFrame(self, host, text, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, text=text, padding=5)
-        res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos, padx=10, pady=10)
+        res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos, padx=20, pady=20)
         return res
     
     def buildLabel(self, host, textList, amount=1, pos=(N,W,E,S)):
