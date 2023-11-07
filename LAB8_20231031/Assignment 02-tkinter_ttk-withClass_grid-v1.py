@@ -35,9 +35,8 @@ class Main(Tk):
         return res
 
     def setCommand(self, varList, command):
-        res = list()
         for item in varList:
-            res 
+            item.config(command=command)
 
 if __name__ == "__main__":
     main = Main()
