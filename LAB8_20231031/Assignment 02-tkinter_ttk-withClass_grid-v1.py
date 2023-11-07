@@ -13,13 +13,12 @@ class Main(Tk):
         self.option = IntVar()
         self.optionText = ['Area of Rectangle', 'Area of Triangle', 'Pythagorean']
         
-        self.paramText = ['', '', '']
-        
         self.expand = False
         
         self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
         self.optionFrame = self.buildLabelFrame(self.mainFrame, text="Calculation", x=0, y=0, width=1, height=3)
         self.optionList = self.buildRadioButton(self.optionFrame, self.option, self.optionText, amount=3)
+        self.setCommand(self.optionList, [self.trigger(), self.trigger(), self.trigger()])
         
     def trigger(self):
         if not self.expand:
@@ -29,8 +28,10 @@ class Main(Tk):
             print()
             
     def expandWindow(self):
+        self.paramText = ['', '', '']
+        
         self.actionFrame = self.buildLabelFrame(self.mainFrame, text="Parameter Setting", x=2, y=0, width=1, height=3)
-        self.paramLabel =
+        self.paramLabel = self.buildLabel(self.actionFrame, self.paramText, 3, pos=(E))
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, padding=5)
