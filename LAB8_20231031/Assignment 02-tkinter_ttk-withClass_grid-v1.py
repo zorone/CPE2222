@@ -34,6 +34,9 @@ class Main(Tk):
         self.setText()
         self.setCommand()
 
+    def activate(self):
+        
+
     def expandWindow(self):
         self.paramText = ['', '', '']
         
@@ -41,6 +44,7 @@ class Main(Tk):
         self.paramLabel = self.buildLabel(self.actionFrame, self.paramText, amount=3, pos=(E), justify='right')
         self.spinBoxParam = self.buildSpinBox(self.actionFrame, self.spinBoxVar, amount=2, startx=1, starty=0)
         self.paramSubmit = self.buildButton(self.actionFrame, startx=1, starty=2)
+        self.paramSubmit[0].config(command=activate)
 
     def setText(self):
         labelText = [['Length:', 'Width:', 'Area'],
