@@ -15,7 +15,7 @@ class Main(Tk):
         self.title("CPE2222")
         self.style = ttk.Style()
         
-        self.optionFrame = build.frame(self, x=)
+        self.mainFrame = build.frame(host=self, x=0, y=0, width=3, height=7)
 
 if __name__ == "__main__":
     build = Build()
