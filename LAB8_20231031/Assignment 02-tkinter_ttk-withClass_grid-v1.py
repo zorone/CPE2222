@@ -43,7 +43,7 @@ class Main(Tk):
     def buildLabel(self, host, textList, amount=1, pos=(N,W,E,S)):
         res = list()
         for i in range(0, amount):
-            res += [ttk.Label(host, text=textList[i], pos=)]
+            res += [ttk.Label(host, text=textList[i], literal='center')]
     
     def buildRadioButton(self, host, var, textList, amount=1, pos=(N,W,E,S)):
         res = list()
