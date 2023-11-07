@@ -43,7 +43,8 @@ class Main(Tk):
             res = self.pythagorean()
 
         if not self.respond:
-            self.resLabel = ttk.Label(column=3, row=0, column justify='center', text='')
+            self.resLabel = ttk.Label(justify='center', text='')
+            self.resLabel.grid(column=3, row=0, columnspan=4, rowspan=3)
 
     def expandWindow(self):
         self.paramText = ['', '', '']
