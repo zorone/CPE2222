@@ -12,9 +12,12 @@ class Main(Tk):
         
         self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
 
-    def buildFrame(self, host, x, y, width, height):
+    def buildFrame(self, host, x, y, width, height, pos):
         res = ttk.Labelframe(host, padding=5)
-        res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=(N,W,E,S))
+        if pos != (N,W,E,S):
+            res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos)
+        else:
+            res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=(N,W,E,S))
         return res
 
     def buildLabelFrame(self, host, text, x, y, width, height):
