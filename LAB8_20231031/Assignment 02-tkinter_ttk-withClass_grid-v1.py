@@ -15,7 +15,7 @@ class Main(Tk):
         
         self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
         self.optionFrame = self.buildLabelFrame(self.mainFrame, text="Calculation", x=0, y=0, width=1, height=3)
-        self.optionList = self.buildRadioButton(self.optionFrame, self.option, 3,)
+        self.optionList = self.buildRadioButton(self.optionFrame, self.option, self.optionText, 3)
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, padding=5)
