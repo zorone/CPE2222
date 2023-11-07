@@ -38,7 +38,12 @@ class Main(Tk):
         self.spinBoxVal[0] = self.spinBoxVar[0].get()
         self.spinBoxVal[1] = self.spinBoxVar[1].get()
         
-        
+        if self.spinBoxVal[0] == int(self.spinBoxVal[0]):
+            self.spinBoxVal[0] = int(self.spinBoxVal[0])
+            
+        if self.spinBoxVal[1] == int(self.spinBoxVal[1]):
+            self.spinBoxVal[1] = int(self.spinBoxVal[1])
+
         if self.optionVal == 0:
             res = self.areaRectangle()
         elif self.optionVal == 1:
@@ -123,17 +128,17 @@ class Main(Tk):
     def areaRectangle(self):
         self.res = self.spinBoxVal[0] * self.spinBoxVal[1]
         self.res = round(self.res, 1)
-        print("The area of rectangle with length of ", self.spinBoxVal[0], " and width of ", self.spinBoxVal[1]," is ", self.res)
+        print("The area of rectangle with length of {} and width of {} is {}".format(self.spinBoxVal[0], self.spinBoxVal[1], self.res))
         
     def areaTriangle(self):
         self.res = (1/2) * self.spinBoxVal[0] * self.spinBoxVal[1]
         self.res = round(self.res, 1)
-        print("The area of triangle with base of ", self.spinBoxVal[0], " and height of ", self.spinBoxVal[1], " is ", self.res)
+        print("The area of triangle with base of {} and height of {} is {}".format(self.spinBoxVal[0], self.spinBoxVal[1], self.res))
         
     def pythagorean(self):
         self.res = (self.spinBoxVal[0]**2 + self.spinBoxVal[1]**2)**(1/2)
         self.res = round(self.res, 1)
-        print("The longest side of right triangle with (", self.spinBoxVal[0], ",", self.spinBoxVal[1],") is ", self.res)
+        print("The longest side of right triangle with ({},{}) is {}".format(self.spinBoxVal[0], self.spinBoxVal[1], self.res))
 
 if __name__ == "__main__":
     main = Main()
