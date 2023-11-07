@@ -53,8 +53,10 @@ class Main(Tk):
 
         if not self.respond:
             self.respond = True
-            self.resLabel = ttk.Label(justify='center', text='')
-            self.resLabel.grid(column=0, row=3, columnspan=3, rowspan=3, sticky=(N,W,E,S))
+            
+            self.resFrame = self.buildFrame(self, 0, 3, 3, 4)
+            self.resLabel = ttk.Label(self.resFrame, justify='center', text='')
+            self.resLabel.grid(column=0, row=3, columnspan=3, rowspan=4, sticky=(N,W,E,S))
         
         self.resLabel.config(text=res)
 
