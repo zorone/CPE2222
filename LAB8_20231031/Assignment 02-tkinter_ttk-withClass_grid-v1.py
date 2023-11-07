@@ -14,11 +14,12 @@ class Main(Tk):
         self.optionText = ['Area of Rectangle', 'Area of Triangle', 'Pythagorean']
         
         self.expand = False
+        self.command = self.trigger()
         
         self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
         self.optionFrame = self.buildLabelFrame(self.mainFrame, text="Calculation", x=0, y=0, width=1, height=3)
         self.optionList = self.buildRadioButton(self.optionFrame, self.option, self.optionText, amount=3)
-        self.setCommand(self.optionList, [self.trigger(), self.trigger(), self.trigger()])
+        self.setCommand(self.optionList, self.command)
         
     def trigger(self):
         if not self.expand:
@@ -58,7 +59,7 @@ class Main(Tk):
 
     def setCommand(self, varList, command):
         for i, item in enumerate(varList):
-            item.config(command=command[i])
+            item.config(command=command)
 
 if __name__ == "__main__":
     main = Main()
