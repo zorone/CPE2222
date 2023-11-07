@@ -36,6 +36,8 @@ class Main(Tk):
         
         self.actionFrame = self.buildLabelFrame(self.mainFrame, text="Parameter Setting", x=2, y=0, width=1, height=3)
         self.paramLabel = self.buildLabel(self.actionFrame, self.paramText, amount=3, pos=(E), justify='right')
+        self.spinBoxParam = self.buildSpinBox(self.actionFrame, self.spinBoxVar, amount=2)
+        self.paramSubmit = self.buildButton(self.actionFrame, startx=1, starty=2)
 
     def setText(self):
         labelText = [['Length:', 'Width:', 'Area'],
@@ -72,7 +74,7 @@ class Main(Tk):
     def buildSpinBox(self, host, varList, amount=1, startx=0, starty=0, incrX=1, incrY=0, range=(1,100), incr=0.1, pos=(N,W,E,S)):
         res = list()
         for i in range(0, amount):
-            res += [ttk.Spinbox(host, variable=varList[i], from_=1, to=100, increment=0.1)]
+            res += [ttk.Spinbox(host, variable=varList[i], from_=range[0], to=range[1], increment=incr)]
             res[i].grid(column=startx, row=starty, sticky=pos)
             startx += incrX
             starty += incrY
