@@ -36,7 +36,7 @@ class Main(Tk):
         
         self.actionFrame = self.buildLabelFrame(self.mainFrame, text="Parameter Setting", x=2, y=0, width=1, height=3)
         self.paramLabel = self.buildLabel(self.actionFrame, self.paramText, amount=3, pos=(E), justify='right')
-        self.spinBoxParam = self.buildSpinBox(self.actionFrame, self.spinBoxVar, amount=2)
+        self.spinBoxParam = self.buildSpinBox(self.actionFrame, self.spinBoxVar, amount=2, startx=1, starty=0)
         self.paramSubmit = self.buildButton(self.actionFrame, startx=1, starty=2)
 
     def setText(self):
@@ -62,7 +62,7 @@ class Main(Tk):
             startx += incrX
             starty += incrY
     
-    def buildRadioButton(self, host, var, textList, amount=1, startx=0, starty=0, incrX=1, incrY=0, pos=(N,W,E,S)):
+    def buildRadioButton(self, host, var, textList, amount=1, startx=0, starty=0, incrX=0, incrY=1, pos=(N,W,E,S)):
         res = list()
         for i in range(0, amount):
             res += [ttk.Radiobutton(host, text=textList[i], value=i, variable=var)]
@@ -71,10 +71,19 @@ class Main(Tk):
             starty += incrY
         return res
     
-    def buildSpinBox(self, host, varList, amount=1, startx=0, starty=0, incrX=1, incrY=0, range=(1,100), incr=0.1, pos=(N,W,E,S)):
+    def buildSpinBox(self, host, varList, amount=1, startx=0, starty=0, incrX=0, incrY=1, range=(1,100), incr=0.1, pos=(N,W,E,S)):
         res = list()
         for i in range(0, amount):
             res += [ttk.Spinbox(host, variable=varList[i], from_=range[0], to=range[1], increment=incr)]
+            res[i].grid(column=startx, row=starty, sticky=pos)
+            startx += incrX
+            starty += incrY
+        return res
+    
+    def buildButton(self, host, text='', amount=1, startx=0, starty=0, incrX=0, incrY=1, pos=(N,W,E,S)):
+        res = list()
+        for i in range(0, amount):
+            res += [ttk.Button(host, padding=5, text=text)]
             res[i].grid(column=startx, row=starty, sticky=pos)
             startx += incrX
             starty += incrY
