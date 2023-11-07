@@ -67,6 +67,7 @@ class Main(Tk):
             res[i].grid(column=startx, row=starty, sticky=pos)
             startx += incrX
             starty += incrY
+        return res
     
     def buildRadioButton(self, host, var, textList, amount=1, startx=0, starty=0, incrX=0, incrY=1, pos=(N,W,E,S)):
         res = list()
