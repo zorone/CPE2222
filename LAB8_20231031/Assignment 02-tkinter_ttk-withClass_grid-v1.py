@@ -15,6 +15,8 @@ class Main(Tk):
         
         self.expand = False
         
+        self.spinBoxVar = [DoubleVar(), DoubleVar()]
+        
         self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
         self.optionFrame = self.buildLabelFrame(self.mainFrame, text="Calculation", x=0, y=0, width=1, height=3)
         self.optionList = self.buildRadioButton(self.optionFrame, self.option, self.optionText, amount=3)
@@ -67,10 +69,14 @@ class Main(Tk):
             starty += incrY
         return res
     
-    def buildSpinBox(self, host, var, amount=1, startx=0, starty=0, incrX=1, incrY=0, pos=(N,W,E,S)):
+    def buildSpinBox(self, host, varList, amount=1, startx=0, starty=0, incrX=1, incrY=0, range=(1,100), incr=0.1, pos=(N,W,E,S)):
         res = list()
         for i in range(0, amount):
-            res += [ttk.Spinbox(host, variable=var, from_=1, to=100, interval=)]
+            res += [ttk.Spinbox(host, variable=varList[i], from_=1, to=100, increment=0.1)]
+            res[i].grid(column=startx, row=starty, sticky=pos)
+            startx += incrX
+            starty += incrY
+        return res
 
 if __name__ == "__main__":
     main = Main()
