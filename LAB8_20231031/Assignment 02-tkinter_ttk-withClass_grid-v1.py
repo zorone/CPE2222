@@ -27,7 +27,7 @@ class Main(Tk):
         self.spinBoxVal = [float(), float()]
         self.res = float()
         
-        self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7, xRes=True, yRes=True)
+        self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
         self.optionFrame = self.buildLabelFrame(self.mainFrame, text="Calculation", x=0, y=0, width=1, height=3)
         self.optionList = self.buildRadioButton(self.optionFrame, self.option, self.optionText, amount=3)
         
@@ -61,7 +61,7 @@ class Main(Tk):
         if not self.respond:
             self.respond = True
             
-            self.resFrame = self.buildFrame(self.mainFrame, 0, 3, 3, 4, xRes=True, yRes=True)
+            self.resFrame = self.buildFrame(self.mainFrame, 0, 3, 3, 4)
             self.resLabel = ttk.Label(self.resFrame, anchor='center', justify='center', text='')
             self.resLabel.grid(column=0, row=0, sticky=(N,W,E,S))
         
@@ -87,29 +87,15 @@ class Main(Tk):
         self.paramLabel[1].config(text=labelText[self.optionVal][1])
         self.paramSubmit[0].config(text=labelText[self.optionVal][2])
 
-    def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S), xRes=True, yRes=False):
+    def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Frame(host, padding=5)
         res.anchor('center')
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos)
-        
-        if xRes:
-            for i in range(width):
-                res.grid_columnconfigure(i, weight=1)
-        if yRes:
-            for i in range(height):
-                res.grid_rowconfigure(i, weight=1)
         return res
 
-    def buildLabelFrame(self, host, text, x, y, width=1, height=1, pos=(N,W,E,S), xRes=True, yRes=False):
+    def buildLabelFrame(self, host, text, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, text=text, padding=5)
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos, padx=20, pady=(10, 20))
-        
-        if xRes:
-            for i in range(width):
-                res.grid_columnconfigure(i, weight=1)
-        if yRes:
-            for i in range(height):
-                res.grid_rowconfigure(i, weight=1)
         return res
     
     def buildLabel(self, host, textList, amount=1, startx=0, starty=0, incrX=0, incrY=1, pos=(N,W,E,S), justify='center'):
