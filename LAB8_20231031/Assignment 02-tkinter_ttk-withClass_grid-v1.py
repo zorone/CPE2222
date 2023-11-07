@@ -91,6 +91,7 @@ class Main(Tk):
         res = ttk.Frame(host, padding=5)
         res.grid_rowconfigure(0, weight=1)
         res.grid_columnconfigure(0, weight=1)
+        res.anchor('center')
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos)
         return res
 
