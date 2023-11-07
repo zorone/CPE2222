@@ -8,7 +8,6 @@ class Build:
         return res
 class Main(Tk):
     
-    build = Build()
     
     def __init__(self,):
         super().__init__()
@@ -16,8 +15,9 @@ class Main(Tk):
         self.title("CPE2222")
         self.style = ttk.Style()
         
-        self.optionFrame = build.frame
+        self.optionFrame = build.frame(self, x=)
 
 if __name__ == "__main__":
+    build = Build()
     main = Main()
     main.mainloop()
