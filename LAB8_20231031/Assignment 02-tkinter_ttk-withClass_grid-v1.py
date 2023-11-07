@@ -84,13 +84,13 @@ class Main(Tk):
         res = ttk.Frame(host, padding=5)
         res.anchor('center')
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos)
-        config()
+        self.config()
         return res
 
     def buildLabelFrame(self, host, text, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, text=text, padding=5)
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos, padx=20, pady=(10, 20))
-        config()
+        self.config()
         return res
     
     def buildLabel(self, host, textList, amount=1, startx=0, starty=0, incrX=0, incrY=1, pos=(N,W,E,S), justify='center'):
@@ -142,6 +142,13 @@ class Main(Tk):
             self.grid_columnconfigure(1, weight=1, minsize=20)
             self.grid_rowconfigure(2, weight=1)
             self.grid_columnconfigure(2, weight=1)
+            
+            self.mainFrame.grid_rowconfigure(0, weight=1)
+            self.mainFrame.grid_columnconfigure(0, weight=1)
+            self.mainFrame.grid_rowconfigure(1, weight=1)
+            self.mainFrame.grid_columnconfigure(1, weight=1)
+            self.mainFrame.grid_rowconfigure(2, weight=1)
+            self.mainFrame.grid_columnconfigure(2, weight=1)
     
     def areaRectangle(self):
         self.res = self.spinBoxVal[0] * self.spinBoxVal[1]
