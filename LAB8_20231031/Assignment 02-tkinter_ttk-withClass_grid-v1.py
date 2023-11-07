@@ -14,6 +14,7 @@ class Main(Tk):
         self.optionText = ['Area of Rectangle', 'Area of Triangle', 'Pythagorean']
         
         self.expand = False
+        self.respond = False
         
         self.spinBoxVar = [DoubleVar(), DoubleVar()]
         self.spinBoxVal = [float(), float()]
@@ -32,10 +33,17 @@ class Main(Tk):
             self.expandWindow()
         
         self.setText()
-        self.setCommand()
         
     def activate(self):
-        print()
+        if self.optionVal == 0:
+            res = self.areaRectangle()
+        elif self.optionVal == 1:
+            res = self.areaTriangle()
+        elif self.optionVal == 2:
+            res = self.pythagorean()
+
+        if not self.respond:
+            self.resLabel = ttk.Label(column=3, row=0, column justify='center', text='')
 
     def expandWindow(self):
         self.paramText = ['', '', '']
@@ -44,7 +52,7 @@ class Main(Tk):
         self.paramLabel = self.buildLabel(self.actionFrame, self.paramText, amount=3, pos=(E), justify='right')
         self.spinBoxParam = self.buildSpinBox(self.actionFrame, self.spinBoxVar, amount=2, startx=1, starty=0)
         self.paramSubmit = self.buildButton(self.actionFrame, startx=1, starty=2)
-        self.paramSubmit[0].config(command=activate)
+        self.paramSubmit[0].config(command=self.activate)
 
     def setText(self):
         labelText = [['Length:', 'Width:', 'Area'],
@@ -56,14 +64,6 @@ class Main(Tk):
         self.paramLabel[0].config(text=labelText[self.optionVal][0])
         self.paramLabel[1].config(text=labelText[self.optionVal][1])
         self.paramSubmit[0].config(text=labelText[self.optionVal][2])
-
-    def setCommand(self):
-        if self.optionVal == 0:
-            self.paramSubmit[0].config(command=areaRectangle)
-        elif self.optionVal == 1:
-            self.paramSubmit[0].config(command=areaTriangle)
-        elif self.optionVal == 2:
-            self.paramSubmit[0].config(command=pythagorean)
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Frame(host, padding=5)
