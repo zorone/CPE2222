@@ -35,6 +35,10 @@ class Main(Tk):
         self.setText()
         
     def activate(self):
+        self.spinBoxVal[0] = self.spinBoxVar[0].get()
+        self.spinBoxVal[1] = self.spinBoxVar[1].get()
+        
+        
         if self.optionVal == 0:
             res = self.areaRectangle()
         elif self.optionVal == 1:
@@ -43,8 +47,11 @@ class Main(Tk):
             res = self.pythagorean()
 
         if not self.respond:
+            self.respond = True
             self.resLabel = ttk.Label(justify='center', text='')
-            self.resLabel.grid(column=3, row=0, columnspan=4, rowspan=3)
+            self.resLabel.grid(column=3, row=0, columnspan=3, rowspan=3, sticky=(N,W,E,S))
+        
+        self.resLabel.config(text=res)
 
     def expandWindow(self):
         self.paramText = ['', '', '']
@@ -113,6 +120,20 @@ class Main(Tk):
             starty += incrY
         return res
     
+    def areaRectangle(self):
+        self.res = self.spinBoxVal[0] * self.spinBoxVal[1]
+        self.res = round(self.res, 1)
+        print("The area of rectangle with length of {} and width of {} is {}", self.spinBoxVal[0], self.spinBoxVal[1], self.res)
+        
+    def areaTriangle(self):
+        self.res = (1/2) * self.spinBoxVal[0] * self.spinBoxVal[1]
+        self.res = round(self.res, 1)
+        print("The area of triangle with base of {} and height of {} is {}", self.spinBoxVal[0], self.spinBoxVal[1], self.res)
+        
+    def pythagorean(self):
+        self.res = (self.spinBoxVal[0]**2 + self.spinBoxVal[1]**2)**(1/2)
+        self.res = round(self.res, 1)
+        print("The longest side of right triangle with ({},{}) is {}", self.spinBoxVal[0], self.spinBoxVal[1], self.res)
 
 if __name__ == "__main__":
     main = Main()
