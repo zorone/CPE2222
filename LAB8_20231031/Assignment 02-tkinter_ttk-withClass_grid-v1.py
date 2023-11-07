@@ -13,6 +13,8 @@ class Main(Tk):
         self.option = IntVar()
         self.optionText = ['Area of Rectangle', 'Area of Triangle', 'Pythagorean']
         
+        self.paramText = ['', '', '']
+        
         self.expand = False
         
         self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
@@ -28,7 +30,7 @@ class Main(Tk):
             
     def expandWindow(self):
         self.actionFrame = self.buildLabelFrame(self.mainFrame, text="Parameter Setting", x=2, y=0, width=1, height=3)
-        self.paramLabel
+        self.paramLabel =
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, padding=5)
@@ -43,7 +45,8 @@ class Main(Tk):
     def buildLabel(self, host, textList, amount=1, pos=(N,W,E,S)):
         res = list()
         for i in range(0, amount):
-            res += [ttk.Label(host, text=textList[i], literal='center')]
+            res += [ttk.Label(host, text=textList[i], justify='center')]
+            res[i].grid(column=0, row=i, sticky=pos)
     
     def buildRadioButton(self, host, var, textList, amount=1, pos=(N,W,E,S)):
         res = list()
