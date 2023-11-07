@@ -15,7 +15,7 @@ class Main(Tk):
         
         self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
         self.optionFrame = self.buildLabelFrame(self.mainFrame, text="Calculation", x=0, y=0, width=1, height=3)
-        self.optionList = self.buildRadioButton(self.optionFrame, self.option, self.optionText, 3)
+        self.optionList = self.buildRadioButton(self.optionFrame, self.option, self.optionText, amount=3)
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Labelframe(host, padding=5)
@@ -29,8 +29,8 @@ class Main(Tk):
     
     def buildRadioButton(self, host, var, *textList, amount=1, pos=(N,W,E,S)):
         res = list()
-        for i, text in enumerate(textList):
-            res += [ttk.Radiobutton(host, text=text, value=i, variable=var)]
+        for i in range(0, amount):
+            res += [ttk.Radiobutton(host, text=textList[i], value=i, variable=var)]
             res[i].grid(column=0, row=i, sticky=pos)
         return res
 
