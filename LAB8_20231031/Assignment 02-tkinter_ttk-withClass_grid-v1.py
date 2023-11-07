@@ -16,6 +16,8 @@ class Main(Tk):
         self.expand = False
         
         self.spinBoxVar = [DoubleVar(), DoubleVar()]
+        self.spinBoxVal = [float(), float()]
+        self.res = float()
         
         self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
         self.optionFrame = self.buildLabelFrame(self.mainFrame, text="Calculation", x=0, y=0, width=1, height=3)
@@ -30,6 +32,7 @@ class Main(Tk):
             self.expandWindow()
         
         self.setText()
+        self.setCommand()
 
     def expandWindow(self):
         self.paramText = ['', '', '']
@@ -49,6 +52,14 @@ class Main(Tk):
         self.paramLabel[0].config(text=labelText[self.optionVal][0])
         self.paramLabel[1].config(text=labelText[self.optionVal][1])
         self.paramSubmit[0].config(text=labelText[self.optionVal][2])
+
+    def setCommand(self):
+        if self.optionVal == 0:
+            self.paramSubmit[0].config(command=areaRectangle)
+        elif self.optionVal == 1:
+            self.paramSubmit[0].config(command=areaTriangle)
+        elif self.optionVal == 2:
+            self.paramSubmit[0].config(command=pythagorean)
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Frame(host, padding=5)
@@ -96,6 +107,7 @@ class Main(Tk):
             startx += incrX
             starty += incrY
         return res
+    
 
 if __name__ == "__main__":
     main = Main()
