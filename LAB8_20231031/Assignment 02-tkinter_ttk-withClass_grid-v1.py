@@ -1,11 +1,6 @@
 from tkinter import *
 from tkinter import ttk
 
-class Build:
-    def frame(host, x, y, width, height):
-        res = ttk.Frame(host, padding=5)
-        res.grid(column=x, row=y, columnspan=width, rowspan=height)
-        return res
 class Main(Tk):
     
     
@@ -15,9 +10,18 @@ class Main(Tk):
         self.title("CPE2222")
         self.style = ttk.Style()
         
-        self.mainFrame = build.frame(host=self, x=0, y=0, width=3, height=7)
+        self.mainFrame = self.buildFrame(self, x=0, y=0, width=3, height=7)
+
+    def buildFrame(self, host, x, y, width, height):
+        res = ttk.Labelframe(host, padding=5)
+        res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=(N,W,E,S))
+        return res
+
+    def buildLabelFrame(self, host, text, x, y, width, height):
+        res = ttk.Labelframe(host, text=text, padding=5)
+        res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=(N,W,E,S))
+        return res
 
 if __name__ == "__main__":
-    build = Build()
     main = Main()
     main.mainloop()
