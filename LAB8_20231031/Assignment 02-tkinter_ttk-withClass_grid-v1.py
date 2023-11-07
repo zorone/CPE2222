@@ -27,13 +27,18 @@ class Main(Tk):
             self.expand = True
             self.expandWindow()
         else:
-            print()
+            self.setText()
             
     def expandWindow(self):
         self.paramText = ['', '', '']
         
         self.actionFrame = self.buildLabelFrame(self.mainFrame, text="Parameter Setting", x=2, y=0, width=1, height=3)
-        self.paramLabel = self.buildLabel(self.actionFrame, self.paramText, 3, pos=(E))
+        self.paramLabel = self.buildLabel(self.actionFrame, self.paramText, 3, pos=(E), justify='right')
+
+    def setText(self):
+        labelText = [['Length:', 'Width:', 'Area'],
+                     ['Base:', 'Height:', 'Area'],
+                     ['The 1st side:', 'The 2nd side:', 'Pythagorean Theory']]
 
     def buildFrame(self, host, x, y, width=1, height=1, pos=(N,W,E,S)):
         res = ttk.Frame(host, padding=5)
@@ -45,10 +50,10 @@ class Main(Tk):
         res.grid(column=x, row=y, columnspan=width, rowspan=height, sticky=pos, padx=20, pady=(10, 20))
         return res
     
-    def buildLabel(self, host, textList, amount=1, pos=(N,W,E,S)):
+    def buildLabel(self, host, textList, amount=1, pos=(N,W,E,S), justify='center'):
         res = list()
         for i in range(0, amount):
-            res += [ttk.Label(host, text=textList[i], justify='center')]
+            res += [ttk.Label(host, text=textList[i], justify=justify)]
             res[i].grid(column=0, row=i, sticky=pos)
     
     def buildRadioButton(self, host, var, textList, amount=1, pos=(N,W,E,S)):
