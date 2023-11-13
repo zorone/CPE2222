@@ -155,7 +155,8 @@ class Main(Tk):
         self.frameHeight += 40
 
     def draw(self, pos):
-        print(locals())
+        print(vars(self))
+        print(self.__dir__())
         if(self.canvasWindow in self.__dir__ and self.canvasWindow.winfo_exists()):
              self.canvasWindow.destroy()
         
