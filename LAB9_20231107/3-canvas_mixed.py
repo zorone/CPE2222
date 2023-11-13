@@ -16,6 +16,7 @@ class Main(Tk):
         self.triangleVal = StringVar()
         self.circleVal = StringVar()
         
+        self.optionSet = 0
         self.prevSet = -1
         
         self.mainFrame = ttk.Frame(self, padding=5)
@@ -52,8 +53,10 @@ class Main(Tk):
         self.circleTick.grid(column=0, row=2, sticky=(N,W,E,S))
         
     def showOption(self):
+        self.optionSet = 0
+        for i in range(3):
+            self.optionSet[i].get()
         if(self.prevSet == -1):
-            s
         type = 
         if(self.optionSet[type].get() == 1):
             self.optionLabel[type].grid(column=1, row=type, sticky=(N,W,E,S))
