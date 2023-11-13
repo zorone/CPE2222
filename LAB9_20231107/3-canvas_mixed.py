@@ -79,18 +79,18 @@ class Main(Tk):
     
     def execute(self):
         
-        size = self.check()
-        if type(size) != type(list()):
+        pos = self.check()
+        if type(pos) != type(list()):
             return -1
         
         self.valueExtract()
-        res = self.draw(size)
+        res = self.draw(pos)
         
     def check(self):
         emptyCheck = 0
         res = [0]
         
-        self.strList = list()
+        self.strList = ['']
         
         for i in range(3):
             temp = self.optionVal[i].get()
@@ -121,7 +121,7 @@ class Main(Tk):
         
         return res
     
-    def valueExtract(self, size):
+    def valueExtract(self):
         for (i, s) in enumerate(self.strList):
             length = 0
             height = 0
@@ -135,7 +135,7 @@ class Main(Tk):
                     self.strList[i] = [length, height]
                     break
 
-    def draw(self, size):
+    def draw(self, pos):
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
         
@@ -144,9 +144,12 @@ class Main(Tk):
         
         offset = 20
         
-        for i in range(1, size[0]+1):
-            if i == 1:
-                
+        for i in range(1, pos[0]+1):
+            if pos[i] == 0:
+                self.canvas.create_rectangle(offset, 20,
+                                             offset + self.strList[i][0], 20 + self.strList[i][1],
+                                             fill="red")
+            if pos[i] == 1:
 
 if __name__ == '__main__':
     main = Main()
