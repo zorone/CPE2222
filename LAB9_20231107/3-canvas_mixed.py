@@ -33,8 +33,8 @@ class Main(Tk):
         self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
         self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
         
-        self.polygonOption = ['50x50', '100x50', '50x100']
-        self.radiusOption = ['Radius = 25', 'Radius = 50', 'Radius = 75']
+        self.polygonOption = ['50x50', '50x50', '100x50', '50x100']
+        self.radiusOption = ['Radius = 25', 'Radius = 25', 'Radius = 50', 'Radius = 75']
         
         self.optionList = [ttk.OptionMenu(self.optionFrame, self.rectangleVal, *self.polygonOption)]
         self.optionList += [ttk.OptionMenu(self.optionFrame, self.triangleVal, *self.polygonOption)]
