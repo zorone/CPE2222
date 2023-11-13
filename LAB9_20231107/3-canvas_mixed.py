@@ -88,9 +88,11 @@ class Main(Tk):
         for i in range(3):
             if self.optionVal[i].get() == '':
                 messagebox.showerror("Parameter Setting Error",
-                                     """
-                                        
+                                     """You have to select at least one choice from three checkboxes.
+                                     Please Try again but this time, use your brain
+                                     Thank you very much for using our application
                                      """)
+                return -1
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
