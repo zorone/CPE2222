@@ -21,7 +21,7 @@ class Main(Tk):
         }
         self.mainFrame = self.buildFrame(self, self.mainFrameOption)
         
-    def buildFrame(self, root, **options):
+    def buildFrame(self, root, options):
         if options['config'].get('padding') == None:
             options['config']['padding'] = 5
 
