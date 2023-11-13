@@ -164,12 +164,12 @@ class Main(Tk):
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
         
-        # self.canvasWindow.rowconfigure(0, 1)
-        # self.canvasWindow.columnconfigure(0, 1)
+        self.canvasWindow.rowconfigure(0, 1)
+        self.canvasWindow.columnconfigure(0, 1)
         
         self.canvasFrame = ttk.Frame(self.canvasWindow, padding=5)
         self.canvasFrame.anchor("center")
-        self.canvasFrame.grid(row=0, column=0, sticky=(N,W,E,S))
+        self.canvasFrame.grid(row=0, column=0, rowspan=2, columnspan=2, sticky=(N,W,E,S))
         
         self.canvas = Canvas(self.canvasFrame, bg="white", width=self.frameWidth, height=self.frameHeight)
         self.canvas.anchor('center')
