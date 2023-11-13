@@ -3,6 +3,7 @@ from tkinter import ttk
 
 class Main(Tk):
     def __init__(self):
+        super().__init__()
         self.geometry("270x165")
         self.title('Canvas Drawing')
         
