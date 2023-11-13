@@ -60,6 +60,8 @@ class Main(Tk):
             type = self.currentSet
         else:
             type = self.currentSet - self.prevSet
+        
+        self.prevSet = self.currentSet
 
         if(type > 0):
             type = int(math.log2(type))
@@ -72,6 +74,7 @@ class Main(Tk):
             self.optionList[type].grid_forget()
         else:
             print("Initialize...")
+        
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
