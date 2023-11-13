@@ -156,11 +156,10 @@ class Main(Tk):
 
     def draw(self, pos):
         try:
-            self.canvasWindow.winfo_exists()
+            if self.canvasWindow.winfo_exists():
+                self.canvasWindow.destroy()
         except AttributeError:
             print("self.canvasWindow isn't exist.")
-        if(self.canvasWindow in vars(self) and ):
-             self.canvasWindow.destroy()
         
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
