@@ -76,10 +76,13 @@ class Main(Tk):
             print("Initialize...")
     
     def execute(self):
-        if self.check(): return -1
+        if (size = self.check()):
+            return -1
         
         size = self.valueExtract()
         res = self.draw(size)
+        
+    def check(self):
         
 if __name__ == '__main__':
     main = Main()
