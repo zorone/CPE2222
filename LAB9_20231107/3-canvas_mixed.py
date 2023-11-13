@@ -133,10 +133,10 @@ class Main(Tk):
             height = 0
             if s[0] == 'R':
                 self.strList[j] = [int(s[9:])]
-                self.frameWidth += self.strList[j] + 20
+                self.frameWidth += (2*self.strList[j]) + 20
                 
                 if(self.frameHeight < self.strList[j]):
-                    self.frameHeight = self.strList[j]
+                    self.frameHeight = 2*self.strList[j]
             else:
                 for count, ch in enumerate(s):
                     if ch != 'x': continue
@@ -144,17 +144,17 @@ class Main(Tk):
                     height = int(s[count+1:])
                     self.strList[j] = [length, height]
                     
-                    self.frameWidth += self.strList[j] + 20
+                    self.frameWidth += self.strList[j][0] + 20
                     
-                    if(self.frameHeight < self.strList[j]):
-                        self.frameHeight = self.strList[j]
+                    if(self.frameHeight < self.strList[j][1]):
+                        self.frameHeight = self.strList[j][1]
                     break
 
     def draw(self, pos):
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
         
-        self.canvas = Canvas(self.canvasWindow, bg="white")
+        self.canvas = Canvas(self.canvasWindow, bg="white", width=self.frameWidth, height=self.frameHeight)
         self.canvas.grid(row=0, column=0, sticky=(N,W,E,S))
         
         offset = 20
