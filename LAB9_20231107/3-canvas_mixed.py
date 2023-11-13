@@ -122,9 +122,13 @@ class Main(Tk):
         return res
     
     def valueExtract(self):
-        for s in self.strList:
+        for (i, s) in enumerate(self.strList):
+            length = 0
+            height = 0
             if s[0] == 'R':
-                
+                self.strList[i] = s[9:]
+            else:
+                while ch != 'x':
 
 if __name__ == '__main__':
     main = Main()
