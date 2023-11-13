@@ -79,12 +79,12 @@ class Main(Tk):
     
     def execute(self):
         
-        size = self.check()
-        if size <= 0:
+        self.size = self.check()
+        if self.size <= 0:
             return -1
         
         self.valueExtract()
-        res = self.draw(size)
+        res = self.draw(self.size)
         
     def check(self):
         emptyCheck = 0
