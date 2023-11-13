@@ -25,7 +25,7 @@ class Main(Tk):
         self.optionFrame = ttk.Labelframe(self.mainFrame, text='Drawing Setting')
         self.optionFrame.pack(anchor='center', side='top', fill='none', expand=TRUE, ipadx=5, ipady=5, padx=5, pady=5)
         
-        self.drawButton = ttk.Button(self.mainFrame, padding=5, text='Draw')
+        self.drawButton = ttk.Button(self.mainFrame, padding=5, text='Draw', command=self.execute)
         self.drawButton.pack(anchor='center', side='top', fill='none', expand=TRUE)
         
         # Need to declare before self.rectangleTick because it will error at checking phase -- No variable defined.
@@ -33,8 +33,8 @@ class Main(Tk):
         self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
         self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
         
-        self.polygonOption = ['50x50', '50x50', '100x50', '50x100']
-        self.radiusOption = ['Radius = 25', 'Radius = 25', 'Radius = 50', 'Radius = 75']
+        self.polygonOption = ['', '50x50', '100x50', '50x100']
+        self.radiusOption = ['', 'Radius = 25', 'Radius = 50', 'Radius = 75']
         
         self.optionList = [ttk.OptionMenu(self.optionFrame, self.rectangleVal, *self.polygonOption)]
         self.optionList += [ttk.OptionMenu(self.optionFrame, self.triangleVal, *self.polygonOption)]
@@ -74,6 +74,12 @@ class Main(Tk):
             self.optionList[type].grid_forget()
         else:
             print("Initialize...")
+    
+    def execute(self):
+        if self.check(): return -1
+        
+        size = self.valueExtract()
+        res = self.draw(size)
         
 if __name__ == '__main__':
     main = Main()
