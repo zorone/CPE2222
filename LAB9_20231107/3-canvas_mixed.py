@@ -12,9 +12,9 @@ class Main(Tk):
         
         self.optionSet = [IntVar(), IntVar(), IntVar()]
         
-        self.optionVal = [StringVar()]
-        self.optionVal += [StringVar()]
-        self.optionVal += [StringVar()]
+        self.optionVal = [StringVar(value='-1')]
+        self.optionVal += [StringVar(value='-1')]
+        self.optionVal += [StringVar(value='-1')]
         
         self.currentSet = 0
         self.prevSet = -1
@@ -65,6 +65,7 @@ class Main(Tk):
 
         if(type > 0):
             type = int(math.log2(type))
+            self.optionVal[type].set('')
             self.optionLabel[type].grid(column=1, row=type, sticky=(N,W,E,S))
             self.optionList[type].grid(column=2, row=type, sticky=(N,W,E,S))
         elif(type < 0):
@@ -116,7 +117,7 @@ class Main(Tk):
                                  You have to select at least one choice from three checkboxes.
                                  Please Try again but this time, use your brain
                                  Thank you very much for using our application
-                                 """)
+                                 """, options=[])
             return -2
         
         return res
