@@ -130,10 +130,16 @@ class Main(Tk):
             else:
                 for count, ch in enumerate(s):
                     if ch != 'x': continue
-                    length = s[0:count]
-                    height = s[count+1:]
+                    length = int(s[0:count])
+                    height = int(s[count+1:])
                     self.strList[i] = [length, height]
                     break
+
+    def draw(self):
+        self.canvas = Toplevel()
+        self.canvas.title("RESULT")
+        
+        self.
 
 if __name__ == '__main__':
     main = Main()
