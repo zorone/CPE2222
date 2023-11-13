@@ -125,7 +125,7 @@ class Main(Tk):
             length = 0
             height = 0
             if s[0] == 'R':
-                self.strList[i+1] = int([s[9:]])
+                self.strList[i+1] = [int(s[9:])]
             else:
                 for count, ch in enumerate(s):
                     if ch != 'x': continue
