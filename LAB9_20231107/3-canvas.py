@@ -10,7 +10,7 @@ class Main(Tk):
             'config': {
                 
             },
-            'position': {
+            'pos': {
                 'x': 0,
                 'y': 0,
                 'width': 1,
@@ -28,8 +28,11 @@ class Main(Tk):
             root,
             padding = options['config']['padding'])
         res.grid(
-            row = options['pos']['x'],
-            column = options['pos']['y']
+            column = options['pos']['x'],
+            columnspan = options['pos']['width'],
+            row = options['pos']['y'],
+            rowspan = options['pos']['height'],
+            sticky = options['pos']['sticky']
         )
         return res
         
@@ -41,7 +44,13 @@ class Main(Tk):
             root,
             padding = options['config']['padding'],
             text = text)
-        res.grid()
+        res.grid(
+            column = options['pos']['x'],
+            columnspan = options['pos']['width'],
+            row = options['pos']['y'],
+            rowspan = options['pos']['height'],
+            sticky = options['pos']['sticky']
+        )
         return res
 
 if __name__ == '__main__':
