@@ -10,7 +10,7 @@ class Main(Tk):
         self.geometry('270x165')
         self.title('Canvas Drawing')
         
-        self.optionSet = [IntVar(value=0), IntVar(value=0), IntVar(value=0)]
+        self.optionSet = [IntVar(), IntVar(), IntVar()]
         
         self.rectangleVal = StringVar()
         self.triangleVal = StringVar()
