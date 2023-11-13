@@ -7,6 +7,7 @@ class Main(Tk):
         self.geometry("270x165")
         self.title('Canvas Drawing')
         
+        '''
         self.mainFrameOption = {
             'config': {
                 
@@ -20,7 +21,7 @@ class Main(Tk):
             }
         }
         self.mainFrame = self.buildFrame(self, self.mainFrameOption)
-        
+        '''
         self.labelFrameOption = {
             'config': {
                 'padding': 5
@@ -33,7 +34,7 @@ class Main(Tk):
                 'sticky': (N,E,W,S)
             }
         }
-        self.labelFrame = self.buildLabelFrame(self.mainFrame, "Drawing Setting", self.labelFrameOption)
+        self.labelFrame = self.buildLabelFrame(self, "Drawing Setting", self.labelFrameOption)
         
     def buildFrame(self, root, options):
         if options['config'].get('padding') == None:
