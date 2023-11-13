@@ -133,10 +133,10 @@ class Main(Tk):
             height = 0
             if s[0] == 'R':
                 self.strList[j] = [int(s[9:])]
-                self.frameWidth += (2*self.strList[j]) + 20
+                self.frameWidth += (2*self.strList[j][0]) + 20
                 
-                if(self.frameHeight < self.strList[j]):
-                    self.frameHeight = 2*self.strList[j]
+                if(self.frameHeight < self.strList[j][0]):
+                    self.frameHeight = 2*self.strList[j][0]
             else:
                 for count, ch in enumerate(s):
                     if ch != 'x': continue
