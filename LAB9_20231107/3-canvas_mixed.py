@@ -132,7 +132,7 @@ class Main(Tk):
                     if ch != 'x': continue
                     length = int(s[0:count])
                     height = int(s[count+1:])
-                    self.strList[i] = [length, height]
+                    self.strList[i+1] = [length, height]
                     break
 
     def draw(self, pos):
