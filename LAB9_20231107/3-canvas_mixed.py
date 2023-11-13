@@ -16,6 +16,8 @@ class Main(Tk):
         self.triangleVal = StringVar()
         self.circleVal = StringVar()
         
+        self.prevSet = -1
+        
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
@@ -45,13 +47,15 @@ class Main(Tk):
         self.triangleTick.anchor('w')
         self.triangleTick.grid(column=0, row=1, sticky=(N,W,E,S))
         
-        self.circleTick = ttk.Checkbutton(self.optionFrame, text='Circle', onvalue=3, offvalue=0, variable=self.optionSet[2], command=self.showOption())
+        self.circleTick = ttk.Checkbutton(self.optionFrame, text='Circle', onvalue=4, offvalue=0, variable=self.optionSet[2], command=self.showOption())
         self.circleTick.anchor('w')
         self.circleTick.grid(column=0, row=2, sticky=(N,W,E,S))
         
-    def showOption(self, type):
-        print(type)
-        if((self.optionSet[type].get()) - 1 == 1):
+    def showOption(self):
+        if(self.prevSet == -1):
+            s
+        type = 
+        if(self.optionSet[type].get() == 1):
             self.optionLabel[type].grid(column=1, row=type, sticky=(N,W,E,S))
             self.optionList[type].grid(column=2, row=type, sticky=(N,W,E,S))
         else:
