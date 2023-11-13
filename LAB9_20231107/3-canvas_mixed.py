@@ -19,6 +19,8 @@ class Main(Tk):
         self.currentSet = 0
         self.prevSet = -1
         
+        self.strList = list()
+        
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
@@ -83,12 +85,12 @@ class Main(Tk):
         if size:
             return -1
         
-        size = self.valueExtract(size)
+        self.size = self.valueExtract()
         res = self.draw(size)
         
     def check(self):
         emptyCheck = 0
-        res = list()
+        res = [0]
         
         for i in range(3):
             temp = self.optionVal[i].get()
@@ -104,7 +106,9 @@ class Main(Tk):
                 emptyCheck += 1
             
             else:
+                res[0] += 1
                 res += [i]
+                self.strList += [temp]
         
         if emptyCheck == 3:
             messagebox.showerror("Parameter Setting Error",
@@ -117,8 +121,9 @@ class Main(Tk):
         
         return res
     
-    def valueExtract(self, str):
-        
+    def valueExtract(self):
+        for s in self.strList
+
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
