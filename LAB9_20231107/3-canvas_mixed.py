@@ -126,7 +126,7 @@ class Main(Tk):
             length = 0
             height = 0
             if s[0] == 'R':
-                self.strList[i] = s[9:]
+                self.strList[i] = [s[9:]]
             else:
                 for count, ch in enumerate(s):
                     if ch != 'x': continue
@@ -158,7 +158,10 @@ class Main(Tk):
                                            fill="blue")
                 
             elif pos[i] == 2:
-                self.canvas.create_arc()
+                next += self.strList[i][0]
+                self.canvas.create_oval(offset, 20,
+                                        next, 20 + (2*self.strList[i][0]),
+                                        fill="yellow")
                 
             offset = next + 20
 
