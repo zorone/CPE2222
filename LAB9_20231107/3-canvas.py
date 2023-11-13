@@ -21,6 +21,20 @@ class Main(Tk):
         }
         self.mainFrame = self.buildFrame(self, self.mainFrameOption)
         
+        self.labelFrameOption = {
+            'config': {
+                'padding': 5
+            },
+            'pos': {
+                'x': 0,
+                'y': 0,
+                'width': 1,
+                'height': 2,
+                'sticky': (N,E,W,S)
+            }
+        }
+        self.labelFrame = self.buildLabelFrame(self.mainFrame)
+        
     def buildFrame(self, root, options):
         if options['config'].get('padding') == None:
             options['config']['padding'] = 5
