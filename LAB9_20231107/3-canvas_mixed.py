@@ -40,15 +40,15 @@ class Main(Tk):
         self.optionList += [ttk.OptionMenu(self.optionFrame, self.triangleVal, *self.polygonOption)]
         self.optionList += [ttk.OptionMenu(self.optionFrame, self.circleVal, *self.radiusOption)]
         
-        self.rectangleTick = ttk.Checkbutton(self.optionFrame, text='Rectangle', onvalue=1, offvalue=0, variable=self.optionSet[0], command=self.showOption())
+        self.rectangleTick = ttk.Checkbutton(self.optionFrame, text='Rectangle', onvalue=1, offvalue=0, variable=self.optionSet[0], command=self.showOption)
         self.rectangleTick.anchor('w')
         self.rectangleTick.grid(column=0, row=0, sticky=(N,W,E,S))
         
-        self.triangleTick = ttk.Checkbutton(self.optionFrame, text='Right Triangle', onvalue=2, offvalue=0, variable=self.optionSet[1], command=self.showOption())
+        self.triangleTick = ttk.Checkbutton(self.optionFrame, text='Right Triangle', onvalue=2, offvalue=0, variable=self.optionSet[1], command=self.showOption)
         self.triangleTick.anchor('w')
         self.triangleTick.grid(column=0, row=1, sticky=(N,W,E,S))
         
-        self.circleTick = ttk.Checkbutton(self.optionFrame, text='Circle', onvalue=4, offvalue=0, variable=self.optionSet[2], command=self.showOption())
+        self.circleTick = ttk.Checkbutton(self.optionFrame, text='Circle', onvalue=4, offvalue=0, variable=self.optionSet[2], command=self.showOption)
         self.circleTick.anchor('w')
         self.circleTick.grid(column=0, row=2, sticky=(N,W,E,S))
         
