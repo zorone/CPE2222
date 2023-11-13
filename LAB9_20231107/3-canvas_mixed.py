@@ -25,7 +25,7 @@ class Main(Tk):
         self.drawButton = ttk.Button(self.mainFrame, padding=5, text='Draw')
         self.drawButton.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
-        self.rectangleTick = ttk.Checkbutton(self.optionFrame, text='Rectangle', onvalue=1, offvalue=0, variable=self.rectangleSet)
+        self.rectangleTick = ttk.Checkbutton(self.optionFrame, text='Rectangle', onvalue=1, offvalue=0, variable=self.rectangleSet, command=self.showOption)
         self.rectangleTick.anchor('w')
         self.rectangleTick.grid(column=0, row=0, sticky=(N,W,E,S))
         
@@ -44,7 +44,13 @@ class Main(Tk):
         self.polygonOption = ['50x50', '100x50', '50x100']
         self.radiusOption = ['Radius = 25', 'Radius = 50', 'Radius = 75']
         
-        self.triangleOption = ttk.OptionMenu(self.optionFrame, variable=self.triangleVal, values=*self.polygonOption)
+        self.rectangleOption = ttk.OptionMenu(self.optionFrame, self.rectangleVal, *self.polygonOption)
+        self.triangleOption = ttk.OptionMenu(self.optionFrame, self.triangleVal, *self.polygonOption)
+        self.circleOption = ttk.OptionMenu(self.optionFrame, self.circleVal, *self.radiusOption)
+        
+    def showOption(self):
+        print
+        
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
