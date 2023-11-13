@@ -153,7 +153,7 @@ class Main(Tk):
         self.frameHeight += 40
 
     def draw(self, pos):
-        if(tkinter.Toplevel.)
+        if(self.Toplevel)
         
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
