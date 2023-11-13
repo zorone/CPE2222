@@ -154,12 +154,13 @@ class Main(Tk):
             elif pos[i] == 1:
                 self.canvas.create_polygon(offset, 20,
                                            next, 20,
-                                           next, 20 + self.strList[i][1])
+                                           next, 20 + self.strList[i][1],
+                                           fill="blue")
                 
             elif pos[i] == 2:
-                print
+                self.canvas.create_arc()
                 
-            offset = next
+            offset = next + 20
 
 if __name__ == '__main__':
     main = Main()
