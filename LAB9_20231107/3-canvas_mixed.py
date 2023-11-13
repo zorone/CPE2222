@@ -115,6 +115,9 @@ class Main(Tk):
                                  """)
             return -2
         
+        return res
+    
+    def valueExtract(self, str):
         
 if __name__ == '__main__':
     main = Main()
