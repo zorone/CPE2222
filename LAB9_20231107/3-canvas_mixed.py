@@ -28,6 +28,9 @@ class Main(Tk):
         self.drawButton = ttk.Button(self.mainFrame, padding=5, text='Draw', command=self.execute)
         self.drawButton.pack(anchor='center', side='top', fill='none', expand=TRUE)
         
+        self.frameWidth = -1
+        self.frameHight = -1
+        
         # Need to declare before self.rectangleTick because it will error at checking phase -- No variable defined.
         self.optionLabel = [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
         self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
@@ -84,7 +87,7 @@ class Main(Tk):
         if type(pos) != type(list()):
             return -1
         
-        self.valueExtract()
+        self.paramGenerate()
         res = self.draw(pos)
         
     def check(self):
@@ -120,12 +123,16 @@ class Main(Tk):
         
         return res
     
-    def valueExtract(self):
+    def paramGenerate(self):
         for (i, s) in enumerate(self.strList[1:]):
             length = 0
             height = 0
             if s[0] == 'R':
                 self.strList[i+1] = [int(s[9:])]
+                self.frameWidth += self.strList[i+1] + 20
+                
+                if(self.frameHeight < self.strList[i+1]):
+                    self.frameHeight = self.strList[i+1]
             else:
                 for count, ch in enumerate(s):
                     if ch != 'x': continue
@@ -149,18 +156,18 @@ class Main(Tk):
             if pos[i] == 0:
                 self.canvas.create_rectangle(offset, 20,
                                              next, 20 + self.strList[i][1],
-                                             fill="red")
+                                             fill="red", outline="black")
             elif pos[i] == 1:
                 self.canvas.create_polygon(offset, 20,
                                            next, 20,
                                            next, 20 + self.strList[i][1],
-                                           fill="blue")
+                                           fill="blue", outline="black")
                 
             elif pos[i] == 2:
                 next += self.strList[i][0]
                 self.canvas.create_oval(offset, 20,
                                         next, 20 + (2*self.strList[i][0]),
-                                        fill="yellow")
+                                        fill="yellow", outline="black")
                 
             offset = next + 20
 
