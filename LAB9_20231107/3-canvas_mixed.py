@@ -149,13 +149,20 @@ class Main(Tk):
                     if(self.frameHeight < self.strList[j][1]):
                         self.frameHeight = self.strList[j][1]
                     break
+        self.frameWidth += 20
+        self.frameHeight += 40
 
     def draw(self, pos):
+        if(self.canvasWindow)
+        
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
         
         self.canvas = Canvas(self.canvasWindow, bg="white", width=self.frameWidth, height=self.frameHeight)
         self.canvas.grid(row=0, column=0, sticky=(N,W,E,S))
+        
+        self.canvasCloseButton = ttk.Button(self.canvasWindow, text="Close Window", padding=5, command=self.canvasWindow.quit)
+        self.canvasCloseButton.grid(row=1, column=0, sticky=(N,W,E,S))
         
         offset = 20
         next = -1
@@ -179,6 +186,8 @@ class Main(Tk):
                                         fill="yellow", outline="black")
                 
             offset = next + 20
+            
+        return self.canvasWindow
 
 if __name__ == '__main__':
     main = Main()
