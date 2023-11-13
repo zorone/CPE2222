@@ -12,6 +12,10 @@ class Main(Tk):
         self.triangleSet = IntVar(value=0)
         self.circleSet = IntVar(value=0)
         
+        self.rectangleVal = StringVar()
+        self.triangleVal = StringVar()
+        self.circleVal = StringVar()
+        
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
@@ -40,7 +44,7 @@ class Main(Tk):
         self.polygonOption = ['50x50', '100x50', '50x100']
         self.radiusOption = ['Radius = 25', 'Radius = 50', 'Radius = 75']
         
-        self.triangleOption = ttk.Menubutton
+        self.triangleOption = ttk.OptionMenu(self.optionFrame, variable=self.triangleVal, values=*self.polygonOption)
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
