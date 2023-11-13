@@ -8,9 +8,7 @@ class Main(Tk):
         self.geometry('270x165')
         self.title('Canvas Drawing')
         
-        self.rectangleSet = IntVar(value=0)
-        self.triangleSet = IntVar(value=0)
-        self.circleSet = IntVar(value=0)
+        self.optionSet = [IntVar(value=0), IntVar(value=0), IntVar(value=0)]
         
         self.rectangleVal = StringVar()
         self.triangleVal = StringVar()
@@ -25,32 +23,37 @@ class Main(Tk):
         self.drawButton = ttk.Button(self.mainFrame, padding=5, text='Draw')
         self.drawButton.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
-        self.rectangleTick = ttk.Checkbutton(self.optionFrame, text='Rectangle', onvalue=1, offvalue=0, variable=self.rectangleSet, command=self.showOption(0))
+        self.rectangleTick = ttk.Checkbutton(self.optionFrame, text='Rectangle', onvalue=1, offvalue=0, variable=self.optionSet[0], command=self.showOption(0))
         self.rectangleTick.anchor('w')
         self.rectangleTick.grid(column=0, row=0, sticky=(N,W,E,S))
         
-        self.triangleTick = ttk.Checkbutton(self.optionFrame, text='Right Triangle', onvalue=1, offvalue=0, variable=self.triangleSet, command=self.showOption(1))
+        self.triangleTick = ttk.Checkbutton(self.optionFrame, text='Right Triangle', onvalue=1, offvalue=0, variable=self.optionSet[1], command=self.showOption(1))
         self.triangleTick.anchor('w')
         self.triangleTick.grid(column=0, row=1, sticky=(N,W,E,S))
         
-        self.circleTick = ttk.Checkbutton(self.optionFrame, text='Circle', onvalue=1, offvalue=0, variable=self.circleSet, command=self.showOption(2))
+        self.circleTick = ttk.Checkbutton(self.optionFrame, text='Circle', onvalue=1, offvalue=0, variable=self.optionSet[2], command=self.showOption(2))
         self.circleTick.anchor('w')
         self.circleTick.grid(column=0, row=2, sticky=(N,W,E,S))
         
-        self.rectangleLabel = ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')
-        self.triangleLabel = ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')
-        self.circleLabel = ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')
+        self.optionLabel = [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
+        self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
+        self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
         
         self.polygonOption = ['50x50', '100x50', '50x100']
         self.radiusOption = ['Radius = 25', 'Radius = 50', 'Radius = 75']
         
-        self.rectangleOption = ttk.OptionMenu(self.optionFrame, self.rectangleVal, *self.polygonOption)
-        self.triangleOption = ttk.OptionMenu(self.optionFrame, self.triangleVal, *self.polygonOption)
-        self.circleOption = ttk.OptionMenu(self.optionFrame, self.circleVal, *self.radiusOption)
+        self.optionList = [ttk.OptionMenu(self.optionFrame, self.rectangleVal, *self.polygonOption)]
+        self.optionList += [ttk.OptionMenu(self.optionFrame, self.triangleVal, *self.polygonOption)]
+        self.optionList += [ttk.OptionMenu(self.optionFrame, self.circleVal, *self.radiusOption)]
         
     def showOption(self, type):
-        print
-        
+        if(self.optionSet[type].get() == 1):
+            self.optionLabel[type].grid(column=1, row=type, sticky=(N,W,E,S))
+            self.optionList[type].grid(column=2, row=type, sticky=(N,W,E,S))
+        else{
+            self.optionLabel[type].grid_forget()
+            self.optionList[type].grid_forget()
+        }
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
