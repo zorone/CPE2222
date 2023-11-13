@@ -79,12 +79,12 @@ class Main(Tk):
     
     def execute(self):
         
-        self.size = self.check()
-        if self.size <= 0:
+        size = self.check()
+        if type(size) != type(list()):
             return -1
         
         self.valueExtract()
-        res = self.draw(self.size)
+        res = self.draw(size)
         
     def check(self):
         emptyCheck = 0
@@ -121,7 +121,7 @@ class Main(Tk):
         
         return res
     
-    def valueExtract(self):
+    def valueExtract(self, size):
         for (i, s) in enumerate(self.strList):
             length = 0
             height = 0
@@ -135,7 +135,7 @@ class Main(Tk):
                     self.strList[i] = [length, height]
                     break
 
-    def draw(self):
+    def draw(self, size):
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
         
@@ -144,7 +144,7 @@ class Main(Tk):
         
         offset = 20
         
-        for i in range(3):
+        for i in range(size[0]):
             
 
 if __name__ == '__main__':
