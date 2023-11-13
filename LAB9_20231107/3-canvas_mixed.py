@@ -8,9 +8,9 @@ class Main(Tk):
         self.geometry('270x165')
         self.title('Canvas Drawing')
         
-        self.rectangleSet = 0
-        self.triangleSet = 0
-        self.circleSet = 0
+        self.rectangleSet = IntVar(value=0)
+        self.triangleSet = IntVar(value=0)
+        self.circleSet = IntVar(value=0)
         
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.pack(anchor='center', side='top', fill='both', expand=TRUE)
@@ -21,8 +21,26 @@ class Main(Tk):
         self.drawButton = ttk.Button(self.mainFrame, padding=5, text='Draw')
         self.drawButton.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
-        self.rectangleTick = ttk.Checkbutton(self.optionFrame, name='Rectangle', onvalue=1, offvalue=0, variable=self.rectangleSet)
+        self.rectangleTick = ttk.Checkbutton(self.optionFrame, text='Rectangle', onvalue=1, offvalue=0, variable=self.rectangleSet)
+        self.rectangleTick.anchor('w')
+        self.rectangleTick.grid(column=0, row=0, sticky=(N,W,E,S))
         
+        self.triangleTick = ttk.Checkbutton(self.optionFrame, text='Right Triangle', onvalue=1, offvalue=0, variable=self.triangleSet)
+        self.triangleTick.anchor('w')
+        self.triangleTick.grid(column=0, row=1, sticky=(N,W,E,S))
+        
+        self.circleTick = ttk.Checkbutton(self.optionFrame, text='Circle', onvalue=1, offvalue=0, variable=self.circleSet)
+        self.circleTick.anchor('w')
+        self.circleTick.grid(column=0, row=2, sticky=(N,W,E,S))
+        
+        self.rectangleLabel = ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')
+        self.triangleLabel = ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')
+        self.circleLabel = ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')
+        
+        self.polygonOption = ['50x50', '100x50', '50x100']
+        self.radiusOption = ['Radius = 25', 'Radius = 50', 'Radius = 75']
+        
+        self.triangleOption = ttk.Menubutton
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
