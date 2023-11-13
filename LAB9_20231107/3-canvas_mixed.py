@@ -128,7 +128,12 @@ class Main(Tk):
             if s[0] == 'R':
                 self.strList[i] = s[9:]
             else:
-                while ch != 'x':
+                for count, ch in enumerate(s):
+                    if ch != 'x': continue
+                    length = s[0:count]
+                    height = s[count+1:]
+                    self.strList[i] = [length, height]
+                    break
 
 if __name__ == '__main__':
     main = Main()
