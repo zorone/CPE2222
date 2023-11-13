@@ -155,9 +155,10 @@ class Main(Tk):
         self.frameHeight += 40
 
     def draw(self, pos):
-        try self.canvasWindow.winfo_exists():
-            
-        except 
+        try:
+            self.canvasWindow.winfo_exists()
+        except AttributeError:
+            print("self.canvasWindow isn't exist.")
         if(self.canvasWindow in vars(self) and ):
              self.canvasWindow.destroy()
         
