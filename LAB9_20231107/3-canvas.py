@@ -51,7 +51,7 @@ class Main(Tk):
         )
         return res
         
-    def buildLabelFrame(self, root, text, **options):
+    def buildLabelFrame(self, root, text, options):
         if options['config'].get('padding') == None:
             options['config']['padding'] = 5
 
