@@ -72,6 +72,8 @@ class Main(Tk):
             type = int(math.log2(type))
             self.optionLabel[type].grid_forget()
             self.optionList[type].grid_forget()
+            
+            self.optionVal[type].set('-1')
         else:
             print("Initialize...")
     
@@ -85,7 +87,12 @@ class Main(Tk):
         res = self.draw(size)
         
     def check(self):
+        emptyCheck = 0
+        emptyChoice = 0
+        res = list()
+        
         for i in range(3):
+            temp = self.optionVal[i].get()
             if self.optionVal[i].get() == '':
                 messagebox.showerror("Parameter Setting Error",
                                      """You have to select at least one choice from three checkboxes.
