@@ -88,18 +88,34 @@ class Main(Tk):
         
     def check(self):
         emptyCheck = 0
-        emptyChoice = 0
         res = list()
         
         for i in range(3):
             temp = self.optionVal[i].get()
-            if self.optionVal[i].get() == '':
+            if temp == '':
                 messagebox.showerror("Parameter Setting Error",
-                                     """You have to select at least one choice from three checkboxes.
-                                     Please Try again but this time, use your brain
-                                     Thank you very much for using our application
-                                     """)
+                                 """
+                                 You have empty values.
+                                 Please Try again but this time, use your brain
+                                 Thank you very much for using our application
+                                 """)
                 return -1
+            elif temp == '-1':
+                emptyCheck += 1
+            
+            else:
+                res += [i]
+        
+        if emptyCheck == 3:
+            messagebox.showerror("Parameter Setting Error",
+                                 """
+                                 You have to select at least one choice from three checkboxes.
+                                 Please Try again but this time, use your brain
+                                 Thank you very much for using our application
+                                 """)
+            return -2
+        
+        
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
