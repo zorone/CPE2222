@@ -153,7 +153,8 @@ class Main(Tk):
         self.frameHeight += 40
 
     def draw(self, pos):
-        if(self.Toplevel)
+        if(Toplevel.winfo_exists(self.canvasWindow)):
+            self.canvasWindow.quit()
         
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
