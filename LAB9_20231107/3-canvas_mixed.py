@@ -87,7 +87,10 @@ class Main(Tk):
     def check(self):
         for i in range(3):
             if self.optionVal[i].get() == '':
-                messagebox.showerror("Parameter Setting Error", "You have to select at least one choice")
+                messagebox.showerror("Parameter Setting Error",
+                                     """
+                                        
+                                     """)
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
