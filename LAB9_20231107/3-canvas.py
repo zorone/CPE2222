@@ -29,7 +29,7 @@ class Main(Tk):
                 'x': 0,
                 'y': 0,
                 'width': 1,
-                'height': 2,
+                'height': 1,
                 'sticky': (N,E,W,S)
             }
         }
