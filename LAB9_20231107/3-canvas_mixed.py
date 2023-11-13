@@ -20,7 +20,7 @@ class Main(Tk):
         self.mainFrame.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
         self.optionFrame = ttk.Labelframe(self.mainFrame, text='Drawing Setting')
-        self.optionFrame.pack(anchor='center', side='top', fill='both', expand=TRUE, ipad=5, ipady=5, padx=5, pady=5)
+        self.optionFrame.pack(anchor='center', side='top', fill='both', expand=TRUE, ipadx=5, ipady=5, padx=5, pady=5)
         
         self.drawButton = ttk.Button(self.mainFrame, padding=5, text='Draw')
         self.drawButton.pack(anchor='center', side='top', fill='both', expand=TRUE)
