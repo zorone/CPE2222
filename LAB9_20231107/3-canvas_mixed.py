@@ -146,13 +146,20 @@ class Main(Tk):
         next = -1
         
         for i in range(1, pos[0]+1):
+            next = offset + self.strList[i][0]
             if pos[i] == 0:
-                next = offset + self.strList[i][0]
                 self.canvas.create_rectangle(offset, 20,
                                              next, 20 + self.strList[i][1],
                                              fill="red")
-            if pos[i] == 1:
-                next = offset + self.str
+            elif pos[i] == 1:
+                self.canvas.create_polygon(offset, 20,
+                                           next, 20,
+                                           next, 20 + self.strList[i][1])
+                
+            elif pos[i] == 2:
+                print
+                
+            offset = next
 
 if __name__ == '__main__':
     main = Main()
