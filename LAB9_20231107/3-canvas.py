@@ -7,18 +7,40 @@ class Main(Tk):
         self.title('Canvas Drawing')
         
         self.mainFrameOption = {
-            'x': 0,
-            'y': 0,
+            'config': {
+                
+            },
+            'position': {
+                'x': 0,
+                'y': 0,
+                'width': 1,
+                'height': 2,
+                'sticky': (N,E,W,S)
+            }
         }
         self.mainFrame = self.buildFrame(self, self.mainFrameOption)
         
     def buildFrame(self, root, **options):
-        res = ttk.Frame(root, padding=5)
-        res.grid()
+        if options['config'].get('padding') == None:
+            options['config']['padding'] = 5
+
+        res = ttk.Frame(
+            root,
+            padding = options['config']['padding'])
+        res.grid(
+            row = options['pos']['x'],
+            column = options['pos']['y']
+        )
         return res
         
-    def buildLabelFrame(self, root, text, **options, **positions):
-        res = ttk.LabelFrame(root, padding=5, text=text)
+    def buildLabelFrame(self, root, text, **options):
+        if options['config'].get('padding') == None:
+            options['config']['padding'] = 5
+
+        res = ttk.LabelFrame(
+            root,
+            padding = options['config']['padding'],
+            text = text)
         res.grid()
         return res
 
