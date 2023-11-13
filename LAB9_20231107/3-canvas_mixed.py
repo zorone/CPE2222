@@ -122,7 +122,7 @@ class Main(Tk):
         return res
     
     def valueExtract(self):
-        for (i, s) in enumerate(self.strList):
+        for (i, s) in enumerate(self.strList[1:]):
             length = 0
             height = 0
             if s[0] == 'R':
