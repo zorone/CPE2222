@@ -155,6 +155,7 @@ class Main(Tk):
         self.frameHeight += 40
 
     def draw(self, pos):
+        print(globals())
         if(self.canvasWindow in globals() and self.canvasWindow.winfo_exists()):
              self.canvasWindow.destroy()
         
