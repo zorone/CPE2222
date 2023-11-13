@@ -96,8 +96,8 @@ class Main(Tk):
         for i in range(3):
             temp = self.optionVal[i].get()
             if temp == '':
-                messagebox.showerror("Parameter Setting Error",
-                                 """
+                messagebox.showerror(title = "Parameter Setting Error",
+                                 message = """
                                  You have empty values.
                                  Please Try again but this time, use your brain
                                  Thank you very much for using our application
@@ -112,12 +112,12 @@ class Main(Tk):
                 self.strList += [temp]
         
         if emptyCheck == 3:
-            messagebox.showerror("Parameter Setting Error",
-                                 """
+            messagebox.showerror(title = "Parameter Setting Error",
+                                 message = """
                                  You have to select at least one choice from three checkboxes.
                                  Please Try again but this time, use your brain
                                  Thank you very much for using our application
-                                 """, options=[])
+                                 """)
             return -2
         
         return res
