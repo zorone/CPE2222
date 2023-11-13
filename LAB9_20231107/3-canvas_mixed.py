@@ -156,7 +156,7 @@ class Main(Tk):
 
     def draw(self, pos):
         print(locals())
-        if(self.canvasWindow in globals() and self.canvasWindow.winfo_exists()):
+        if(self.canvasWindow in self.__dir__ and self.canvasWindow.winfo_exists()):
              self.canvasWindow.destroy()
         
         self.canvasWindow = Toplevel()
