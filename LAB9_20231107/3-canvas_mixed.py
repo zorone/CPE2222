@@ -143,13 +143,16 @@ class Main(Tk):
         self.canvas.grid(row=0, column=0, sticky=(N,W,E,S))
         
         offset = 20
+        next = -1
         
         for i in range(1, pos[0]+1):
             if pos[i] == 0:
+                next = offset + self.strList[i][0]
                 self.canvas.create_rectangle(offset, 20,
-                                             offset + self.strList[i][0], 20 + self.strList[i][1],
+                                             next, 20 + self.strList[i][1],
                                              fill="red")
             if pos[i] == 1:
+                next = offset + self.str
 
 if __name__ == '__main__':
     main = Main()
