@@ -66,7 +66,8 @@ class Main(Tk):
             self.optionLabel[type].grid(column=1, row=type, sticky=(N,W,E,S))
             self.optionList[type].grid(column=2, row=type, sticky=(N,W,E,S))
         else:
-            type = math.log2(-1*type)
+            type = abs(type)
+            type = math.log2(type)
             self.optionLabel[type].grid_forget()
             self.optionList[type].grid_forget()
             
