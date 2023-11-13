@@ -153,9 +153,9 @@ class Main(Tk):
         self.frameHeight += 40
 
     def draw(self, pos):
-        Toplevel.winfo_children(self)
-        if(Toplevel.winfo_exists(self.canvasWindow)):
-            self.canvasWindow.quit()
+        self.winfo_children
+        # if(Toplevel.winfo_exists(self.canvasWindow)):
+        #     self.canvasWindow.quit()
         
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
@@ -163,7 +163,7 @@ class Main(Tk):
         self.canvas = Canvas(self.canvasWindow, bg="white", width=self.frameWidth, height=self.frameHeight)
         self.canvas.grid(row=0, column=0, sticky=(N,W,E,S))
         
-        self.canvasCloseButton = ttk.Button(self.canvasWindow, text="Close Window", padding=5, command=self.canvasWindow.quit)
+        self.canvasCloseButton = ttk.Button(self.canvasWindow, text="Close Window", padding=5, command=self.canvasWindow.destroy)
         self.canvasCloseButton.grid(row=1, column=0, sticky=(N,W,E,S))
         
         offset = 20
