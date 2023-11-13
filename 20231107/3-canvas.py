@@ -6,11 +6,13 @@ class Main(Tk):
         self.geometry("270x165")
         self.title('Canvas Drawing')
         
-    def buildFrame(self):
-        res = ttk.Frame()
+    def buildFrame(self, root):
+        res = ttk.Frame(root, padding=5)
+        res.grid()
+        return res
         
-    def buildLabelFrame(self):
-        print()
+    def buildLabelFrame(self, root):
+        res = ttk.LabelFrame(root, padding=5)
 
 if __name__ == '__main__':
     main = Main()
