@@ -144,8 +144,9 @@ class Main(Tk):
         
         offset = 20
         
-        for i in range(size[0]):
-            
+        for i in range(1, size[0]+1):
+            if i == 1:
+                
 
 if __name__ == '__main__':
     main = Main()
