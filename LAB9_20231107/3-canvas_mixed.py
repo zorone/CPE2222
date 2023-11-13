@@ -25,6 +25,18 @@ class Main(Tk):
         self.drawButton = ttk.Button(self.mainFrame, padding=5, text='Draw')
         self.drawButton.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
+        # Need to declare before self.rectangleTick because it will error at checking phase -- No variable defined.
+        self.optionLabel = [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
+        self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
+        self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
+        
+        self.polygonOption = ['50x50', '100x50', '50x100']
+        self.radiusOption = ['Radius = 25', 'Radius = 50', 'Radius = 75']
+        
+        self.optionList = [ttk.OptionMenu(self.optionFrame, self.rectangleVal, *self.polygonOption)]
+        self.optionList += [ttk.OptionMenu(self.optionFrame, self.triangleVal, *self.polygonOption)]
+        self.optionList += [ttk.OptionMenu(self.optionFrame, self.circleVal, *self.radiusOption)]
+        
         self.rectangleTick = ttk.Checkbutton(self.optionFrame, text='Rectangle', onvalue=1, offvalue=0, variable=self.optionSet[0], command=self.showOption(0))
         self.rectangleTick.anchor('w')
         self.rectangleTick.grid(column=0, row=0, sticky=(N,W,E,S))
@@ -36,17 +48,6 @@ class Main(Tk):
         self.circleTick = ttk.Checkbutton(self.optionFrame, text='Circle', onvalue=1, offvalue=0, variable=self.optionSet[2], command=self.showOption(2))
         self.circleTick.anchor('w')
         self.circleTick.grid(column=0, row=2, sticky=(N,W,E,S))
-        
-        self.optionLabel = [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
-        self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
-        self.optionLabel += [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
-        
-        self.polygonOption = ['50x50', '100x50', '50x100']
-        self.radiusOption = ['Radius = 25', 'Radius = 50', 'Radius = 75']
-        
-        self.optionList = [ttk.OptionMenu(self.optionFrame, self.rectangleVal, *self.polygonOption)]
-        self.optionList += [ttk.OptionMenu(self.optionFrame, self.triangleVal, *self.polygonOption)]
-        self.optionList += [ttk.OptionMenu(self.optionFrame, self.circleVal, *self.radiusOption)]
         
     def showOption(self, type):
         if(self.optionSet[type].get() == 1):
