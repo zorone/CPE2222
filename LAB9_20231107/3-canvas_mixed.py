@@ -19,8 +19,6 @@ class Main(Tk):
         self.currentSet = 0
         self.prevSet = -1
         
-        self.strList = list()
-        
         self.mainFrame = ttk.Frame(self, padding=5)
         self.mainFrame.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
@@ -82,15 +80,17 @@ class Main(Tk):
     def execute(self):
         
         size = self.check()
-        if size:
+        if size <= 0:
             return -1
         
-        self.size = self.valueExtract()
+        self.valueExtract()
         res = self.draw(size)
         
     def check(self):
         emptyCheck = 0
         res = [0]
+        
+        self.strList = list()
         
         for i in range(3):
             temp = self.optionVal[i].get()
@@ -122,7 +122,9 @@ class Main(Tk):
         return res
     
     def valueExtract(self):
-        for s in self.strList
+        for s in self.strList:
+            if s[0] == 'R':
+                
 
 if __name__ == '__main__':
     main = Main()
