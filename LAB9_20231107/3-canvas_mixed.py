@@ -65,12 +65,13 @@ class Main(Tk):
             type = math.log2(type)
             self.optionLabel[type].grid(column=1, row=type, sticky=(N,W,E,S))
             self.optionList[type].grid(column=2, row=type, sticky=(N,W,E,S))
-        else:
+        elif(type < 0):
             type = abs(type)
             type = math.log2(type)
             self.optionLabel[type].grid_forget()
             self.optionList[type].grid_forget()
-            
+        else:
+            print("Initialize...")
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
