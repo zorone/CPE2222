@@ -164,10 +164,19 @@ class Main(Tk):
         self.canvasWindow = Toplevel()
         self.canvasWindow.title("RESULT")
         
-        self.canvas = Canvas(self.canvasWindow, bg="white", width=self.frameWidth, height=self.frameHeight)
+        self.canvasWindow.rowconfigure(0, 1)
+        self.canvasWindow.columnconfigure(0, 1)
+        
+        self.canvasFrame = ttk.Frame(self.canvasWindow, padding=5)
+        self.canvasFrame.anchor("center")
+        self.canvasFrame.grid(row=0, column=0, sticky=(N,W,E,S))
+        
+        self.canvas = Canvas(self.canvasFrame, bg="white", width=self.frameWidth, height=self.frameHeight)
+        self.canvas.anchor('center')
         self.canvas.grid(row=0, column=0, sticky=(N,W,E,S))
         
-        self.canvasCloseButton = ttk.Button(self.canvasWindow, text="Close Window", padding=5, command=self.canvasWindow.destroy)
+        self.canvasCloseButton = ttk.Button(self.canvasFrame, text="Close Window", padding=5, command=self.canvasWindow.destroy)
+        self.canvasCloseButton.anchor('center')
         self.canvasCloseButton.grid(row=1, column=0, sticky=(N,W,E,S))
         
         offset = 20
