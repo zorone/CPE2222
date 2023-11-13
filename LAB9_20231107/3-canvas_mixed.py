@@ -12,9 +12,9 @@ class Main(Tk):
         
         self.optionSet = [IntVar(), IntVar(), IntVar()]
         
-        self.rectangleVal = StringVar()
-        self.triangleVal = StringVar()
-        self.circleVal = StringVar()
+        self.optionVal = [StringVar()]
+        self.optionVal += [StringVar()]
+        self.optionVal += [StringVar()]
         
         self.currentSet = 0
         self.prevSet = -1
@@ -36,9 +36,9 @@ class Main(Tk):
         self.polygonOption = ['', '50x50', '100x50', '50x100']
         self.radiusOption = ['', 'Radius = 25', 'Radius = 50', 'Radius = 75']
         
-        self.optionList = [ttk.OptionMenu(self.optionFrame, self.rectangleVal, *self.polygonOption)]
-        self.optionList += [ttk.OptionMenu(self.optionFrame, self.triangleVal, *self.polygonOption)]
-        self.optionList += [ttk.OptionMenu(self.optionFrame, self.circleVal, *self.radiusOption)]
+        self.optionList = [ttk.OptionMenu(self.optionFrame, self.optionVal[0], *self.polygonOption)]
+        self.optionList += [ttk.OptionMenu(self.optionFrame, self.optionVal[1], *self.polygonOption)]
+        self.optionList += [ttk.OptionMenu(self.optionFrame, self.optionVal[2], *self.radiusOption)]
         
         self.rectangleTick = ttk.Checkbutton(self.optionFrame, text='Rectangle', onvalue=1, offvalue=0, variable=self.optionSet[0], command=self.showOption)
         self.rectangleTick.anchor('w')
@@ -76,14 +76,18 @@ class Main(Tk):
             print("Initialize...")
     
     def execute(self):
-        if (size = self.check()):
+        
+        size = self.check()
+        if size:
             return -1
         
-        size = self.valueExtract()
+        size = self.valueExtract(size)
         res = self.draw(size)
         
     def check(self):
-        
+        for i in range(3):
+            if self.optionVal[i].get() == '':
+                messagebox.showerror("Parameter Setting Error", "You have to select at least one choice")
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
