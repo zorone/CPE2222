@@ -136,10 +136,13 @@ class Main(Tk):
                     break
 
     def draw(self):
-        self.canvas = Toplevel()
-        self.canvas.title("RESULT")
+        self.canvasWindow = Toplevel()
+        self.canvasWindow.title("RESULT")
         
-        self.
+        self.canvas = Canvas(self.canvasWindow, bg="white")
+        self.canvas.grid(row=0, column=0, sticky=(N,W,E,S))
+        
+        self.canvas.create_rectangle()
 
 if __name__ == '__main__':
     main = Main()
