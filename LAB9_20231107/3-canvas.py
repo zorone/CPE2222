@@ -33,7 +33,7 @@ class Main(Tk):
                 'sticky': (N,E,W,S)
             }
         }
-        self.labelFrame = self.buildLabelFrame(self.mainFrame)
+        self.labelFrame = self.buildLabelFrame(self.mainFrame, "Drawing Setting", self.labelFrameOption)
         
     def buildFrame(self, root, options):
         if options['config'].get('padding') == None:
