@@ -142,7 +142,10 @@ class Main(Tk):
         self.canvas = Canvas(self.canvasWindow, bg="white")
         self.canvas.grid(row=0, column=0, sticky=(N,W,E,S))
         
-        self.canvas.create_rectangle()
+        offset = 20
+        
+        for i in range(3):
+            
 
 if __name__ == '__main__':
     main = Main()
