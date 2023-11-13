@@ -124,21 +124,30 @@ class Main(Tk):
         return res
     
     def paramGenerate(self):
+        self.frameWidth = 0
+        self.frameHeight = 0
+        
         for (i, s) in enumerate(self.strList[1:]):
+            j = i+1
             length = 0
             height = 0
             if s[0] == 'R':
-                self.strList[i+1] = [int(s[9:])]
-                self.frameWidth += self.strList[i+1] + 20
+                self.strList[j] = [int(s[9:])]
+                self.frameWidth += self.strList[j] + 20
                 
-                if(self.frameHeight < self.strList[i+1]):
-                    self.frameHeight = self.strList[i+1]
+                if(self.frameHeight < self.strList[j]):
+                    self.frameHeight = self.strList[j]
             else:
                 for count, ch in enumerate(s):
                     if ch != 'x': continue
                     length = int(s[0:count])
                     height = int(s[count+1:])
-                    self.strList[i+1] = [length, height]
+                    self.strList[j] = [length, height]
+                    
+                    self.frameWidth += self.strList[j] + 20
+                    
+                    if(self.frameHeight < self.strList[j]):
+                        self.frameHeight = self.strList[j]
                     break
 
     def draw(self, pos):
