@@ -50,10 +50,10 @@ class Main(Tk):
         if(self.optionSet[type].get() == 1):
             self.optionLabel[type].grid(column=1, row=type, sticky=(N,W,E,S))
             self.optionList[type].grid(column=2, row=type, sticky=(N,W,E,S))
-        else{
+        else:
             self.optionLabel[type].grid_forget()
             self.optionList[type].grid_forget()
-        }
+            
 if __name__ == '__main__':
     main = Main()
     main.mainloop()
