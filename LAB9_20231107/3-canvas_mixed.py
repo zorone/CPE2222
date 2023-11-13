@@ -62,12 +62,12 @@ class Main(Tk):
             type = self.currentSet - self.prevSet
 
         if(type > 0):
-            type = math.log2(type)
+            type = int(math.log2(type))
             self.optionLabel[type].grid(column=1, row=type, sticky=(N,W,E,S))
             self.optionList[type].grid(column=2, row=type, sticky=(N,W,E,S))
         elif(type < 0):
             type = abs(type)
-            type = math.log2(type)
+            type = int(math.log2(type))
             self.optionLabel[type].grid_forget()
             self.optionList[type].grid_forget()
         else:
