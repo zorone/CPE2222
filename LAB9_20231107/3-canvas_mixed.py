@@ -133,10 +133,12 @@ class Main(Tk):
             height = 0
             if s[0] == 'R':
                 self.strList[j] = [int(s[9:])]
-                self.frameWidth += (2*self.strList[j][0]) + 20
                 
-                if(self.frameHeight < self.strList[j][0]):
-                    self.frameHeight = 2*self.strList[j][0]
+                temp = 2*self.strList[j][0]
+                self.frameWidth += temp + 20
+                
+                if(self.frameHeight < temp):
+                    self.frameHeight = temp
             else:
                 for count, ch in enumerate(s):
                     if ch != 'x': continue
@@ -153,7 +155,7 @@ class Main(Tk):
         self.frameHeight += 40
 
     def draw(self, pos):
-        print(self.winfo_children)
+        print(Toplevel.winfo_children)
         # if(Toplevel.winfo_exists(self.canvasWindow)):
         #     self.canvasWindow.quit()
         
