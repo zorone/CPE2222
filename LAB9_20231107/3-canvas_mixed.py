@@ -20,10 +20,10 @@ class Main(Tk):
         self.mainFrame.pack(anchor='center', side='top', fill='both', expand=TRUE)
         
         self.optionFrame = ttk.Labelframe(self.mainFrame, text='Drawing Setting')
-        self.optionFrame.pack(anchor='center', side='top', fill='both', expand=TRUE, ipadx=5, ipady=5, padx=5, pady=5)
+        self.optionFrame.pack(anchor='center', side='top', fill='none', expand=TRUE, ipadx=5, ipady=5, padx=5, pady=5)
         
         self.drawButton = ttk.Button(self.mainFrame, padding=5, text='Draw')
-        self.drawButton.pack(anchor='center', side='top', fill='both', expand=TRUE)
+        self.drawButton.pack(anchor='center', side='top', fill='none', expand=TRUE)
         
         # Need to declare before self.rectangleTick because it will error at checking phase -- No variable defined.
         self.optionLabel = [ttk.Label(self.optionFrame, text='Size:', anchor='e', justify='right')]
@@ -50,6 +50,7 @@ class Main(Tk):
         self.circleTick.grid(column=0, row=2, sticky=(N,W,E,S))
         
     def showOption(self, type):
+        print(type)
         if(self.optionSet[type].get() == 1):
             self.optionLabel[type].grid(column=1, row=type, sticky=(N,W,E,S))
             self.optionList[type].grid(column=2, row=type, sticky=(N,W,E,S))
