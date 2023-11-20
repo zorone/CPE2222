@@ -55,6 +55,13 @@ class Main():
                     tempLock = True
                     continue
                 
+                if s == '\n':
+                    print("Empty line")
+                    tempLock = False
+                    tempSkip = False
+                    nameType.clear()
+                    continue
+
                 if not tempSkip:
                     if len(nameType) > 1:
                         tempSkip = True
@@ -79,12 +86,6 @@ class Main():
                         CPE += [tempName]
                         nameType += ["CPE"]
                         continue
-                    
-                elif s == '\n':
-                    print("Empty line")
-                    tempLock = False
-                    tempSkip = False
-                    nameType.clear()
 
             F.close()
             
