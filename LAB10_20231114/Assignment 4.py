@@ -18,7 +18,10 @@ class Main():
             CPE = list()
             
             F = open("input.txt", 'r', encoding='utf-8')
-            F.readline()
+            data = F.readlines()
+            tempName = s[0]
+            
+            for s in data:
                 
         except OSError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
