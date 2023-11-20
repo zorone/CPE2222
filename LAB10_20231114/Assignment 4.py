@@ -104,20 +104,21 @@ class Main():
         for i, k in enumerate(key):
             os.mkdir(k)
             command = self.baseCommand + "./" + k + "/readme.txt"
+            filename = path[k] + ".txt"
+            filePath = k + filename
             if self.trailing == '\\':
                 command = command.replace('/', '\\')
+                filePath = filePath.replace('/', '\\')
             print(command)
             os.system(command)
             
-            filename = path[k] + ".txt"
-            filePath = k + filename
             f = open(filePath, 'w', encoding='utf-8')
             introLine = path[k]
             if i > 2:
                 introLine += ' '
             if not 0 < i < 3:
                 introLine += 'คณะวิศวกรรมศาสตร์'
-            introLine += ' มหาวิทยาลัยรามคำแหง'
+            introLine += ' มหาวิทยาลัยรามคำแหง\n'
             f.write(introLine)
             
             for j, s in enumerate(self.nameList[i], 1):
