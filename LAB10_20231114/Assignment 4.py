@@ -71,8 +71,9 @@ class Main():
 
 def route(r):
     key = r.keys()
-    for route in key:
-        if(r[route])
+    for k in key:
+        if(type(r[k]) == type(dict())):
+            route(r[k])
 
 if __name__ == '__main__':
     main = Main()
