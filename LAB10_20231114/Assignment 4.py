@@ -95,10 +95,10 @@ def platformSet():
     else:
         plt = platform.platform()
         
-        if plt == 'Windows':
-            return "copy ./readme.txt "
-        else:
-            return "cp ./readme.txt "
+    if plt == 'Windows':
+        return "copy ./readme.txt "
+    else:
+        return "cp ./readme.txt "
 
 if __name__ == '__main__':
     main = Main()
