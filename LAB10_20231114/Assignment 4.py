@@ -81,6 +81,7 @@ class Main():
                         continue
                     
                 elif s == '\n':
+                    print("Empty line")
                     tempLock = False
                     tempSkip = False
                     nameType.clear()
