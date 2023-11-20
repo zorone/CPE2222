@@ -86,15 +86,13 @@ class Main():
 
             F.close()
             
-            '''
             self.nameList = [name, student, instructor, CVE, IND, CPE]
             
             self.fileGen()
             
-        '''
         except FileNotFoundError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
-        '''
+        
         except FileExistsError:
             if self.trailing == '\\':
                 os.system("rmdir /S .\รายชื่อ")
@@ -141,7 +139,6 @@ def platformSet():
         return "copy ./readme.txt ", '\\'
     else:
         return "cp ./readme.txt ", '/'
-        '''
 
 if __name__ == '__main__':
     main = Main()
