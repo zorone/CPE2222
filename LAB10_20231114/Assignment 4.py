@@ -1,7 +1,7 @@
 import os
 import platform
 
-predefined = True
+predefined = False
 pf = 0
 
 path = {
