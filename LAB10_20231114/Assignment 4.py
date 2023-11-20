@@ -113,7 +113,7 @@ def platformSet():
         plt = pf
     
     else:
-        plt = platform.platform()
+        plt = platform.system()
         
     print(plt)
     if plt == 'Windows':
