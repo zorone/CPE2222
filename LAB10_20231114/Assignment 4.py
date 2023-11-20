@@ -23,10 +23,9 @@ class Main():
         try:
             self.baseCommand, self.trailing = platformSet()
             path = os.path.dirname(os.path.abspath(__file__))
-            print(path)
             os.chdir(path)
             path = os.listdir()
-            print(path)
+            
             if "readme.txt" not in path:
                 raise FileNotFoundError
             if "input.txt" not in path:
@@ -47,38 +46,41 @@ class Main():
             tempName = ''
             
             for s in data:
+                print(s)
                 if not tempLock:
+                    print('name: ', s)
                     tempName = s
                     name += [tempName]
                     tempLock = True
                     continue
-            
-                if len(nameType) > 1:
-                    nameType.clear()
-                    tempSkip = True
-                    continue
-                if "นักศึกษา" in s:
-                    student += [tempName]
-                    tempSkip = True
-                    continue
-                if "อาจารย์" in s:
-                    instructor += [tempName]
-                    nameType += ["instructor"]
-                    continue
-                if "โยธา" in s:
-                    CVE += [tempName]
-                    nameType += ["CVE"]
-                    continue
-                if "อุตสาหการ" in s:
-                    IND += [tempName]
-                    nameType += ["IND"]
-                    continue
-                if "คอมพิวเตอร์" in s:
-                    CPE += [tempName]
-                    nameType += ["CPE"]
-                    continue
                 
-                if s == '\n':
+                if not tempSkip:
+                    if len(nameType) > 1:
+                        nameType.clear()
+                        tempSkip = True
+                        continue
+                    if "นักศึกษา" in s:
+                        student += [tempName]
+                        tempSkip = True
+                        continue
+                    if "อาจารย์" in s:
+                        instructor += [tempName]
+                        nameType += ["instructor"]
+                        continue
+                    if "โยธา" in s:
+                        CVE += [tempName]
+                        nameType += ["CVE"]
+                        continue
+                    if "อุตสาหการ" in s:
+                        IND += [tempName]
+                        nameType += ["IND"]
+                        continue
+                    if "คอมพิวเตอร์" in s:
+                        CPE += [tempName]
+                        nameType += ["CPE"]
+                        continue
+                    
+                elif s == '\n':
                     tempLock = False
                     tempSkip = False
 
@@ -108,7 +110,6 @@ class Main():
             if self.trailing == '\\':
                 command = command.replace('/', '\\')
                 filePath = filePath.replace('/', '\\')
-            print(command)
             os.system(command)
             
             f = open(filePath, 'w', encoding='utf-8')
@@ -128,13 +129,12 @@ class Main():
         
 def platformSet():
     plt = ''
+
     if predefined:
         plt = pf
-    
     else:
         plt = platform.system()
-        
-    print(plt)
+
     if plt == 'Windows':
         return "copy ./readme.txt ", '\\'
     else:
