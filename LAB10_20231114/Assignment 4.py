@@ -3,8 +3,6 @@ import platform
 
 predefined = False
 pf = 1
-baseCommand = ''
-trailing = ''
 
 path = {
     "รายชื่อ": "รายชื่อพนักงานและนักศึกษา",
@@ -23,7 +21,7 @@ else:
 class Main():
     def __init__(self):
         try:
-            baseCommand, trailing = platformSet()
+            self.baseCommand, self.trailing = platformSet()
             path = os.path.dirname(os.path.abspath(__file__))
             print(path)
             os.chdir(path)
@@ -87,13 +85,25 @@ class Main():
 
             F.close()
             
+            self.fileGen()
+            
         except FileNotFoundError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
             
         except FileExistsError:
             os.rmdir("./รายชื่อ")
-            fileGen()
+            self.fileGen()
             
+    def fileGen(self):
+        key = path.keys()
+        for k in key:
+            os.mkdir(k)
+            command = self.baseCommand + "./" + k + "/readme.txt"
+            if self.trailing == '\\':
+                command = command.replace('/', '\\')
+            print(command)
+            os.system(command)
+        
 def platformSet():
     plt = ''
     if predefined:
@@ -106,16 +116,6 @@ def platformSet():
         return "copy ./readme.txt ", '\\'
     else:
         return "cp ./readme.txt ", '/'
-    
-def fileGen():
-    key = path.keys()
-    for k in key:
-        os.mkdir(k)
-        command = baseCommand + "./" + k + "/readme.txt"
-        if trailing == '\\':
-            command = command.replace('/', '\\')
-        print(command)
-        os.system(command)
 
 if __name__ == '__main__':
     main = Main()
