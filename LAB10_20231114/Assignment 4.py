@@ -11,6 +11,7 @@ class Main():
             if "input.txt" not in path:
                 raise OSError
             
+            name = list()
             student = list()
             instructor = list()
             CVE = list()
@@ -23,11 +24,11 @@ class Main():
             tempSkip = False
             nameType = list()
             tempName = ''
-            buffer = ''
             
             for s in data:
                 if not tempLock:
                     tempName = s
+                    name += [tempName]
                     tempLock = True
                     continue
                 
@@ -37,23 +38,23 @@ class Main():
                         tempSkip = True
                         continue
                     if "นักศึกษา" in s:
-                        student += [s]
+                        student += [tempName]
                         tempSkip = True
                         continue
                     if "อาจารย์" in s:
-                        instructor += [s]
+                        instructor += [tempName]
                         nameType += ["instructor"]
                         continue
                     if "โยธา" in s:
-                        CVE += [s]
+                        CVE += [tempName]
                         nameType += ["CVE"]
                         continue
                     if "อุตสาหการ" in s:
-                        IND += [s]
+                        IND += [tempName]
                         nameType += ["IND"]
                         continue
                     if "คอมพิวเตอร์" in s:
-                        CPE += [s]
+                        CPE += [tempName]
                         nameType += ["CPE"]
                         continue
                     
@@ -61,6 +62,10 @@ class Main():
                     tempLock = False
                     tempSkip = False
 
+            F.close()
+            
+            structure = ["รายชื่อ": ["นักศึกษา", "อาจารย์": ["วิศวกรรมโยธา", "วิศวกรรมอุตสาหการ", "วิศวกรรมคอมพิวเตอร์"]]]
+            
         except OSError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
 
