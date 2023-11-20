@@ -21,7 +21,7 @@ else:
 class Main():
     def __init__(self):
         try:
-            '''
+            
             self.baseCommand, self.trailing = platformSet()
             path = os.path.dirname(os.path.abspath(__file__))
             os.chdir(path)
@@ -31,7 +31,7 @@ class Main():
                 raise FileNotFoundError
             if "input.txt" not in path:
                 raise FileNotFoundError
-            '''
+            
             name = list()
             student = list()
             instructor = list()
