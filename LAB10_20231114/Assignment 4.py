@@ -1,8 +1,8 @@
 import os
 import platform
 
-predefined = True
-pf = 1
+predefined = False
+pf = 0
 
 path = {
     "รายชื่อ": "รายชื่อพนักงานและนักศึกษา",
@@ -92,7 +92,7 @@ class Main():
             
         except FileExistsError:
             if self.trailing == '\\':
-                os.system("del .\รายชื่อ")
+                os.system("rmdir /S .\รายชื่อ")
             else:
                 os.system("rm -rf ./รายชื่อ")
             self.fileGen()
