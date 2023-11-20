@@ -1,9 +1,24 @@
 import os
 import platform
 
-predefined = True
-pf = "Windows"
+predefined = False
+pf = 1
+baseCommand = ''
 trailing = ''
+
+path = {
+    "รายชื่อ": "รายชื่อพนักงานและนักศึกษา",
+    "รายชื่อ/นักศึกษา": "รายชื่อนักศึกษาคณะวิศวกรรมศาสตร์",
+    "รายชื่อ/อาจารย์": "รายชื่อคณาจารย์คณะวิศวกรรมศาสตร์",
+    "รายชื่อ/อาจารย์/วิศวกรรมโยธา": "รายชื่อคณาจารย์สาขาวิศวกรรมโยธา",
+    "รายชื่อ/อาจารย์/วิศวกรรมอุตสาหการ": "รายชื่อคณาจารย์สาขาวิศวกรรมอุตสาหการ",
+    "รายชื่อ/อาจารย์/วิศวกรรมคอมพิวเตอร์": "รายชื่อคณาจารย์สาขาวิศวกรรมคอมพิวเตอร์"
+}
+
+if pf == 1:
+    pf = "Windows"
+else:
+    pf = "Linux"
 
 class Main():
     def __init__(self):
@@ -72,29 +87,12 @@ class Main():
 
             F.close()
             
-            path = {
-                "รายชื่อ": "รายชื่อพนักงานและนักศึกษา",
-                "รายชื่อ/นักศึกษา": "รายชื่อนักศึกษาคณะวิศวกรรมศาสตร์",
-                "รายชื่อ/อาจารย์": "รายชื่อคณาจารย์คณะวิศวกรรมศาสตร์",
-                "รายชื่อ/อาจารย์/วิศวกรรมโยธา": "รายชื่อคณาจารย์สาขาวิศวกรรมโยธา",
-                "รายชื่อ/อาจารย์/วิศวกรรมอุตสาหการ": "รายชื่อคณาจารย์สาขาวิศวกรรมอุตสาหการ",
-                "รายชื่อ/อาจารย์/วิศวกรรมคอมพิวเตอร์": "รายชื่อคณาจารย์สาขาวิศวกรรมคอมพิวเตอร์"
-            }
-            
-            key = path.keys()
-            for k in key:
-                os.mkdir(k)
-                command = baseCommand + "./" + k + "/readme.txt"
-                if trailing == '\\':
-                    command.replace('/', '\\')
-                print(command)
-                os.system(command)
-            
         except FileNotFoundError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
             
         except FileExistsError:
-            pass
+            os.rmdir("./รายชื่อ")
+            fileGen()
             
 def platformSet():
     plt = ''
@@ -108,6 +106,16 @@ def platformSet():
         return "copy ./readme.txt ", '\\'
     else:
         return "cp ./readme.txt ", '/'
+    
+def fileGen():
+    key = path.keys()
+    for k in key:
+        os.mkdir(k)
+        command = baseCommand + "./" + k + "/readme.txt"
+        if trailing == '\\':
+            command = command.replace('/', '\\')
+        print(command)
+        os.system(command)
 
 if __name__ == '__main__':
     main = Main()
