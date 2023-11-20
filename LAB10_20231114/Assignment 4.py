@@ -1,8 +1,13 @@
 import os
+import platform
+
+predefined = True
+pf = "Windows"
 
 class Main():
     def __init__(self):
         try:
+            baseCommand = platformSet()
             path = os.path.dirname(os.path.abspath(__file__))
             os.chdir(path)
             path = os.listdir()
@@ -76,10 +81,24 @@ class Main():
             key = path.keys()
             for k in key:
                 os.mkdir(k)
-                
+                command = baseCommand + "./" + k
+                os.system(command)
             
         except OSError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
+            
+def platformSet():
+    plt = ''
+    if predefined:
+        plt = pf
+    
+    else:
+        plt = platform.platform()
+        
+        if plt == 'Windows':
+            return "copy ./readme.txt "
+        else:
+            return "cp ./readme.txt "
 
 if __name__ == '__main__':
     main = Main()
