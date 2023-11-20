@@ -8,7 +8,7 @@ trailing = ''
 class Main():
     def __init__(self):
         try:
-            baseCommand = platformSet()
+            baseCommand, trailing = platformSet()
             path = os.path.dirname(os.path.abspath(__file__))
             print(path)
             os.chdir(path)
@@ -84,7 +84,7 @@ class Main():
             key = path.keys()
             for k in key:
                 os.mkdir(k)
-                command = baseCommand + "./" + k + "/readme.txt"
+                command = baseCommand + "."+ trailing + k + trailing + "readme.txt"
                 print(command)
                 os.system(command)
             
@@ -103,11 +103,9 @@ def platformSet():
         plt = platform.platform()
         
     if plt == 'Windows':
-        trailing = '\\'
-        return "copy ./readme.txt "
+        return "copy .\\readme.txt ", '\\'
     else:
-        trailing = '/'
-        return "cp ./readme.txt "
+        return "cp ./readme.txt ", '/'
 
 if __name__ == '__main__':
     main = Main()
