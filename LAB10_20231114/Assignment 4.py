@@ -3,7 +3,7 @@ import os
 class Main():
     def __init__(self):
         try:
-            path = os.listdir()
+            path = os.path.dirname(os.path.abspath(__file__))
             print(path)
                 
         except OSError:
