@@ -11,20 +11,17 @@ class Main():
             if "input.txt" not in path:
                 raise OSError
             
-            structure = {"นักศึกษา": "นักศึกษา",
-                         "อาจารย์": {"อาจารย์": "คณาจารย์", "โยธา": "โยธา", "อุตสาหการ": "อุตสาหการ", "คอมพิวเตอร์": "คอมพิวเตอร์"}}
+            student = list()
+            instructor = list()
+            CVE = list()
+            IND = list()
+            CPE = list()
             
-            route(structure)
+            F = open("input.txt", 'r', encoding='utf-8')
+            F.readline()
                 
         except OSError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
-
-def route(r):
-    key = r.keys()
-    
-    for k in key:
-        if type(r[k]) == type(dict()):
-            route(r[k])
 
 if __name__ == '__main__':
     main = Main()
