@@ -85,7 +85,7 @@ class Main():
 
             F.close()
             
-            nameList = [name, student, instructor, CVE, IND, CPE]
+            self.nameList = [name, student, instructor, CVE, IND, CPE]
             
             self.fileGen()
             
@@ -120,7 +120,8 @@ class Main():
             introLine += ' มหาวิทยาลัยรามคำแหง'
             f.write(introLine)
             
-            for j, s in enumerate(nameList[i]):
+            for j, s in enumerate(self.nameList[i], 1):
+                temp = str(j) + ')'
         
 def platformSet():
     plt = ''
