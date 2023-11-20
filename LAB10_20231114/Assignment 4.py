@@ -74,7 +74,8 @@ class Main():
             }
             
             key = path.keys()
-            for p in path:
+            for k in key:
+                os.mkdir(k)
                 
             
         except OSError:
