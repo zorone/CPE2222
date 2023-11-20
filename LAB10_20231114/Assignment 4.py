@@ -1,9 +1,11 @@
-from os import *
+import os
 
 class Main():
     def __init__(self):
         try:
-            print
+            path = os.listdir()
+            for dir in path:
+                
         except OSError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
 
