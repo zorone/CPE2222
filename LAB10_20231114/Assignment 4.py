@@ -84,7 +84,9 @@ class Main():
             key = path.keys()
             for k in key:
                 os.mkdir(k)
-                command = baseCommand + "."+ trailing + k + trailing + "readme.txt"
+                command = baseCommand + "./" + k + "/readme.txt"
+                if trailing == '\\':
+                    command.replace('/', '\\')
                 print(command)
                 os.system(command)
             
@@ -103,7 +105,7 @@ def platformSet():
         plt = platform.platform()
         
     if plt == 'Windows':
-        return "copy .\\readme.txt ", '\\'
+        return "copy ./readme.txt ", '\\'
     else:
         return "cp ./readme.txt ", '/'
 
