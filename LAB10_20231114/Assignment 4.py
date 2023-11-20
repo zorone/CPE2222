@@ -106,6 +106,10 @@ class Main():
                 command = command.replace('/', '\\')
             print(command)
             os.system(command)
+            
+            filename = path[k] + ".txt"
+            filePath = k + filename
+            f = open(filename, 'w')
         
 def platformSet():
     plt = ''
