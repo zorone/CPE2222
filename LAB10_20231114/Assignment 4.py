@@ -99,7 +99,7 @@ class Main():
             
     def fileGen(self):
         key = path.keys()
-        for k in key:
+        for i, k in enumerate(key):
             os.mkdir(k)
             command = self.baseCommand + "./" + k + "/readme.txt"
             if self.trailing == '\\':
@@ -109,7 +109,13 @@ class Main():
             
             filename = path[k] + ".txt"
             filePath = k + filename
-            f = open(filename, 'w')
+            f = open(filePath, 'w', encoding='utf-8')
+            introLine = path[k]
+            if i > 2:
+                introLine += ' '
+            if 0 > i > 2:
+            introLine += 
+            f.write("")
         
 def platformSet():
     plt = ''
