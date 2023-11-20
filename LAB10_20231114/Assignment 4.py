@@ -83,7 +83,8 @@ class Main():
             key = path.keys()
             for k in key:
                 os.mkdir(k)
-                command = baseCommand + "./" + k
+                command = baseCommand + "./" + k + "/readme.txt"
+                print(command)
                 os.system(command)
             
         except FileNotFoundError:
