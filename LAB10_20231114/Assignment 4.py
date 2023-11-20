@@ -113,7 +113,7 @@ class Main():
             introLine = path[k]
             if i > 2:
                 introLine += ' '
-            if 0 > i > 2:
+            if 0 < i < 2:
             introLine += 
             f.write("")
         
