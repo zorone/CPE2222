@@ -92,9 +92,10 @@ class Main():
             
             self.fileGen()
             
+        '''
         except FileNotFoundError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
-            
+        '''
         except FileExistsError:
             if self.trailing == '\\':
                 os.system("rmdir /S .\รายชื่อ")
