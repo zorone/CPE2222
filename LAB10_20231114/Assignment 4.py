@@ -110,7 +110,7 @@ class Main():
 def platformSet():
     plt = ''
     if predefined:
-        plt = platformSet
+        plt = pf
     
     else:
         plt = platform.platform()
