@@ -52,33 +52,32 @@ class Main():
                     name += [tempName]
                     tempLock = True
                     continue
+            
+                if len(nameType) > 1:
+                    nameType.clear()
+                    tempSkip = True
+                    continue
+                if "นักศึกษา" in s:
+                    student += [tempName]
+                    tempSkip = True
+                    continue
+                if "อาจารย์" in s:
+                    instructor += [tempName]
+                    nameType += ["instructor"]
+                    continue
+                if "โยธา" in s:
+                    CVE += [tempName]
+                    nameType += ["CVE"]
+                    continue
+                if "อุตสาหการ" in s:
+                    IND += [tempName]
+                    nameType += ["IND"]
+                    continue
+                if "คอมพิวเตอร์" in s:
+                    CPE += [tempName]
+                    nameType += ["CPE"]
+                    continue
                 
-                if not tempSkip:
-                    if len(nameType) > 1:
-                        nameType.clear()
-                        tempSkip = True
-                        continue
-                    if "นักศึกษา" in s:
-                        student += [tempName]
-                        tempSkip = True
-                        continue
-                    if "อาจารย์" in s:
-                        instructor += [tempName]
-                        nameType += ["instructor"]
-                        continue
-                    if "โยธา" in s:
-                        CVE += [tempName]
-                        nameType += ["CVE"]
-                        continue
-                    if "อุตสาหการ" in s:
-                        IND += [tempName]
-                        nameType += ["IND"]
-                        continue
-                    if "คอมพิวเตอร์" in s:
-                        CPE += [tempName]
-                        nameType += ["CPE"]
-                        continue
-                    
                 if s == '\n':
                     tempLock = False
                     tempSkip = False
