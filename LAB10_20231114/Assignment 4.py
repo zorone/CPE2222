@@ -9,12 +9,14 @@ class Main():
         try:
             baseCommand = platformSet()
             path = os.path.dirname(os.path.abspath(__file__))
+            print(path)
             os.chdir(path)
             path = os.listdir()
+            print(path)
             if "readme.txt" not in path:
-                raise OSError
+                raise FileNotFoundError
             if "input.txt" not in path:
-                raise OSError
+                raise FileNotFoundError
             
             name = list()
             student = list()
@@ -84,8 +86,11 @@ class Main():
                 command = baseCommand + "./" + k
                 os.system(command)
             
-        except OSError:
+        except FileNotFoundError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
+            
+        except FileExistsError:
+            pass
             
 def platformSet():
     plt = ''
