@@ -121,7 +121,10 @@ class Main():
             f.write(introLine)
             
             for j, s in enumerate(self.nameList[i], 1):
-                temp = str(j) + ')'
+                temp = '{}) {}'.format(j, s)
+                f.write(temp)
+            
+            f.close()
         
 def platformSet():
     plt = ''
