@@ -22,7 +22,7 @@ class Main():
     def __init__(self):
         try:
             
-            self.baseCommand, self.trailing = platformSet()
+            # self.baseCommand, self.trailing = platformSet()
             path = os.path.dirname(os.path.abspath(__file__))
             os.chdir(path)
             path = os.listdir()
