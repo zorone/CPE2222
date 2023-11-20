@@ -105,7 +105,7 @@ class Main():
             os.mkdir(k)
             command = self.baseCommand + "./" + k + "/readme.txt"
             filename = path[k] + ".txt"
-            filePath = k + filename
+            filePath = k + "/" + filename
             if self.trailing == '\\':
                 command = command.replace('/', '\\')
                 filePath = filePath.replace('/', '\\')
