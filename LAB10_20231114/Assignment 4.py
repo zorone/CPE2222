@@ -85,6 +85,8 @@ class Main():
 
             F.close()
             
+            nameList = [name, student, instructor, CVE, IND, CPE]
+            
             self.fileGen()
             
         except FileNotFoundError:
@@ -113,9 +115,12 @@ class Main():
             introLine = path[k]
             if i > 2:
                 introLine += ' '
-            if 0 < i < 2:
-            introLine += 
-            f.write("")
+            if not 0 < i < 3:
+                introLine += 'คณะวิศวกรรมศาสตร์'
+            introLine += ' มหาวิทยาลัยรามคำแหง'
+            f.write(introLine)
+            
+            for j, s in enumerate(nameList[i]):
         
 def platformSet():
     plt = ''
