@@ -64,16 +64,12 @@ class Main():
 
             F.close()
             
-            structure = {"รายชื่อ": ["นักศึกษา", {"อาจารย์": ["วิศวกรรมโยธา", "วิศวกรรมอุตสาหการ", "วิศวกรรมคอมพิวเตอร์"]}]}
+            path = [
+                
+            ]
             
         except OSError:
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
-
-def route(r):
-    key = r.keys()
-    for k in key:
-        if(type(r[k]) == type(dict())):
-            route(r[k])
 
 if __name__ == '__main__':
     main = Main()
