@@ -47,16 +47,13 @@ class Main():
             tempName = ''
             
             for s in data:
-                print(s)
                 if not tempLock:
-                    print('name: ', s)
                     tempName = s
                     name += [tempName]
                     tempLock = True
                     continue
                 
                 if s == '\n':
-                    print("Empty line")
                     tempLock = False
                     tempSkip = False
                     nameType.clear()
