@@ -21,6 +21,7 @@ else:
 class Main():
     def __init__(self):
         try:
+            '''
             self.baseCommand, self.trailing = platformSet()
             path = os.path.dirname(os.path.abspath(__file__))
             os.chdir(path)
@@ -30,7 +31,7 @@ class Main():
                 raise FileNotFoundError
             if "input.txt" not in path:
                 raise FileNotFoundError
-            
+            '''
             name = list()
             student = list()
             instructor = list()
@@ -56,7 +57,6 @@ class Main():
                 
                 if not tempSkip:
                     if len(nameType) > 1:
-                        nameType.clear()
                         tempSkip = True
                         continue
                     if "นักศึกษา" in s:
@@ -83,9 +83,11 @@ class Main():
                 elif s == '\n':
                     tempLock = False
                     tempSkip = False
+                    nameType.clear()
 
             F.close()
             
+            '''
             self.nameList = [name, student, instructor, CVE, IND, CPE]
             
             self.fileGen()
@@ -139,6 +141,7 @@ def platformSet():
         return "copy ./readme.txt ", '\\'
     else:
         return "cp ./readme.txt ", '/'
+        '''
 
 if __name__ == '__main__':
     main = Main()
