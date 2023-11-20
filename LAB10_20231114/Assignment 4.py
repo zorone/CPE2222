@@ -1,7 +1,7 @@
 import os
 import platform
 
-predefined = False
+predefined = True
 pf = 1
 
 path = {
@@ -91,7 +91,10 @@ class Main():
             print("Incorrect file Structure, please check if your workspace has all files that is needed.")
             
         except FileExistsError:
-            os.rmdir("./รายชื่อ")
+            if self.trailing == '\\':
+                os.system("del .\รายชื่อ")
+            else:
+                os.system("rm -rf ./รายชื่อ")
             self.fileGen()
             
     def fileGen(self):
@@ -107,11 +110,12 @@ class Main():
 def platformSet():
     plt = ''
     if predefined:
-        plt = pf
+        plt = platformSet
     
     else:
         plt = platform.platform()
         
+    print(plt)
     if plt == 'Windows':
         return "copy ./readme.txt ", '\\'
     else:
