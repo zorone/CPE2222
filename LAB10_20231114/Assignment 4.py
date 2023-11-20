@@ -3,6 +3,7 @@ import platform
 
 predefined = True
 pf = "Windows"
+trailing = ''
 
 class Main():
     def __init__(self):
@@ -102,8 +103,10 @@ def platformSet():
         plt = platform.platform()
         
     if plt == 'Windows':
+        trailing = '\\'
         return "copy ./readme.txt "
     else:
+        trailing = '/'
         return "cp ./readme.txt "
 
 if __name__ == '__main__':
