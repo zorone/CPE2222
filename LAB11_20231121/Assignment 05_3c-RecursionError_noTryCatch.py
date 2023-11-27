@@ -13,6 +13,6 @@ print(limit)
 if(val >= limit):
     print('Escaping RecursionError')
     print("Set val to {} so it won't exceed recursion limit.".format(limit))
-    val = limit-1
+    val = limit/2
 
 recursivePrint(val)
