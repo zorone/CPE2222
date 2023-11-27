@@ -1,6 +1,6 @@
 d = dict()
 for c in 'abcdefghijklmnopqrstuvwxyz':
-    d[c] = '{}'.format(c)
+    d[c] = c
 
 print(d)
 
