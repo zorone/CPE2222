@@ -11,11 +11,14 @@ def testDecimal(data):
         elif(s in '.' and count < 1):
             count += 1
         else:
-            return (False, False)
-    if(count == 0):
-        return (True, True)
+            return (False, False) # string
     else:
-        return (True, False)
+        return (False, False) # Empty String
+
+    if(count == 0):
+        return (True, True) # int
+    else:
+        return (True, False) # float
 
 xTest = testDecimal(x)
 yTest = testDecimal(y)
@@ -27,7 +30,7 @@ if(mode == '+'):
     res = x + y
 
 elif(mode == '*'):
-    if(yTest[1] == False):
+    if(yTest[1] == True):
         y = int(y)
         res = x*y
     elif(xTest[0] and yTest[0]):
