@@ -8,8 +8,8 @@ for i in range(0, 100):
             b += i
     else:
         if(i%3 == 0):
-            a += b
+            a += [b]
         else:
-            b += a
+            a += [a]
     print(a)
     print(b)
