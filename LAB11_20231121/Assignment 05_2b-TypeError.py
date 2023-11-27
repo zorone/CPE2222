@@ -7,16 +7,16 @@ res = int()
 
 if(mode == '+'):
     cmd = 'res = x + y'
-    codeObj = compile(cmd)
+    codeObj = compile(cmd, 'test', 'exec')
 elif(mode == '-'):
     cmd = 'res = x - y'
-    codeObj = compile(cmd)
+    codeObj = compile(cmd, 'test', 'exec')
 elif(mode == '*'):
     cmd = 'res = x * y'
-    codeObj = compile(cmd)
+    codeObj = compile(cmd, 'test', 'exec')
 elif(mode == '/'):
     cmd = 'res = x / y'
-    codeObj = compile(cmd)
+    codeObj = compile(cmd, 'test', 'exec')
 else:
     print('Operation is unavailable.')
 try:
