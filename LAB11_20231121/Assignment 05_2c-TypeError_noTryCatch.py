@@ -11,8 +11,11 @@ def testDecimal(data):
         elif(s in '.' and count < 1):
             count += 1
         else:
-            return False
-    return True
+            return [False, False]
+    if(count == 0):
+        return (True, True)
+    else:
+        return (True, False)
 
 if(mode == '+'):
     res = x + y
