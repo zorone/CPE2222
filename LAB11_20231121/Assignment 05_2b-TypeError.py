@@ -18,7 +18,8 @@ elif(mode == '/'):
     cmd = 'res = x / y'
     codeObj = compile(cmd, 'test', 'exec')
 else:
-    print('Operation is unavailable.')
+    cmd = "print('Operation is unavailable.')"
+    codeObj = compile(cmd, 'test', 'exec')
 try:
     exec(codeObj)
     print(res)
