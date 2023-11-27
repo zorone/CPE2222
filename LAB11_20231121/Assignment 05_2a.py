@@ -1,6 +1,16 @@
 x = input("Enter first argument:")
 y = input("Enter second argument:")
-print("\nUsable modes: +, -, *, /\n")
+print("Usable modes: +, -, *, /\n")
 mode = input("Please enter modes:")
 
-if():
+if(mode == '+'):
+    res = x + y
+elif(mode == '-'):
+    res = x - y
+elif(mode == '*'):
+    res = x * y
+elif(mode == '/'):
+    res = x/y
+else:
+    print('Operation is unavailable.')
+print(res)
