@@ -17,5 +17,13 @@ else:
     print('Operation is unavailable.')
 print(res)
 
-def testDecimal(str):
-    for s in
+def testDecimal(data):
+    count = 0
+    for s in data:
+        if(s in '0123456789'):
+            continue
+        elif(s in '.' and count < 1):
+            count += 1
+        else:
+            return False
+    return True
