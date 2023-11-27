@@ -21,23 +21,30 @@ xTest = testDecimal(x)
 yTest = testDecimal(y)
 
 if(mode == '+'):
-    if(xTest[1] and yTest[0])
+    if(xTest[0] and yTest[0]):
+        x = float(x)
+        y = float(y)
     res = x + y
 
-elif(testDecimal(y)):
-    y = float(y)
-    if(mode == '*'):
+elif(mode == '*'):
+    if(yTest[1] == False):
+        y = int(y)
         res = x*y
-    elif(testDecimal(x)):
+    elif(xTest[0] and yTest[0]):
         x = float(x)
+        y = float(y)
+        res = x*y
+    else:
+        res = 'Escaping TypeError'
+elif(xTest[0] and yTest[0]):
+        x = float(x)
+        y = float(y)
         if(mode == '-'):
             res = x - y
         elif(mode == '/'):
             res = x / y
         else:
             res = ('Operation is unavailable.')
-    else:
-        res = 'Escaping TypeError'
 else:
     res = 'Escaping TypeError'
 print(res)
