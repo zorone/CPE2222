@@ -20,15 +20,15 @@ if(mode == '+'):
 elif(testDecimal(y)):
     if(mode == '*'):
         res = x*y
+    elif(testDecimal(x)):
+        if(mode == '-'):
+            res = x - y
+        elif(mode == '/'):
+            res = x / y
+        else:
+            res = ('Operation is unavailable.')
     else:
         res = 'Escaping TypeError'
-
-elif(testDecimal(x)):
-    
-elif(mode == '-'):
-    res = x - y
-elif(mode == '/'):
-    res = x/y
 else:
-    print('Operation is unavailable.')
+    res = 'Escaping TypeError'
 print(res)
