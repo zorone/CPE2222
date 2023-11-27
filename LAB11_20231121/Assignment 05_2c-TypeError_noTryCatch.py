@@ -13,6 +13,8 @@ def testDecimal(data):
         else:
             return (False, False) # string
     else:
+        if(len(data) > 0):
+            break
         return (False, False) # Empty String
 
     if(count == 0):
