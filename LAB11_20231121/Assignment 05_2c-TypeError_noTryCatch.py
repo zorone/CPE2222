@@ -18,9 +18,11 @@ if(mode == '+'):
     res = x + y
 
 elif(testDecimal(y)):
+    y = float(y)
     if(mode == '*'):
         res = x*y
     elif(testDecimal(x)):
+        x = float(x)
         if(mode == '-'):
             res = x - y
         elif(mode == '/'):
