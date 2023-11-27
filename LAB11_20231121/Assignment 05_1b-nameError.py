@@ -12,3 +12,12 @@ try:
 
 except NameError:
     res = list()
+    print("Escaping NameError")
+
+finally:
+    for data in dup:
+        if(data >= 5):
+            res = [data]
+        else:
+            res += [data]
+    print(res)
