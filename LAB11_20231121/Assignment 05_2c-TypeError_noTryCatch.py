@@ -5,7 +5,7 @@ mode = input("Please enter modes:")
 
 if(mode == '+'):
     res = x + y
-elif(y.isdecimal()):
+elif(testDecimal(y)):
     if(mode == '*'):
         res = x*y
 elif(x.isdigit):
@@ -16,3 +16,6 @@ elif(mode == '/'):
 else:
     print('Operation is unavailable.')
 print(res)
+
+def testDecimal(str):
+    for s in
