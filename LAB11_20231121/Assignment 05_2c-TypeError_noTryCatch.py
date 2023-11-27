@@ -31,12 +31,12 @@ if(mode == '+'):
     res = x + y
 
 elif(mode == '*'):
-    if(yTest[1] == True):
-        y = int(y)
-        res = x*y
-    elif(xTest[0] and yTest[0]):
+    if(xTest[0] and yTest[0]):
         x = float(x)
         y = float(y)
+        res = x*y
+    elif(yTest[1] == True):
+        y = int(y)
         res = x*y
     else:
         res = 'Escaping TypeError'
