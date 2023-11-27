@@ -11,7 +11,7 @@ val = int(input('Enter value:'))
 limit = getrecursionlimit()
 if(val >= limit):
     print('Escaping RecursionError')
-    print("Set val to {} so it won't exceed recursion limit.".format(limit))
-    val = limit-4
+    print("Set val to {} so it won't exceed recursion limit.".format(limit-5))
+    val = limit-5
 
 recursivePrint(val)
