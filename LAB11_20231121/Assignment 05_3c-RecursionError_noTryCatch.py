@@ -12,6 +12,6 @@ limit = getrecursionlimit()
 if(val >= limit):
     print('Escaping RecursionError')
     print("Set val to {} so it won't exceed recursion limit.".format(limit))
-    val = limit-9
+    val = limit-8
 
 recursivePrint(val)
