@@ -9,6 +9,7 @@ def recursivePrint(val :int):
 
 val = int(input('Enter value:'))
 limit = getrecursionlimit()
+print(limit)
 if(val >= limit):
     print('Escaping RecursionError')
     print("Set val to {} so it won't exceed recursion limit.".format(limit))
