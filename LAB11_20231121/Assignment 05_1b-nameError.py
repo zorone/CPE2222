@@ -8,7 +8,7 @@ try:
             res = [data]
         else:
             res += [data]
-    print(res)
+        print(res)
 
 except NameError:
     res = list()
@@ -20,4 +20,4 @@ finally:
             res = [data]
         else:
             res += [data]
-    print(res)
+        print(res)
