@@ -1,5 +1,5 @@
 d = dict()
 for c in 'abcdefghijklmnopqrstuvwxyz':
-    d.update(c, c)
+    d.setdefault(c, c)
 
 print(d)
