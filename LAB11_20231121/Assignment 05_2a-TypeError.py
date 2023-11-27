@@ -1,6 +1,6 @@
 x = input("Enter first argument:")
 y = input("Enter second argument:")
-print("Usable modes: +, -, *, /\n")
+print("Usable modes: +, -, *, /")
 mode = input("Please enter modes:")
 
 if(mode == '+'):
