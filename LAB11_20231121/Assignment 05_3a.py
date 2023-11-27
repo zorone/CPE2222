@@ -5,5 +5,5 @@ def recursivePrint(val :int):
         recursivePrint(val+1)
     print(val)
 
-input = int('Enter value:')
-recursivePrint(input)
+val = int(input('Enter value:'))
+recursivePrint(val)
