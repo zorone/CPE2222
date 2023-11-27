@@ -1,13 +1,9 @@
 d = dict()
 
-try:
-    for c in 'abcdefghijklmnopqrstuvwxyz':
-        d[c] = c
+for c in 'abcdefghijklmnopqrstuvwxyz':
+    d[c] = c
 
-    print(d)
+print(d)
 
-    for c in 'abcdefghijklmnopqrstuvwxyz':
-        print(d[c])
-
-except KeyError:
-    print('Escaping KeyError')
+for c in 'abcdefghijklmnopqrstuvwxyz':
+    print(d[c])
