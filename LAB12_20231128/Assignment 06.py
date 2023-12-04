@@ -50,7 +50,7 @@ K3 = (K1 - K2)/20
 K = np.sum(K3, axis=0)
 print(K)
 
-K = np.sum(A*(X**2)-(Y*X), axis=0)/2
+K = np.sum(A*(X**2)-(Y*X), axis=0)/20
 print(K)
 
 K = np.sum(A*(X**2)-(Y*X), axis=1)
