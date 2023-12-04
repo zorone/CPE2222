@@ -24,7 +24,7 @@ m = J.size
 J = J/(2*m)
 
 K = (np.sum(A*(X**2))-(Y*X))
-m = K.size*5
+m = K.size/5
 K = K/m
 
 print('X[{},:] = {}'.format(0, X[0, :]))
