@@ -19,7 +19,7 @@ Y = Y[:, np.newaxis]
 
 A = D.sum(axis=(1,2))
 
-J = (np.sum((A*X-Y))**2)
+J = (np.sum(((A*X)-Y)**2))
 m = J.size
 J = J/(2*m)
 
