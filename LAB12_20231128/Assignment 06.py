@@ -12,7 +12,7 @@ _5 = np.loadtxt('5.csv')
 
 D = np.array([_1, _2, _3, _4, _5])
 
-X = D.mean(axis=2)
+X = D.mean()
 
 print(D)
 print(X)
