@@ -21,8 +21,8 @@ A = D.sum(axis=(1,2))
 A = A.reshape(1, 5)
 
 J1 = np.matmul(A, np.transpose(X))-np.transpose(Y)
-J2 = J1.sum()
-J = J2**2/(2*J1.size)
+J2 = J1**2
+J = J2.sum()/(2*J2.size)
 
 K1 = X**2
 K2 = np.matmul(A, np.transpose(K1))
