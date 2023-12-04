@@ -13,5 +13,6 @@ _5 = np.loadtxt('5.csv')
 D = np.array([_1, _2, _3, _4, _5])
 
 X = np.transpose(D.mean(axis=1))
+Y = np.std(D)
 
 print(X)
