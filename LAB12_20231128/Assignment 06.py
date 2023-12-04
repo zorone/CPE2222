@@ -54,6 +54,6 @@ K = np.sum(A*(X**2)-(Y*X), axis=0)/2
 print(K)
 
 K = np.sum(A*(X**2)-(Y*X), axis=1)
-K.reshape(20, 5)
+K = K.reshape(20, 5)
 K = np.mean(K, axis=0)
 print(K)
