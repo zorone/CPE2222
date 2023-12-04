@@ -24,8 +24,12 @@ J1 = np.matmul(A, np.transpose(X))-np.transpose(Y)
 J2 = np.matmul(J1, np.transpose(J1))
 J = J2.sum()/(2*J2.size)
 
-K1 = np.matmul(X, np.transpose(X))
-K2 = np.matmul(A, X)
+K1 = X**2
+K2 = np.matmul(A, np.transpose(K1))
+K3 = np.sum(K2)
+K4 = np.matmul(np.transpose(Y), X)
+K5 = K3-K4
+K = K5/K5.size
 
 print('X[{},:] = {}'.format(0, X[0, :]))
 print('X[{},:] = {}\n'.format(-1, X[-1, :]))
@@ -33,3 +37,4 @@ print('Y[{},0] = {}'.format(0, Y[0, 0]))
 print('Y[{},0] = {}\n'.format(-1, Y[-1, 0]))
 print("A = {}\n".format(A))
 print("J = {}\n".format(J))
+print("K = {}\n".format(K))
