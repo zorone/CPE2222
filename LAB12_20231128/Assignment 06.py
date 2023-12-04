@@ -50,6 +50,7 @@ for i in range(0, 2):
 
 for i in range(0, 2):
     for j in range(0, 2):
+        if i == 0 and j == 0: continue
         K = np.sum(np.sum(A*(X**2), axis=i)-(Y*X), axis=j)
         print(K)
 
