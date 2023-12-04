@@ -21,8 +21,8 @@ A = D.sum(axis=(1,2))
 
 m = D.size
 
-J = np.sum((A*X-Y)**2)/(2*m)
-K = (np.sum(A*(X**2))-(Y*X))/m
+J = (np.sum((A*X-Y))**2)/(2*m)
+K = (np.sum(A*(X**2)-(Y*X)))/m
 
 print('X[{},:] = {}'.format(0, X[0, :]))
 print('X[{},:] = {}\n'.format(-1, X[-1, :]))
