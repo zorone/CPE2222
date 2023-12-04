@@ -34,6 +34,7 @@ print('Y[{},0] = {}\n'.format(-1, Y[-1, 0]))
 print("A = {}\n".format(A))
 
 # print(J)
-print(K)
+# print(K)
 # print(A*X*X)
 # print(Y*X)
+print((A*X).shape)
