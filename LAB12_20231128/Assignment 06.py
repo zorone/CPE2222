@@ -41,14 +41,19 @@ K = (np.mean(A*(X**2)-(Y*X), axis=0))*5
 print(K)
 
 K1 = np.sum(A*(X**2), axis=1)
-K2 = np.sum(Y*X, axis=1)/20
+K1.reshape(20, 5)
+K2 = np.sum(Y*X, axis=1)
+K2.reshape(20, 5)
 print(K1)
 print(K2)
+K3 = (K1 - K2)/20
+K = np.sum(K3, axis=0)
+print(K3)
 
 K = np.sum(A*(X**2)-(Y*X), axis=0)/2
 print(K)
 
 K = np.sum(A*(X**2)-(Y*X), axis=1)
-K = K[:, 5]
+K.reshape(20, 5)
 K = np.mean(K, axis=0)
 print(K)
