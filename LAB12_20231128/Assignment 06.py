@@ -18,4 +18,5 @@ Y = Y[:, np.newaxis]
 
 print('X[{},:] = {}'.format(0, X[0, :]))
 print('X[{},:] = {}'.format(-1, X[-1, :]))
-print(Y)
+print('Y[{},:] = {}'.format(-1, Y[0, 0]))
+print('Y[{},:] = {}'.format(-1, Y[-1, 0]))
