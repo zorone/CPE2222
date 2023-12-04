@@ -19,10 +19,6 @@ Y = Y[:, np.newaxis]
 
 A = D.sum(axis=(1,2))
 
-K = (np.sum(A*(X**2)-(Y*X)))
-m = K.size/5
-K = K/m
-
 print('X[{},:] = {}'.format(0, X[0, :]))
 print('X[{},:] = {}\n'.format(-1, X[-1, :]))
 print('Y[{},0] = {}'.format(0, Y[0, 0]))
@@ -47,10 +43,11 @@ print(J)
 J = np.sum((A*X-Y)**2)/(40)
 print(J)
 
-J = np.sum((A*X-Y)/(500))**2
+J = np.sum((A*X-Y)/(40))**2
 print(J)
 
-J = (np.sum(A*X-Y)**2)/(2000)
+J = (np.sum(A*X-Y)**2)/(20000)
 print(J)
 
-# print(K)
+K = (np.sum(A*(X**2)-(X*Y)))
+print(K)
