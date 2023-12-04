@@ -49,5 +49,5 @@ print(J)
 J = (np.sum(A*X-Y)**2)/(20000)
 print(J)
 
-K = (np.sum(A*(X**2)-(X*Y)))
+K = (np.sum((X**2)*A-(X*Y)))
 print(K)
