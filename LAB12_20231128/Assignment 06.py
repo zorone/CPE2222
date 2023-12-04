@@ -26,10 +26,10 @@ print('Y[{},0] = {}'.format(0, Y[0, 0]))
 print('Y[{},0] = {}\n'.format(-1, Y[-1, 0]))
 print("A = {}\n".format(A))
 
-J = np.sum((A*X-Y)**2)/20
+J = np.sum((A*X-Y)**2)/10
 print(J)
 
-J = np.mean((A*X-Y)**2)*20
+J = np.mean((A*X-Y)**2)*10
 print(J)
 
 J = (np.mean(A*X-Y)**2)/(2000)
