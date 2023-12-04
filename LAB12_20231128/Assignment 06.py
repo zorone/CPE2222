@@ -26,43 +26,4 @@ print('Y[{},0] = {}'.format(0, Y[0, 0]))
 print('Y[{},0] = {}\n'.format(-1, Y[-1, 0]))
 print("A = {}\n".format(A))
 
-J = np.sum((A*X-Y)**2)/40
-print(J)
-
-J = np.mean((A*X-Y)**2)*10
-print(J)
-
-J = (np.mean(A*X-Y)**2)/10
-print(J)
-
-K = (np.sum(A*(X**2)-(Y*X), axis=0)/20)
-print(K)
-
-K = np.mean((np.sum(A*(X**2), axis=0)-(Y*X)), axis=0)/20
-print(K)
-
-K = (np.mean(A*(X**2)-(Y*X), axis=0))*5
-print(K)
-
-K1 = np.sum(A*(X**2), axis=1)
-K1 = K1.reshape(20, 5)
-K2 = np.sum(Y*X, axis=1)
-K2 = K2.reshape(20, 5)
-K3 = (K1 - K2)/20
-K = np.sum(K3, axis=0)
-print(K)
-
-K = np.sum(A*(X**2)-(Y*X), axis=0)/20
-print(K)
-
-K = np.sum(A*(X**2)-(Y*X), axis=1)
-K = K.reshape(20, 5)
-K = np.mean(K, axis=0)
-print(K)
-
-K = np.sum(A*(X**2)-(Y*X), axis=1)
-K = K.reshape(20, 5)
-K = np.mean(K, axis=1)
-K = K.reshape(4, 5)
-K = np.mean(K, axis=0)
-print(K)
+print(A*X)
