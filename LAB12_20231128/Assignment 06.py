@@ -1,4 +1,8 @@
+import os
 import numpy as np
+
+path = os.path.dirname(os.path.abspath(__file__))
+os.chdir(path)
 
 _1 = np.loadtxt('1.csv')
 _2 = np.loadtxt('2.csv')
