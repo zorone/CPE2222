@@ -18,6 +18,7 @@ Y = np.std(D.std(axis=2), axis=0)
 Y = Y[:, np.newaxis]
 
 A = D.sum(axis=(1,2))
+A = A.reshape(1, 5)
 
 print('X[{},:] = {}'.format(0, X[0, :]))
 print('X[{},:] = {}\n'.format(-1, X[-1, :]))
