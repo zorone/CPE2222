@@ -26,4 +26,4 @@ print('Y[{},0] = {}'.format(0, Y[0, 0]))
 print('Y[{},0] = {}\n'.format(-1, Y[-1, 0]))
 print("A = {}\n".format(A))
 
-print((A*X-Y)**2)
+print(np.sum((A*X-Y)**2, axis=0))
