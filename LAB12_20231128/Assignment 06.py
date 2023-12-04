@@ -32,7 +32,7 @@ print(J)
 J = np.mean((A*X-Y)**2)*10
 print(J)
 
-J = (np.mean(A*X-Y)**2)/(2000)
+J = (np.mean(A*X-Y)**2)/10
 print(J)
 
 K = (np.sum(A*(X**2)-(Y*X), axis=0)/20)
