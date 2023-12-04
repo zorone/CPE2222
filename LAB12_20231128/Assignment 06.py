@@ -13,7 +13,8 @@ _5 = np.loadtxt('5.csv')
 D = np.array([_1, _2, _3, _4, _5])
 
 X = np.transpose(D.mean(axis=1))
-Y = D.std(axis=(2, 0))
+Y = np.std(D.std(axis=2), axis=0)
+Y = Y[:, np.newaxis]
 
 print('X[{},:] = {}'.format(0, X[0, :]))
 print('X[{},:] = {}'.format(-1, X[-1, :]))
