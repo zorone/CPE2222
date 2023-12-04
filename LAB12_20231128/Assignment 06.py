@@ -29,7 +29,7 @@ K2 = np.matmul(A, np.transpose(K1))
 K3 = np.sum(K2)
 K4 = np.matmul(np.transpose(Y), X)
 K5 = K3-K4
-K = K5/K5.size
+K = K5/K2.size
 
 print('X[{},:] = {}'.format(0, X[0, :]))
 print('X[{},:] = {}\n'.format(-1, X[-1, :]))
