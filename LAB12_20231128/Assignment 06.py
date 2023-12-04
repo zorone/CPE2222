@@ -44,13 +44,13 @@ print(J)
 J = np.sum((A*X-Y)**2)
 print(J)
 
-J = np.sum((A*X-Y)**2)/(500)
+J = np.sum((A*X-Y)**2)/(40)
 print(J)
 
 J = np.sum((A*X-Y)/(500))**2
 print(J)
 
-J = (np.sum(A*X-Y)**2)/(500)
+J = (np.sum(A*X-Y)**2)/(2000)
 print(J)
 
 # print(K)
