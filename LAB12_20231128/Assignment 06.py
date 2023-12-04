@@ -39,3 +39,6 @@ print(K)
 
 K = np.mean((np.sum(A*(X**2), axis=0)-(Y*X)), axis=0)/20
 print(K)
+
+K = (np.mean(A*(X**2)-(Y*X), axis=0)/20)
+print(K)
