@@ -13,10 +13,15 @@ _5 = np.loadtxt('5.csv')
 D = np.array([_1, _2, _3, _4, _5])
 
 X = np.transpose(D.mean(axis=1))
+
 Y = np.std(D.std(axis=2), axis=0)
 Y = Y[:, np.newaxis]
 
+A = D.sum(axis=(1,2))
+
 print('X[{},:] = {}'.format(0, X[0, :]))
-print('X[{},:] = {}'.format(-1, X[-1, :]))
-print('Y[{},:] = {}'.format(-1, Y[0, 0]))
-print('Y[{},:] = {}'.format(-1, Y[-1, 0]))
+print('X[{},:] = {}\n'.format(-1, X[-1, :]))
+print('Y[{},0] = {}'.format(0, Y[0, 0]))
+print('Y[{},0] = {}\n'.format(-1, Y[-1, 0]))
+
+print(A)
