@@ -20,9 +20,9 @@ Y = Y[:, np.newaxis]
 A = D.sum(axis=(1,2))
 A = A.reshape(1, 5)
 
-J1 = np.matmul(A, np.transpose(X))
-J2 = Y**2
-J = np.sum(J1-np.transpose(J2))/(2*J1.size)
+J1 = np.matmul(X, np.transpose(A))-Y
+J2 = np.matmul(J1, np.transpose(J1))
+J = J2.sum()/(2*J2.size)
 
 K1 = X**2
 K2 = np.matmul(A, np.transpose(K1))
