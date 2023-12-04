@@ -26,7 +26,7 @@ J = J/(2*m)
 K = (np.sum(A*(X**2))-(Y*X))
 m = K.size/5
 K = K/m
-K = K.mean(axis=1)
+K = K.mean(axis=0)
 
 print('X[{},:] = {}'.format(0, X[0, :]))
 print('X[{},:] = {}\n'.format(-1, X[-1, :]))
@@ -36,3 +36,4 @@ print("A = {}\n".format(A))
 
 print(J)
 print(K)
+print(A*X)
