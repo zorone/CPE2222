@@ -19,9 +19,7 @@ Y = Y[:, np.newaxis]
 
 A = D.sum(axis=(1,2))
 
-J = (np.sum(((A*X)-Y))**2)
-m = J.size
-J = J/(2*m)
+J = A*X
 
 K = (np.sum(A*(X**2)-(Y*X)))
 m = K.size/5
@@ -35,6 +33,3 @@ print("A = {}\n".format(A))
 
 # print(J)
 # print(K)
-# print(A*X*X)
-# print(Y*X)
-print(np.mean(A*X*X-Y*X, axis=0))
