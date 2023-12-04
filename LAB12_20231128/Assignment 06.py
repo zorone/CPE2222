@@ -36,3 +36,6 @@ print(K)
 
 K = (np.sum(A*(X**2), axis=0)-(Y*X))/20
 print(K)
+
+K = np.sum((np.sum(A*(X**2), axis=0)-(Y*X)), axis=0)/20
+print(K)
