@@ -21,10 +21,12 @@ A = D.sum(axis=(1,2))
 A = A.reshape(1, 5)
 
 J1 = np.matmul(A, np.transpose(X))-np.transpose(Y)
-J = np.sum(np.matmul(J1, np.transpose(J1)))
+J2 = np.matmul(J1, np.transpose(J1))
+J = J2.sum()/(2*J2.size)
 
 print('X[{},:] = {}'.format(0, X[0, :]))
 print('X[{},:] = {}\n'.format(-1, X[-1, :]))
 print('Y[{},0] = {}'.format(0, Y[0, 0]))
 print('Y[{},0] = {}\n'.format(-1, Y[-1, 0]))
 print("A = {}\n".format(A))
+print("J = {}\n".format(J))
