@@ -40,18 +40,13 @@ print(K)
 K = (np.mean(A*(X**2)-(Y*X), axis=0))*5
 print(K)
 
-for i in range(0, 2):
-    for j in range(0, 2):
-        if i == 0 and j == 0: continue
-        if i == 0 and j == 1: continue
-        if i == 1 and j == 0: continue
-        K = (np.sum(A*(X**2), axis=i) - np.sum(Y*X, axis=j))/20
-        print(K)
+K = (np.sum(A*(X**2), axis=1) - np.sum(Y*X, axis=1))/20
+print(K)
 
 for i in range(0, 2):
     for j in range(0, 2):
         if i == 0 and j == 0: continue
-        K = np.sum(np.sum(A*(X**2), axis=i)-(Y*X), axis=j)
+        K = np.sum(A*(X**2)*np.sum((Y*X), axis=i), axis=j)
         print(K)
 
 for i in range(0, 2):
