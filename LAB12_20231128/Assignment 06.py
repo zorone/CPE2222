@@ -43,6 +43,7 @@ print(K)
 for i in range(0, 2):
     for j in range(0, 2):
         if i == 0 and j == 0: continue
+        if i == 0 and j == 1: continue
         K = (np.sum(A*(X**2), axis=i) - np.sum(Y*X, axis=j))/20
         print(K)
 
