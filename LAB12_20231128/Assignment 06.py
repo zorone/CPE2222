@@ -19,7 +19,7 @@ Y = Y[:, np.newaxis]
 
 A = D.sum(axis=(1,2))
 
-m = D.size
+m = 100000
 
 J = (np.sum((A*X-Y))**2)/(2*m)
 K = (np.sum(A*(X**2)-(Y*X)))/m
