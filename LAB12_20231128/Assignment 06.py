@@ -10,10 +10,6 @@ _3 = np.loadtxt('3.csv')
 _4 = np.loadtxt('4.csv')
 _5 = np.loadtxt('5.csv')
 
-D = _1
-np.concatenate(D, _2)
-np.concatenate(D, _3)
-np.concatenate(D, _4)
-np.concatenate(D, _5)
+D = np.array([_1, _2, _3, _4, _5])
 
 print(D)
