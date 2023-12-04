@@ -23,7 +23,7 @@ J = (np.sum(((A*X)-Y))**2)
 m = J.size
 J = J/(2*m)
 
-K = (np.sum(A*(X**2))-(Y*X))
+K = (np.sum(A*(X**2)-(Y*X)))
 m = K.size/5
 K = K/m
 K = K.mean(axis=0)
