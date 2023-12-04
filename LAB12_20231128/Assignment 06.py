@@ -44,11 +44,5 @@ K = (np.sum(A*(X**2), axis=1) - np.sum(Y*X, axis=1))/20
 print(K)
 
 for i in range(0, 2):
-    for j in range(0, 2):
-        if i == 0 and j == 0: continue
-        K = np.sum(A*(X**2)*np.sum((Y*X), axis=i), axis=j)
-        print(K)
-
-for i in range(0, 2):
     K = np.sum(A*(X**2)-(Y*X), axis=i)
     print(K)
