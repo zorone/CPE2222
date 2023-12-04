@@ -15,6 +15,6 @@ D = np.array([_1, _2, _3, _4, _5])
 X = np.transpose(D.mean(axis=1))
 Y = np.std(D.std(axis=1), axis=0)
 
-print('X[{},:] = {}'.format(0, D[0, 1]))
-print('X[{},:] = {}'.format(-1, D[-1, :]))
+print('X[{},:] = {}'.format(0, X[0, 1]))
+print('X[{},:] = {}'.format(-1, X[-1, :]))
 print(Y)
