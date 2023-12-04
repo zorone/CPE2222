@@ -38,12 +38,21 @@ print(J)
 J = (A*X-Y)**2
 print(J)
 
-J = A*X-Y
-print(J)
-
 J = np.sum(A*X-Y)**2
 print(J)
 
 J = np.sum((A*X-Y)**2)
+print(J)
+
+J = np.sum((A*X-Y)**2)/(2*500)
+print(J)
+
+J = np.sum((A*X-Y)/(2*500))**2
+print(J)
+
+J = (np.sum(A*X-Y)**2)/(2*500)
+print(J)
+
+J = (np.sum(A*X-Y)/(2*500))**2
 print(J)
 # print(K)
