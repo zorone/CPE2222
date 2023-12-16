@@ -1,4 +1,4 @@
-import OS
+import os
 
 # TODO: Write codes as Assigned.
 # ? Don't forget to add citation.
@@ -12,7 +12,7 @@ class Main():
 
 # TODO: Navigate to current directory
     def setCurrentDir(self):
-        OS.
+        path = os.path().dirname(os.)
 
 # TODO: Fetch Data
 
