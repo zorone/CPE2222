@@ -1,4 +1,5 @@
 import os
+from urllib.request import urlretrieve
 
 # TODO: Write codes as Assigned.
 # ? Don't forget to add citation.
@@ -8,13 +9,24 @@ class Main():
     def __init__(self):
         # TODO: module detection
         # ? Added module detection capability.
-        print
+
+        self.setCurrentDir()
 
 # TODO: Navigate to current directory
     def setCurrentDir(self):
-        path = os.path().dirname(os.)
+        path = os.path.dirname(os.path.abspath(__file__))
+        os.chdir(path)
 
 # TODO: Fetch Data
+    def fetch(self, url):
+        # * src: https://docs.python.org/3/library/urllib.request.html#urllib.request.urlretrieve
+        # * src: https://realpython.com/python-download-file-from-url/#facilitating-file-downloads-with-python
+        
+        # ? Further Reading
+        # ? src: https://urllib3.readthedocs.io/en/stable/
+        # ? src: https://requests.readthedocs.io/en/latest/
+        # ? src: https://docs.aiohttp.org/en/stable/
+        print
 
 # TODO: Read Data using numpy
 
