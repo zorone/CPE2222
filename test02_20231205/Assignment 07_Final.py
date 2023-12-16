@@ -1,7 +1,18 @@
+import OS
+
 # TODO: Write codes as Assigned.
 # ? Don't forget to add citation.
 
+# TODO: Initialize Class
+class Main():
+    def __init__(self):
+        # TODO: module detection
+        # ? Added module detection capability.
+        print
+
 # TODO: Navigate to current directory
+    def setCurrentDir(self):
+        OS.
 
 # TODO: Fetch Data
 
@@ -28,9 +39,10 @@
 
 # TODO: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
-# * Pandas Data Frame
+# * 2-Ordered Pandas Data Frame
 # * In this Form:
 # * 'Other Liabilities to Financial Institutions': min, mean, max
 # * 'Other Items (net)': min, mean, max
 
-# TODO: Initialize program
+if __name__ == "__main__":
+    main = Main()
