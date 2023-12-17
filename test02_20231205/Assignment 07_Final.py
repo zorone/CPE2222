@@ -60,8 +60,8 @@ class Main():
             print(self.dataKey)
             print(self.date)
             
-            self.dataKey = pd.to_datetime(self.dataKey, format="%b %Y ")
-            print(self.dataKey)
+            self.date = pd.to_datetime(self.date, format="%b %Y ")
+            print(self.date)
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
