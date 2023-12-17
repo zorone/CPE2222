@@ -18,6 +18,7 @@ class Main():
         self.fetch(url)
         self.pdInit()
         self._1()
+        self._2()
 
 # DONE: Navigate to current directory
     def setCurrentDir(self):
@@ -95,8 +96,6 @@ class Main():
         self.data_1 = self.data[self.dataKey[17]]
         self.data_1 = self.data_1.filter(like='F').iloc[0::4]
         self._res_1 = int(round(self.data_1.mean(axis=0), 0))
-        print(self.data_1)
-        print(self._res_1)
         
         # TODO: non-libary method.
 
@@ -107,7 +106,8 @@ class Main():
     def _2(self):
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#indexing
         
-        self.data_2 = self.data[self.dataKey[9]]
+        self.data_2 = self.data[self.dataKey[8]]
+        print(self.data_2)
         self._res_2 = self.data_2.mean()
 
 # TODO: 3.
