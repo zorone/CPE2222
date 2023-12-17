@@ -95,6 +95,7 @@ class Main():
         self.data_1 = self.data[self.dataKey[18]]
         self.data_1 = self.data_1.filter(like='F').iloc[0::4]
         self._res_1 = int(round(self.data_1.mean(axis=0), 0))
+        print(self.data_1)
         print(self._res_1)
         
         # TODO: non-libary method.
