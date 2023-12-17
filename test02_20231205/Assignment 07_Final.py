@@ -84,12 +84,14 @@ class Main():
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.is_leap_year.html#pandas-series-dt-is-leap-year
         # * src: https://pandas.pydata.org/docs/user_guide/10min.html#boolean-indexing
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas-series
-        # * src: https://docs.python.org/3/library/functions.html?highlight=all#all
         
         # ? Further reading
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#converting-to-timestamps
+        # ? src: https://docs.python.org/3/library/functions.html?highlight=all#all
         
         self.data_1 = self.data[self.dataKey[17]]
+        self.data_1_check = self.date.is_leap_year
+        self.data_1_check = self.data_1_check.month == 2
         
         self.data_1 = self.data_1.all([self.date.is_leap_year, self.date.month == 2])
         print(self.data_1)
