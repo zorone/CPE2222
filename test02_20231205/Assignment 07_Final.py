@@ -13,6 +13,7 @@ class Main():
         # ? Implement All Library check at initialize stage
         
         self.setCurrentDir()
+        self.fetch()
         self.pdInit()
 
 # DONE: Navigate to current directory
