@@ -66,7 +66,7 @@ class Main():
     def _1(self):
         self.data_1 = self.data[18]
         self.data_1_check = self.data_1.dt.is_leap_year
-        self.data_1 = self.data[self.data_1.dt.is_leap_year not False]
+        self.data_1 = self.data[self.data_1.dt.is_leap_year is True]
         print(self.data_1)
         self._res_1 = self.data_1.mean(axis=0, )
         
