@@ -44,7 +44,7 @@ class Main():
             import pandas as pd
             
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
-            self.data = pd.read_csv(self.fileName, header=None)
+            self.data = pd.read_csv(self.fileName, skiprows=5)
             print(self.data)
 
         except ModuleNotFoundError:
