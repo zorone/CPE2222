@@ -13,14 +13,14 @@ class Main():
         # ? Implement All Library check at initialize stage
         
         self.setCurrentDir()
-        
+        self.pdInit()
 
 # DONE: Navigate to current directory
     def setCurrentDir(self):
         path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(path)
 
-# TODO: Fetch Data
+# DONE: Fetch Data
     def fetch(self, url):
         # * src: https://docs.python.org/3/library/urllib.request.html#urllib.request.urlretrieve
         # * src: https://realpython.com/python-download-file-from-url/#facilitating-file-downloads-with-python
@@ -32,13 +32,16 @@ class Main():
         
         url = "https://app.bot.or.th/BTWS_STAT/statistics/DownloadFile.aspx?file=EC_MB_001_ENG_ALL.CSV"
         self.fileName, res = urlretrieve(url, filename='./EC_MB_001_ENG_ALL.CSV')
+        self.fileName = './' + self.fileName
         
         # TODO: Added options for keeping file or not.
 
 # TODO: Read Data using numpy
-    def pdInit(self, file):
+    def pdInit(self):
         try:
             import pandas as pd
+            self.data = pd.read_csv(self.fileName)
+            print(self.data)
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
