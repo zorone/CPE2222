@@ -50,7 +50,7 @@ class Main():
             # ? Further Reading
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
             
-            self.data = pd.read_csv(self.fileName, header=5, usecols=[1,:]).transpose()
+            self.data = pd.read_csv(self.fileName, header=5, usecols=[x for x in range(1, 378)]).transpose()
             print(self.data)
 
         except ModuleNotFoundError:
