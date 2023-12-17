@@ -109,7 +109,8 @@ class Main():
         # * src: https://stackoverflow.com/questions/43556344/pandas-monthly-rolling-operation
         # * src: https://copyprogramming.com/howto/pandas-find-the-mean-for-each-year
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/09_timeseries.html
-        
+        # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/06_calculate_statistics.html
+        # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/07_reshape_table_layout.html#min-tut-07-reshape
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/docs/user_guide/basics.html#dtypes
@@ -117,10 +118,9 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.rolling.html#pandas-series-rolling
         # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
-        # ? src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/06_calculate_statistics.html
         
         self.data_2 = self.data[self.dataKey[9]]
-        self._res_2 = pd.Series()
+        self._res_2 = self.data_2.groupby()
         print(self._res_2)
 
 # TODO: 3.
