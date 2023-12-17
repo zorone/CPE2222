@@ -46,6 +46,8 @@ class Main():
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html#pandas.DataFrame.transpose
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#handling-column-names
+            # * src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
+            # * src: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
             
             # ? Further Reading
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
@@ -55,7 +57,8 @@ class Main():
             print(self.data)
             print(self.dataKey)
             
-            self.dataKey = self.dataKey.to_datetime
+            self.dataKey = pd.to_datetime(self.dataKey, format='%b %Y')
+            print(self.dataKey)
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
