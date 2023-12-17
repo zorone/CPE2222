@@ -61,7 +61,7 @@ class Main():
             self.date = self.data.index.str.title()
             self.date = pd.to_datetime(self.date, format="%b %Y ")
             
-            self.data = self.data.insert(0, 'time', self.date)
+            self.data.insert(0, 'time', self.date)
             print(self.data)
 
         except ModuleNotFoundError:
