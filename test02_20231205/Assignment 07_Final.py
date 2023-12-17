@@ -11,10 +11,12 @@ class Main():
         # FEATURES: module detection
         # ? Added module detection capability.
         
+        self.setCurrentDir()
+        
         try:
-            self.setCurrentDir()
+            import pandas as pd
         except ModuleNotFoundError:
-            print
+            print("Couldn't find required library. Would you like to install it? <Y/N>")
 
 # DONE: Navigate to current directory
     def setCurrentDir(self):
