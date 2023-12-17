@@ -1,4 +1,5 @@
 import os
+import numpy as np
 from urllib.request import urlretrieve
 
 # TODO: Write codes as Assigned.
@@ -41,7 +42,10 @@ class Main():
     def pdInit(self):
         try:
             import pandas as pd
-            self.data = pd.read_csv(self.fileName)
+            
+            # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
+            data = np.array()
+            self.data = pd.read_csv(self.fileName, data)
             print(self.data)
 
         except ModuleNotFoundError:
