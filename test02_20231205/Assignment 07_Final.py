@@ -1,4 +1,5 @@
 import os
+import io
 import pandas as pd
 import numpy as np
 from urllib.request import urlretrieve
@@ -46,7 +47,10 @@ class Main():
             # FIXME: Will move import pandas outside, please put it back later
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html#pandas.DataFrame.transpose
-            self.data = pd.read_csv(self.fileName, header=5, index_col=0).transpose()
+            # * src: https://pandas.pydata.org/docs/user_guide/io.html#handling-column-names
+            # * src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
+            
+            self.data = pd.read_csv(io.StringIO(self.fileName), header=5, index_col=0).transpose()
             print(self.data)
 
         except ModuleNotFoundError:
