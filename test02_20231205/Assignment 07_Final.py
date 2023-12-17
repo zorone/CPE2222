@@ -53,7 +53,7 @@ class Main():
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
-            self.dataKey = self.data.axes
+            self.dataKey = self.data.index
             print(self.data)
             print(self.dataKey)
             
