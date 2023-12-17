@@ -46,7 +46,7 @@ class Main():
             
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html#pandas.DataFrame.transpose
-            self.data = pd.read_csv(self.fileName, skiprows=5).transpose()
+            self.data = pd.read_csv(self.fileName, header=5, index_col=0).transpose()
             print(self.data)
 
         except ModuleNotFoundError:
