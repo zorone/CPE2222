@@ -19,6 +19,7 @@ class Main():
         self.pdInit()
         self._1()
         self._2()
+        self._3()
 
 # DONE: Navigate to current directory
     def setCurrentDir(self):
@@ -125,7 +126,6 @@ class Main():
         
         self.dataByYear = self.data.groupby(self.data['time'].dt.year)
         self._res_2 = self.dataByYear[self.dataKey[9]].mean().loc[1981:1990]
-        print(self._res_2)
 
 # TODO: 3.
 # ? 3. List of net loss continuously for 3 months
