@@ -90,10 +90,9 @@ class Main():
         # ? src: https://docs.python.org/3/library/functions.html?highlight=all#all
         
         self.data_1 = self.data[self.dataKey[17]]
-        self.data_1_check = self.date.is_leap_year
+        self.data_1_check = self.date.is_leap_year and (self.date.month == 2)
         
         self.data_1 = self.data_1[self.data_1_check]
-        self.data_1 = self.data_1[[self.data_1.index]]
         print(self.data_1)
         # self._res_1 = self.data_1.mean(axis=0, )
         
