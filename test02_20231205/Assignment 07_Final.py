@@ -38,14 +38,13 @@ class Main():
         
         # TODO: Added options for keeping file or not.
 
-# TODO: Read Data using numpy
+# DONE: Read Data using numpy
     def pdInit(self):
         try:
             import pandas as pd
             
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
             self.data = pd.read_csv(self.fileName, skiprows=5)
-            print(self.data)
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
@@ -62,6 +61,10 @@ class Main():
 
 # TODO: 1.
 # ? 1. Mean of monetary base of all February in Leap year.
+    def _1(self):
+        self.mean = self.data.mean(axis=1)
+        
+        # TODO: non-libary method.
 
 # TODO: 2.
 # ? 2. means for each year of 'Net Claims on Central Government'
