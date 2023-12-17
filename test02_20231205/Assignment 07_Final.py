@@ -10,13 +10,10 @@ class Main():
     def __init__(self):
         # FEATURES: module detection
         # ? Added module detection capability.
+        # ? Implement All Library check at initialize stage
         
         self.setCurrentDir()
         
-        try:
-            import pandas as pd
-        except ModuleNotFoundError:
-            print("Couldn't find required library. Would you like to install it? <Y/N>")
 
 # DONE: Navigate to current directory
     def setCurrentDir(self):
@@ -32,9 +29,27 @@ class Main():
         # ? src: https://urllib3.readthedocs.io/en/stable/
         # ? src: https://requests.readthedocs.io/en/latest/
         # ? src: https://docs.aiohttp.org/en/stable/
-        print
+        
+        url = "https://app.bot.or.th/BTWS_STAT/statistics/DownloadFile.aspx?file=EC_MB_001_ENG_ALL.CSV"
+        self.fileName, res = urlretrieve(url, filename='./EC_MB_001_ENG_ALL.CSV')
+        
+        # TODO: Added options for keeping file or not.
 
 # TODO: Read Data using numpy
+    def pdInit(self, file):
+        try:
+            import pandas as pd
+
+        except ModuleNotFoundError:
+            userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
+            if(userPrompt in 'Yy'):
+                self.pdInstall()
+            elif(userPrompt in 'Nn'):
+                # TODO: No pandas method
+                userPrompt = input("Would you want to proceed without pandas anyway? <Y/N>")
+            else:
+                # TODO: let user choose a choice
+                print("Invalid Operation. Please Select operations below:")
 
 # TODO: Manipulated it
 
@@ -61,6 +76,15 @@ class Main():
 # * In this Form:
 # * 'Other Liabilities to Financial Institutions': min, mean, max
 # * 'Other Items (net)': min, mean, max
+
+# TODO: Implement pandas installation.
+    def pdInstall(self):
+        try:
+            os.system("pip install pandas")
+        except:
+            # TODO: no pip handling
+            # TODO: import failed after install pandas
+            print
 
 if __name__ == "__main__":
     main = Main()
