@@ -91,9 +91,9 @@ class Main():
         
         self.data_1 = self.data[self.dataKey[17]]
         self.data_1_check = self.date.is_leap_year
-        self.data_1_check = self.data_1_check.month == 2
         
-        self.data_1 = self.data_1.all([self.date.is_leap_year, self.date.month == 2])
+        self.data_1 = self.data_1[self.data_1_check]
+        self.data_1 = self.data_1[[self.data_1.index]]
         print(self.data_1)
         # self._res_1 = self.data_1.mean(axis=0, )
         
