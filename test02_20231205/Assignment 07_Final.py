@@ -46,22 +46,18 @@ class Main():
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html#pandas.DataFrame.transpose
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#handling-column-names
-            # * src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
             # * src: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.str.casefold.html#pandas.Series.str.casefold
             
             # ? Further Reading
+            # ? src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
             self.dataKey = self.data.keys()
-            self.date = self.data.index.str.title()
             print(self.data)
             print(self.dataKey)
-            print(self.date)
             
-            self.date = pd.to_datetime(self.date, format="%b %Y ")
-            print(self.date)
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
@@ -81,24 +77,22 @@ class Main():
     def _1(self):
         
         # * src: https://pandas.pydata.org/docs/user_guide/10min.html#getitem
-        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.is_leap_year.html#pandas-series-dt-is-leap-year
         # * src: https://pandas.pydata.org/docs/user_guide/10min.html#boolean-indexing
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas-series
         
         # ? Further reading
+        # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.is_leap_year.html#pandas-series-dt-is-leap-year
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#converting-to-timestamps
         # ? src: https://docs.python.org/3/library/functions.html?highlight=all#all
         
         self.data_1 = self.data[self.dataKey[17]]
-        self.data_1_check = self.date.is_leap_year
-        
-        self.data_1 = self.data_1[self.data_1_check]
-        print(self.data_1)
-        
         self.data_1 = self.data_1.filter(like='F')
         print(self.data_1)
-        self._res_1 = int(self.data_1.mean(axis=0).round(0))
-        print(self._res_1)
+        
+        self.data_1 = self.data_1.iloc[0::4]
+        print(self.data_1)
+        # self._res_1 = int(self.data_1.mean(axis=0).round(0))
+        # print(self._res_1)
         
         # TODO: non-libary method.
 
