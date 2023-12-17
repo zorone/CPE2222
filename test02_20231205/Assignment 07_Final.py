@@ -119,7 +119,7 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
         
-        self._res_2 = self.data.groupby(self.data['time'].dt.year)[self.dataKey[9]].where(self.data['time'].dt.year > 1979).mean()
+        self._res_2 = self.data.groupby(self.data['time'].dt.year).loc[1981,1990].mean()
         self._res_2 = self._res_2[:1991]
         print(self._res_2)
 
