@@ -1,5 +1,6 @@
 import os
 from urllib.request import urlretrieve
+import pandas
 
 # TODO: Write codes as Assigned.
 # ? Don't forget to add citation.
@@ -7,12 +8,15 @@ from urllib.request import urlretrieve
 # TODO: Initialize Class
 class Main():
     def __init__(self):
-        # TODO: module detection
+        # FEATURES: module detection
         # ? Added module detection capability.
+        
+        try:
+            self.setCurrentDir()
+        except ModuleNotFoundError:
+            print
 
-        self.setCurrentDir()
-
-# TODO: Navigate to current directory
+# DONE: Navigate to current directory
     def setCurrentDir(self):
         path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(path)
