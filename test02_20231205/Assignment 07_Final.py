@@ -55,8 +55,6 @@ class Main():
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
             self.dataKey = self.data.keys()
-            print(self.data)
-            print(self.dataKey)
             
 
         except ModuleNotFoundError:
@@ -86,11 +84,7 @@ class Main():
         # ? src: https://docs.python.org/3/library/functions.html?highlight=all#all
         
         self.data_1 = self.data[self.dataKey[17]]
-        self.data_1 = self.data_1.filter(like='F')
-        print(self.data_1)
-        
-        self.data_1 = self.data_1.iloc[0::4]
-        print(self.data_1)
+        self.data_1 = self.data_1.filter(like='F').iloc[0::4]
         self._res_1 = int(self.data_1.mean(axis=0).round(0))
         print(self._res_1)
         
