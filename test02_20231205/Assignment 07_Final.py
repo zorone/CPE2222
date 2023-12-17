@@ -1,9 +1,10 @@
 import os
 from urllib.request import urlretrieve
-import pandas
 
 # TODO: Write codes as Assigned.
 # ? Don't forget to add citation.
+
+url = "https://app.bot.or.th/BTWS_STAT/statistics/DownloadFile.aspx?file=EC_MB_001_ENG_ALL.CSV"
 
 # TODO: Initialize Class
 class Main():
@@ -13,7 +14,7 @@ class Main():
         # ? Implement All Library check at initialize stage
         
         self.setCurrentDir()
-        self.fetch()
+        self.fetch(url)
         self.pdInit()
 
 # DONE: Navigate to current directory
@@ -31,7 +32,6 @@ class Main():
         # ? src: https://requests.readthedocs.io/en/latest/
         # ? src: https://docs.aiohttp.org/en/stable/
         
-        url = "https://app.bot.or.th/BTWS_STAT/statistics/DownloadFile.aspx?file=EC_MB_001_ENG_ALL.CSV"
         self.fileName, res = urlretrieve(url, filename='./EC_MB_001_ENG_ALL.CSV')
         self.fileName = './' + self.fileName
         
