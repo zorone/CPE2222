@@ -51,6 +51,7 @@ class Main():
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
+            self.dataKey = self.data.keys()
             print(self.data)
 
         except ModuleNotFoundError:
@@ -78,7 +79,7 @@ class Main():
         # ? Further reading
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#converting-to-timestamps
         
-        self.data_1 = self.data[18]
+        self.data_1 = self.data[self.dataKey[17]]
         print(self.data_1)
         print(self.data_1.dtypes)
         # self.data_1_check = pd.to_datetime(self.data_1)
