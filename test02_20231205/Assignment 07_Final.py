@@ -133,7 +133,7 @@ class Main():
     def _3(self):
         # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
         
-        self._res_3 = self.dataByYear[self.dataKey[1]].get_group(1991, 2005)
+        self._res_3 = self.dataByYear[self.dataKey[1]].get_group(1991)
         print(self._res_3)
 
 # TODO: 4.
