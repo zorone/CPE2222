@@ -119,9 +119,10 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
         
-        self.data_2 = self.data[self.dataKey[9]]
-        self._res_2 = self.data_2.groupby()
-        print(self._res_2)
+        self.data_2 = self.data.groupby(self.data['time'].dt.year)[self.dataKey[9]]
+        print(self.data_2)
+        # self._res_2 = self.data_2
+        # print(self._res_2)
 
 # TODO: 3.
 # ? 3. List of net loss continuously for 3 months
