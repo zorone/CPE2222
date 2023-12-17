@@ -109,9 +109,9 @@ class Main():
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#truncating-fancy-indexing
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing
         
-        self.data_2 = self.data[self.dataKey[0], self.dataKey[9]].between("1981", "1990")
-        self.data.rolling()
-        self._res_2 = self.data_2.rolling(window="1Y").mean(axis=0)
+        self.data_2 = self.data[self.dataKey[0], self.dataKey[9]]
+        # self.data.rolling()
+        # self._res_2 = self.data_2.rolling(window="1Y").mean(axis=0)
 
 # TODO: 3.
 # ? 3. List of net loss continuously for 3 months
