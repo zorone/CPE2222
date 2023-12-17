@@ -92,9 +92,10 @@ class Main():
         # ? src: https://docs.python.org/3/library/functions.html?highlight=all#all
         # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.loc.html#pandas-series-loc
         
-        self.data_1 = self.data[self.dataKey[17]]
+        self.data_1 = self.data[self.dataKey[18]]
         self.data_1 = self.data_1.filter(like='F').iloc[0::4]
         self._res_1 = int(round(self.data_1.mean(axis=0), 0))
+        print(self._res_1)
         
         # TODO: non-libary method.
 
@@ -105,7 +106,7 @@ class Main():
     def _2(self):
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#indexing
         
-        self.data_2 = self.data[self.dataKey[8]]
+        self.data_2 = self.data[self.dataKey[9]]
         self._res_2 = self.data_2.mean()
 
 # TODO: 3.
