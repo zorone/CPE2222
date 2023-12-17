@@ -47,7 +47,6 @@ class Main():
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html#pandas.DataFrame.transpose
             self.data = pd.read_csv(self.fileName, header=5, index_col=0).transpose()
-            print(self.data)
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
@@ -66,7 +65,9 @@ class Main():
 # ? 1. Mean of monetary base of all February in Leap year.
     def _1(self):
         self.data_1 = self.data[18]
+        self.data_1 = self.data_1[self.data_1]
         print(self.data_1)
+        self._res_1 = self.data_1.mean(axis=0, )
         
         # TODO: non-libary method.
 
