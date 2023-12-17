@@ -58,12 +58,12 @@ class Main():
             # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#assigning-new-columns-in-method-chains
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
-            self.dataKey = self.data.keys()
             self.date = self.data.index.str.title()
             self.date = pd.to_datetime(self.date, format="%b %Y ")
             
             self.data.insert(0, 'time', self.date)
             print(self.data)
+            self.dataKey = self.data.keys()
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
@@ -93,10 +93,10 @@ class Main():
         # ? src: https://docs.python.org/3/library/functions.html?highlight=all#all
         # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.loc.html#pandas-series-loc
         
-        self.data_1 = self.data[self.dataKey[17]]
+        self.data_1 = self.data[self.dataKey[18]]
         self.data_1 = self.data_1.filter(like='F').iloc[0::4]
         self._res_1 = int(round(self.data_1.mean(axis=0), 0))
-        
+        print(self.data_1)
         # TODO: non-libary method.
 
 # TODO: 2.
@@ -106,7 +106,7 @@ class Main():
     def _2(self):
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#indexing
         
-        self.data_2 = self.data[self.dataKey[8]]
+        self.data_2 = self.data[self.dataKey[9]]
         print(self.data_2)
         self._res_2 = self.data_2.mean()
 
