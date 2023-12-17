@@ -108,12 +108,14 @@ class Main():
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between.html#pandas-series-between
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#truncating-fancy-indexing
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing
+        # * src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
         
-        self.data_2 = pd.Series(self.data[self.dataKey[9]], index=self.date, dtype="Int64")
-        print(self.data[self.dataKey[9]])
-        print(self.data_2)
-        # self.data.rolling()
-        # self._res_2 = self.data_2.rolling(window="1Y").mean(axis=0)
+        # ? Further Reading
+        # ? src: https://pandas.pydata.org/docs/user_guide/basics.html#dtypes
+        
+        self.data_2 = pd.Series(self.data[self.dataKey[9]].array, index=self.date)
+        self._res_2 = self.data_2.rolling(window='1Y').mean()
+        print(self._res_2)
 
 # TODO: 3.
 # ? 3. List of net loss continuously for 3 months
