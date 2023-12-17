@@ -98,7 +98,7 @@ class Main():
         self._res_1 = int(round(self.data_1.mean(axis=0), 0))
         # TODO: non-libary method.
 
-# TODO: 2.
+# DONE: 2.
 # ? 2. means for each year of 'Net Claims on Central Government'
 # * Pandas Series
 # * 1981 - 1990
@@ -121,14 +121,18 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.rolling.html#pandas-series-rolling
         # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
+        # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between_time.html#pandas.Series.between_time
         
         self.dataByYear = self.data.groupby(self.data['time'].dt.year)
-        self._res_2 = self.dataByYear[self.dataKey[9]].loc[1981:1990].mean()
+        self._res_2 = self.dataByYear[self.dataKey[9]].mean().loc[1981:1990]
         print(self._res_2)
 
 # TODO: 3.
 # ? 3. List of net loss continuously for 3 months
 # * 1991 - 2005
+    def _3(self):
+        self._res_3 = self.dataByYear[self.dataKey[1]].get_group()
+        print(self._res_3)
 
 # TODO: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
