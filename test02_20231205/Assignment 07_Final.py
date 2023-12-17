@@ -62,7 +62,7 @@ class Main():
 # TODO: 1.
 # ? 1. Mean of monetary base of all February in Leap year.
     def _1(self):
-        self.mean = self.data.mean(axis=1)
+        self.data_1 = self.data[]
         
         # TODO: non-libary method.
 
