@@ -131,7 +131,9 @@ class Main():
 # ? 3. List of net loss continuously for 3 months
 # * 1991 - 2005
     def _3(self):
-        self._res_3 = self.dataByYear[self.dataKey[1]].get_group()
+        # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
+        
+        self._res_3 = self.dataByYear[self.dataKey[1]].get_group(1991, 2005)
         print(self._res_3)
 
 # TODO: 4.
