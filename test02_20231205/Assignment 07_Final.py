@@ -50,7 +50,7 @@ class Main():
             # ? Further Reading
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
             
-            self.data = pd.read_csv(self.fileName, header=5, index_col=1, parse_dates=[1])
+            self.data = pd.read_csv(self.fileName, header=5)
             print(self.data)
 
         except ModuleNotFoundError:
