@@ -109,7 +109,7 @@ class Main():
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#truncating-fancy-indexing
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing
         
-        self.data_2 = pd.Series(self.data[self.dataKey[9]])
+        self.data_2 = pd.Series(self.data[self.dataKey[9]], index=self.date)
         print(self.date)
         print(self.data_2)
         # self.data.rolling()
