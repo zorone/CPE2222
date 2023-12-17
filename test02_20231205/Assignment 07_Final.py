@@ -103,19 +103,20 @@ class Main():
 # * 1981 - 1990
     def _2(self):
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#indexing
-        # * src: https://pandas.pydata.org/docs/user_guide/window.html#windowing-operations
-        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.rolling.html#pandas-series-rolling
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between.html#pandas-series-between
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#truncating-fancy-indexing
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing
-        # * src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
         # * src: https://stackoverflow.com/questions/43556344/pandas-monthly-rolling-operation
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/docs/user_guide/basics.html#dtypes
+        # ? src: https://pandas.pydata.org/docs/user_guide/window.html#windowing-operations
+        # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.rolling.html#pandas-series-rolling
+        # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
+        # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
         
-        self.data_2 = pd.Series(self.data[self.dataKey[9]].array, index=self.date)
-        self._res_2 = self.data_2.rolling(window='1AS').mean()
+        self.data_2 = self.data[self.dataKey[9]]
+        self._res_2 = pd.Series(lambda: x for x in range(0))
         print(self._res_2)
 
 # TODO: 3.
