@@ -48,17 +48,20 @@ class Main():
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#handling-column-names
             # * src: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.str.casefold.html#pandas.Series.str.casefold
+            # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.insert.html#pandas-dataframe-insert
             
             # ? Further Reading
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
+            # ? src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.assign.html#pandas-dataframe-assign
+            # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#assigning-new-columns-in-method-chains
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
             self.dataKey = self.data.keys()
             self.date = self.data.index.str.title()
             self.date = pd.to_datetime(self.date, format="%b %Y ")
             
-            self.data = self.data.assign(time=self.date).tail()
+            self.data = self.data.insert(0, 'time', self.date)
             print(self.data)
 
         except ModuleNotFoundError:
@@ -91,7 +94,7 @@ class Main():
         
         self.data_1 = self.data[self.dataKey[17]]
         self.data_1 = self.data_1.filter(like='F').iloc[0::4]
-        self._res_1 = int(self.data_1.mean(axis=0).round(0))
+        self._res_1 = int(round(self.data_1.mean(axis=0), 0))
         
         # TODO: non-libary method.
 
