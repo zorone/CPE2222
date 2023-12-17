@@ -7,7 +7,7 @@ from urllib.request import urlretrieve
 
 url = "https://app.bot.or.th/BTWS_STAT/statistics/DownloadFile.aspx?file=EC_MB_001_ENG_ALL.CSV"
 
-# TODO: Initialize Class
+# DONE: Initialize Class
 class Main():
     def __init__(self):
         # FEATURES: module detection
@@ -55,7 +55,11 @@ class Main():
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
             self.dataKey = self.data.keys()
+            self.date = self.data.index.str.title()
+            self.date = pd.to_datetime(self.date, format="%b %Y ")
             
+            self.data = self.data.assign(time=self.date).tail()
+            print(self.data)
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
@@ -70,23 +74,24 @@ class Main():
 
 # TODO: Manipulated it
 
-# TODO: 1.
+# DONE: 1.
 # ? 1. Mean of monetary base of all February in Leap year.
     def _1(self):
         
         # * src: https://pandas.pydata.org/docs/user_guide/10min.html#getitem
         # * src: https://pandas.pydata.org/docs/user_guide/10min.html#boolean-indexing
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas-series
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.iloc.html#pandas-series-iloc
         
         # ? Further reading
         # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.is_leap_year.html#pandas-series-dt-is-leap-year
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#converting-to-timestamps
         # ? src: https://docs.python.org/3/library/functions.html?highlight=all#all
+        # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.loc.html#pandas-series-loc
         
         self.data_1 = self.data[self.dataKey[17]]
         self.data_1 = self.data_1.filter(like='F').iloc[0::4]
         self._res_1 = int(self.data_1.mean(axis=0).round(0))
-        print(self._res_1)
         
         # TODO: non-libary method.
 
@@ -94,6 +99,11 @@ class Main():
 # ? 2. means for each year of 'Net Claims on Central Government'
 # * Pandas Series
 # * 1981 - 1990
+    def _2(self):
+        # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#indexing
+        
+        self.data_2 = self.data[self.dataKey[8]]
+        self._res_2 = self.data_2.mean()
 
 # TODO: 3.
 # ? 3. List of net loss continuously for 3 months
