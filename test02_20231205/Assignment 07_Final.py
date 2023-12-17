@@ -95,7 +95,7 @@ class Main():
         self.data_1_check = self.date.is_leap_year
         print(self.data_1_check)
         
-        self.data_1 = self.data[self.data_1.dt.is_leap_year is True]
+        self.data_1 = self.data[self.data_1_check is True]
         print(self.data_1)
         # self._res_1 = self.data_1.mean(axis=0, )
         
