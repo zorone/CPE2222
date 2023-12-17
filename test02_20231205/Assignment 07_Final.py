@@ -113,6 +113,7 @@ class Main():
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/06_calculate_statistics.html
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/07_reshape_table_layout.html#min-tut-07-reshape
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby
+        # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/03_subset_data.html#how-do-i-select-specific-rows-and-columns-from-a-dataframe
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/docs/user_guide/basics.html#dtypes
@@ -122,7 +123,7 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
         
         self.dataByYear = self.data.groupby(self.data['time'].dt.year)
-        self._res_2 = self.dataByYear[self.dataKey[9]].mean()[1981,1990]
+        self._res_2 = self.dataByYear[self.dataKey[9]].mean().iloc[1981:1990]
         print(self._res_2)
 
 # TODO: 3.
