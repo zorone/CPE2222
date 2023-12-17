@@ -97,8 +97,8 @@ class Main():
         
         self.data_1 = self.data_1.filter(like='F')
         print(self.data_1)
-        self._res_1 = self.data_1.mean(axis=0, )
-        print(self._res_1)
+        self._res_1 = self.data_1.mean(axis=0)
+        print(self._res_1.round(0))
         
         # TODO: non-libary method.
 
