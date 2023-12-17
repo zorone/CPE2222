@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 import numpy as np
 from urllib.request import urlretrieve
 
@@ -42,8 +43,7 @@ class Main():
 # DONE: Read Data using numpy
     def pdInit(self):
         try:
-            import pandas as pd
-            
+            # FIXME: Will move import pandas outside, please put it back later
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html#pandas.DataFrame.transpose
             self.data = pd.read_csv(self.fileName, header=5, index_col=0).transpose()
@@ -68,11 +68,10 @@ class Main():
         # * src: https://pandas.pydata.org/docs/user_guide/10min.html#getitem
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.is_leap_year.html#pandas-series-dt-is-leap-year
         # * src: https://pandas.pydata.org/docs/user_guide/10min.html#boolean-indexing
+        # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#converting-to-timestamps
         
         self.data_1 = self.data[18]
-        self.data_1_check = self.data_1.dt
-        print(self.data_1_check)
-        self.data_1_check = self.data_1.dt.is_leap_year
+        self.data_1_check = pd.to_datetime(self.data_1)
         print(self.data_1_check)
         self.data_1 = self.data[self.data_1.dt.is_leap_year is True]
         print(self.data_1)
