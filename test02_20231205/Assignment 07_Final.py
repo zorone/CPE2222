@@ -48,16 +48,17 @@ class Main():
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#handling-column-names
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
             # * src: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
+            # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.str.casefold.html#pandas.Series.str.casefold
             
             # ? Further Reading
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
-            self.dataKey = self.data.index
+            self.dataKey = self.data.index.str.title()
             print(self.data)
             print(self.dataKey)
             
-            self.dataKey = pd.to_datetime(self.dataKey, format='%b %Y')
+            self.dataKey = pd.to_datetime(self.dataKey, format="%b %Y ")
             print(self.dataKey)
 
         except ModuleNotFoundError:
