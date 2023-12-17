@@ -17,6 +17,7 @@ class Main():
         self.setCurrentDir()
         self.fetch(url)
         self.pdInit()
+        self._1()
 
 # DONE: Navigate to current directory
     def setCurrentDir(self):
@@ -46,6 +47,7 @@ class Main():
             # * src: https://pandas.pydata.org/docs/user_guide/io.html#parsing-options
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.transpose.html#pandas.DataFrame.transpose
             self.data = pd.read_csv(self.fileName, skiprows=5).transpose()
+            print(self.data)
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
