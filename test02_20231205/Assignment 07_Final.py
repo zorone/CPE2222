@@ -51,8 +51,11 @@ class Main():
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
-            self.dataKey = self.data.keys()
+            self.dataKey = self.data.axes
             print(self.data)
+            print(self.dataKey)
+            
+            self.dataKey = self.dataKey.to_datetime
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
