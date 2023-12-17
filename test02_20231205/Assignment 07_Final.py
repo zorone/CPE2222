@@ -64,8 +64,16 @@ class Main():
 # TODO: 1.
 # ? 1. Mean of monetary base of all February in Leap year.
     def _1(self):
+        
+        # * src: https://pandas.pydata.org/docs/user_guide/10min.html#getitem
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.is_leap_year.html#pandas-series-dt-is-leap-year
+        # * src: https://pandas.pydata.org/docs/user_guide/10min.html#boolean-indexing
+        
         self.data_1 = self.data[18]
+        self.data_1_check = self.data_1.dt
+        print(self.data_1_check)
         self.data_1_check = self.data_1.dt.is_leap_year
+        print(self.data_1_check)
         self.data_1 = self.data[self.data_1.dt.is_leap_year is True]
         print(self.data_1)
         self._res_1 = self.data_1.mean(axis=0, )
