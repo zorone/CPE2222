@@ -109,12 +109,13 @@ class Main():
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#truncating-fancy-indexing
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing
         # * src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
+        # * src: https://stackoverflow.com/questions/43556344/pandas-monthly-rolling-operation
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/docs/user_guide/basics.html#dtypes
         
         self.data_2 = pd.Series(self.data[self.dataKey[9]].array, index=self.date)
-        self._res_2 = self.data_2.rolling(window='1Y').mean()
+        self._res_2 = self.data_2.rolling(window='1AS').mean()
         print(self._res_2)
 
 # TODO: 3.
