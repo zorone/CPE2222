@@ -122,7 +122,7 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
         
         self.dataByYear = self.data.groupby(self.data['time'].dt.year)
-        self._res_2 = self.dataByYear[self.dataKey[9]][1981:1991].mean()
+        self._res_2 = self.dataByYear[self.dataKey[9]].mean()
         print(self._res_2)
 
 # TODO: 3.
