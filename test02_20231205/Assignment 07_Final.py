@@ -132,8 +132,9 @@ class Main():
 # * 1991 - 2005
     def _3(self):
         # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
+        # * src: https://stackoverflow.com/questions/31535442/select-multiple-groups-from-pandas-groupby-object
         
-        self._res_3 = self.dataByYear[self.dataKey[1]].get_group(1991)
+        self._res_3 = self.dataByYear[self.dataKey[1]].get_group(range(1991, 2006))
         print(self._res_3)
 
 # TODO: 4.
