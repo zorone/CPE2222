@@ -54,9 +54,11 @@ class Main():
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
-            self.dataKey = self.data.index.str.title()
+            self.dataKey = self.data.index
+            self.date = self.data.index.str.title()
             print(self.data)
             print(self.dataKey)
+            print(self.date)
             
             self.dataKey = pd.to_datetime(self.dataKey, format="%b %Y ")
             print(self.dataKey)
