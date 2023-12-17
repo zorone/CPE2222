@@ -62,7 +62,6 @@ class Main():
             self.date = pd.to_datetime(self.date, format="%b %Y ")
             
             self.data.insert(0, 'time', self.date)
-            print(self.data)
             self.dataKey = self.data.keys()
 
         except ModuleNotFoundError:
@@ -96,7 +95,6 @@ class Main():
         self.data_1 = self.data[self.dataKey[18]]
         self.data_1 = self.data_1.filter(like='F').iloc[0::4]
         self._res_1 = int(round(self.data_1.mean(axis=0), 0))
-        print(self.data_1)
         # TODO: non-libary method.
 
 # TODO: 2.
@@ -105,10 +103,15 @@ class Main():
 # * 1981 - 1990
     def _2(self):
         # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#indexing
+        # * src: https://pandas.pydata.org/docs/user_guide/window.html#windowing-operations
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.rolling.html#pandas-series-rolling
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between.html#pandas-series-between
+        # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#truncating-fancy-indexing
+        # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing
         
-        self.data_2 = self.data[self.dataKey[9]]
-        print(self.data_2)
-        self._res_2 = self.data_2.mean()
+        self.data_2 = self.data[self.dataKey[0,9]]["1981":"1990"]
+        self.data.rolling()
+        self._res_2 = self.data_2.rolling(window="1Y").mean(axis=0)
 
 # TODO: 3.
 # ? 3. List of net loss continuously for 3 months
