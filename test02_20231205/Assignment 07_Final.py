@@ -91,6 +91,7 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#converting-to-timestamps
         # ? src: https://docs.python.org/3/library/functions.html?highlight=all#all
         # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.loc.html#pandas-series-loc
+        # ? src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/05_add_columns.html
         
         self.data_1 = self.data[self.dataKey[18]]
         self.data_1 = self.data_1.filter(like='F').iloc[0::4]
@@ -111,6 +112,7 @@ class Main():
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/09_timeseries.html
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/06_calculate_statistics.html
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/07_reshape_table_layout.html#min-tut-07-reshape
+        # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/docs/user_guide/basics.html#dtypes
@@ -119,8 +121,8 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
         
-        self._res_2 = self.data.groupby(self.data['time'].dt.year).loc[1981,1990].mean()
-        self._res_2 = self._res_2[:1991]
+        self.dataByYear = self.data.groupby(self.data['time'].dt.year)
+        self._res_2 = self.dataByYear[self.dataKey[9]][1981:1991].mean()
         print(self._res_2)
 
 # TODO: 3.
