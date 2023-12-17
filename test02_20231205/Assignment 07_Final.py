@@ -89,13 +89,8 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#converting-to-timestamps
         
         self.data_1 = self.data[self.dataKey[17]]
-        print(self.data_1)
-        print(self.data_1.dtypes)
-
-        self.data_1_check = self.date.is_leap_year
-        print(self.data_1_check)
         
-        self.data_1 = self.data[self.data_1_check is True]
+        self.data_1 = self.data[self.date.is_leap_year]
         print(self.data_1)
         # self._res_1 = self.data_1.mean(axis=0, )
         
