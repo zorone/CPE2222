@@ -68,9 +68,13 @@ class Main():
         # * src: https://pandas.pydata.org/docs/user_guide/10min.html#getitem
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.is_leap_year.html#pandas-series-dt-is-leap-year
         # * src: https://pandas.pydata.org/docs/user_guide/10min.html#boolean-indexing
-        # * src: https://pandas.pydata.org/docs/user_guide/timeseries.html#converting-to-timestamps
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas-series
+        
+        # ? Further reading
+        # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#converting-to-timestamps
         
         self.data_1 = self.data[18]
+        print(self.data_1.dtypes)
         self.data_1_check = pd.to_datetime(self.data_1)
         print(self.data_1_check)
         self.data_1 = self.data[self.data_1.dt.is_leap_year is True]
