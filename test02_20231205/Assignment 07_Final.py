@@ -203,7 +203,7 @@ class Main():
         
         self.data_4 :pd.Series = self.timeData[self.dataKey[4]].loc['2000':'2005']
         print(self.data_4)
-        self._res_4 = self.data_4.rolling(6).apply()
+        self._res_4 = self.data_4.rolling(6).apply(dataCond)
 
 # TODO: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
@@ -220,6 +220,16 @@ class Main():
             # TODO: no pip handling
             # TODO: import failed after install pandas
             print
+
+def dataCond(valList, comp, expect):
+    count = 0
+    for val in valList:
+        if(val > comp):
+            count += 1
+    if count >= expect:
+        return True
+    else:
+        return False
 
 if __name__ == "__main__":
     main = Main()
