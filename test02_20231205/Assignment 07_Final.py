@@ -182,13 +182,13 @@ class Main():
         # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
         
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
+        print(self.data_3)
         self.data_3_index = self.data_3.index
         
         for period in range(0, self.data_3.size-2):
             temp = self.data_3.iloc[period:period+3]
-            # print(self.data_3_index[period], ': ', temp)
             if (temp.is_monotonic_decreasing):
-                print(':')
+                print(temp)
 
 # TODO: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
