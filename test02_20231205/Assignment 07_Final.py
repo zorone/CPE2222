@@ -135,13 +135,16 @@ class Main():
 # * 1991 - 2005
     def _3(self):
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.rolling.html#pandas.Series.rolling
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between_time.html#pandas.Series.between_time
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.is_monotonic_decreasing.html
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
         # ? src: https://stackoverflow.com/questions/31535442/select-multiple-groups-from-pandas-groupby-object
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html#pandas.Grouper
         
-        self._res_3 = self.data.rolling(3)
+        self._res_3 = self.data[self.dataKey[1]].between_time('1991', '2005').rolling(3).is_monotonic_decreasing
+        print(self._res_3)
         
 
 # TODO: 4.
