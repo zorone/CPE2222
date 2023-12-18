@@ -60,8 +60,7 @@ class Main():
             # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.copy.html
             # * src: https://stackoverflow.com/a/44831147
             # * src: https://stackoverflow.com/questions/19851005/rename-pandas-dataframe-index 
-            # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html#pandas.DataFrame.reindex
-            # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex_like.html#pandas.DataFrame.reindex_like
+            # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html
             
             # ? Further Reading
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
@@ -76,8 +75,9 @@ class Main():
             # ? src: https://docs.python.org/3/library/functions.html?highlight=zip#zip
             # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html#pandas.DataFrame.index
             # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.columns.html#pandas.DataFrame.columns
-            # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html
             # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index
+            # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html#pandas.DataFrame.reindex
+            # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex_like.html#pandas.DataFrame.reindex_like
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
             self.dateName = self.data.index
@@ -86,13 +86,13 @@ class Main():
             
             self.dateToLabel = self.dateName.to_series(index=self.date)
             
-            self.dataKey = self.data.keys()
             self.defaultData = self.data.copy()
             self.data.insert(0, 'time', self.date)
+            self.dataKey = self.data.keys()
             
-            self.timeData = self.defaultData.copy()
+            self.timeData = self.data.copy()
             self.timeData.insert(0, 'labels', self.dateName)
-            print(self.timeData.reindex_like(index=self.))
+            print(self.timeData.set_index(self.dataKey[0]))
             
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
 
