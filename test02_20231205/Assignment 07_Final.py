@@ -22,6 +22,7 @@ class Main():
         self._2()
         self._3()
         self._4()
+        self._5()
 
 # DONE: Navigate to current directory
     def setCurrentDir(self):
@@ -194,7 +195,7 @@ class Main():
             if (temp.is_monotonic_decreasing):
                 print(temp)
 
-# TODO: 4.
+# DONE: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
 # * 2000 - 2005
 # * 583757
@@ -229,6 +230,11 @@ class Main():
 # * In this Form:
 # * 'Other Liabilities to Financial Institutions': min, mean, max
 # * 'Other Items (net)': min, mean, max
+    def _5(self):
+        # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.Series.agg.html
+        # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.agg.html
+        
+        self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg(self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max'])
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
