@@ -157,7 +157,7 @@ class Main():
         
         self._res_2 = self.dataByYear[self.dataKey[9]].mean().loc[1981:1990]
 
-# TODO: 3.
+# DONE: 3.
 # ? 3. List of net loss continuously for 3 months
 # * 1991 - 2005
     def _3(self):
@@ -181,6 +181,8 @@ class Main():
         
         # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
         
+        # FEATURES: return data back
+        
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
         print(self.data_3)
         self.data_3_index = self.data_3.index
@@ -194,6 +196,14 @@ class Main():
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
 # * 2000 - 2005
 # * 583757
+    def _4(self):
+        
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rolling.html#pandas.DataFrame.rolling
+        # * src: https://pandas.pydata.org/docs/reference/window.html#window
+        
+        self.data_4 :pd.Series = self.timeData[self.dataKey[4]].loc['2000':'2005']
+        print(self.data_4)
+        self._res_4 = self.data_4.rolling(6).apply(lambda s: if(s.min >= ))
 
 # TODO: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
