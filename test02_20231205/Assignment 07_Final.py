@@ -92,7 +92,7 @@ class Main():
             
             self.timeData = self.data.copy()
             self.timeData.insert(0, 'labels', self.dateName)
-            print(self.timeData.set_index(self.dataKey[0]))
+            self.timeData.set_index(self.dataKey[0], inplace=True)
             
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
 
@@ -170,7 +170,7 @@ class Main():
         # ? src: https://stackoverflow.com/questions/31535442/select-multiple-groups-from-pandas-groupby-object
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html#pandas.Grouper
         
-        self._res_3 = self.data[self.dataKey[1]].between_time('1991', '2005').rolling(3).is_monotonic_decreasing
+        self._res_3 = self.timeData[self.dataKey[1]].between_time('1991', '2005').rolling(3).is_monotonic_decreasing
         print(self._res_3)
         
 
