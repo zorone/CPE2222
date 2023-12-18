@@ -238,6 +238,8 @@ class Main():
         tempDict = dict()
         for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=1):
             tempDict[i] = name
+        
+        self.dataByMonth.index.names = ['']
         self.dataByMonth.rename(index=tempDict, inplace=True)
         print(self.dataByMonth)
 
