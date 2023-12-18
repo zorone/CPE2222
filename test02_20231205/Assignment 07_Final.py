@@ -209,7 +209,7 @@ class Main():
         print(self.data_4)
         test = partial(dataCond, comp=583757, expect=3)
         self._res_4 = self.data_4.rolling(6).apply(test)
-        print(self._res_4)
+        print(self.data_4[self.data_4])
 
 # TODO: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
