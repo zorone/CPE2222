@@ -21,6 +21,7 @@ class Main():
         self._1()
         self._2()
         self._3()
+        self._4()
 
 # DONE: Navigate to current directory
     def setCurrentDir(self):
@@ -182,7 +183,7 @@ class Main():
         
         # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
         
-        # FEATURES: return data back
+        # TODO: needs to format these result later.
         
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
         print(self.data_3)
