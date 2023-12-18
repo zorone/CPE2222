@@ -133,9 +133,15 @@ class Main():
     def _3(self):
         # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
         # * src: https://stackoverflow.com/questions/31535442/select-multiple-groups-from-pandas-groupby-object
+        # * src: https://stackoverflow.com/questions/14734533/how-to-access-subdataframes-of-pandas-groupby-by-key
         
-        self._res_3 = self.dataByYear[self.dataKey[1]]
-        print(self._res_3)
+        # ? Further Reading
+        # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html#pandas.Grouper
+        
+        self._res_3 = self.dataByYear[self.dataKey[1]].mean()
+        
+        for year in range(1991, 2006):
+            print(self._res_3.get_group(year))
 
 # TODO: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
