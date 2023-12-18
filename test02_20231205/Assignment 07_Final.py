@@ -141,7 +141,7 @@ class Main():
         self._res_3 = self.dataByYear[self.dataKey[1]].mean()
         
         for year in range(1991, 2006):
-            print(self._res_3.get_group(year))
+            print(self._res_3[year])
 
 # TODO: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
