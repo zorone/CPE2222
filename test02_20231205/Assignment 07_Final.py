@@ -55,6 +55,7 @@ class Main():
             # * src: https://stackoverflow.com/questions/14734533/how-to-access-subdataframes-of-pandas-groupby-by-key#comment33905910_17302673
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.Index.array.html#pandas.Index.array
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html#pandas-datetimeindex
+            # * src: https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.to_series.html
             
             # ? Further Reading
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
@@ -64,13 +65,14 @@ class Main():
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Index.values.html#pandas.Index.values
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.arrays.DatetimeArray.html#pandas.arrays.DatetimeArray
             # ? src: https://docs.python.org/3/library/datetime.html#datetime.datetime
+            # ? src: https://stackoverflow.com/questions/60913716/convert-timeindex-of-dataframe-to-datetimeindex-in-place
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
             self.dateName = self.data.index
             self.date = self.data.index.str.title()
             self.date = pd.to_datetime(self.date, format="%b %Y ")
             
-            self.dateToLabel = pd.Series(self.date, index=self.date)
+            self.dateToLabel = self.dateName.to_series(index=self.date)
             print(self.dateToLabel)
             
             self.data.insert(0, 'time', self.date)
