@@ -185,8 +185,8 @@ class Main():
         self.data_3_index = self.data_3.index
         
         for period in range(2, self.data_3.size):
-            print(self.data_3_index[period])
             temp = self.data_3.iloc[period:period+2]
+            print(self.data_3_index[period], ': ', temp)
             if (temp.is_monotonic_decreasing):
                 print(':')
 
