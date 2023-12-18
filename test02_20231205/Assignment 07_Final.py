@@ -221,7 +221,7 @@ class Main():
         self._res_4 = self.data_4.rolling(6).apply(test)
         self._res_4 = self._res_4.astype('boolean')
         print(self._res_4)
-        # print(self.data_4[self._res_4])
+        print(self.data_4[self._res_4])
 
 # TODO: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
