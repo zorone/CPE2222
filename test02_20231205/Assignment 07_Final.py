@@ -182,11 +182,12 @@ class Main():
         # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
         
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
-        self.date_3_index = self.data_3.index
+        self.data_3_index = self.data_3.index
         
         for period in range(2, self.data_3.size):
             print(self.data_3_index[period])
-            if (self.data_3.iloc[period:period+2].is_monotonic_decreasing):
+            temp = self.data_3.iloc[period:period+2]
+            if (temp.is_monotonic_decreasing):
                 print(':')
 
 # TODO: 4.
