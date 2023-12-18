@@ -184,9 +184,10 @@ class Main():
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
         self.date_3_index = self.data_3.index
         
-        for period in range(0, self.data_3.size-2):
+        for period in range(2, self.data_3.size):
+            print(self.data_3_index[period])
             if (self.data_3.iloc[period:period+2].is_monotonic_decreasing):
-                print(self.data_3_index[period+2])
+                print(':')
 
 # TODO: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
