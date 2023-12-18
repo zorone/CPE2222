@@ -203,6 +203,7 @@ class Main():
         
         self.data_4 :pd.Series = self.timeData[self.dataKey[4]].loc['2000':'2005']
         print(self.data_4)
+        test = dataCond(comp=583757, expect=3)
         self._res_4 = self.data_4.rolling(6).apply(dataCond)
 
 # TODO: 5.
