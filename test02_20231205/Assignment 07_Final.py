@@ -58,6 +58,7 @@ class Main():
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.to_series.html
             # * src: https://stackoverflow.com/questions/54680055/what-is-a-good-way-to-prevent-changes-from-being-applied-to-an-original-data-fra
             # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.copy.html
+            # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename
             
             # ? Further Reading
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
@@ -82,7 +83,7 @@ class Main():
             
             self.timeData = self.defaultData.copy()
             self.timeData.insert(0, 'labels', self.dateName)
-            print(self.timeData)
+            print(self.timeData.rename(index=self.date))
             
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
 
