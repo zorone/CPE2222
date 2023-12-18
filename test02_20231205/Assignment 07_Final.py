@@ -177,7 +177,7 @@ class Main():
         
         # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
         
-        self.data_3 = self.timeData[self.dataKey[1]].between_time('1991', '2005')
+        self.data_3 = self.timeData[self.dataKey[1]].between_time('1991-01-01', '2005-12-31')
         print(self.data_3)
         
 
