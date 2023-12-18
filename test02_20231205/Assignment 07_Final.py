@@ -51,6 +51,8 @@ class Main():
             # * src: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.str.casefold.html#pandas.Series.str.casefold
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.insert.html#pandas-dataframe-insert
+            # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby
+            # * src: https://stackoverflow.com/questions/14734533/how-to-access-subdataframes-of-pandas-groupby-by-key#comment33905910_17302673
             
             # ? Further Reading
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
@@ -64,6 +66,10 @@ class Main():
             
             self.data.insert(0, 'time', self.date)
             self.dataKey = self.data.keys()
+            
+            self.dataByYear = self.data.groupby(self.data['time'].dt.year)
+            self.dataByYear = dict(iter(self.dataByYear))
+            print(self.dataByYear)
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
@@ -113,7 +119,6 @@ class Main():
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/09_timeseries.html
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/06_calculate_statistics.html
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/07_reshape_table_layout.html#min-tut-07-reshape
-        # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/03_subset_data.html#how-do-i-select-specific-rows-and-columns-from-a-dataframe
         
         # ? Further Reading
@@ -123,8 +128,8 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#series-is-ndarray-like
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
         # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between_time.html#pandas.Series.between_time
+        # ? src: https://stackoverflow.com/questions/14734533/how-to-access-subdataframes-of-pandas-groupby-by-key
         
-        self.dataByYear = self.data.groupby(self.data['time'].dt.year)
         self._res_2 = self.dataByYear[self.dataKey[9]].mean().loc[1981:1990]
 
 # TODO: 3.
@@ -133,15 +138,12 @@ class Main():
     def _3(self):
         # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
         # * src: https://stackoverflow.com/questions/31535442/select-multiple-groups-from-pandas-groupby-object
-        # * src: https://stackoverflow.com/questions/14734533/how-to-access-subdataframes-of-pandas-groupby-by-key
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html#pandas.Grouper
         
         self._res_3 = self.dataByYear[self.dataKey[1]].mean()
         
-        for year in range(1991, 2006):
-            print(self._res_3[year])
 
 # TODO: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
