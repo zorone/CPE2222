@@ -68,7 +68,7 @@ class Main():
             self.dataKey = self.data.keys()
             
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
-            self.dataByYear = dict(iter(self.dataByYear))
+            self.dataByYear = pd.DataFrame(dict(iter(self.dataByYear)))
             print(self.dataByYear)
 
         except ModuleNotFoundError:
