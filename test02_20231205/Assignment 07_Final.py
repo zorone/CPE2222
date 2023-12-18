@@ -180,6 +180,10 @@ class Main():
         # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
         
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
+        
+        for period in range(0, self.data_3.size-2):
+            temp = self.data_3.iloc[period:period+2].is_monotonic_decreasing
+            print
         print(self.data_3)
         
 
