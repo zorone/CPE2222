@@ -133,8 +133,8 @@ class Main():
     def _3(self):
         # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
         # * src: https://stackoverflow.com/questions/31535442/select-multiple-groups-from-pandas-groupby-object
-        
-        self._res_3 = self.dataByYear[self.dataKey[1]].get_group([i for i in range(1991, 2006)])
+        self.data.get_group()
+        self._res_3 = self.dataByYear[self.dataKey[1]]
         print(self._res_3)
 
 # TODO: 4.
