@@ -217,11 +217,9 @@ class Main():
         # ? src: https://en.wikipedia.org/wiki/Three-valued_logic#Kleene_and_Priest_logics
         
         self.data_4 :pd.Series = self.timeData[self.dataKey[4]].loc['2000':'2005']
-        print(self.data_4)
         test = partial(dataCond, comp=583757, expect=3)
         self._res_4 = self.data_4.rolling(6).apply(test)
         self._res_4 = self._res_4.astype('boolean')
-        print(self._res_4)
         print(self.data_4[self._res_4])
 
 # TODO: 5.
@@ -235,6 +233,7 @@ class Main():
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.agg.html
         
         self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg(['min', 'mean', 'max'])
+        print(self.dataByMonth)
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
