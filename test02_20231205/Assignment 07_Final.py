@@ -78,7 +78,7 @@ class Main():
             self.defaultData = self.data
             self.data.insert(0, 'time', self.date)
             
-            self.timeData = self.data
+            self.timeData = self.defaultData
             self.timeData.insert(0, 'labels', self.dateName)
             print(self.timeData)
             
