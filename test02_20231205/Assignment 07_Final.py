@@ -53,19 +53,24 @@ class Main():
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.insert.html#pandas-dataframe-insert
             # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby
             # * src: https://stackoverflow.com/questions/14734533/how-to-access-subdataframes-of-pandas-groupby-by-key#comment33905910_17302673
+            # * src: https://pandas.pydata.org/docs/reference/api/pandas.Index.array.html#pandas.Index.array
+            # * src: https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html#pandas-datetimeindex
             
             # ? Further Reading
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
             # ? src: https://docs.python.org/3/library/io.html?highlight=stringio#io.StringIO
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.assign.html#pandas-dataframe-assign
             # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#assigning-new-columns-in-method-chains
+            # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Index.values.html#pandas.Index.values
+            # ? src: https://pandas.pydata.org/docs/reference/api/pandas.arrays.DatetimeArray.html#pandas.arrays.DatetimeArray
+            # ? src: https://docs.python.org/3/library/datetime.html#datetime.datetime
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
             self.dateName = self.data.index
             self.date = self.data.index.str.title()
             self.date = pd.to_datetime(self.date, format="%b %Y ")
             
-            self.dateToLabel = pd.Series([self.date, self.dateName], index=self.date)
+            self.dateToLabel = pd.Series([self.date.array, self.dateName], index=self.date)
             print(self.dateToLabel)
             
             self.data.insert(0, 'time', self.date)
