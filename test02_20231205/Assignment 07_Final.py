@@ -234,7 +234,7 @@ class Main():
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.Series.agg.html
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.agg.html
         
-        self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg([self.dataKey[24], self.dataKey[27]]: ['min', 'mean', 'max'])
+        self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg(self.dataKey[24], self.dataKey[27])
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
