@@ -202,14 +202,19 @@ class Main():
         
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rolling.html#pandas.DataFrame.rolling
         # * src: https://pandas.pydata.org/docs/reference/window.html#window
-        # * src: https://stackoverflow.com/questions/10692602/python-store-function-with-parameters
-        # * src: https://docs.python.org/3/library/functools.html#functools.partial
+        # * src: https://pandas.pydata.org/docs/dev/user_guide/indexing.html#selection-by-label
+        # * src: https://pandas.pydata.org/docs/dev/user_guide/indexing.html#boolean-indexing
+        
+        # ? Further Reading
+        # ? src: https://stackoverflow.com/questions/10692602/python-store-function-with-parameters
+        # ? src: https://docs.python.org/3/library/functools.html#functools.partial
         
         self.data_4 :pd.Series = self.timeData[self.dataKey[4]].loc['2000':'2005']
         print(self.data_4)
         test = partial(dataCond, comp=583757, expect=3)
         self._res_4 = self.data_4.rolling(6).apply(test)
-        print(self.data_4[self._res_4])
+        print(self._res_4)
+        # print(self.data_4[self._res_4])
 
 # TODO: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
