@@ -71,6 +71,7 @@ class Main():
             self.dateName = self.data.index
             self.date = self.data.index.str.title()
             self.date = pd.to_datetime(self.date, format="%b %Y ")
+            print(self.data)
             
             self.dateToLabel = self.dateName.to_series(index=self.date)
             
@@ -80,7 +81,8 @@ class Main():
             
             self.timeData = self.defaultData
             self.timeData.insert(0, 'labels', self.dateName)
-            print(self.timeData)
+            # print(self.timeData)
+            print(self.data)
             
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
 
