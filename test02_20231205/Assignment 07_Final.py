@@ -166,6 +166,8 @@ class Main():
         # * src: https://stackoverflow.com/questions/57235819/get-if-a-rolling-window-is-increasing-or-decreasing
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.resample.html
         # * src: https://stackoverflow.com/a/29370182
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.size.html#pandas.Series.size
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.index.html#pandas.Series.index
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
@@ -180,12 +182,11 @@ class Main():
         # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
         
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
+        self.date_3_index = self.data_3.index
         
         for period in range(0, self.data_3.size-2):
-            temp = self.data_3.iloc[period:period+2].is_monotonic_decreasing
-            print
-        print(self.data_3)
-        
+            if (self.data_3.iloc[period:period+2].is_monotonic_decreasing):
+                print(self.data_3_index[period+2])
 
 # TODO: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
