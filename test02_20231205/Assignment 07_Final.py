@@ -203,7 +203,7 @@ class Main():
         
         self.data_4 :pd.Series = self.timeData[self.dataKey[4]].loc['2000':'2005']
         print(self.data_4)
-        self._res_4 = self.data_4.rolling(6).apply(lambda s: if(s.min >= ))
+        self._res_4 = self.data_4.rolling(6).apply()
 
 # TODO: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
