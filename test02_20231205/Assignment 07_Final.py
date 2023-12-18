@@ -155,7 +155,7 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between_time.html#pandas.Series.between_time
         # ? src: https://stackoverflow.com/questions/14734533/how-to-access-subdataframes-of-pandas-groupby-by-key
         
-        self._res_2 = self.timeData[self.dataKey[9]].loc[1981:1990].mean()
+        self._res_2 = self.dataByYear[self.dataKey[9]].mean().loc[1981:1990]
 
 # TODO: 3.
 # ? 3. List of net loss continuously for 3 months
@@ -179,7 +179,7 @@ class Main():
         
         # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
         
-        self.data_3 = self.timeData[self.dataKey[1]].resample()
+        self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
         print(self.data_3)
         
 
