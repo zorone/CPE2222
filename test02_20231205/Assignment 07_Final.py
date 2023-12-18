@@ -184,8 +184,8 @@ class Main():
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
         self.data_3_index = self.data_3.index
         
-        for period in range(2, self.data_3.size):
-            temp = self.data_3.iloc[period:period+2]
+        for period in range(0, self.data_3.size-3):
+            temp = self.data_3.iloc[period:period+3]
             print(self.data_3_index[period], ': ', temp)
             if (temp.is_monotonic_decreasing):
                 print(':')
