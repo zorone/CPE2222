@@ -68,9 +68,6 @@ class Main():
             self.dataKey = self.data.keys()
             
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
-            self.dataByYear = dict(iter(self.dataByYear))
-            # self.dataByYear = pd.DataFrame(self.dataByYear, columns=self.dataByYear[0][0])
-            print(self.dataByYear.items())
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
@@ -137,13 +134,14 @@ class Main():
 # ? 3. List of net loss continuously for 3 months
 # * 1991 - 2005
     def _3(self):
-        # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
-        # * src: https://stackoverflow.com/questions/31535442/select-multiple-groups-from-pandas-groupby-object
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.rolling.html#pandas.Series.rolling
         
         # ? Further Reading
+        # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
+        # ? src: https://stackoverflow.com/questions/31535442/select-multiple-groups-from-pandas-groupby-object
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html#pandas.Grouper
         
-        self._res_3 = self.dataByYear[self.dataKey[1]].mean()
+        self._res_3 = self.data.rolling(3)
         
 
 # TODO: 4.
