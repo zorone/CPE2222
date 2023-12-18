@@ -70,7 +70,7 @@ class Main():
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
             self.dataByYear = dict(iter(self.dataByYear))
             # self.dataByYear = pd.DataFrame(self.dataByYear, columns=self.dataByYear[0][0])
-            print(self.dataByYear.keys)
+            print(self.dataByYear.keys())
 
         except ModuleNotFoundError:
             userPrompt = input("Couldn't find required library. Would you like to install it? <Y/N>")
