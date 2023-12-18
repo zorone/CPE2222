@@ -204,15 +204,22 @@ class Main():
         # * src: https://pandas.pydata.org/docs/reference/window.html#window
         # * src: https://pandas.pydata.org/docs/dev/user_guide/indexing.html#selection-by-label
         # * src: https://pandas.pydata.org/docs/dev/user_guide/indexing.html#boolean-indexing
+        # * src: https://pandas.pydata.org/docs/dev/user_guide/basics.html#dtypes
+        # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.Series.astype.html#pandas.Series.astype
+        # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.Series.convert_dtypes.html#pandas.Series.convert_dtypes
         
         # ? Further Reading
         # ? src: https://stackoverflow.com/questions/10692602/python-store-function-with-parameters
         # ? src: https://docs.python.org/3/library/functools.html#functools.partial
+        # ? src: https://pandas.pydata.org/docs/dev/reference/api/pandas.arrays.BooleanArray.html#pandas.arrays.BooleanArray
+        # ? src: https://pandas.pydata.org/docs/dev/user_guide/boolean.html#boolean-kleene
+        # ? src: https://en.wikipedia.org/wiki/Three-valued_logic#Kleene_and_Priest_logics
         
         self.data_4 :pd.Series = self.timeData[self.dataKey[4]].loc['2000':'2005']
         print(self.data_4)
         test = partial(dataCond, comp=583757, expect=3)
         self._res_4 = self.data_4.rolling(6).apply(test)
+        self._res_4 = self._res_4.astype('boolean')
         print(self._res_4)
         # print(self.data_4[self._res_4])
 
