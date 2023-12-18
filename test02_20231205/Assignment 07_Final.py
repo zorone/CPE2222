@@ -13,7 +13,7 @@ class Main():
     def __init__(self):
         # FEATURES: module detection
         # ? Added module detection capability.
-        # ? Implement All Library check at initialize stage
+        # ? Implement All Library check at initialize stage 
         
         self.setCurrentDir()
         self.fetch(url)
@@ -110,7 +110,7 @@ class Main():
                 # TODO: let user choose a choice
                 print("Invalid Operation. Please Select operations below:")
 
-# TODO: Manipulated it
+# DONE: Manipulated it
 
 # DONE: 1.
 # ? 1. Mean of monetary base of all February in Leap year.
@@ -222,7 +222,7 @@ class Main():
         self._res_4 = self._res_4.astype('boolean')
         print(self.data_4[self._res_4])
 
-# TODO: 5.
+# DONE: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
 # * 2-Ordered Pandas Data Frame
 # * In this Form:
@@ -232,7 +232,13 @@ class Main():
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.Series.agg.html
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.agg.html
         
+        # TODO: some more formatting.
+        
         self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
+        tempDict = dict()
+        for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=1):
+            tempDict[i] = name
+        self.dataByMonth.rename(index=tempDict, inplace=True)
         print(self.dataByMonth)
 
 # TODO: Implement pandas installation.
