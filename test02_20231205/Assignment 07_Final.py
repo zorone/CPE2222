@@ -61,6 +61,7 @@ class Main():
             # * src: https://stackoverflow.com/a/44831147
             # * src: https://stackoverflow.com/questions/19851005/rename-pandas-dataframe-index 
             # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html#pandas.DataFrame.reindex
+            # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex_like.html#pandas.DataFrame.reindex_like
             
             # ? Further Reading
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
@@ -76,6 +77,7 @@ class Main():
             # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html#pandas.DataFrame.index
             # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.columns.html#pandas.DataFrame.columns
             # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html
+            # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
             self.dateName = self.data.index
@@ -90,7 +92,7 @@ class Main():
             
             self.timeData = self.defaultData.copy()
             self.timeData.insert(0, 'labels', self.dateName)
-            print(self.timeData.reindex(index=self.date))
+            print(self.timeData.reindex_like(index=self.))
             
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
 
