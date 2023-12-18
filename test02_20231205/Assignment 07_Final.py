@@ -85,7 +85,7 @@ class Main():
             
             self.timeData = self.defaultData.copy()
             self.timeData.insert(0, 'labels', self.dateName)
-            print(self.timeData.rename(index=zip(self.dateName, self.date)))
+            print(self.timeData.rename(index=zip(self.dateName.array, self.date.array)))
             
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
 
