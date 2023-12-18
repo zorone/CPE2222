@@ -70,7 +70,7 @@ class Main():
             self.date = self.data.index.str.title()
             self.date = pd.to_datetime(self.date, format="%b %Y ")
             
-            self.dateToLabel = pd.Series([self.date.array, self.dateName], index=self.date)
+            self.dateToLabel = pd.Series([self.date.date, self.dateName.array], index=self.date)
             print(self.dateToLabel)
             
             self.data.insert(0, 'time', self.date)
