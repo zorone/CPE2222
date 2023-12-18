@@ -61,8 +61,12 @@ class Main():
             # ? src: https://pandas.pydata.org/docs/user_guide/dsintro.html#assigning-new-columns-in-method-chains
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
+            self.dateName = self.data.index
             self.date = self.data.index.str.title()
             self.date = pd.to_datetime(self.date, format="%b %Y ")
+            
+            self.dateToLabel = pd.Series([self.date, self.dateName], index=self.date)
+            print(self.dateToLabel)
             
             self.data.insert(0, 'time', self.date)
             self.dataKey = self.data.keys()
