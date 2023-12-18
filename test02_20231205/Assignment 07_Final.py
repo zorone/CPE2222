@@ -58,9 +58,9 @@ class Main():
             # * src: https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.to_series.html
             # * src: https://stackoverflow.com/questions/54680055/what-is-a-good-way-to-prevent-changes-from-being-applied-to-an-original-data-fra
             # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.copy.html
-            # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename
             # * src: https://stackoverflow.com/a/44831147
-            # * src: https://docs.python.org/3/library/functions.html?highlight=zip#zip
+            # * src: https://stackoverflow.com/questions/19851005/rename-pandas-dataframe-index 
+            # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html#pandas.DataFrame.reindex
             
             # ? Further Reading
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html#pandas.to_datetime
@@ -71,6 +71,11 @@ class Main():
             # ? src: https://pandas.pydata.org/docs/reference/api/pandas.arrays.DatetimeArray.html#pandas.arrays.DatetimeArray
             # ? src: https://docs.python.org/3/library/datetime.html#datetime.datetime
             # ? src: https://stackoverflow.com/questions/60913716/convert-timeindex-of-dataframe-to-datetimeindex-in-place
+            # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html#pandas.DataFrame.rename
+            # ? src: https://docs.python.org/3/library/functions.html?highlight=zip#zip
+            # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html#pandas.DataFrame.index
+            # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.columns.html#pandas.DataFrame.columns
+            # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html
             
             self.data = pd.read_csv(self.fileName, header=5, index_col=0, usecols=[x for x in range(1, 380)]).transpose()
             self.dateName = self.data.index
@@ -85,7 +90,7 @@ class Main():
             
             self.timeData = self.defaultData.copy()
             self.timeData.insert(0, 'labels', self.dateName)
-            print(self.timeData.rename(index=zip(self.dateName.array, self.date.array)))
+            print(self.timeData.reindex(index=self.date))
             
             self.dataByYear = self.data.groupby(self.data['time'].dt.year)
 
