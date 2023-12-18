@@ -234,7 +234,7 @@ class Main():
         
         # TODO: some more formatting.
         
-        self.dataByMonth = self.data.groupby(self.data['time'].dt.month, as_index=False).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
+        self.dataByMonth = self.data.groupby(self.data['time'].dt.month, as_index=False).agg({[self.dataKey[24]]: ['min', 'mean', 'max'], [self.dataKey[27]]: ['min', 'mean', 'max']})
         tempDictIndex = dict()
         tempDictColumn = dict()
         for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=0):
