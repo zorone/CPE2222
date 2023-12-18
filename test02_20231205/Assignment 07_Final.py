@@ -235,11 +235,16 @@ class Main():
         # TODO: some more formatting.
         
         self.dataByMonth = self.data.groupby(self.data['time'].dt.month, as_index=False).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
-        tempDict = dict()
+        tempDictIndex = dict()
+        tempDictColumn = dict()
         for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=0):
-            tempDict[i] = name
+            tempDictIndex[i] = name
         
-        self.dataByMonth.rename(index=tempDict, inplace=True)
+        for name in ('min', 'mean', 'max'):
+            tempDictIndex[name] = name.upper()
+        
+        self.dataByMonth.rename(index=tempDictIndex, inplace=True)
+        self.dataByMonth.rename(columns=tempDictColumn, inplace=True, level=1)
         print(self.dataByMonth)
 
 # TODO: Implement pandas installation.
