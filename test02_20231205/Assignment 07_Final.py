@@ -162,9 +162,10 @@ class Main():
 # * 1991 - 2005
     def _3(self):
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.rolling.html#pandas.Series.rolling
-        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between_time.html#pandas.Series.between_time
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.is_monotonic_decreasing.html
         # * src: https://stackoverflow.com/questions/57235819/get-if-a-rolling-window-is-increasing-or-decreasing
+        # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.resample.html
+        # * src: https://stackoverflow.com/a/29370182
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
@@ -174,10 +175,11 @@ class Main():
         # ? src: https://github.com/pandas-dev/pandas/issues/19248
         # ? src: https://stackoverflow.com/questions/46100962/loop-to-get-rolling-future-values-of-a-pandas-time-indexed-dataframe-can-i-make/46101574#46101574
         # ? src: https://github.com/pandas-dev/pandas/pull/28297
+        # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between_time.html#pandas.Series.between_time
         
         # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
         
-        self.data_3 = self.timeData[self.dataKey[1]].between_time('1991-01-01', '2005-12-31')
+        self.data_3 = self.timeData[self.dataKey[1]].resample()
         print(self.data_3)
         
 
