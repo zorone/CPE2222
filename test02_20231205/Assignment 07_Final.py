@@ -164,14 +164,21 @@ class Main():
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.rolling.html#pandas.Series.rolling
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between_time.html#pandas.Series.between_time
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.is_monotonic_decreasing.html
+        # * src: https://stackoverflow.com/questions/57235819/get-if-a-rolling-window-is-increasing-or-decreasing
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
         # ? src: https://stackoverflow.com/questions/31535442/select-multiple-groups-from-pandas-groupby-object
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html#pandas.Grouper
+        # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.is_monotonic_decreasing.html
+        # ? src: https://github.com/pandas-dev/pandas/issues/19248
+        # ? src: https://stackoverflow.com/questions/46100962/loop-to-get-rolling-future-values-of-a-pandas-time-indexed-dataframe-can-i-make/46101574#46101574
+        # ? src: https://github.com/pandas-dev/pandas/pull/28297
         
-        self._res_3 = self.timeData[self.dataKey[1]].between_time('1991', '2005').rolling('30D').is_monotonic_decreasing()
-        print(self._res_3)
+        # ! There is nothing wrong with using loop for pandas. So don't think about it too much.
+        
+        self.data_3 = self.timeData[self.dataKey[1]].between_time('1991', '2005')
+        print(self.data_3)
         
 
 # TODO: 4.
