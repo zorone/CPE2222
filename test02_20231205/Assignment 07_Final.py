@@ -238,11 +238,13 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/whatsnew/v2.1.0.html#other-deprecations (GH 41090, GH 50684, GH 52849)
         # ?     src-mention: https://github.com/pandas-dev/pandas/issues/41090
         # ? --> src-mention: https://github.com/pandas-dev/pandas/issues/50684
+        # ?     --> src-mention: https://github.com/pandas-dev/pandas/pull/50744
+        # ?         src-mention: https://github.com/pandas-dev/pandas/issues/46944
         # ?     src-mention: https://github.com/pandas-dev/pandas/issues/52849
         
         # TODO: some more formatting.
         
-        self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
+        self.dataByMonth = self.data.groupby(self.data['time'].dt.month, as_index=False).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})['time']
         tempDictIndex = dict()
         tempDictColumn = dict()
         for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=0):
