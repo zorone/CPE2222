@@ -232,6 +232,7 @@ class Main():
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.Series.agg.html
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.agg.html
         # * src: https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#defined-levels
+        # * src: https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#creating-a-multiindex-hierarchical-index-object
         
         # ? Further Reading
         # ? src: https://stackoverflow.com/questions/60999753/pandas-future-warning-indexing-with-multiple-keys
@@ -247,7 +248,6 @@ class Main():
         # TODO: some more formatting.
         
         self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
-        print(self.dataByMonth.index)
         tempDictIndex = dict()
         tempDictColumn = dict()
         for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=0):
@@ -258,6 +258,7 @@ class Main():
         
         self.dataByMonth.rename(index=tempDictIndex, inplace=True)
         self.dataByMonth.rename(columns=tempDictColumn, inplace=True, level=1)
+        self.dataByMonth.index.names = [None]
         print(self.dataByMonth)
 
 # TODO: Implement pandas installation.
