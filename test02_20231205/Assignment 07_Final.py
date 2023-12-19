@@ -231,6 +231,7 @@ class Main():
     def _5(self):
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.Series.agg.html
         # * src: https://pandas.pydata.org/docs/dev/reference/api/pandas.DataFrame.agg.html
+        # * src: https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#reconstructing-the-level-labels
         
         # ? Further Reading
         # ? src: https://stackoverflow.com/questions/60999753/pandas-future-warning-indexing-with-multiple-keys
@@ -244,7 +245,8 @@ class Main():
         
         # TODO: some more formatting.
         
-        self.dataByMonth = self.data.groupby(self.data['time'].dt.month, as_index=False).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})['time']
+        self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
+        print(self.dataByMonth.get_level_values(0))
         tempDictIndex = dict()
         tempDictColumn = dict()
         for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=0):
