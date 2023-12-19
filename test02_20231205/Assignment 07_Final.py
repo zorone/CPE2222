@@ -171,6 +171,7 @@ class Main():
         # * src: https://stackoverflow.com/a/29370182
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.size.html#pandas.Series.size
         # * src: https://pandas.pydata.org/docs/reference/api/pandas.Series.index.html#pandas.Series.index
+        # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.iat.html
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.get_group.html
@@ -193,7 +194,8 @@ class Main():
         for period in range(0, self.data_3.size-2):
             temp :pd.Series = self.data_3.iloc[period:period+3]
             if (temp.is_monotonic_decreasing):
-                self._res_3 = temp.index.iat[-1]
+                self._res_3 = temp.iat[-1]
+        print(self._res_3)
 
 # DONE: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
