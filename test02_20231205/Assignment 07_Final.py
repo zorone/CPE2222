@@ -189,11 +189,11 @@ class Main():
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
         print(self.data_3)
         self.data_3_index = self.data_3.index
-        
+        self._res_3 = tuple()
         for period in range(0, self.data_3.size-2):
-            temp = self.data_3.iloc[period:period+3]
+            temp :pd.Series = self.data_3.iloc[period:period+3]
             if (temp.is_monotonic_decreasing):
-                print(temp)
+                self._res_3 = temp.index.iat[-1]
 
 # DONE: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
@@ -250,7 +250,7 @@ class Main():
         self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
         tempDictIndex = dict()
         tempDictColumn = dict()
-        for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=0):
+        for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=1):
             tempDictIndex[i] = name
         
         for name in ('min', 'mean', 'max'):
