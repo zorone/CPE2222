@@ -266,14 +266,19 @@ class Main():
     
     def res(self):
         # * src: https://stackoverflow.com/a/20686659
+        # * src: https://docs.python.org/3/library/stdtypes.html?highlight=center#str.center
         
         # ? Further Reading
         # ? src: https://docs.python.org/3/library/functions.html?highlight=print#print
         
         pageBreak = '*'*160
-        print('Pandas Application'.center())
+        print('Pandas Application'.center(160))
         print(pageBreak)
         print('Average of "Monetary Base" [Only February on Leap Years]: {}'.format(format(self._res_1, ',')))
+        
+        print(pageBreak)
+        print('2) Pandas Series of Annual Average of "Net Claims on Central Government" [1981-1990]:')
+        print(self._res_2)
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
