@@ -281,7 +281,7 @@ class Main():
         pageBreak = '-'*160
         print('Pandas Application'.center(160))
         print(pageBreak)
-        print('Average of "Monetary Base" [Only February on Leap Years]: {}'.format(format(self._res_1, ',')))
+        print('1) Average of "Monetary Base" [Only February on Leap Years]: {}'.format(format(self._res_1, ',')))
         
         print(pageBreak)
         print('2) Pandas Series of Annual Average of "Net Claims on Central Government" [1981-1990]:')
