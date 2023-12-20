@@ -226,10 +226,13 @@ class Main():
         test = partial(dataCond, comp=583757, expect=3)
         self._4_test = self.data_4.rolling(6).apply(test)
         self._4_test = self._4_test.astype('boolean')
-        self._res_4_Series = self.data_4[self._4_test]
-        self._res_4 = self._res_4_Series.index
+        self._res_4_index = self.data_4[self._4_test].index
+        self._res_4 = tuple()
+        
+        for date in self._res_4_index:
+            self._res_4 += self.dateToLabel[date]
         print(self._res_4)
-
+        
 # DONE: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
 # * 2-Ordered Pandas Data Frame
