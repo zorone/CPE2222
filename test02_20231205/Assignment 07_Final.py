@@ -257,7 +257,7 @@ class Main():
         
         # TODO: some more formatting.
         
-        self.dataByMonth = self.data.groupby(self.data['time'].dt.month).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
+        self._res_5 = self.data.groupby(self.data['time'].dt.month).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
         tempDictIndex = dict()
         tempDictColumn = dict()
         for i, name in enumerate(('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'), start=1):
@@ -266,11 +266,11 @@ class Main():
         for name in ('min', 'mean', 'max'):
             tempDictIndex[name] = name.upper()
         
-        self.dataByMonth.rename(index=tempDictIndex, inplace=True)
-        self.dataByMonth.rename(columns=tempDictColumn, inplace=True, level=1)
-        self.dataByMonth.index.names = [None]
-        print(self.dataByMonth)
+        self._res_5.rename(index=tempDictIndex, inplace=True)
+        self._res_5.rename(columns=tempDictColumn, inplace=True, level=1)
+        self._res_5.index.names = [None]
     
+# TODO: print output
     def res(self):
         # * src: https://stackoverflow.com/a/20686659
         # * src: https://docs.python.org/3/library/stdtypes.html?highlight=center#str.center
@@ -297,6 +297,12 @@ class Main():
         print('4) Within 6-months window, there must be at least 3 months with "Claims on Financial Institutions" more than "583,758" [2000-2005]:')
         for month in self._res_4:
             print(month)
+        
+        print(pageBreak)
+        print('5) Pandas Data Frame of monthly minimum, mean, and maximum of "Other Liabilities to Financial Institutions" and "Other Items (net)" [Double column levels]:')
+        print(self._res_5)
+        
+        print(pageBreak)
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
