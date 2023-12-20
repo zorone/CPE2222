@@ -164,7 +164,7 @@ class Main():
         
         self._res_2 :pd.Series = self.dataByYear[self.dataKey[9]].mean().loc[1981:1990]
         self._res_2.index.names = [None]
-        self._res_2.name = [None]
+        self._res_2.name = None
 
 # DONE: 3.
 # ? 3. List of net loss continuously for 3 months
@@ -200,7 +200,7 @@ class Main():
         for period in range(0, self.data_3.size-2):
             temp :pd.Series = self.data_3.iloc[period:period+3]
             if (temp.is_monotonic_decreasing):
-                self._res_3 = temp.iat[-1]
+                self._res_3 += temp.iat[-1]
         print(self._res_3)
 
 # DONE: 4.
@@ -284,6 +284,10 @@ class Main():
         print(pageBreak)
         print('2) Pandas Series of Annual Average of "Net Claims on Central Government" [1981-1990]:')
         print(self._res_2)
+        
+        print(pageBreak)
+        print('3) The 3 consecutive monthly decreases of "Net Foreign Assets" [1991-2005]:')
+        
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
