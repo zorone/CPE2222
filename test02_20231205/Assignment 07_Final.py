@@ -149,6 +149,7 @@ class Main():
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/06_calculate_statistics.html
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/07_reshape_table_layout.html#min-tut-07-reshape
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/03_subset_data.html#how-do-i-select-specific-rows-and-columns-from-a-dataframe
+        # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/docs/user_guide/basics.html#dtypes
@@ -158,8 +159,10 @@ class Main():
         # ? src: https://pandas.pydata.org/docs/user_guide/timeseries.html#dateoffset-objects
         # ? src: https://pandas.pydata.org/docs/reference/api/pandas.Series.between_time.html#pandas.Series.between_time
         # ? src: https://stackoverflow.com/questions/14734533/how-to-access-subdataframes-of-pandas-groupby-by-key
+        # ? src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.index.html#pandas.Series.index
         
-        self._res_2 = self.dataByYear[self.dataKey[9]].mean().loc[1981:1990]
+        self._res_2 :pd.Series = self.dataByYear[self.dataKey[9]].mean().loc[1981:1990]
+        self._res_2.index.names = [None]
 
 # DONE: 3.
 # ? 3. List of net loss continuously for 3 months
