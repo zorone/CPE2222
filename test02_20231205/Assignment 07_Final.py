@@ -194,7 +194,6 @@ class Main():
         # TODO: needs to format these result later.
         
         self.data_3 = self.timeData[self.dataKey[1]].loc['1991':'2005']
-        print(self.data_3)
         self.data_3_index = self.data_3.index
         self._res_3 = tuple()
         for period in range(0, self.data_3.size-2):
@@ -225,9 +224,13 @@ class Main():
         
         self.data_4 :pd.Series = self.timeData[self.dataKey[4]].loc['2000':'2005']
         test = partial(dataCond, comp=583757, expect=3)
-        self._res_4 = self.data_4.rolling(6).apply(test)
-        self._res_4 = self._res_4.astype('boolean')
-        print(self.data_4[self._res_4])
+        self._4_test = self.data_4.rolling(6).apply(test)
+        self._4_test = self._res_4.astype('boolean')
+        self._res_4_Series = self.data_4[self._test]
+        self._res_4 = tuple()
+        
+        for data in self._res_4_Series:
+            self._res_4 += 
 
 # DONE: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
@@ -291,6 +294,7 @@ class Main():
             print(month)
         
         print(pageBreak)
+        print('4) Within 6-months window, there must be at least 3 months with "Claims on Financial Institutions" more than "583,758" [2000-2005]:')
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
