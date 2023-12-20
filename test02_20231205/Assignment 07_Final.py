@@ -262,6 +262,17 @@ class Main():
         self.dataByMonth.rename(columns=tempDictColumn, inplace=True, level=1)
         self.dataByMonth.index.names = [None]
         print(self.dataByMonth)
+    
+    def res(self):
+        # * src: https://stackoverflow.com/a/20686659
+        
+        # ? Further Reading
+        # ? src: https://docs.python.org/3/library/functions.html?highlight=print#print
+        
+        pageBreak = '*'*160
+        print('Pandas Application'.center())
+        print(pageBreak)
+        print('Average of "Monetary Base" [Only February on Leap Years]: {}'.format(format(self._res_1, ',')))
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
