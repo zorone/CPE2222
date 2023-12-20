@@ -150,6 +150,7 @@ class Main():
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/07_reshape_table_layout.html#min-tut-07-reshape
         # * src: https://pandas.pydata.org/docs/dev/getting_started/intro_tutorials/03_subset_data.html#how-do-i-select-specific-rows-and-columns-from-a-dataframe
         # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html
+        # * src: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.name.html#pandas.Series.name
         
         # ? Further Reading
         # ? src: https://pandas.pydata.org/docs/user_guide/basics.html#dtypes
@@ -163,6 +164,7 @@ class Main():
         
         self._res_2 :pd.Series = self.dataByYear[self.dataKey[9]].mean().loc[1981:1990]
         self._res_2.index.names = [None]
+        self._res_2.name = [None]
 
 # DONE: 3.
 # ? 3. List of net loss continuously for 3 months
@@ -274,7 +276,7 @@ class Main():
         # ? Further Reading
         # ? src: https://docs.python.org/3/library/functions.html?highlight=print#print
         
-        pageBreak = '*'*160
+        pageBreak = '-'*160
         print('Pandas Application'.center(160))
         print(pageBreak)
         print('Average of "Monetary Base" [Only February on Leap Years]: {}'.format(format(self._res_1, ',')))
