@@ -230,8 +230,7 @@ class Main():
         self._res_4 = tuple()
         
         for date in self._res_4_index:
-            self._res_4 += self.dateToLabel[date]
-        print(self._res_4)
+            self._res_4 += (self.dateToLabel[date],)
         
 # DONE: 5.
 # ? 5. Tables of data, for min, mean, and max, of 'Other Liabilities to Financial Institutions' and 'Other Items (net)' for all year, based on each month.
@@ -296,6 +295,8 @@ class Main():
         
         print(pageBreak)
         print('4) Within 6-months window, there must be at least 3 months with "Claims on Financial Institutions" more than "583,758" [2000-2005]:')
+        for month in self._res_4:
+            print(month)
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
