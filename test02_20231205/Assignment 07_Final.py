@@ -200,8 +200,7 @@ class Main():
         for period in range(0, self.data_3.size-2):
             temp :pd.Series = self.data_3.iloc[period:period+3]
             if (temp.is_monotonic_decreasing):
-                print(self.dateToLabel[temp.index[-1]], ': ', [temp.index[-1]])
-        # print(self._res_3)
+                self._res_3 += self.dateToLabel[temp.index[-1]]
 
 # DONE: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
@@ -288,6 +287,10 @@ class Main():
         print(pageBreak)
         print('3) The 3 consecutive monthly decreases of "Net Foreign Assets" [1991-2005]:')
         
+        for month in self._res_3:
+            print(month)
+        
+        print(pageBreak)
 
 # TODO: Implement pandas installation.
     def pdInstall(self):
