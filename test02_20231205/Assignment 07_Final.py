@@ -200,7 +200,7 @@ class Main():
         for period in range(0, self.data_3.size-2):
             temp :pd.Series = self.data_3.iloc[period:period+3]
             if (temp.is_monotonic_decreasing):
-                print(temp.index)
+                print(temp.index[-1])
         # print(self._res_3)
 
 # DONE: 4.
