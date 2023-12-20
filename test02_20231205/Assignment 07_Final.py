@@ -23,6 +23,7 @@ class Main():
         self._3()
         self._4()
         self._5()
+        self.res()
 
 # DONE: Navigate to current directory
     def setCurrentDir(self):
