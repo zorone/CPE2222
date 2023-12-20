@@ -3,7 +3,7 @@ import pandas as pd
 from urllib.request import urlretrieve
 from functools import partial
 
-# TODO: Write codes as Assigned.
+# DONE: Write codes as Assigned.
 # ? Don't forget to add citation.
 
 url = "https://app.bot.or.th/BTWS_STAT/statistics/DownloadFile.aspx?file=EC_MB_001_ENG_ALL.CSV"
@@ -255,7 +255,7 @@ class Main():
         # ?     src-mention: https://github.com/pandas-dev/pandas/issues/52849
         # ? src: https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#reconstructing-the-level-labels
         
-        # TODO: some more formatting.
+        # DONE: some more formatting.
         
         self._res_5 = self.data.groupby(self.data['time'].dt.month).agg({self.dataKey[24]: ['min', 'mean', 'max'], self.dataKey[27]: ['min', 'mean', 'max']})
         tempDictIndex = dict()
@@ -270,7 +270,7 @@ class Main():
         self._res_5.rename(columns=tempDictColumn, inplace=True, level=1)
         self._res_5.index.names = [None]
     
-# TODO: print output
+# DONE: print output
     def res(self):
         # * src: https://stackoverflow.com/a/20686659
         # * src: https://docs.python.org/3/library/stdtypes.html?highlight=center#str.center
