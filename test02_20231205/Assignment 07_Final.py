@@ -200,7 +200,7 @@ class Main():
         for period in range(0, self.data_3.size-2):
             temp :pd.Series = self.data_3.iloc[period:period+3]
             if (temp.is_monotonic_decreasing):
-                self._res_3 += self.dateToLabel[temp.index[-1]]
+                self._res_3 += (self.dateToLabel[temp.index[-1]],)
 
 # DONE: 4.
 # ? 4. List of 'Claims on Financial Institutions' is greater than 583757 for at least 3 month, In 6 month ranges
