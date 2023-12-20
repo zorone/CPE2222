@@ -225,7 +225,7 @@ class Main():
         self.data_4 :pd.Series = self.timeData[self.dataKey[4]].loc['2000':'2005']
         test = partial(dataCond, comp=583757, expect=3)
         self._4_test = self.data_4.rolling(6).apply(test)
-        self._4_test = self._res_4.astype('boolean')
+        self._4_test = self._4_test.astype('boolean')
         self._res_4_Series = self.data_4[self._test]
         self._res_4 = self._res_4_Series.index
         print(self._res_4)
