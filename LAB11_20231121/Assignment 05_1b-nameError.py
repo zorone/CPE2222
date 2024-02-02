@@ -1,23 +1,3 @@
-dup = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-
-# only show list of itself when data no less than 5; else show accumulate list until this iterations.
-
-try:
-    for data in dup:
-        if(data >= 5):
-            res = [data]
-        else:
-            res += [data]
-        print(res)
-
-except NameError:
-    res = list()
-    print("Escaping NameError")
-
-finally:
-    for data in dup:
-        if(data >= 5):
-            res = [data]
-        else:
-            res += [data]
-        print(res)
+version https://git-lfs.github.com/spec/v1
+oid sha256:bc61d1dfd0f7db53a70005c1b8180bf44f3910cc7778eac2e24d99e7bc181bdf
+size 502

@@ -1,20 +1,3 @@
-# https://pythonexamples.org/python-tkinter-window-resize-event/
-
-import tkinter as tk
-from tkinter import font
-
-def on_window_resize(event):
-    width = event.width
-    height = event.height
-    print(f"Window resized to {width}x{height}")
-
-# Create the main window
-window = tk.Tk()
-window.geometry("300x300")
-window.title("PythonExamples.org")
-
-# Bind the resize event to a function
-window.bind("<Configure>", on_window_resize)
-
-# Run the application
-window.mainloop()
+version https://git-lfs.github.com/spec/v1
+oid sha256:701db756306e2ab7c2298e56d03fc9252ca7244bd175fbd9e41710f3968e2d2b
+size 491

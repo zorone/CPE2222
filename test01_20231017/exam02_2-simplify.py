@@ -1,20 +1,3 @@
-n = int(input("Please Enter Degree: "))
-
-sz = 0
-arr = [1]
-arrList = list()
-arrList += [arr]
-
-for i in range(1, n+1):
-    sz += 1
-    arr = list()
-    for j in range(0, sz+1):
-        if j == 0:
-            val = arrList[-1][-1]
-        else:
-            val = arrList[-1][j-1] + arr[-1]
-        arr += [val]
-    arrList += [arr]
-
-res = arrList[sz]
-print(res)
+version https://git-lfs.github.com/spec/v1
+oid sha256:0f540c70e8bdb71581c9e1f055a52696e9b3826fcf95219c0f233eef4a4f9cd6
+size 377

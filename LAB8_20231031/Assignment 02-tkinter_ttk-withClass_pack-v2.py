@@ -1,17 +1,3 @@
-from tkinter import *
-from tkinter import ttk
-
-class Main(Tk):
-    def __init__(self,):
-        super().__init__()
-        
-        self.title("CPE2222")
-        self.style = ttk.Style()
-    
-class Build:
-    def __init__(self,):
-        print()
-
-if __name__ == "__main__":
-    main = Main()
-    main.mainloop()
+version https://git-lfs.github.com/spec/v1
+oid sha256:2a2066adb34e8749214cc1ea7a38d165252ffd4664267e924a3e98fc81f9217f
+size 327

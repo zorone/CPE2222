@@ -1,18 +1,3 @@
-def nthDegreePascal(re :int):
-    pascalList = list()
-    if(re <= 1):
-        temp = [1, 1][0:re+1]
-        return temp
-    else:
-        temp = nthDegreePascal(re-1)
-    
-    pascalList += [1]
-    for i in range(0, len(temp)-1):
-        pascalList += [temp[i]+temp[i+1]]
-    
-    pascalList += [1]
-        
-    return pascalList
-
-n = int(input("Please Enter Degree of Pascal Triangle: "))
-print(nthDegreePascal(n))
+version https://git-lfs.github.com/spec/v1
+oid sha256:bdd52f86e1f074642a05fa5127c64cf2259dc36e0bf998354b3bd861ed22af3f
+size 433

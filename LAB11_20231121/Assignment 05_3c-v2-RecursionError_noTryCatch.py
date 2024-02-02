@@ -1,17 +1,3 @@
-from sys import getrecursionlimit
-
-def recursivePrint(val :int):
-    if(val > 0):
-        recursivePrint(val-1)
-    elif(val < 0):
-        recursivePrint(val+1)
-    print(val)
-
-val = int(input('Enter value:'))
-limit = getrecursionlimit()-5
-if(val >= limit):
-    print('Escaping RecursionError')
-    print("Set val to {} so it won't exceed recursion limit.".format(limit))
-    val = limit
-
-recursivePrint(val)
+version https://git-lfs.github.com/spec/v1
+oid sha256:4d5229f34e8ccd2f0c93a27d7e71fc5f2d45faf9b254d0680b3db85eb7fb7293
+size 424

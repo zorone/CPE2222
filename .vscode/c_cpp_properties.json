@@ -1,20 +1,3 @@
-{
-    "configurations": [
-        {
-            "name": "Win32",
-            "includePath": [
-                "${default}"
-            ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "windowsSdkVersion": "10.0.22621.0",
-            "cStandard": "c17",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64"
-        }
-    ],
-    "version": 4
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4a6a4510f6d3b459ec942e13839bde1cb58aad6c0eb51c99656136e11d51005c
+size 480
