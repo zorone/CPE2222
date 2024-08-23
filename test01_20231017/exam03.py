@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54aff1d63536f48bf8c83fe65c446723d91e9e3652d6b28d6fc775864943f015
-size 416
+print('  Drawing the right triangle by "*"  '.center(50, "-"))
+print('[To quit this program by pressing "0"]')
+print("-"*50)
+
+n = int(input("Enter the height of right triangle:"))
+
+while n != 0:
+    if n > 1:
+        print("*".rjust(n))
+    for i in range(1, n-1):
+        print("{}{}".format("*".rjust(n-i), "*".rjust(i)))
+    print("*"*n)
+    
+    n = int(input("Enter the height of right triangle:"))

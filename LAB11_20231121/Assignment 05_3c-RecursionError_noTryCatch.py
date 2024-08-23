@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:05b266c585a89d85f36a55269a24e521b950d73dfdbe0763866b408054e5cfbc
-size 426
+from sys import getrecursionlimit
+
+def recursivePrint(val :int):
+    if(val > 0):
+        recursivePrint(val-1)
+    elif(val < 0):
+        recursivePrint(val+1)
+    print(val)
+
+val = int(input('Enter value:'))
+limit = getrecursionlimit()
+if(val >= limit):
+    print('Escaping RecursionError')
+    print("Set val to {} so it won't exceed recursion limit.".format(limit-5))
+    val = limit-5
+
+recursivePrint(val)

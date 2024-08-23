@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf614e92647ff24223ec594a4cf3e8b1f1a958e4e657c281d375beb6ef9f688c
-size 706
+x = input("Enter first argument:")
+y = input("Enter second argument:")
+print("Usable modes: +, -, *, /")
+mode = input("Please enter modes:")
+
+res = int()
+
+if(mode == '+'):
+    cmd = 'res = x + y'
+    codeObj = compile(cmd, 'test', 'exec')
+elif(mode == '-'):
+    cmd = 'res = x - y'
+    codeObj = compile(cmd, 'test', 'exec')
+elif(mode == '*'):
+    cmd = 'res = x * y'
+    codeObj = compile(cmd, 'test', 'exec')
+elif(mode == '/'):
+    cmd = 'res = x / y'
+    codeObj = compile(cmd, 'test', 'exec')
+else:
+    cmd = "print('Operation is unavailable.')"
+    codeObj = compile(cmd, 'test', 'exec')
+try:
+    exec(codeObj)
+    print(res)
+except TypeError:
+    print("Escaping TypeError")

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:884e9675cfd997b71f0b39cf825f3f73bffe7da71251fb73f5b4371582876e29
-size 260
+a = list()
+b = 0
+for i in range(0, 100):
+    if(i < 50):
+        if(i%2 == 0):
+            a += [i]
+        else:
+            b += i
+    else:
+        if(i%3 == 0):
+            a += [b]
+        else:
+            a += [a]
+    print(a)
+    print(b)

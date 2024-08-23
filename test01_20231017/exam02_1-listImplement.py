@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:713d46faa24161638417497482f321282c5755a92ce9a49ba46a1cad02301b31
-size 394
+n = int(input("Please Enter Degree: "))
+
+sz = 0
+arr = [1]
+arrList = list()
+arrList += [arr]
+
+for i in range(1, n+1):
+    arr = list()
+    sz = len(arrList)
+    for j in range(0, sz+1):
+        if j == 0:
+            val = arrList[sz-1][sz-1]
+        else:
+            val = arrList[sz-1][j-1] + arr[j-1]
+        arr += [val]
+    arrList += [arr]
+
+res = arrList[sz]
+print(res)

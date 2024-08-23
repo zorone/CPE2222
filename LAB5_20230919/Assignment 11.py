@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ce2a3422934851ea9216a4d74dd4cc13d15c69ba827e4133d44dd95b6293a15
-size 228
+print("Making a list of Factorial series of n")
+n = int(input("Enter 'n' of Factorial number:"))
+arr = [1]
+
+for i in range(2, n+1):
+    arr += [arr[i-2] * i]
+
+print("A list of Factorial series of {} is {}".format(n, arr))

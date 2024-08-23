@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a8ce77fc1bbc4bb5348e1982f6ce23c701e8ad2f1821fd66686f043281e6df1
-size 406
+# https://stackoverflow.com/a/67306226
+
+from tkinter import *
+
+root = Tk()
+
+
+def clear():
+    label.config(text='')
+
+
+def change():
+    label.config(text='changed text')
+
+
+label = Label(text='default text')
+buttonA = Button(root, text='clear text', command=clear)
+buttonB = Button(root, text='change text', command=change)
+
+label.pack()
+buttonA.pack()
+buttonB.pack()
+
+root.mainloop()

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:da69a732c57822bc94999c9726b0e74019ffc8c9f25eeb9ee39f33a4f38f393a
-size 511
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ]
+}

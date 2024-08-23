@@ -1,3 +1,100 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d2cdf0a311d7cd45377480883987f4f1a4193035ea49e5024cbb80ec9c59e528
-size 2418
+In [1]: import numpy as np
+
+In [2]: np.random.randint(0, 2, 16)
+Out[2]: array([1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0])
+
+In [3]: bits = np.random.randint(0, 2, 16)
+
+In [4]: enumerate(bits)
+Out[4]: <enumerate at 0x236cdac8440>
+
+In [5]: list(enumerate(bits))
+Out[5]:
+[(0, 1),
+ (1, 0),
+ (2, 1),
+ (3, 0),
+ (4, 0),
+ (5, 1),
+ (6, 1),
+ (7, 0),
+ (8, 0),
+ (9, 0),
+ (10, 0),
+ (11, 1),
+ (12, 1),
+ (13, 1),
+ (14, 1),
+ (15, 1)]
+
+In [6]: [i for i, bit in enumerate(bits)]
+Out[6]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+In [7]: [i for i, bit in enumerate(bits) if bit]
+Out[7]: [0, 2, 5, 6, 11, 12, 13, 14, 15]
+
+In [8]: bits
+Out[8]: array([1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1])
+
+In [9]: 0 ^ 2 ^ 5 ^ 6 ^ 11 ^ 12 ^ 13 ^ 14 ^ 15
+Out[9]: 10
+
+In [10]: from functools import reduce
+
+In [11]: import operator as op
+
+In [12]: reduce(op.xor, [i for i, bit in enumerate(bits) if bit])
+Out[12]: 10
+
+In [13]: reduce(lambda x, y: x ^ y, [i for i, bit in enumerate(bits) if bit
+    ...: ])
+Out[13]: 10
+
+In [14]: bin(10)
+Out[14]: '0b1010'
+
+In [15]: bits[2] = not bits[2]
+
+In [16]: bits[8] = not bits[8]
+
+In [17]: reduce(lambda x, y: x ^ y, [i for i, bit in enumerate(bits) if bit
+    ...: ])
+Out[17]: 0
+
+In [18]: bits[15] = not bits[15]
+
+In [19]: reduce(lambda x, y: x ^ y, [i for i, bit in enumerate(bits) if bit
+    ...: ])
+Out[19]: 15
+
+In [20]: bits[15] = not bits[15]
+
+In [21]: reduce(lambda x, y: x ^ y, [i for i, bit in enumerate(bits) if bit
+    ...: ])
+Out[21]: 0
+
+In [22]: _ih
+Out[22]:
+['',
+ 'import numpy as np',
+ 'np.random.randint(0, 2, 16)',
+ 'bits = np.random.randint(0, 2, 16)',
+ 'enumerate(bits)',
+ 'list(enumerate(bits))',
+ '[i for i, bit in enumerate(bits)]',
+ '[i for i, bit in enumerate(bits) if bit]',
+ 'bits',
+ '0 ^ 2 ^ 5 ^ 6 ^ 11 ^ 12 ^ 13 ^ 14 ^ 15',
+ 'from functools import reduce',
+ 'import operator as op',
+ 'reduce(op.xor, [i for i, bit in enumerate(bits) if bit])',
+ 'reduce(lambda x, y: x ^ y, [i for i, bit in enumerate(bits) if bit])',
+ 'bin(10)',
+ 'bits[2] = not bits[2]',
+ 'bits[8] = not bits[8]',
+ 'reduce(lambda x, y: x ^ y, [i for i, bit in enumerate(bits) if bit])',
+ 'bits[15] = not bits[15]',
+ 'reduce(lambda x, y: x ^ y, [i for i, bit in enumerate(bits) if bit])',
+ 'bits[15] = not bits[15]',
+ 'reduce(lambda x, y: x ^ y, [i for i, bit in enumerate(bits) if bit])',
+ '_ih']

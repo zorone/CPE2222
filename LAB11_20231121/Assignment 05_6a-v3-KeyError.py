@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:677d33c5b9ef07bd884ed7f4731b5b15ce10e5fa7eceb5ed8119acf2e5817acf
-size 309
+d = dict()
+for c in 'abcdefghijklmnopqrstuvwxyz':
+    cmd = "d.setdefault('{}', '{}')".format(c, c)
+    codeObj = compile(cmd, 'temp', 'exec')
+    exec(codeObj)
+
+for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+    cmd = "print(d['{}'])".format(c)
+    codeObj = compile(cmd, 'temp', 'exec')
+    exec(codeObj)

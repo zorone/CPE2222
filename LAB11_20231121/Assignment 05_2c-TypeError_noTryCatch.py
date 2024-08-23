@@ -1,3 +1,54 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3f8b6491d35ffc305e49a9bbb848b3f5da46a9a98c5b39645e25b17ba3da8a36
-size 1265
+x = input("Enter first argument:")
+y = input("Enter second argument:")
+print("Usable modes: +, -, *, /")
+mode = input("Please enter modes:")
+
+def testDecimal(data):
+    count = 0
+    for s in data:
+        if(s in '0123456789'):
+            continue
+        elif(s in '.' and count < 1):
+            count += 1
+        else:
+            return (False, False) # string
+    else:
+        if(len(data) == 0):
+            return (False, False) # Empty String
+
+    if(count == 0):
+        return (True, True) # int
+    else:
+        return (True, False) # float
+
+xTest = testDecimal(x)
+yTest = testDecimal(y)
+
+if(mode == '+'):
+    if(xTest[0] and yTest[0]):
+        x = float(x)
+        y = float(y)
+    res = x + y
+
+elif(mode == '*'):
+    if(xTest[0] and yTest[0]):
+        x = float(x)
+        y = float(y)
+        res = x*y
+    elif(yTest[1] == True):
+        y = int(y)
+        res = x*y
+    else:
+        res = 'Escaping TypeError'
+elif(xTest[0] and yTest[0]):
+        x = float(x)
+        y = float(y)
+        if(mode == '-'):
+            res = x - y
+        elif(mode == '/'):
+            res = x / y
+        else:
+            res = ('Operation is unavailable.')
+else:
+    res = 'Escaping TypeError'
+print(res)
